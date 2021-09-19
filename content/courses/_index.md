@@ -1,10 +1,10 @@
 ---
 header:
   caption: ""
-  image: ""
-title: Courses
+  image: "uploads/Rlogo.png"
+title: Tutoriales de R
 type: page
 view: 2
 ---
 
-I teach the following courses:
+A continuación encontrarás tutoriales para ealizar análsis y visualización de datos con el lenguaje de programación R.

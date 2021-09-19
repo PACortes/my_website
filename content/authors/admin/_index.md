@@ -3,50 +3,49 @@ bio: My research interests include distributed robotics, mobile computing and pr
   matter.
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
-    year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
+  - course: Doctor en Ciencias, mención Ecología y Evolución
+    institution: Universidad Austral de Chile
+    year: 2014
+  - course: Magíster (c) en Procesamiento y Gestión de Información
+    institution: Pontificia Universidad Católica de Chile
+    year: 2021
+  - course: Licenciado en Ciencias Biológicas
+    institution: Universidad Austral de Chile
     year: 2008
-email: ""
+email: "pablocortesgarcia@gmail.com"
 highlight_name: true
 interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
+- Cambio Climático
+- Biodiversidad
+- Procesamiento de Lenguaje Natural
+- Búsqueda y recuperación de información
 organizations:
-- name: Stanford University
-  url: https://www.stanford.edu/
-role: Professor of Artificial Intelligence
+- name: Escuela de Ingeniería en Medio Ambiente y Sustentabilidad, Universidad Mayor
+  url: www.umayor.cl
+role: Profesor Asistente
 social:
 - icon: envelope
   icon_pack: fas
   link: /#contact
 - display:
     header: true
-  icon: twitter
-  icon_pack: fab
-  label: Follow me on Twitter
-  link: https://twitter.com/GeorgeCushen
-- icon: graduation-cap
+  icon: graduation-cap
   icon_pack: fas
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  link: https://www.researchgate.net/profile/Pablo_Cortes11
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/PACortes
 - icon: linkedin
   icon_pack: fab
-  link: https://www.linkedin.com/
+  link: https://www.linkedin.com/in/pablo-andrés-cortés-garcía-1bb2511b3
+- icon: instagram
+  icon_pack: fab
+  link: https://www.instagram.com/pabcorgar/
+  
 superuser: true
-title: Nelson Bighetti
+title: Pablo Cortés García
 ---
 
-Pablo Cortés is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Pablo Cortés es Licenciado en Ciencias Biológicas (2004- 2008), Doctor en Ciencias mención Ecología y Evolución por la Universidad Austral de Chile (2010-2014) y candidato a Magíster en Procesamiento y Gestión de la Información de la Pontificia Universidad Católica de Chile (2020-2021). 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
-
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Descaraga mi {{< staticref "uploads/CV_CortesPA_2021.pdf" "newtab" >}}CV{{< /staticref >}}.

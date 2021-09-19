@@ -7,4 +7,4 @@ type: page
 view: 2
 ---
 
-A continuación encontrarás tutoriales para ealizar análsis y visualización de datos con el lenguaje de programación Python.
+A continuación encontrarás tutoriales para realizar análsis y visualización de datos con el lenguaje de programación Python.

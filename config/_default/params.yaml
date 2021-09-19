@@ -25,17 +25,17 @@ address:
   street: Transformation Blvd
   city: KAUST
   region: Thuwal
-  country: Arabia Saudita
+  country: Saudi Arabia
   country_code: KSA
 coordinates:
   latitude: '22.3161'
   longitude: '39.0977'
 contact_links:
-  - icon: 
-    icon_pack: linkedin
+  - icon: linkedin
+    icon_pack: fab
     name: DM Me
     link: 'https://www.linkedin.com/in/pablo-andrés-cortés-garcía-1bb2511b3'
-  
+
 # Site header
 
 main_menu:

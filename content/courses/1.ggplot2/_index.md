@@ -2,7 +2,7 @@
 date: "2021-09-19"
 linkTitle: Data Science
 summary: En este taller, aprenderemos a visualizar nuestros datos usando el paquete ggplot2.
-title: "\U0001F4CA ggplot2: Visualización de datos"
+title: "ggplot2: Visualización de datos"
 type: book
 ---
 
@@ -25,7 +25,7 @@ El paquete ggplot2 implementa un único sistema para describir y construir gráf
 En general, ggplot2 divide un gráfico (plot) en tres partes fundamentales diferentes: 
 
 ```r
-ggplot(data = data, mapping=aes(x=Var1, y =Var2))+ geom_function()
+ggplot(data = MisDatos, mapping=aes(x=Variable1, y =Variable2))+ geom_function()
 ```
 
 ## Visualizaciones a realizar

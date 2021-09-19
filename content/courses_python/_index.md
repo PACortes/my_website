@@ -2,9 +2,9 @@
 header:
   caption: ""
   image: ""
-title: Tutoriales de R
+title: Tutoriales de Python
 type: page
 view: 2
 ---
 
-A continuación encontrarás tutoriales para ealizar análsis y visualización de datos con el lenguaje de programación R.
+A continuación encontrarás tutoriales para ealizar análsis y visualización de datos con el lenguaje de programación Python.

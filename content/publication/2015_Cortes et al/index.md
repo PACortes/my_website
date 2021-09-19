@@ -1,34 +1,35 @@
 ---
-abstract: Resident passerines inhabiting high latitude environments are faced with strong seasonal changes in thermal conditions and energy availability. Summit metabolic rate (maximal metabolic rate elicited by shivering during cold exposure M(sum)) and basal metabolic rate (BMR) vary in parallel among seasons and increase in winter due to cold acclimatization, and these adjustments are thought to be critical for survival. Wintering individuals expressing consistently higher M(sum) and BMR could therefore be seen as better performers with higher chances of winter survival than those exhibiting lower metabolic performance. In this study, we calculated repeatability to evaluate temporal consistency of body mass, BMR and M(sum) within and across three consecutives winters in black-capped chickadees (*Poecile atricapillus*). We found that body mass was significantly repeatable both within and across winters (R 0.51-0.90). BMR (R 0.29-0.47) was only repeatable within winter while M(sum) was repeatable both among (R 0.33-0.49) and within winters (R 0.33-0.49) with the magnitude and significance of repeatability in both variables depending on the year and whether they were corrected for body mass or body size. The patterns of repeatability observed among years also differed between the two variables. Our findings suggest that the relative ranking of individuals in winter metabolic performance is affected by local ecological conditions and can change within relatively short periods of time.
+abstract: Torpor is a phenotype characterized by a controlled decline of metabolic rate and body temperature. During arousal from torpor, organs undergo rapid metabolic reactivation and rewarming to near normal levels. As torpor progress, animals show a preference for fatty acids over glucose as primary source of energy. Here, we analyzed for first time the changes in the maximal activity of key enzymes related to fatty acid (Carnitine palmitoyltransferase and β-Hydroxyacyl CoA dehydrogenase) and carbohydrate (Pyruvate kinase, Phosphofructokinase and Lactate dehydrogenase) catabolism, as well as mitochondrial oxidative capacity (Citrate synthase), in six organs of torpid, arousing and euthermic Chilean mouse-opossums (*Thylamys elegans*). Our results showed that activity of enzymes related to fatty acid and carbohydrate catabolism were different among torpor phases and the pattern of variation differs among tissues. In terms of lipid utilization, maximal enzymatic activities differ in tissues with high oxidative capacity such as heart, kidney, and liver. In terms of carbohydrate use, lower enzymatic activities were observed during torpor in brain and liver. Interestingly, citrate synthase activity did not differ thought torpor-arousal cycle in any tissues analyzed, suggesting no modulation of mitochondrial content in T. elegans. Overall results provide an indication that modulation of enzymes associated with carbohydrate and fatty-acid pathways is mainly oriented to limit energy expensive processes and sustain energy metabolism during transition from torpor to euthermy. Future studies are required to elucidate if physiological events observed for *T. elegans* are unique from other marsupials, or represents a general response in marsupials.
 author_notes:
 - Equal contribution
 authors:
 - admin
-- Magali Petit
-- Agnes Lewden
-- Myriam Milbergue
-- François Vézina
-date: "2015-02-17T00:00:00Z"
-doi: "https://doi.org/10.1002/jez.1908"
+- Leonardo Daniel Bacigalupe
+- Fredy Mondaca
+- Véronique Desrosiers
+- Pierre U Blier
+date: "2016-01-01T00:00:00Z"
+doi: "https://doi.org/10.1002/jez.1994"
 featured: false
 image:
-  caption: 'Image credit: [**ebird*](https://ebird.org/species/bkcchi)'
+  caption: 'Image credit: [**naturalista**](https://www.naturalista.mx/observations/68387896)'
   focal_point: ""
   preview_only: false
 projects: []
-publication: 'Journal of Experimental Zoology A Ecological Genetics and Physiology. 323(3) 179-90'
+publication: ' J Exp Zool A Ecol Genet Physiol. 325(1):41-51'
 publication_short: ""
 publication_types:
 - "2"
-publishDate: "2015-02-17T00:00:00Z"
+publishDate: "2016-01-01T00:00:00Z"
 tags:
-- Basal metabolic rate
-- Summit metabolic rate
-- Wintering survival
-title: "Individual inconsistencies in basal and summit metabolic rate highlight flexibility of metabolic performance in a wintering passerine"
+- Torpor
+- Marsupials
+- Fatty acid catabolism 
+- Carbohydrate catabolism
+title: "Mitochondrial phenotype of marsupial torpor: Fuel metabolic switch in the Chilean mouse-opossum Thylamys elegans"
 url_code: ""
 url_dataset: ""
-url_pdf: https://onlinelibrary.wiley.com/doi/epdf/10.1002/jez.1908
+url_pdf: https://onlinelibrary.wiley.com/doi/epdf/10.1002/jez.1994
 url_poster: ""
 url_project: ""
 url_slides: ""

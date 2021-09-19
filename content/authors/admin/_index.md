@@ -29,8 +29,8 @@ social:
   link: /#contact
 - display:
     header: true
-  icon: graduation-cap
-  icon_pack: fas
+  icon: researchgate
+  icon_pack: fab
   link: https://www.researchgate.net/profile/Pablo_Cortes11
 - icon: github
   icon_pack: fab

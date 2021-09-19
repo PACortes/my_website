@@ -9,7 +9,7 @@ headless: true
 # Order that this section appears on the page.
 weight: 40
 
-title: Experience
+title: Experiencia
 subtitle:
 
 # Date format for experience
@@ -22,29 +22,30 @@ date_format: Jan 2006
 #   Leave `date_end` empty if it's your current employer.
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
-  - title: CEO
-    company: GenCoin
-    company_url: ''
-    company_logo: org-gc
-    location: California
-    date_start: '2021-01-01'
+  - title: Profesor Asistente
+    company: Universidad Mayor
+    company_url: 'https://www.umayor.cl/postgrados/programas/medio-ambiente-desarrollo-sustentable/'
+    company_logo: 
+    location: Chile
+    date_start: '2018-03-01'
     date_end: ''
     description: |2-
-        Responsibilities include:
+        Responsabilidades:
         
-        * Analysing
-        * Modelling
-        * Deploying
+        * Académico
+        * Director docente, Magíster en Medio Ambiente y Desarrollo Sustentable
+        * Coordinador de Innovación Educativa
         
-  - title: Professor of Semiconductor Physics
-    company: University X
+  - title: Investigador Postdoctoral FONDECYT
+    company: Pontificia Universidad Católica de Chile
     company_url: ''
-    company_logo: org-x
-    location: California
-    date_start: '2016-01-01'
-    date_end: '2020-12-31'
-    description: Taught electronic engineering and researched semiconductor physics.
-
+    company_logo: 
+    location: Chile
+    date_start: '2014-11-01'
+    date_end: '2017-10-30'
+    description: |2-
+        Proyecto FONDECYT 3150215. Modularidad e integración de la hibernación de anfibios, desde el genotipo al fenotipo.
+    
 design:
   columns: '2'
 ---

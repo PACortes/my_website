@@ -11,7 +11,7 @@ main:
     url: '#posts'
     weight: 20
   - name: Publicaciones
-    url: '#featured'
+    url: publication/
     weight: 30
   - name: R
     url: courses/

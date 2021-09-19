@@ -1,32 +1,35 @@
 ---
-abstract: Mammalian torpor is a phenotype characterized by a controlled decline of metabolic rate, generally followed by a reduction in body temperature. During arousal from torpor, both metabolic rate and body temperature rapidly returns to resting levels. Metabolic rate reduction experienced by torpid animals is triggered by active suppression of mitochondrial respiration, which is rapidly reversed during rewarming process. In this study, we analyzed the changes in the maximal activity of key enzymes related to electron transport system (complexes I, III and IV) in six tissues of torpid, arousing and euthermic Chilean mouse-opossums (*Thylamys elegans*). We observed higher maximal activities of complexes I and IV during torpor in brain, heart and liver, the most metabolically active organs in mammals. On the contrary, higher enzymatic activities of complexes III were observed during torpor in kidneys and lungs. Moreover, skeletal muscle was the only tissue without significant differences among stages in all complexes evaluated, suggesting no modulation of oxidative capacities of electron transport system components in this thermogenic tissue. In overall, our data suggest that complexes I and IV activity plays a major role in initiation and maintenance of metabolic suppression during torpor in Chilean mouse-opossum, whereas improvement of oxidative capacities in complex III might be critical to sustain metabolic machinery in organs that remains metabolically active during torpor.
+abstract: Torpor is a phenotype characterized by a controlled decline of metabolic rate and body temperature. During arousal from torpor, organs undergo rapid metabolic reactivation and rewarming to near normal levels. As torpor progress, animals show a preference for fatty acids over glucose as primary source of energy. Here, we analyzed for first time the changes in the maximal activity of key enzymes related to fatty acid (Carnitine palmitoyltransferase and β-Hydroxyacyl CoA dehydrogenase) and carbohydrate (Pyruvate kinase, Phosphofructokinase and Lactate dehydrogenase) catabolism, as well as mitochondrial oxidative capacity (Citrate synthase), in six organs of torpid, arousing and euthermic Chilean mouse-opossums (*Thylamys elegans*). Our results showed that activity of enzymes related to fatty acid and carbohydrate catabolism were different among torpor phases and the pattern of variation differs among tissues. In terms of lipid utilization, maximal enzymatic activities differ in tissues with high oxidative capacity such as heart, kidney, and liver. In terms of carbohydrate use, lower enzymatic activities were observed during torpor in brain and liver. Interestingly, citrate synthase activity did not differ thought torpor-arousal cycle in any tissues analyzed, suggesting no modulation of mitochondrial content in T. elegans. Overall results provide an indication that modulation of enzymes associated with carbohydrate and fatty-acid pathways is mainly oriented to limit energy expensive processes and sustain energy metabolism during transition from torpor to euthermy. Future studies are required to elucidate if physiological events observed for *T. elegans* are unique from other marsupials, or represents a general response in marsupials.
 author_notes:
 - Equal contribution
 authors:
 - admin
-- Francisco Bozinovic
+- Leonardo Daniel Bacigalupe
+- Fredy Mondaca
+- Véronique Desrosiers
 - Pierre U Blier
-date: "2018-07-01T00:00:00Z"
-doi: "https://doi.org/10.1016/j.cbpa.2017.12.014"
+date: "2016-01-01T00:00:00Z"
+doi: "https://doi.org/10.1002/jez.1994"
 featured: false
 image:
   caption: 'Image credit: [**naturalista**](https://www.naturalista.mx/observations/68387896)'
   focal_point: ""
   preview_only: false
 projects: []
-publication: 'Comparative Biochemistry and Physiology - Part A: Molecular & Integrative Physiology. 221:7-14'
+publication: ' J Exp Zool A Ecol Genet Physiol. 325(1):41-51'
 publication_short: ""
 publication_types:
 - "2"
-publishDate: "2017-01-01T00:00:00Z"
+publishDate: "2016-01-01T00:00:00Z"
 tags:
 - Torpor
 - Marsupials
-- Electron transport system
-title: "Mitochondrial phenotype during torpor: Modulation of mitochondrial electron transport system in the Chilean mouse–opossum Thylamys elegans"
+- Fatty acid catabolism 
+- Carbohydrate catabolism
+title: "Mitochondrial phenotype of marsupial torpor: Fuel metabolic switch in the Chilean mouse-opossum Thylamys elegans"
 url_code: ""
 url_dataset: ""
-url_pdf: https://reader.elsevier.com/reader/sd/pii/S1095643318300333?token=67858656C2E49BB0368D7A50728D3C412AAFF2A17762C6E947C53960E266DBC640011567E636C1FC8B52E36DCAC14BB3&originRegion=eu-west-1&originCreation=20210916205607
+url_pdf: https://onlinelibrary.wiley.com/doi/epdf/10.1002/jez.1994
 url_poster: ""
 url_project: ""
 url_slides: ""

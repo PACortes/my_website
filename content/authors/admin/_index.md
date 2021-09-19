@@ -1,7 +1,7 @@
 ---
 bio: My research interests include distributed robotics, mobile computing and programmable
   matter.
-education:
+educación:
   courses:
   - course: Doctor en Ciencias, mención Ecología y Evolución
     institution: Universidad Austral de Chile
@@ -14,7 +14,7 @@ education:
     year: 2008
 email: "pablocortesgarcia@gmail.com"
 highlight_name: true
-interests:
+intereses:
 - Cambio Climático
 - Biodiversidad
 - Procesamiento de Lenguaje Natural

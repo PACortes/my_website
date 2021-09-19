@@ -1,41 +1,39 @@
 ---
-date: "2021-01-24"
+date: "2021-09-19"
 linkTitle: Data Science
-summary: An example of using Wowchemy's Book layout for publishing online courses.
-title: "\U0001F4CA Learn Data Science"
+summary: En este taller, aprenderemos a visualizar nuestros datos usando el paquete ggplot2.
+title: "\U0001F4CA ggplot2: Visualización de datos"
 type: book
 ---
 
-{{< figure src="featured.jpg" >}}
+{{< figure src="ggplot2_logo.png" >}}
 
 {{< toc hide_on="xl" >}}
 
-## What you will learn
+## Resumen
 
 - Fundamental {{<hl>}}Python programming skills{{</hl>}}
 - {{<hl>}}Statistical concepts{{</hl>}} and how to apply them in practice
 - Gain experience with the {{<hl>}}Scikit{{</hl>}}, including data visualization with {{<hl>}}Plotly{{</hl>}} and data wrangling with {{<hl>}}Pandas{{</hl>}}
 
-## Program overview
+## ¿Qué es ggplot2?
 
-The demand for skilled data science practitioners is rapidly growing. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi.
+ggplot2 es un paquete de visualización altamente versátil que permite crear gráficos elegantes y atractivos.
 
-## Courses in this program
+El paquete ggplot2 implementa un único sistema para describir y construir gráficos, el cuál funciona en capas (se agrega una a una) y se aplica a diferentes tipos de visualizaciones. 
+
+En general, ggplot2 divide un gráfico (plot) en tres partes fundamentales diferentes: 
+
+```r
+ggplot(data = data, mapping=aes(x=Var1, y =Var2))+ geom_function()
+```
+
+## Visualizaciones a realizar
 
 {{< list_children >}}
 
-## Meet your instructor
 
-{{< mention "admin" >}}
+## Enlaces de interés
 
-## FAQs
 
-{{< spoiler text="Are there prerequisites?" >}}
-There are no prerequisites for the first course.
-{{< /spoiler >}}
-
-{{< spoiler text="How often do the courses run?" >}}
-Continuously, at your own pace.
-{{< /spoiler >}}
-
-{{< cta cta_text="Begin the course" cta_link="python" >}}
+{{< cta cta_text="Comencemos con el taller" cta_link="python" >}}

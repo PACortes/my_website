@@ -4,7 +4,7 @@ author_notes:
 - Equal contribution
 authors:
 - admin
-- Leonardo Daniel Bacigalupe
+- Leonardo D Bacigalupe
 - Fredy Mondaca
 - Véronique Desrosiers
 - Pierre U Blier
@@ -16,7 +16,7 @@ image:
   focal_point: ""
   preview_only: false
 projects: []
-publication: ' J Exp Zool A Ecol Genet Physiol. 325(1):41-51'
+publication: 'J Exp Zool A Ecol Genet Physiol. 325(1):41-51'
 publication_short: ""
 publication_types:
 - "2"

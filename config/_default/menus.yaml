@@ -17,7 +17,7 @@ main:
     url: courses/
     weight: 40
   - name: Python
-    url: courses/
+    url: courses_python/
     weight: 50
   - name: Contacto
     url: '#contact'

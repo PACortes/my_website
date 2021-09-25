@@ -1,6 +1,6 @@
 ---
 date: "2021-09-19"
-linkTitle: Data Science
+linkTitle: ggplot2
 summary: En este taller, aprenderemos a visualizar nuestros datos usando el paquete ggplot2.
 title: "ggplot2: Visualización de datos"
 type: book

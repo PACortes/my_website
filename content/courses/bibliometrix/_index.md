@@ -1,12 +1,12 @@
 ---
 date: "2021-09-19"
-linkTitle: ggplot2
+linkTitle: bibliometrix
 summary: En este taller, aprenderemos a visualizar nuestros datos usando el paquete ggplot2.
 title: "ggplot2: Visualización de datos"
 type: book
 ---
 
-{{< figure src="ggplot2_logo.png" >}}
+{{< figure src="bibliometrix_logo.png" >}}
 
 {{< toc hide_on="xl" >}}
 

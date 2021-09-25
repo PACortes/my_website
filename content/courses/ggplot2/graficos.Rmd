@@ -1,6 +1,5 @@
 ---
-title: "Intento R Markdown"
-author: "Frida Gomam"
+title: "Grafico de torta"
 date: 2020-12-01T21:13:14-05:00
 categories: ["R"]
 tags: ["R Markdown", "plot", "regression"]
@@ -22,7 +21,7 @@ fit <- lm(dist ~ speed, data = cars)
 fit
 ```
 
-# Including Plots
+# Grafico
 
 You can also embed plots. See Figure \@ref(fig:pie) for example:
 

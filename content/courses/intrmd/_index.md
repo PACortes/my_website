@@ -12,8 +12,7 @@ type: book
 
 ## ¿Qué es RMarkdown?
 
-Rmarkdown nos permite generar informes a partir de R. Utiliza un lenguaje llamado Markdown para enriquecer el informe final. Este permite incluir texto, comandos de R, imágenes y gráficos a un documento. Pero lo más importante es que permite que se reproduzca el análisis realizado y si se incorporan nuevos datos, los resultados se actualizarán. Para mas detalles visitar [http://rmarkdown.rstudio.com].
-
+Rmarkdown nos permite generar informes a partir de R. Utiliza un lenguaje llamado Markdown para enriquecer el informe final. Este permite incluir texto, comandos de R, imágenes y gráficos a un documento. Pero lo más importante es que permite que se reproduzca el análisis realizado y si se incorporan nuevos datos, los resultados se actualizarán.
 
 ## Visualizaciones a realizar
 

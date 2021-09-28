@@ -13,9 +13,9 @@ authors:
 lastmod: '2021-09-17T16:12:21-03:00'
 featured: no
 image:
-  caption: 'negacionismo.jpg'
+  caption: ''
   focal_point: ''
-  preview_only: no
+  preview_only: yes
 projects: []
 ---
 
@@ -48,3 +48,6 @@ Para que el debate tenga éxito, tendrá que ser inclusivo, identificar discusio
 Las personas interesadas en la conservación debemos evitar ser arrastrados a discusiones fútiles o ataques personales, ser mesurados y respetuosos en nuestras respuestas y reforzar el papel de los científicos como expertos confiables al contrarrestar argumentos defectuosos con evidencia. Al adoptar estos enfoques y aprender algunas de las lecciones sobre el negacionismo, los conservacionistas pueden apoderarse de la narrativa.
 
 La comunidad científica y la ciudadanía representan dos interlocutores que requieren comunicarse de forma activa y clara. Ambos deben generar espacios para debatir y expresar las evidencias que permitan derribar los argumentos falaces presentes y futuros, apuntando al objetivo final de enfrentar la pérdida de la biodiversidad.
+
+* Referencia https://www.eldesconcierto.cl/opinion/2020/09/07/negacionismo-amenaza-invisible-para-la-biodiversidad.html
+

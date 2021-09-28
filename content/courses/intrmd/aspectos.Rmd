@@ -69,6 +69,12 @@ El documento lo podemos escribir en forma de texto plano (el contenido que desea
 
 Un aspecto importante es que la separación de párrafos se realiza saltando una línea en blanco. 
 
+```
+Me salto
+una
+
+línea
+```
 
 ## 3.3. Trozos (*chunk*) de código
 

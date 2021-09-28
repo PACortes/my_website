@@ -29,8 +29,6 @@ La sintáxis básica de ggplot2 para generar un gráfico de dipersión es:
 
 En donde:
 
-You first pass the dataset mtcars to ggplot.
-
 * `data`: es la base de datos.
 
 * `aes()`: especifica las variables en los ejes x e y.
@@ -54,24 +52,47 @@ Ajustemos el título del gráfico las etiquetas de los ejes con la función `l
 
 ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
   geom_point()+
-  xlim(c(0, 8))+
-  ylim(c(0, 3))+
   labs(title="Largo vs Ancho del Pétalo", 
        x="Largo de Pétalo (cms)",
        y="Ancho de Pétalo (cms)")
 ```
 
 
-## Título y etiquetas: tamañao de fuente 
+## Límites de los ejes
 
-Ahora, aumentemos el tamaños de las fuentes de títulos (y su color) y etiquetas con a función `theme()`, la cuál nos permite controlar aspectos como fuentes, marcas, fondos, entre muchos otros.
+```{r}
+ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
+  geom_point()+
+  xlim(c(0, 8))+
+  ylim(c(0, 3))+
+labs(title="Largo vs Ancho del Pétalo", 
+       x="Largo de Pétalo (cms)",
+       y="Ancho de Pétalo (cms)")
+```
+
+
+## Título y etiquetas: tamaño de las letras
+
+Ahora, aumentemos el tamaños de las letras de títulos (y su color) y etiquetas con a función `theme()`, la cuál nos permite controlar aspectos como fuentes, marcas, fondos, entre muchos otros. 
 
 `theme()` incluye dos componentes principales:
 
 * **Elementos del tema**: especifica los elementos que queremos controlar.Por ejemplo, `plot.title` controla la apariencia del título. 
 
-* **Función del tema**`+`: describe la propiedad visual del elemento que queremos controlar.Por ejemplo, `element_text()` establece el tamaño de fuente, el color, entre otros. 
+* **Función del tema**: describe la propiedad visual del elemento que queremos controlar.Por ejemplo, `element_text()` establece el tamaño de fuente, el color, entre otros:
 
+
+  + Para cambiar el tamaño de un elemento, utilizamos la función `size =`.
+
+  + Para cambiar el color de un elemento, utilizamos la función `color =`.
+  
+  + Para cambiar la familia de letra de un elemento, utilizamos `family =`.
+  
+  + Para cambiar el tipo de letra de un elemento, utilizamos `face =`.
+  
+    + Para cambiar el tipo de línea, utilizamos `linetype =`.
+  
+  
 ```{r}
 ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
   geom_point()+
@@ -85,7 +106,49 @@ ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
 ```
 
 
+## Tamaño de los puntos
+Para cambiar el tamaño de los puntos (aumentar o disminuir), utilizamos la función `size =`(valor por defecto:0.5) dentro de `geom_point()`. 
+
+Por ejemplo, podemos especificar que todos los puntos tendrán un diamtero de 2.5
+
+```{r}
+ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
+  geom_point(size=2.5)+
+  xlim(c(0, 8))+
+  ylim(c(0, 3))+
+  labs(title="Largo vs Ancho del Pétalo", 
+       y="Ancho (cms)", x="Largo (cms)")+
+  theme(axis.text =element_text(size=16),
+        axis.title=element_text(size=23),
+        plot.title=element_text(size=25),
+        plot.subtitle=element_text(size=20))
+```
+
+También, podríamos especificar diferentes tamaños según un valor específico de una de nuestras variables. Para ello debemos incorporar una dimensión `aes()` dentro de `geom_point()`.
+
+
+```{r}
+ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
+  geom_point(aes(size=Petal.Length>2.5))+
+  xlim(c(0, 8))+
+  ylim(c(0, 3))+
+  labs(title="Largo vs Ancho del Pétalo", 
+       y="Ancho (cms)", x="Largo (cms)")+
+  theme(axis.text =element_text(size=16),
+        axis.title=element_text(size=23),
+        plot.title=element_text(size=25),
+        plot.subtitle=element_text(size=20))
+```
+
+
+
+También, podemos 
+## Color de los puntos
+
+### Método 1: 
 Ajustemos el tamaño y color de los puntos
+
+
 ```{r}
 ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
   geom_point(col="steelblue", size=2.5)+
@@ -99,8 +162,7 @@ ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
         plot.subtitle=element_text(size=20))
 ```
 
-
-Ajustemos el color de los puntos de acuerdo a categorías en otra variable
+### Método 2: De acuerdo a categorías en otra variable.
 
 ```{r}
 ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
@@ -114,6 +176,7 @@ ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
         plot.title=element_text(size=25),
         plot.subtitle=element_text(size=20))
 ```
+### Método 2: De acuerdo a categorías en otra variable con valores específicos.
 
 Ajustemos manualmente color de los puntos de acuerdo a categorías en otra variable
 
@@ -172,4 +235,7 @@ ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
 ```
 
 
+
+
+Theme elements [https://ggplot2.tidyverse.org/reference/element.html]
 

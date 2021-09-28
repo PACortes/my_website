@@ -49,7 +49,7 @@ output:
 <h1>3. Visualización</h1>
 <p>Generemos un gráfico de dispersión con las variables <strong>Petal.Length</strong> y <strong>Petal.Width</strong> de la base de datos <code>iris</code>.</p>
 <pre class="r"><code>ggplot(data=iris, mapping =aes(x=Petal.Length, y =Petal.Width))+geom_point()</code></pre>
-<p><img src="/courses/rmarkdon/graficos_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="/courses/rmarkdown/graficos_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <div id="límites-de-los-ejes" class="section level2">
 <h2>3.1. Límites de los ejes</h2>
 <p>Ahora</p>
@@ -60,7 +60,7 @@ output:
 labs(title=&quot;Largo vs Ancho del Pétalo&quot;, 
        x=&quot;Largo de Pétalo (cms)&quot;,
        y=&quot;Ancho de Pétalo (cms)&quot;)</code></pre>
-<p><img src="/courses/rmarkdon/graficos_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="/courses/rmarkdown/graficos_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
 <div id="título-y-etiquetas" class="section level2">
 <h2>3.1. Título y etiquetas</h2>
@@ -70,7 +70,7 @@ labs(title=&quot;Largo vs Ancho del Pétalo&quot;,
   labs(title=&quot;Largo vs Ancho del Pétalo&quot;, 
        x=&quot;Largo de Pétalo (cms)&quot;,
        y=&quot;Ancho de Pétalo (cms)&quot;)</code></pre>
-<p><img src="/courses/rmarkdon/graficos_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="/courses/rmarkdown/graficos_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Ahora, aumentemos el tamaños de las letras de títulos (y su color) y etiquetas con a función <code>theme()</code>, la cuál nos permite controlar aspectos como fuentes, marcas, fondos, entre muchos otros.</p>
 <p><code>theme()</code> incluye dos componentes principales:</p>
 <ul>
@@ -95,7 +95,7 @@ labs(title=&quot;Largo vs Ancho del Pétalo&quot;,
   theme(axis.text =element_text(size=16),
         axis.title=element_text(size=23),
         plot.title=element_text(size=25,colour=&quot;darkblue&quot;))</code></pre>
-<p><img src="/courses/rmarkdon/graficos_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="/courses/rmarkdown/graficos_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 </div>
 <div id="tamaño-de-los-puntos" class="section level2">
 <h2>3.4. Tamaño de los puntos</h2>
@@ -111,7 +111,7 @@ labs(title=&quot;Largo vs Ancho del Pétalo&quot;,
         axis.title=element_text(size=23),
         plot.title=element_text(size=25),
         plot.subtitle=element_text(size=20))</code></pre>
-<p><img src="/courses/rmarkdon/graficos_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="/courses/rmarkdown/graficos_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>También, podríamos especificar diferentes tamaños según un valor específico de una de nuestras variables. Para ello debemos incorporar una dimensión <code>aes()</code> dentro de <code>geom_point()</code>.</p>
 <pre class="r"><code>ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
   geom_point(aes(size=Petal.Length&gt;2.5))+
@@ -124,7 +124,7 @@ labs(title=&quot;Largo vs Ancho del Pétalo&quot;,
         plot.title=element_text(size=25),
         plot.subtitle=element_text(size=20))
 ## Warning: Using size for a discrete variable is not advised.</code></pre>
-<p><img src="/courses/rmarkdon/graficos_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="/courses/rmarkdown/graficos_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>También, podemos</p>
 </div>
 <div id="color-de-los-puntos" class="section level2">
@@ -140,7 +140,7 @@ labs(title=&quot;Largo vs Ancho del Pétalo&quot;,
         axis.title=element_text(size=23),
         plot.title=element_text(size=25),
         plot.subtitle=element_text(size=20))</code></pre>
-<p><img src="/courses/rmarkdon/graficos_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="/courses/rmarkdown/graficos_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p>De acuerdo a categorías en otra variable.</p>
 <pre class="r"><code>ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
   geom_point(aes(col=Species), size=2.5)+
@@ -152,7 +152,7 @@ labs(title=&quot;Largo vs Ancho del Pétalo&quot;,
         axis.title=element_text(size=23),
         plot.title=element_text(size=25),
         plot.subtitle=element_text(size=20))</code></pre>
-<p><img src="/courses/rmarkdon/graficos_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+<p><img src="/courses/rmarkdown/graficos_files/figure-html/unnamed-chunk-9-1.png" width="672" />
 De acuerdo a categorías en otra variable con valores específicos.</p>
 <p>Ajustemos manualmente color de los puntos de acuerdo a categorías en otra variable</p>
 <pre class="r"><code>ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
@@ -166,7 +166,7 @@ De acuerdo a categorías en otra variable con valores específicos.</p>
         axis.title=element_text(size=23),
         plot.title=element_text(size=25),
         plot.subtitle=element_text(size=20))</code></pre>
-<p><img src="/courses/rmarkdon/graficos_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="/courses/rmarkdown/graficos_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p>Ajustemos manualmente color de los puntos de acuerdo a categorías en otra variable</p>
 <pre class="r"><code>ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
   geom_point(aes(col=Species), size=2.5)+
@@ -182,7 +182,7 @@ De acuerdo a categorías en otra variable con valores específicos.</p>
         legend.box.background = element_rect(fill = &quot;transparent&quot;, colour = &quot;#333333&quot;,size=1.2),
         legend.title = element_text(size = 15),
         legend.text = element_text(size = 12))</code></pre>
-<p><img src="/courses/rmarkdon/graficos_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="/courses/rmarkdown/graficos_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 </div>
 </div>
 <div id="juntando-todas-las-piezas" class="section level1">
@@ -200,7 +200,7 @@ De acuerdo a categorías en otra variable con valores específicos.</p>
         legend.position = c(0.13, 0.85),
         legend.box.background = element_rect(fill = &quot;transparent&quot;, colour = &quot;#333333&quot;,size=1.2),
         axis.line = element_line(color = &quot;#333333&quot;,size = 1, linetype = &quot;solid&quot;))</code></pre>
-<p><img src="/courses/rmarkdon/graficos_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="/courses/rmarkdown/graficos_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 </div>
 <div id="referencias" class="section level1">
 <h1>5. Referencias</h1>

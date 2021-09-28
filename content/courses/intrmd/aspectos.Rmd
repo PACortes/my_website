@@ -1,10 +1,9 @@
 ---
 title: "Aspectos generales"
-date: '2020-12-01T21:13:14-05:00'
+date: '2021-09-28T21:13:14-05:00'
 categories: R
 tags:
 - RMarkdown
-- ggplot
 output:
   blogdown::html_page:
     toc: true
@@ -50,7 +49,7 @@ d. Conocimientos basicos en markdown (para eso está este tutorial, no?).
 
 Cuando se utiliza el botón de `Knit` se generan documentos los cuales contienen sintaxis en markdown con codigos de R en *chunks*.
 
-## 3.1. **Encabezado YAML**
+## 3.1. Encabezado YAML
 
 El encabezado YAML (en inglés *yet another markup language*) determina los parámetros generales de formato para el documento a generar. Es importante tener presente que este encabezado define el formato del archivo resultante, más no su contenido.
 
@@ -75,7 +74,7 @@ En este ejemplo hemos especificado que el documento se generará en formato *HTM
 * **output: ioslides_presentation**...    presentación ioslides (html)
 
 
-## 3.2. **Texto**
+## 3.2. Texto
 El documento lo podemos escribir en forma de texto plano (el contenido que deseas escribir). Para ello podemos usar la sintaxis de markdown para describir el formato del texto en el documento final. Dedicaremos una sección independiente para revisar la sintaxis de RMarkdown.
 
 
@@ -101,7 +100,7 @@ una
 línea
 ```
 
-## 3.3. ### **Trozos (*chunk*) de código**
+## 3.3. Trozos (*chunk*) de código
 
 Los trozos (*chunk*) de código en un documento de R Markdown contendrán  tu código R. Todos los fragmentos de código comienzan y terminan con ` ``` `.
 
@@ -176,14 +175,14 @@ y listas numeradas:
 
 En algunas ocasiones, estaremos interesados en establecer secciones dentro de nuestro documento. Para ello podemos diferenciar mmúltiples encabezados, según el tamaño del texto.
 
-* # Encabezado 1 | *# texto* 
+* # Encabezado 1 | # texto
 
-* ## Encabezado 2 | *## texto* 
+* ## Encabezado 2 | ## texto
 
-*  ### Encabezado 3 | *### texto* 
+*  ### Encabezado 3 | ### texto
 
-* #### Encabezado 4 | *#### texto* 
+* #### Encabezado 4 | #### texto
 
-* ##### Encabezado 5 | *##### texto*  
+* ##### Encabezado 5 | ##### texto
 
-* ###### Encabezado 6 | *###### texto* 
+* ###### Encabezado 6 | ###### texto

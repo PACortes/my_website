@@ -1,20 +1,14 @@
 ---
 date: "2021-09-28"
-linkTitle: rmarkdown
-summary: No es example of using Wowchemy's Book layout for publishing online courses.
-title: "rmarkdown: informes reproducibles"
+linkTitle: RMarkdown
+summary: En este módulo vamos a generar informes reproducibles.
+title: "RMarkdown: informes reproducibles"
 type: book
 ---
 
 {{< figure src="featured.png" >}}
 
 {{< toc hide_on="xl" >}}
-
-## What you will learn
-
-- Fundamental {{<hl>}}Python programming skills{{</hl>}}
-- {{<hl>}}Statistical concepts{{</hl>}} and how to apply them in practice
-- Gain experience with the {{<hl>}}Scikit{{</hl>}}, including data visualization with {{<hl>}}Plotly{{</hl>}} and data wrangling with {{<hl>}}Pandas{{</hl>}}
 
 ## ¿Qué es RMarkdown?
 

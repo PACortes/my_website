@@ -1,6 +1,6 @@
 ---
 date: "2021-09-19"
-linkTitle: RMarkdown
+linkTitle: rmarkdown
 summary: En este taller, aprenderemos a visualizar nuestros datos usando el paquete ggplot2.
 title: "RMarkdown: Informes reproducibles"
 type: book

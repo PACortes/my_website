@@ -1,7 +1,7 @@
 ---
 date: "2021-09-19"
 linkTitle: bibliometrix
-summary: En este taller, aprenderemos a visualizar nuestros datos usando el paquete ggplot2.
+summary: En este taller, aprenderemos a visualizar nuestros datos usando el paquete biliometrix.
 title: "bibliometrix"
 type: book
 thumbnail: "featured.png"

@@ -1,8 +1,8 @@
 ---
 date: "2021-01-24"
-linkTitle: Data Science
+linkTitle: RMarkdown
 summary: An example of using Wowchemy's Book layout for publishing online courses.
-title: "\U0001F4CA Learn Data Science"
+title: "rmarkdown: informes reproducibles"
 type: book
 ---
 

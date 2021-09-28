@@ -76,20 +76,6 @@ En este ejemplo hemos especificado que el documento se generará en formato *HTM
 ## 3.2. Texto
 El documento lo podemos escribir en forma de texto plano (el contenido que deseas escribir). Para ello podemos usar la sintaxis de markdown para describir el formato del texto en el documento final. Dedicaremos una sección independiente para revisar la sintaxis de RMarkdown.
 
-
-Podemos escribir lo que queramos, pero siempre...
-
-
-![](respeto.jpg)
-
-
-Podemos agregar imágenes a un informe de R Markdown a partir de imágenes disponibles en nuestro directorio de trabajo. Para ello utilziaremos la siguiente sintaxis: 
-
-```
-![AQUÍ PODEMOS INCORPORAR TEXTO ](respeto.jpg)
-
-```
-
 Un aspecto importante es que la separación de párrafos se realiza saltando una línea en blanco. 
 
 ```

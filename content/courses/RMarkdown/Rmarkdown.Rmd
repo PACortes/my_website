@@ -178,17 +178,17 @@ y listas numeradas:
 
 En algunas ocasiones, estaremos interesados en establecer secciones dentro de nuestro documento. Para ello podemos diferenciar mmúltiples encabezados, según el tamaño del texto.
 
-# Encabezado 1 |*# texto* 
+* # Encabezado 1 |*# texto* 
 
-## Encabezado 2 |*## texto* 
+* ## Encabezado 2 |*## texto* 
 
-### Encabezado 3 |*### texto* 
+* ### Encabezado 3 |*### texto* 
 
-#### Encabezado 4 |*#### texto* 
+* #### Encabezado 4 |*#### texto* 
 
-##### Encabezado 5 |*##### texto*  
+* ##### Encabezado 5 |*##### texto*  
 
-###### Encabezado 6 |*###### texto* 
+* ###### Encabezado 6 |*###### texto* 
 
 
 # 5. Primer informe con RMarkdown

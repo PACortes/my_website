@@ -6,7 +6,7 @@ title: "RMarkdown: Informes reproducibles"
 type: book
 ---
 
-{{< figure src="rmarkdown_logo.png" >}}
+{{< figure src="ggplot2_logo.png" >}}
 
 {{< toc hide_on="xl" >}}
 

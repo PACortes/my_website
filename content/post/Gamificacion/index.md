@@ -13,12 +13,11 @@ image:
 lastmod: "2020-12-13T00:00:00Z"
 projects: []
 subtitle: ""
-summary: "Welcome \U0001F44B We know that first impressions are important, so we've
-  populated your new site with some initial content to help you get familiar with
-  everything in no time."
+summary: ""
 tags:
 - Docencia
-- Gamigicación
+- Gamificación
+- Innovación educativa
 title: ¿Cómo motivar a nuestros estudiantes? Gamificación en tiempos del Coronavirus.
 ---
 
@@ -64,4 +63,4 @@ Algunas de las ventajas asociadas a la implementación de la gamificación en la
 Gamificar una asignatura implica adaptar diversos elementos de juego tales como un sistema de puntos, incentivos y recompensas, uso de cuestionarios, desafíos que mantengan a las/los estudiantes interesados en el juego y bajo una retroalimentación continua, entre otros.
 
 
-{{< icon name="download" pack="fas" >}} Descarga el documento completo {{< staticref "uploads/Portafolio_interno_VRA.pdf" "newtab" >}}CV{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Descarga el documento completo {{< staticref "uploads/Portafolio_interno_VRA.pdf" "newtab" >}}Gamificación{{< /staticref >}}.

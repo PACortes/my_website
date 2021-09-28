@@ -1,0 +1,418 @@
+---
+title: "RMarkdown"
+date: '2020-12-01T21:13:14-05:00'
+categories: R
+tags:
+- Informes
+- RMarkdown
+output:
+  blogdown::html_page:
+    toc: true
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#como-funciona">1. ¿Como funciona?</a></li>
+<li><a href="#requisitos">2. Requisitos</a></li>
+<li><a href="#estructura-del-archivo-.rmd.">3. Estructura del archivo <code>.Rmd</code>.</a><ul>
+<li><a href="#encabezado-yaml">3.1. <strong>Encabezado YAML</strong></a></li>
+<li><a href="#texto">3.2. <strong>Texto</strong></a></li>
+<li><a href="#trozos-chunk-de-código">3.3. <strong>Trozos (<em>chunk</em>) de código</strong></a></li>
+</ul></li>
+<li><a href="#syntaxis">4. Syntaxis</a></li>
+<li><a href="#encabezado-1-texto">Encabezado 1 |<em># texto</em></a><ul>
+<li><a href="#encabezado-2-texto">Encabezado 2 |<em>## texto</em></a><ul>
+<li><a href="#encabezado-3-texto">Encabezado 3 |<em>### texto</em></a></li>
+</ul></li>
+</ul></li>
+<li><a href="#primer-informe-con-rmarkdown">5. Primer informe con RMarkdown</a><ul>
+<li><a href="#objetivo-del-informe">Objetivo del informe</a></li>
+<li><a href="#paso-1.-exploremos-nuestros-datos">Paso 1. Exploremos nuestros datos</a></li>
+<li><a href="#paso-2.-visualicemos-nuestros-datos">Paso 2. Visualicemos nuestros datos</a></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="como-funciona" class="section level1">
+<h1>1. ¿Como funciona?</h1>
+<p>Debemos comenzar abriendo un archivo R Markdown, un archivo de texto sin formato, que tiene la extensión <code>.Rmd</code>.</p>
+<p>En el menú debemos hacer click en:</p>
+<p><strong>File –&gt; New File –&gt; R Markdown…</strong></p>
+<p>Esto abrirá un fichero que nos permitirá elegir el formato de salida de nuestro informe:</p>
+<ul>
+<li>página web que se podrá ver con un navegador,</li>
+<li>documento PDF o</li>
+<li>documento Word.</li>
+</ul>
+<p><strong>Importante</strong>: Si deseamos generar una documento PDF, necesitaremos instalar LaTeX. Para los usuarios de Markdown R que no hayan instalado LaTeX anteriormente, se recomienda instalarTinyTeX (<a href="https://yihui.name/tinytex/" class="uri">https://yihui.name/tinytex/</a>):</p>
+</div>
+<div id="requisitos" class="section level1">
+<h1>2. Requisitos</h1>
+<p>Al momento de comenzar un proyecto, debemos tener instalado los siguientes programas:</p>
+<ol style="list-style-type: lower-alpha">
+<li>La versión mas reciente de R <a href="https://www.r-project.org" class="uri">https://www.r-project.org</a>.</li>
+<li>RStudio <a href="https://rstudio.com" class="uri">https://rstudio.com</a>.</li>
+<li>Instalar los paquetes <code>knitr</code> y <code>rmarkdown</code>. Podemos instalar cada paquete desde el CRAN con:</li>
+</ol>
+<pre class="r"><code>#install.packages(&quot;rmarkdown&quot;)
+library(rmarkdown)
+#install.packages(&quot;knitr&quot;)
+library(knitr)</code></pre>
+<p>El paquete <code>Knitr</code> integra en un sólo archivo markdown el texto ingresado en formato RMarkdown y los resultados de la ejecución de los códigos construidos mediante R.</p>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Conocimientos basicos en markdown (para eso está este tutorial, no?).</li>
+</ol>
+</div>
+<div id="estructura-del-archivo-.rmd." class="section level1">
+<h1>3. Estructura del archivo <code>.Rmd</code>.</h1>
+<p>Cuando se utiliza el botón de <code>Knit</code> se generan documentos los cuales contienen sintaxis en markdown con codigos de R en <em>chunks</em>.</p>
+<div id="encabezado-yaml" class="section level2">
+<h2>3.1. <strong>Encabezado YAML</strong></h2>
+<p>El encabezado YAML (en inglés <em>yet another markup language</em>) determina los parámetros generales de formato para el documento a generar. Es importante tener presente que este encabezado define el formato del archivo resultante, más no su contenido.</p>
+<p>El encabezado comienza y termina con tres rayas (- - -). Veamos el siguiente ejemplo que incluye algunos parámetros (existen muchos más) que definirán el formato del documento:</p>
+<pre><code>---
+title: &quot;Título del documento&quot;
+author: &quot;Quien desarrolla el documento&quot;
+date: &quot;Fecha en la cual desarrollamos el documento&quot;
+output:
+  html_document: default
+---</code></pre>
+<p>En este ejemplo hemos especificado que el documento se generará en formato <em>HTML</em>. Otras opciones de <em>output</em> son:</p>
+<ul>
+<li><strong>output: html_document</strong>… archivo html (página web)</li>
+<li><strong>output: pdf_document</strong>… archivo pdf</li>
+<li><strong>output: word_document</strong>… Microsoft Word .docx</li>
+<li><strong>output: beamer_presentation</strong>… presentación beamer (pdf)</li>
+<li><strong>output: ioslides_presentation</strong>… presentación ioslides (html)</li>
+</ul>
+</div>
+<div id="texto" class="section level2">
+<h2>3.2. <strong>Texto</strong></h2>
+<p>El documento lo podemos escribir en forma de texto plano (el contenido que deseas escribir). Para ello podemos usar la sintaxis de markdown para describir el formato del texto en el documento final. Dedicaremos una sección independiente para revisar la sintaxis de RMarkdown.</p>
+<p>Podemos escribir lo que queramos, pero siempre…</p>
+<p><img src="respeto.jpg" /></p>
+<p>Podemos agregar imágenes a un informe de R Markdown a partir de imágenes disponibles en nuestro directorio de trabajo. Para ello utilziaremos la siguiente sintaxis:</p>
+<pre><code>![AQUÍ PODEMOS INCORPORAR TEXTO ](respeto.jpg)
+</code></pre>
+<p>Un aspecto importante es que la separación de párrafos se realiza saltando una línea en blanco.</p>
+<pre><code>Me salto
+una
+
+línea</code></pre>
+</div>
+<div id="trozos-chunk-de-código" class="section level2">
+<h2>3.3. <strong>Trozos (<em>chunk</em>) de código</strong></h2>
+<p>Los trozos (<em>chunk</em>) de código en un documento de R Markdown contendrán tu código R. Todos los fragmentos de código comienzan y terminan con <code>```</code>.</p>
+<p>Un <em>chunk</em> básico se ve de la siguiente forma:</p>
+<pre class="r"><code># ``` {r } 
+
+#Aquí va el código
+
+# ```</code></pre>
+<p>Veamos un ejemplo:</p>
+<pre class="r"><code># sumemos
+x &lt;- 1+12
+
+y &lt;- 90
+
+# generemos un objeto que contenga la resta de &quot;x&quot; con &quot;y&quot; 
+respuesta &lt;- x - y
+
+# revisemos el resultado de nuestro objeto llamado respuesta
+respuesta
+## [1] -77</code></pre>
+<p>Ahora, insertemos un nuevo <em>chunk</em>. Para ello podemos escribirlo o podemos utilizar una combinación desde el teclado para generar un <em>chunk</em> por defecto:</p>
+<ul>
+<li><strong>Windows</strong>: Ctrl + Alt + I</li>
+<li><strong>OS X</strong>: Cmd + Option + I</li>
+</ul>
+<pre class="r"><code>#```{r }
+
+#```</code></pre>
+</div>
+</div>
+<div id="syntaxis" class="section level1">
+<h1>4. Syntaxis</h1>
+<p>La syntaxis de Markdown es muy secilla y nos permite añadir estilo, imágenes, enlaces y expresiones mátematicas a nuestro documento de texto. Las palabras o frases deben comenzar y terminar con los siguientes simbolos:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Syntaxis</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>* *</td>
+<td><strong>cursiva</strong></td>
+</tr>
+<tr class="even">
+<td>_ _</td>
+<td><strong>cursiva</strong></td>
+</tr>
+<tr class="odd">
+<td>** **</td>
+<td><strong>negrita</strong></td>
+</tr>
+<tr class="even">
+<td>__ __</td>
+<td><strong>negrita</strong></td>
+</tr>
+<tr class="odd">
+<td>superindice ^ ^</td>
+<td>superindice <sup>2</sup></td>
+</tr>
+<tr class="even">
+<td>tachado ~~ ~~</td>
+<td><del>tachado</del></td>
+</tr>
+<tr class="odd">
+<td>eslabon [ ]</td>
+<td>[<a href="https://www.umayor.cl/um/" class="uri">https://www.umayor.cl/um/</a>]</td>
+</tr>
+</tbody>
+</table>
+<p>También podemos generar listas no numeradas:</p>
+<ul>
+<li>Item 1</li>
+<li>Item 2
+<ul>
+<li>Item 2a</li>
+<li>Item 2b</li>
+</ul></li>
+</ul>
+<p>y listas numeradas:</p>
+<ol style="list-style-type: decimal">
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 2
+<ul>
+<li>Item 3a</li>
+<li>Item 3b</li>
+</ul></li>
+</ol>
+<p>En algunas ocasiones, estaremos interesados en establecer secciones dentro de nuestro documento. Para ello podemos diferenciar mmúltiples encabezados, según el tamaño del texto.</p>
+</div>
+<div id="encabezado-1-texto" class="section level1">
+<h1>Encabezado 1 |<em># texto</em></h1>
+<div id="encabezado-2-texto" class="section level2">
+<h2>Encabezado 2 |<em>## texto</em></h2>
+<div id="encabezado-3-texto" class="section level3">
+<h3>Encabezado 3 |<em>### texto</em></h3>
+<div id="encabezado-4-texto" class="section level4">
+<h4>Encabezado 4 |<em>#### texto</em></h4>
+<div id="encabezado-5-texto" class="section level5">
+<h5>Encabezado 5 |<em>##### texto</em></h5>
+<div id="encabezado-6-texto" class="section level6">
+<h6>Encabezado 6 |<em>###### texto</em></h6>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="primer-informe-con-rmarkdown" class="section level1">
+<h1>5. Primer informe con RMarkdown</h1>
+<p>Generemos un pequeño informe en el cuál aplicaremos los conocimientos que hemos aprendido sobre las librerías <code>dplyr</code>, <code>ggplot2</code> y <code>rmarkdown</code>.</p>
+<div id="objetivo-del-informe" class="section level3">
+<h3>Objetivo del informe</h3>
+<p>Generar un informe automatizado en el cuál se explorarán y visualizarán los los datos de la base de datos iris.</p>
+</div>
+<div id="paso-1.-exploremos-nuestros-datos" class="section level3">
+<h3>Paso 1. Exploremos nuestros datos</h3>
+<p>Utilizaremos el verbo <code>glimpse()</code> de la librería dplyr para explorar la estructura de la base de datos iris. Recordemos que asignamos el nombre data a nuestra base de datos</p>
+<p>Primero debemos asegurarnos de llamar a la librería <code>dplyr</code>. También explicitaremos el argumento <code>warming = FALSE</code> para que…</p>
+<pre class="r"><code>#install.packages(&quot;dplyr&quot;)
+library(dplyr)</code></pre>
+<p>Ahora, carguemos nuestros datos:</p>
+<pre class="r"><code>iris
+##     Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
+## 1            5.1         3.5          1.4         0.2     setosa
+## 2            4.9         3.0          1.4         0.2     setosa
+## 3            4.7         3.2          1.3         0.2     setosa
+## 4            4.6         3.1          1.5         0.2     setosa
+## 5            5.0         3.6          1.4         0.2     setosa
+## 6            5.4         3.9          1.7         0.4     setosa
+## 7            4.6         3.4          1.4         0.3     setosa
+## 8            5.0         3.4          1.5         0.2     setosa
+## 9            4.4         2.9          1.4         0.2     setosa
+## 10           4.9         3.1          1.5         0.1     setosa
+## 11           5.4         3.7          1.5         0.2     setosa
+## 12           4.8         3.4          1.6         0.2     setosa
+## 13           4.8         3.0          1.4         0.1     setosa
+## 14           4.3         3.0          1.1         0.1     setosa
+## 15           5.8         4.0          1.2         0.2     setosa
+## 16           5.7         4.4          1.5         0.4     setosa
+## 17           5.4         3.9          1.3         0.4     setosa
+## 18           5.1         3.5          1.4         0.3     setosa
+## 19           5.7         3.8          1.7         0.3     setosa
+## 20           5.1         3.8          1.5         0.3     setosa
+## 21           5.4         3.4          1.7         0.2     setosa
+## 22           5.1         3.7          1.5         0.4     setosa
+## 23           4.6         3.6          1.0         0.2     setosa
+## 24           5.1         3.3          1.7         0.5     setosa
+## 25           4.8         3.4          1.9         0.2     setosa
+## 26           5.0         3.0          1.6         0.2     setosa
+## 27           5.0         3.4          1.6         0.4     setosa
+## 28           5.2         3.5          1.5         0.2     setosa
+## 29           5.2         3.4          1.4         0.2     setosa
+## 30           4.7         3.2          1.6         0.2     setosa
+## 31           4.8         3.1          1.6         0.2     setosa
+## 32           5.4         3.4          1.5         0.4     setosa
+## 33           5.2         4.1          1.5         0.1     setosa
+## 34           5.5         4.2          1.4         0.2     setosa
+## 35           4.9         3.1          1.5         0.2     setosa
+## 36           5.0         3.2          1.2         0.2     setosa
+## 37           5.5         3.5          1.3         0.2     setosa
+## 38           4.9         3.6          1.4         0.1     setosa
+## 39           4.4         3.0          1.3         0.2     setosa
+## 40           5.1         3.4          1.5         0.2     setosa
+## 41           5.0         3.5          1.3         0.3     setosa
+## 42           4.5         2.3          1.3         0.3     setosa
+## 43           4.4         3.2          1.3         0.2     setosa
+## 44           5.0         3.5          1.6         0.6     setosa
+## 45           5.1         3.8          1.9         0.4     setosa
+## 46           4.8         3.0          1.4         0.3     setosa
+## 47           5.1         3.8          1.6         0.2     setosa
+## 48           4.6         3.2          1.4         0.2     setosa
+## 49           5.3         3.7          1.5         0.2     setosa
+## 50           5.0         3.3          1.4         0.2     setosa
+## 51           7.0         3.2          4.7         1.4 versicolor
+## 52           6.4         3.2          4.5         1.5 versicolor
+## 53           6.9         3.1          4.9         1.5 versicolor
+## 54           5.5         2.3          4.0         1.3 versicolor
+## 55           6.5         2.8          4.6         1.5 versicolor
+## 56           5.7         2.8          4.5         1.3 versicolor
+## 57           6.3         3.3          4.7         1.6 versicolor
+## 58           4.9         2.4          3.3         1.0 versicolor
+## 59           6.6         2.9          4.6         1.3 versicolor
+## 60           5.2         2.7          3.9         1.4 versicolor
+## 61           5.0         2.0          3.5         1.0 versicolor
+## 62           5.9         3.0          4.2         1.5 versicolor
+## 63           6.0         2.2          4.0         1.0 versicolor
+## 64           6.1         2.9          4.7         1.4 versicolor
+## 65           5.6         2.9          3.6         1.3 versicolor
+## 66           6.7         3.1          4.4         1.4 versicolor
+## 67           5.6         3.0          4.5         1.5 versicolor
+## 68           5.8         2.7          4.1         1.0 versicolor
+## 69           6.2         2.2          4.5         1.5 versicolor
+## 70           5.6         2.5          3.9         1.1 versicolor
+## 71           5.9         3.2          4.8         1.8 versicolor
+## 72           6.1         2.8          4.0         1.3 versicolor
+## 73           6.3         2.5          4.9         1.5 versicolor
+## 74           6.1         2.8          4.7         1.2 versicolor
+## 75           6.4         2.9          4.3         1.3 versicolor
+## 76           6.6         3.0          4.4         1.4 versicolor
+## 77           6.8         2.8          4.8         1.4 versicolor
+## 78           6.7         3.0          5.0         1.7 versicolor
+## 79           6.0         2.9          4.5         1.5 versicolor
+## 80           5.7         2.6          3.5         1.0 versicolor
+## 81           5.5         2.4          3.8         1.1 versicolor
+## 82           5.5         2.4          3.7         1.0 versicolor
+## 83           5.8         2.7          3.9         1.2 versicolor
+## 84           6.0         2.7          5.1         1.6 versicolor
+## 85           5.4         3.0          4.5         1.5 versicolor
+## 86           6.0         3.4          4.5         1.6 versicolor
+## 87           6.7         3.1          4.7         1.5 versicolor
+## 88           6.3         2.3          4.4         1.3 versicolor
+## 89           5.6         3.0          4.1         1.3 versicolor
+## 90           5.5         2.5          4.0         1.3 versicolor
+## 91           5.5         2.6          4.4         1.2 versicolor
+## 92           6.1         3.0          4.6         1.4 versicolor
+## 93           5.8         2.6          4.0         1.2 versicolor
+## 94           5.0         2.3          3.3         1.0 versicolor
+## 95           5.6         2.7          4.2         1.3 versicolor
+## 96           5.7         3.0          4.2         1.2 versicolor
+## 97           5.7         2.9          4.2         1.3 versicolor
+## 98           6.2         2.9          4.3         1.3 versicolor
+## 99           5.1         2.5          3.0         1.1 versicolor
+## 100          5.7         2.8          4.1         1.3 versicolor
+## 101          6.3         3.3          6.0         2.5  virginica
+## 102          5.8         2.7          5.1         1.9  virginica
+## 103          7.1         3.0          5.9         2.1  virginica
+## 104          6.3         2.9          5.6         1.8  virginica
+## 105          6.5         3.0          5.8         2.2  virginica
+## 106          7.6         3.0          6.6         2.1  virginica
+## 107          4.9         2.5          4.5         1.7  virginica
+## 108          7.3         2.9          6.3         1.8  virginica
+## 109          6.7         2.5          5.8         1.8  virginica
+## 110          7.2         3.6          6.1         2.5  virginica
+## 111          6.5         3.2          5.1         2.0  virginica
+## 112          6.4         2.7          5.3         1.9  virginica
+## 113          6.8         3.0          5.5         2.1  virginica
+## 114          5.7         2.5          5.0         2.0  virginica
+## 115          5.8         2.8          5.1         2.4  virginica
+## 116          6.4         3.2          5.3         2.3  virginica
+## 117          6.5         3.0          5.5         1.8  virginica
+## 118          7.7         3.8          6.7         2.2  virginica
+## 119          7.7         2.6          6.9         2.3  virginica
+## 120          6.0         2.2          5.0         1.5  virginica
+## 121          6.9         3.2          5.7         2.3  virginica
+## 122          5.6         2.8          4.9         2.0  virginica
+## 123          7.7         2.8          6.7         2.0  virginica
+## 124          6.3         2.7          4.9         1.8  virginica
+## 125          6.7         3.3          5.7         2.1  virginica
+## 126          7.2         3.2          6.0         1.8  virginica
+## 127          6.2         2.8          4.8         1.8  virginica
+## 128          6.1         3.0          4.9         1.8  virginica
+## 129          6.4         2.8          5.6         2.1  virginica
+## 130          7.2         3.0          5.8         1.6  virginica
+## 131          7.4         2.8          6.1         1.9  virginica
+## 132          7.9         3.8          6.4         2.0  virginica
+## 133          6.4         2.8          5.6         2.2  virginica
+## 134          6.3         2.8          5.1         1.5  virginica
+## 135          6.1         2.6          5.6         1.4  virginica
+## 136          7.7         3.0          6.1         2.3  virginica
+## 137          6.3         3.4          5.6         2.4  virginica
+## 138          6.4         3.1          5.5         1.8  virginica
+## 139          6.0         3.0          4.8         1.8  virginica
+## 140          6.9         3.1          5.4         2.1  virginica
+## 141          6.7         3.1          5.6         2.4  virginica
+## 142          6.9         3.1          5.1         2.3  virginica
+## 143          5.8         2.7          5.1         1.9  virginica
+## 144          6.8         3.2          5.9         2.3  virginica
+## 145          6.7         3.3          5.7         2.5  virginica
+## 146          6.7         3.0          5.2         2.3  virginica
+## 147          6.3         2.5          5.0         1.9  virginica
+## 148          6.5         3.0          5.2         2.0  virginica
+## 149          6.2         3.4          5.4         2.3  virginica
+## 150          5.9         3.0          5.1         1.8  virginica</code></pre>
+<p>Finalmente, exploremos la estructura de nuestros datos:</p>
+<pre class="r"><code>glimpse(iris)
+## Rows: 150
+## Columns: 5
+## $ Sepal.Length &lt;dbl&gt; 5.1, 4.9, 4.7, 4.6, 5.0, 5.4, 4.6, 5.0, 4.4, 4.9, 5.4, 4…
+## $ Sepal.Width  &lt;dbl&gt; 3.5, 3.0, 3.2, 3.1, 3.6, 3.9, 3.4, 3.4, 2.9, 3.1, 3.7, 3…
+## $ Petal.Length &lt;dbl&gt; 1.4, 1.4, 1.3, 1.5, 1.4, 1.7, 1.4, 1.5, 1.4, 1.5, 1.5, 1…
+## $ Petal.Width  &lt;dbl&gt; 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0…
+## $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setosa, …</code></pre>
+</div>
+<div id="paso-2.-visualicemos-nuestros-datos" class="section level3">
+<h3>Paso 2. Visualicemos nuestros datos</h3>
+<p>Generemos un gráfico de dispersión con la función <code>geom_point ()</code> para las variables Petal.Length y Petal.Width.</p>
+<p>Primero debemos asegurarnos de llamar a la librería <code>ggplot2</code>.</p>
+<pre class="r"><code>#install.packages(&quot;ggplot2&quot;)
+library(ggplot2)</code></pre>
+<p>Recordemos que <code>ggplot2</code> divide un gráfico en tres partes fundamentales:</p>
+<ol style="list-style-type: decimal">
+<li>los datos.</li>
+<li>la estética.</li>
+<li>la geometría.</li>
+</ol>
+<pre class="r"><code>ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
+  geom_point(aes(col=Species), size=2.5)+
+  scale_colour_manual(values=c(&quot;#BC3C29FF&quot;, &quot;#0072B5FF&quot;,&quot;#E18727FF&quot;))+
+  xlim(c(0, 8))+
+  ylim(c(0, 3))+
+  labs(title=&quot;Largo vs Ancho del Pétalo&quot;,
+       y=&quot;Ancho (cms)&quot;, x=&quot;Largo (cms)&quot;)+
+  theme(axis.text =element_text(size=16),
+        axis.title=element_text(size=23),
+        plot.title=element_text(size=25),
+        legend.position = c(0.13, 0.85),
+        legend.box.background = element_rect(fill = &quot;transparent&quot;, colour = &quot;#333333&quot;,size=1.2),
+        axis.line = element_line(color = &quot;#333333&quot;,size = 1, linetype = &quot;solid&quot;))</code></pre>
+<p><img src="/courses/RMarkdown/Rmarkdown_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+</div>

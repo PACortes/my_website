@@ -43,27 +43,16 @@ En donde:
 
 
 # 3. Visualización 
-Ahora, generemos un gráfico de dispersión con las variables *Petal.Length* y *Petal.Width* de la base de datos `iris`.
+Generemos un gráfico de dispersión con las variables **Petal.Length** y **Petal.Width** de la base de datos `iris`.
 
 ```{r}
 ggplot(data=iris, mapping =aes(x=Petal.Length, y =Petal.Width))+geom_point()
 ```
 
-## 3.1. Título y etiquetas
-Ajustemos el título del gráfico las etiquetas de los ejes con la función `labs()`:
 
-```{r}
+## 3.1. Límites de los ejes
 
-ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
-  geom_point()+
-  labs(title="Largo vs Ancho del Pétalo", 
-       x="Largo de Pétalo (cms)",
-       y="Ancho de Pétalo (cms)")
-```
-
-
-## 3.2. Límites de los ejes
-
+Ahora
 ```{r}
 ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
   geom_point()+
@@ -75,7 +64,18 @@ labs(title="Largo vs Ancho del Pétalo",
 ```
 
 
-## 3.3. Título y etiquetas: tamaño de las letras
+## 3.1. Título y etiquetas
+Las etiquetas por defecto de los ejes mostrará los nombres de las variables. Ahora bien, podemos personalizar las etiquetas de los ejes, e incluso el título del gráfico, con la función `labs()`:
+
+```{r}
+
+ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
+  geom_point()+
+  labs(title="Largo vs Ancho del Pétalo", 
+       x="Largo de Pétalo (cms)",
+       y="Ancho de Pétalo (cms)")
+```
+
 
 Ahora, aumentemos el tamaños de las letras de títulos (y su color) y etiquetas con a función `theme()`, la cuál nos permite controlar aspectos como fuentes, marcas, fondos, entre muchos otros. 
 

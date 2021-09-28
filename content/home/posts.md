@@ -12,7 +12,7 @@ headless: true
 weight: 60
 
 title: Artículos de opinión
-subtitle: Aquí encontrarás de todo un poco.
+subtitle: Aquí encontrarás de todo un poco
 
 content:
   # Page type to display. E.g. post, talk, publication...

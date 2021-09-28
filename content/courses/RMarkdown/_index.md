@@ -1,8 +1,8 @@
 ---
 date: "2021-09-19"
 linkTitle: RMarkdown
-summary: En este módulo aprenderemos a generar informes reproducibles.
-title: "RMarkdown: informes reproducibles"
+summary: En este taller, aprenderemos a visualizar nuestros datos usando el paquete ggplot2.
+title: "RMarkdown: Informes reproducibles"
 type: book
 ---
 
@@ -16,9 +16,17 @@ type: book
 - {{<hl>}}Statistical concepts{{</hl>}} and how to apply them in practice
 - Gain experience with the {{<hl>}}Scikit{{</hl>}}, including data visualization with {{<hl>}}Plotly{{</hl>}} and data wrangling with {{<hl>}}Pandas{{</hl>}}
 
-## ¿Qué es Rmrkdown?
+## ¿Qué es ggplot2?
 
-Rmarkdown nos permite generar informes a partir de R. Utiliza un lenguaje llamado Markdown para enriquecer el informe final. Este permite incluir texto, comandos de R, imágenes y gráficos a un documento. Pero lo más importante es que permite que se reproduzca el análisis realizado y si se incorporan nuevos datos, los resultados se actualizarán.
+ggplot2 es un paquete de visualización altamente versátil que permite crear gráficos elegantes y atractivos.
+
+El paquete ggplot2 implementa un único sistema para describir y construir gráficos, el cuál funciona en capas (se agrega una a una) y se aplica a diferentes tipos de visualizaciones. 
+
+En general, ggplot2 divide un gráfico (plot) en tres partes fundamentales diferentes: 
+
+```r
+ggplot(data = MisDatos, mapping=aes(x=Variable1, y =Variable2))+ geom_function()
+```
 
 ## Visualizaciones a realizar
 

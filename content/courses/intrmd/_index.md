@@ -21,4 +21,4 @@ Rmarkdown nos permite generar informes a partir de R. Utiliza un lenguaje llamad
 
 ## Enlaces de interés
 
-{{< cta cta_text="Comencemos con el taller" cta_link="python" >}}
+{{< cta cta_text="Comencemos" cta_link="python" >}}

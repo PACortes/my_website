@@ -20,8 +20,6 @@ La posición de cada punto en el eje horizontal y vertical indica valores para u
 # Datos
 
 ```{r iris}
-library(dplyr)
-glimpse(iris)
 ```
 # Cargando la librería
 
@@ -33,7 +31,7 @@ library(ggplot2)
 # Visualización
 
 A continuación,
-```{r pie, fig.cap='Gráfico de dispersión.', tidy=FALSE}
+```{r}
 
 ggplot(data=iris, mapping =aes(x=Petal.Length, y =Petal.Width))+geom_point()
 ```
@@ -42,7 +40,7 @@ Mejoremos nuestro gráfico. Para ello, modificaremos algúnos parámetros gráfi
 
 Ajustemos el título del gráfico y de los ejes
 
-```{r pie, fig.cap='Gráfico de dispersión.', tidy=FALSE}
+```{r}
 
 ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
   geom_point()+
@@ -54,10 +52,8 @@ ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
 ```
 
 Ajustemos el título del gráfico y de los ejes
-```{r pie, fig.cap='Gráfico de dispersión.', tidy=FALSE}
-
-
-ggplot(data = data, mapping=aes(x=Petal.Length , y =Petal.Width))+
+```{r}
+ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
   geom_point()+
   xlim(c(0, 8))+
   ylim(c(0, 3))+
@@ -70,11 +66,8 @@ ggplot(data = data, mapping=aes(x=Petal.Length , y =Petal.Width))+
 
 
 Ajustemos el tamaño y color de los puntos
-```{r pie, fig.cap='Gráfico de dispersión.', tidy=FALSE}
-
-
-
-ggplot(data = data, mapping=aes(x=Petal.Length , y =Petal.Width))+
+```{r}
+ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
   geom_point(col="steelblue", size=2.5)+
   xlim(c(0, 8))+
   ylim(c(0, 3))+
@@ -89,10 +82,8 @@ ggplot(data = data, mapping=aes(x=Petal.Length , y =Petal.Width))+
 
 Ajustemos el color de los puntos de acuerdo a categorías en otra variable
 
-```{r pie, fig.cap='Gráfico de dispersión.', tidy=FALSE}
-
-
-ggplot(data = data, mapping=aes(x=Petal.Length , y =Petal.Width))+
+```{r}
+ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
   geom_point(aes(col=Species), size=2.5)+
   xlim(c(0, 8))+
   ylim(c(0, 3))+
@@ -106,8 +97,8 @@ ggplot(data = data, mapping=aes(x=Petal.Length , y =Petal.Width))+
 
 Ajustemos manualmente color de los puntos de acuerdo a categorías en otra variable
 
-```{r pie, fig.cap='Gráfico de dispersión.', tidy=FALSE}
-ggplot(data = data, mapping=aes(x=Petal.Length , y =Petal.Width))+
+```{r}
+ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
   geom_point(aes(col=Species), size=2.5)+
   scale_colour_manual(values=c("#BC3C29FF", "#0072B5FF","#E18727FF"))+
   xlim(c(0, 8))+
@@ -124,8 +115,8 @@ ggplot(data = data, mapping=aes(x=Petal.Length , y =Petal.Width))+
 
 Ajustemos manualmente color de los puntos de acuerdo a categorías en otra variable
 
-```{r pie, fig.cap='Gráfico de dispersión.', tidy=FALSE}
-ggplot(data = data, mapping=aes(x=Petal.Length , y =Petal.Width))+
+```{r}
+ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
   geom_point(aes(col=Species), size=2.5)+
   scale_colour_manual(values=c("#BC3C29FF", "#0072B5FF","#E18727FF"))+
   xlim(c(0, 8))+
@@ -144,8 +135,8 @@ ggplot(data = data, mapping=aes(x=Petal.Length , y =Petal.Width))+
 
 Finalmente
 
-```{r pie, fig.cap='Gráfico de dispersión.', tidy=FALSE}
-ggplot(data = data, mapping=aes(x=Petal.Length , y =Petal.Width))+
+```{r}
+ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
   geom_point(aes(col=Species), size=2.5)+
   scale_colour_manual(values=c("#BC3C29FF", "#0072B5FF","#E18727FF"))+
   xlim(c(0, 8))+

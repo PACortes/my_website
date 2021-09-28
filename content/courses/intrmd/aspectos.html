@@ -59,13 +59,6 @@ library(knitr)</code></pre>
 <h2>3.1. Encabezado YAML</h2>
 <p>El encabezado YAML (en inglés <em>yet another markup language</em>) determina los parámetros generales de formato para el documento a generar. Es importante tener presente que este encabezado define el formato del archivo resultante, más no su contenido.</p>
 <p>El encabezado comienza y termina con tres rayas (- - -). Veamos el siguiente ejemplo que incluye algunos parámetros (existen muchos más) que definirán el formato del documento:</p>
-<pre><code>---
-title: &quot;Título del documento&quot;
-author: &quot;Quien desarrolla el documento&quot;
-date: &quot;Fecha en la cual desarrollamos el documento&quot;
-output:
-  html_document: default
----</code></pre>
 <p>En este ejemplo hemos especificado que el documento se generará en formato <em>HTML</em>. Otras opciones de <em>output</em> son:</p>
 <ul>
 <li><strong>output: html_document</strong>… archivo html (página web)</li>
@@ -79,10 +72,6 @@ output:
 <h2>3.2. Texto</h2>
 <p>El documento lo podemos escribir en forma de texto plano (el contenido que deseas escribir). Para ello podemos usar la sintaxis de markdown para describir el formato del texto en el documento final. Dedicaremos una sección independiente para revisar la sintaxis de RMarkdown.</p>
 <p>Un aspecto importante es que la separación de párrafos se realiza saltando una línea en blanco.</p>
-<pre><code>Me salto
-una
-
-línea</code></pre>
 </div>
 <div id="trozos-chunk-de-código" class="section level2">
 <h2>3.3. Trozos (<em>chunk</em>) de código</h2>

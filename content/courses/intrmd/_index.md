@@ -1,6 +1,6 @@
 ---
 date: "2021-09-28"
-linkTitle: rmarkdown
+linkTitle: RMarkdown
 summary: En este módulo vamos a generar informes reproducibles.
 title: "RMarkdown: informes reproducibles"
 type: book

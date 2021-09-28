@@ -1,5 +1,5 @@
 ---
-title: "Grafico de dispersión"
+title: "RMarkdown"
 date: '2020-12-01T21:13:14-05:00'
 categories: R
 tags:
@@ -8,7 +8,6 @@ tags:
 output:
   blogdown::html_page:
     toc: true
-    toc_float: true
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE)

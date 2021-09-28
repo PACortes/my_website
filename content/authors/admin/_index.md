@@ -1,6 +1,5 @@
 ---
-bio: My research interests include distributed robotics, mobile computing and programmable
-  matter.
+bio: Mis intereses incluyen Cambio Climático, Biodiversidad, Análisis de texto computacional, Búsqueda y recuperación de información.
 education:
   courses:
   - course: Doctor en Ciencias, mención Ecología y Evolución
@@ -17,7 +16,7 @@ highlight_name: true
 interests:
 - Cambio Climático
 - Biodiversidad
-- Procesamiento de Lenguaje Natural
+- Análisis de texto computacional 
 - Búsqueda y recuperación de información
 organizations:
 - name: Escuela de Ingeniería en Medio Ambiente y Sustentabilidad, Universidad Mayor

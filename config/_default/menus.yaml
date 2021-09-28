@@ -7,7 +7,7 @@ main:
   - name: Home
     url: '#about'
     weight: 10
-  - name: Prensa
+  - name: Opinión
     url: '#posts'
     weight: 20
   - name: Publicaciones

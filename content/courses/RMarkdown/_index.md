@@ -1,7 +1,7 @@
 ---
 date: "2021-09-19"
 linkTitle: RMarkdown
-summary: "En este módulo aprenderemos a generar informes reproducibles."
+summary: En este módulo aprenderemos a generar informes reproducibles.
 title: "RMarkdown: informes reproducibles"
 type: book
 ---

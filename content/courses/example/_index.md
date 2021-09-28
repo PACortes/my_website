@@ -1,12 +1,12 @@
 ---
-date: "2021-01-24"
-linkTitle: RMarkdown
-summary: An example of using Wowchemy's Book layout for publishing online courses.
+date: "2021-09-28"
+linkTitle: rmarkdown
+summary: No es example of using Wowchemy's Book layout for publishing online courses.
 title: "rmarkdown: informes reproducibles"
 type: book
 ---
 
-{{< figure src="featured.jpg" >}}
+{{< figure src="featured.png" >}}
 
 {{< toc hide_on="xl" >}}
 

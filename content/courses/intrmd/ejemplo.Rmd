@@ -34,9 +34,8 @@ b. RStudio <https://rstudio.com>.
 c. Instalar los paquetes `knitr` y `rmarkdown`. Podemos instalar cada paquete desde el CRAN con:
 
 ```{r warning=FALSE}
-#install.packages("rmarkdown")
 library(rmarkdown)
-#install.packages("knitr")
+
 library(knitr)
 ```
 

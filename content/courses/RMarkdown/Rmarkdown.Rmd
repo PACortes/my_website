@@ -1,18 +1,18 @@
 ---
-title: "RMarkdown"
+title: "Grafico"
 date: '2020-12-01T21:13:14-05:00'
 categories: R
 tags:
-- Informes
-- RMarkdown
+- Visualización
+- ggplot
 output:
   blogdown::html_page:
     toc: true
 ---
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE)
 ```
+
 
 # 1. ¿Como funciona?
 Debemos comenzar abriendo un archivo R Markdown, un archivo de texto sin formato, que tiene la extensión `.Rmd`.
@@ -32,9 +32,9 @@ Esto abrirá un fichero que nos permitirá elegir el formato de salida de nuestr
 # 2. Requisitos
 Al momento de comenzar un proyecto, debemos tener instalado los siguientes programas:
 
-a. La versión mas reciente de R <https://www.r-project.org>.
-b. RStudio <https://rstudio.com>.
-c. Instalar los paquetes `knitr` y `rmarkdown`. Podemos instalar cada paquete desde el CRAN con:
+* La versión mas reciente de R <https://www.r-project.org>.
+* RStudio <https://rstudio.com>.
+* Instalar los paquetes `knitr` y `rmarkdown`. Podemos instalar cada paquete desde el CRAN con:
 
 ```{r warning=FALSE}
 #install.packages("rmarkdown")
@@ -140,12 +140,6 @@ Ahora, insertemos un nuevo *chunk*. Para ello podemos escribirlo o podemos utili
 * **Windows**: Ctrl + Alt + I 
 * **OS X**: Cmd + Option + I 
 
-```{r }
-#```{r }
-
-#```
-```
-
 # 4. Syntaxis
 La syntaxis de Markdown es muy secilla y nos permite añadir estilo, imágenes, enlaces y expresiones mátematicas a nuestro documento de texto. Las palabras o frases deben comenzar y terminar con los siguientes simbolos: 
 
@@ -178,27 +172,27 @@ y listas numeradas:
 
 En algunas ocasiones, estaremos interesados en establecer secciones dentro de nuestro documento. Para ello podemos diferenciar mmúltiples encabezados, según el tamaño del texto.
 
-* # Encabezado 1 |*# texto* 
+* # Encabezado 1 | *# texto* 
 
-* ## Encabezado 2 |*## texto* 
+* ## Encabezado 2 | *## texto* 
 
-* ### Encabezado 3 |*### texto* 
+* ### Encabezado 3 | *### texto* 
 
-* #### Encabezado 4 |*#### texto* 
+* #### Encabezado 4 | *#### texto* 
 
-* ##### Encabezado 5 |*##### texto*  
+* ##### Encabezado 5 | *##### texto*  
 
-* ###### Encabezado 6 |*###### texto* 
+* ###### Encabezado 6 | *###### texto* 
 
 
 # 5. Primer informe con RMarkdown
 Generemos un pequeño informe en el cuál aplicaremos los conocimientos que hemos aprendido sobre las librerías `dplyr`, `ggplot2` y `rmarkdown`.
 
-### Objetivo del informe
+## 5.1. Objetivo del informe
 
 Generar un informe automatizado en el cuál se explorarán y visualizarán los los datos de la base de datos iris. 
 
-### Paso 1.  Exploremos nuestros datos
+## 5.2.Exploremos nuestros datos
 
 Utilizaremos el verbo `glimpse()` de la librería dplyr para explorar la estructura de la base de datos iris. Recordemos que asignamos el nombre data a nuestra base de datos
 
@@ -221,7 +215,7 @@ Finalmente, exploremos la estructura de nuestros datos:
 glimpse(iris)
 ```
 
-### Paso 2. Visualicemos nuestros datos
+## 5.3. Visualicemos nuestros datos
 
 Generemos un  gráfico de dispersión con la función `geom_point ()` para las variables Petal.Length y Petal.Width. 
 

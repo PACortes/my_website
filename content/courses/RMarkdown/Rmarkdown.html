@@ -1,10 +1,10 @@
 ---
-title: "RMarkdown"
+title: "Grafico"
 date: '2020-12-01T21:13:14-05:00'
 categories: R
 tags:
-- Informes
-- RMarkdown
+- Visualización
+- ggplot
 output:
   blogdown::html_page:
     toc: true
@@ -22,9 +22,9 @@ output:
 </ul></li>
 <li><a href="#syntaxis">4. Syntaxis</a></li>
 <li><a href="#primer-informe-con-rmarkdown">5. Primer informe con RMarkdown</a><ul>
-<li><a href="#objetivo-del-informe">Objetivo del informe</a></li>
-<li><a href="#paso-1.-exploremos-nuestros-datos">Paso 1. Exploremos nuestros datos</a></li>
-<li><a href="#paso-2.-visualicemos-nuestros-datos">Paso 2. Visualicemos nuestros datos</a></li>
+<li><a href="#objetivo-del-informe">5.1. Objetivo del informe</a></li>
+<li><a href="#exploremos-nuestros-datos">5.2.Exploremos nuestros datos</a></li>
+<li><a href="#visualicemos-nuestros-datos">5.3. Visualicemos nuestros datos</a></li>
 </ul></li>
 </ul>
 </div>
@@ -45,11 +45,11 @@ output:
 <div id="requisitos" class="section level1">
 <h1>2. Requisitos</h1>
 <p>Al momento de comenzar un proyecto, debemos tener instalado los siguientes programas:</p>
-<ol style="list-style-type: lower-alpha">
+<ul>
 <li>La versión mas reciente de R <a href="https://www.r-project.org" class="uri">https://www.r-project.org</a>.</li>
 <li>RStudio <a href="https://rstudio.com" class="uri">https://rstudio.com</a>.</li>
 <li>Instalar los paquetes <code>knitr</code> y <code>rmarkdown</code>. Podemos instalar cada paquete desde el CRAN con:</li>
-</ol>
+</ul>
 <pre class="r"><code>#install.packages(&quot;rmarkdown&quot;)
 library(rmarkdown)
 #install.packages(&quot;knitr&quot;)
@@ -122,9 +122,6 @@ respuesta
 <li><strong>Windows</strong>: Ctrl + Alt + I</li>
 <li><strong>OS X</strong>: Cmd + Option + I</li>
 </ul>
-<pre class="r"><code>#```{r }
-
-#```</code></pre>
 </div>
 </div>
 <div id="syntaxis" class="section level1">
@@ -189,23 +186,23 @@ respuesta
 </ol>
 <p>En algunas ocasiones, estaremos interesados en establecer secciones dentro de nuestro documento. Para ello podemos diferenciar mmúltiples encabezados, según el tamaño del texto.</p>
 <ul>
-<li><h1 id="encabezado-1-texto">Encabezado 1 |<em># texto</em></h1></li>
-<li><h2 id="encabezado-2-texto">Encabezado 2 |<em>## texto</em></h2></li>
-<li><h3 id="encabezado-3-texto">Encabezado 3 |<em>### texto</em></h3></li>
-<li><h4 id="encabezado-4-texto">Encabezado 4 |<em>#### texto</em></h4></li>
-<li><h5 id="encabezado-5-texto">Encabezado 5 |<em>##### texto</em></h5></li>
-<li><h6 id="encabezado-6-texto">Encabezado 6 |<em>###### texto</em></h6></li>
+<li><h1 id="encabezado-1-texto">Encabezado 1 | <em># texto</em></h1></li>
+<li><h2 id="encabezado-2-texto">Encabezado 2 | <em>## texto</em></h2></li>
+<li><h3 id="encabezado-3-texto">Encabezado 3 | <em>### texto</em></h3></li>
+<li><h4 id="encabezado-4-texto">Encabezado 4 | <em>#### texto</em></h4></li>
+<li><h5 id="encabezado-5-texto">Encabezado 5 | <em>##### texto</em></h5></li>
+<li><h6 id="encabezado-6-texto">Encabezado 6 | <em>###### texto</em></h6></li>
 </ul>
 </div>
 <div id="primer-informe-con-rmarkdown" class="section level1">
 <h1>5. Primer informe con RMarkdown</h1>
 <p>Generemos un pequeño informe en el cuál aplicaremos los conocimientos que hemos aprendido sobre las librerías <code>dplyr</code>, <code>ggplot2</code> y <code>rmarkdown</code>.</p>
-<div id="objetivo-del-informe" class="section level3">
-<h3>Objetivo del informe</h3>
+<div id="objetivo-del-informe" class="section level2">
+<h2>5.1. Objetivo del informe</h2>
 <p>Generar un informe automatizado en el cuál se explorarán y visualizarán los los datos de la base de datos iris.</p>
 </div>
-<div id="paso-1.-exploremos-nuestros-datos" class="section level3">
-<h3>Paso 1. Exploremos nuestros datos</h3>
+<div id="exploremos-nuestros-datos" class="section level2">
+<h2>5.2.Exploremos nuestros datos</h2>
 <p>Utilizaremos el verbo <code>glimpse()</code> de la librería dplyr para explorar la estructura de la base de datos iris. Recordemos que asignamos el nombre data a nuestra base de datos</p>
 <p>Primero debemos asegurarnos de llamar a la librería <code>dplyr</code>. También explicitaremos el argumento <code>warming = FALSE</code> para que…</p>
 <pre class="r"><code>#install.packages(&quot;dplyr&quot;)
@@ -373,8 +370,8 @@ library(dplyr)</code></pre>
 ## $ Petal.Width  &lt;dbl&gt; 0.2, 0.2, 0.2, 0.2, 0.2, 0.4, 0.3, 0.2, 0.2, 0.1, 0.2, 0…
 ## $ Species      &lt;fct&gt; setosa, setosa, setosa, setosa, setosa, setosa, setosa, …</code></pre>
 </div>
-<div id="paso-2.-visualicemos-nuestros-datos" class="section level3">
-<h3>Paso 2. Visualicemos nuestros datos</h3>
+<div id="visualicemos-nuestros-datos" class="section level2">
+<h2>5.3. Visualicemos nuestros datos</h2>
 <p>Generemos un gráfico de dispersión con la función <code>geom_point ()</code> para las variables Petal.Length y Petal.Width.</p>
 <p>Primero debemos asegurarnos de llamar a la librería <code>ggplot2</code>.</p>
 <pre class="r"><code>#install.packages(&quot;ggplot2&quot;)
@@ -398,6 +395,6 @@ library(ggplot2)</code></pre>
         legend.position = c(0.13, 0.85),
         legend.box.background = element_rect(fill = &quot;transparent&quot;, colour = &quot;#333333&quot;,size=1.2),
         axis.line = element_line(color = &quot;#333333&quot;,size = 1, linetype = &quot;solid&quot;))</code></pre>
-<p><img src="/courses/RMarkdown/Rmarkdown_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="/courses/RMarkdown/Rmarkdown_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 </div>
 </div>

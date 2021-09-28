@@ -25,13 +25,13 @@ library(ggplot2)
 
 La sintáxis básica de ggplot2 para generar un gráfico de dipersión es:
 
-`ggplot(data=, mapping=aes(x=,y=))+ geom_point()`
+`ggplot(data, mapping=aes(x,y))+ geom_point()`
 
 En donde:
 
 You first pass the dataset mtcars to ggplot.
 
-*`data`: es la base de datos.
+* `data`: es la base de datos.
 
 * `aes()`: especifica las variables en los ejes x e y.
 
@@ -41,11 +41,12 @@ You first pass the dataset mtcars to ggplot.
 
 
 # Visualización 
-Ahora, generemos un gráfico de dispersión con las variables * *Petal.Length* y * *Petal.Width* de la base de datos `iris`.
+Ahora, generemos un gráfico de dispersión con las variables *Petal.Length* y *Petal.Width* de la base de datos `iris`.
 
 ```{r}
 ggplot(data=iris, mapping =aes(x=Petal.Length, y =Petal.Width))+geom_point()
 ```
+
 ## Título y etiquetas
 Ajustemos el título del gráfico las etiquetas de los ejes con la función `labs()`:
 
@@ -59,6 +60,8 @@ ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
        x="Largo de Pétalo (cms)",
        y="Ancho de Pétalo (cms)")
 ```
+
+
 ## Título y etiquetas: tamañao de fuente 
 
 Ahora, aumentemos el tamaños de las fuentes de títulos (y su color) y etiquetas con a función `theme()`, la cuál nos permite controlar aspectos como fuentes, marcas, fondos, entre muchos otros.

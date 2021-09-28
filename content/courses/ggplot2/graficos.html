@@ -9,21 +9,24 @@ tags:
 
 
 
-<div id="gráfico-de-dispersión" class="section level1">
-<h1>Gráfico de Dispersión</h1>
 <p>Los gráficos de dispersión (scatterplot en inglés) se utilizan para observar asociación entre dos variablesnuméricas diferentes.</p>
 <p>La posición de cada punto en el eje horizontal y vertical indica valores para una misma unidad experimental.</p>
-</div>
-<div id="datos" class="section level1">
-<h1>Datos</h1>
-</div>
-<div id="cargando-la-librería" class="section level1">
-<h1>Cargando la librería</h1>
+<div id="cargando-la-librería" class="section level2">
+<h2>Cargando la librería</h2>
+<p>Para comenzar, carguemos la libreía ggplot2 usando la función <code>library()</code>.</p>
 <pre class="r"><code>library(ggplot2)</code></pre>
 </div>
-<div id="visualización" class="section level1">
-<h1>Visualización</h1>
-<p>A continuación,</p>
+<div id="visualización" class="section level2">
+<h2>Visualización</h2>
+<p>La sintáxis básica de ggplot2 para generar un gráfico de dipersión es</p>
+<p><code>ggplot(data=, mapping=aes(x=,y=))+ geom_point()</code></p>
+<p>En donde:</p>
+<p>You first pass the dataset mtcars to ggplot.
++ <code>data</code>: es la base de datos.
++ <code>aes()</code>: especifica las variables en los ejes x e y.
++ <code>+</code>: Da aviso a R para que suga leyendo el código, ya que se agregará una nueva capa.
++ <code>geom_point()</code>: Especifica que queremos generar un gráfico de dispersión.</p>
+<p>Ahora, generemos un gráfico de dispersión con las variables <code>Petal.Length</code>, y =<code>Petal.Width</code> de la base de datos <code>iris</code></p>
 <pre class="r"><code>ggplot(data=iris, mapping =aes(x=Petal.Length, y =Petal.Width))+geom_point()</code></pre>
 <p><img src="/courses/ggplot2/graficos_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Mejoremos nuestro gráfico. Para ello, modificaremos algúnos parámetros gráficos, como</p>

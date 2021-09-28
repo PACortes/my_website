@@ -6,33 +6,38 @@ tags:
 - Visualización
 - ggplot
 ---
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE)
 ```
-
-# Gráfico de Dispersión
 
 Los gráficos de dispersión (scatterplot en inglés) se utilizan para observar asociación entre dos variablesnuméricas diferentes. 
 
 La posición de cada punto en el eje horizontal y vertical indica valores para una misma unidad experimental.
 
-# Datos
-
-```{r iris}
-```
-# Cargando la librería
-
+## Cargando la librería
+Para comenzar, carguemos la libreía ggplot2 usando la función `library()`.
 
 ```{r }
 library(ggplot2)
 ```
 
-# Visualización
+## Visualización
 
-A continuación,
+La sintáxis básica de ggplot2 para generar un gráfico de dipersión es
+
+`ggplot(data=, mapping=aes(x=,y=))+ geom_point()`
+
+En donde:
+
+You first pass the dataset mtcars to ggplot.
++ `data`: es la base de datos.
++ `aes()`: especifica las variables en los ejes x e y.
++ `+`: Da aviso a R para que suga leyendo el código, ya que se agregará una nueva capa.
++ `geom_point()`: Especifica que queremos generar un gráfico de dispersión.
+
+Ahora, generemos un gráfico de dispersión con las variables `Petal.Length`, y =`Petal.Width` de la base de datos `iris`
+
 ```{r}
-
 ggplot(data=iris, mapping =aes(x=Petal.Length, y =Petal.Width))+geom_point()
 ```
 

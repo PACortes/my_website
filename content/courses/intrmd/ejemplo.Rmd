@@ -136,13 +136,7 @@ Ahora, insertemos un nuevo *chunk*. Para ello podemos escribirlo o podemos utili
 * **Windows**: Ctrl + Alt + I 
 * **OS X**: Cmd + Option + I 
 
-```{r }
-#```{r }
-
-#```
-```
-
-## 4. Syntaxis
+# 4. Syntaxis
 La syntaxis de Markdown es muy secilla y nos permite añadir estilo, imágenes, enlaces y expresiones mátematicas a nuestro documento de texto. Las palabras o frases deben comenzar y terminar con los siguientes simbolos: 
 
 Syntaxis      | Resultado

@@ -1,36 +1,164 @@
 ---
-title: "Grafico de torta"
-date: 2020-12-01T21:13:14-05:00
-categories: ["R"]
-tags: ["R Markdown", "plot", "regression"]
+title: "Grafico de dispersión"
+date: '2020-12-01T21:13:14-05:00'
+categories: R
+tags:
+- Visualización
+- ggplot
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-# R Markdown
+# Gráfico de Dispersión
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Los gráficos de dispersión (scatterplot en inglés) se utilizan para observar asociación entre dos variablesnuméricas diferentes. 
 
-You can embed an R code chunk like this:
+La posición de cada punto en el eje horizontal y vertical indica valores para una misma unidad experimental.
 
-```{r cars}
-summary(cars)
-fit <- lm(dist ~ speed, data = cars)
-fit
+# Datos
+
+```{r iris}
+library(dplyr)
+glimpse(iris)
+```
+# Cargando la librería
+
+
+```{r }
+library(ggplot2)
 ```
 
-# Grafico
+# Visualización
 
-You can also embed plots. See Figure \@ref(fig:pie) for example:
+A continuación,
+```{r pie, fig.cap='Gráfico de dispersión.', tidy=FALSE}
 
-```{r pie, fig.cap='A fancy pie chart.', tidy=FALSE}
-par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c('Sky', 'Sunny side of pyramid', 'Shady side of pyramid'),
-  col = c('#0292D8', '#F7EA39', '#C4B632'),
-  init.angle = -50, border = NA
-)
+ggplot(data=iris, mapping =aes(x=Petal.Length, y =Petal.Width))+geom_point()
 ```
+
+Mejoremos nuestro gráfico. Para ello, modificaremos algúnos parámetros gráficos, como 
+
+Ajustemos el título del gráfico y de los ejes
+
+```{r pie, fig.cap='Gráfico de dispersión.', tidy=FALSE}
+
+ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
+  geom_point()+
+  xlim(c(0, 8))+
+  ylim(c(0, 3))+
+  labs(title="Largo vs Ancho del Pétalo", 
+       x="Largo de Pétalo (cms)",
+       y="Ancho de Pétalo (cms)")
+```
+
+Ajustemos el título del gráfico y de los ejes
+```{r pie, fig.cap='Gráfico de dispersión.', tidy=FALSE}
+
+
+ggplot(data = data, mapping=aes(x=Petal.Length , y =Petal.Width))+
+  geom_point()+
+  xlim(c(0, 8))+
+  ylim(c(0, 3))+
+  labs(title="Largo vs Ancho del Pétalo", 
+       y="Ancho (cms)", x="Largo (cms)")+
+  theme(axis.text =element_text(size=16),
+        axis.title=element_text(size=23),
+        plot.title=element_text(size=25,colour="maroon"))
+```
+
+
+Ajustemos el tamaño y color de los puntos
+```{r pie, fig.cap='Gráfico de dispersión.', tidy=FALSE}
+
+
+
+ggplot(data = data, mapping=aes(x=Petal.Length , y =Petal.Width))+
+  geom_point(col="steelblue", size=2.5)+
+  xlim(c(0, 8))+
+  ylim(c(0, 3))+
+  labs(title="Largo vs Ancho del Pétalo", 
+       y="Ancho (cms)", x="Largo (cms)")+
+  theme(axis.text =element_text(size=16),
+        axis.title=element_text(size=23),
+        plot.title=element_text(size=25),
+        plot.subtitle=element_text(size=20))
+```
+
+
+Ajustemos el color de los puntos de acuerdo a categorías en otra variable
+
+```{r pie, fig.cap='Gráfico de dispersión.', tidy=FALSE}
+
+
+ggplot(data = data, mapping=aes(x=Petal.Length , y =Petal.Width))+
+  geom_point(aes(col=Species), size=2.5)+
+  xlim(c(0, 8))+
+  ylim(c(0, 3))+
+  labs(title="Largo vs Ancho del Pétalo", 
+       y="Ancho (cms)", x="Largo (cms)")+
+  theme(axis.text =element_text(size=16),
+        axis.title=element_text(size=23),
+        plot.title=element_text(size=25),
+        plot.subtitle=element_text(size=20))
+```
+
+Ajustemos manualmente color de los puntos de acuerdo a categorías en otra variable
+
+```{r pie, fig.cap='Gráfico de dispersión.', tidy=FALSE}
+ggplot(data = data, mapping=aes(x=Petal.Length , y =Petal.Width))+
+  geom_point(aes(col=Species), size=2.5)+
+  scale_colour_manual(values=c("#BC3C29FF", "#0072B5FF","#E18727FF"))+
+  xlim(c(0, 8))+
+  ylim(c(0, 3))+
+  labs(title="Largo vs Ancho del Pétalo", 
+       y="Ancho (cms)", x="Largo (cms)")+
+  theme(axis.text =element_text(size=16),
+        axis.title=element_text(size=23),
+        plot.title=element_text(size=25),
+        plot.subtitle=element_text(size=20))
+```
+
+
+
+Ajustemos manualmente color de los puntos de acuerdo a categorías en otra variable
+
+```{r pie, fig.cap='Gráfico de dispersión.', tidy=FALSE}
+ggplot(data = data, mapping=aes(x=Petal.Length , y =Petal.Width))+
+  geom_point(aes(col=Species), size=2.5)+
+  scale_colour_manual(values=c("#BC3C29FF", "#0072B5FF","#E18727FF"))+
+  xlim(c(0, 8))+
+  ylim(c(0, 3))+
+  labs(title="Mi primer gráfico en R", 
+       y="Ancho (cms)", x="Largo (cms)")+
+  theme(axis.text =element_text(size=16),
+        axis.title=element_text(size=23),
+        plot.title=element_text(size=25),
+        legend.position = c(0.13, 0.85),
+        legend.box.background = element_rect(fill = "transparent", colour = "#333333",size=1.2),
+        legend.title = element_text(size = 15),
+        legend.text = element_text(size = 12))
+```
+
+
+Finalmente
+
+```{r pie, fig.cap='Gráfico de dispersión.', tidy=FALSE}
+ggplot(data = data, mapping=aes(x=Petal.Length , y =Petal.Width))+
+  geom_point(aes(col=Species), size=2.5)+
+  scale_colour_manual(values=c("#BC3C29FF", "#0072B5FF","#E18727FF"))+
+  xlim(c(0, 8))+
+  ylim(c(0, 3))+
+  labs(title="Largo vs Ancho del Petalo",
+       y="Ancho (cms)", x="Largo (cms)")+
+  theme(axis.text =element_text(size=16),
+        axis.title=element_text(size=23),
+        plot.title=element_text(size=25),
+        legend.position = c(0.13, 0.85),
+        legend.box.background = element_rect(fill = "transparent", colour = "#333333",size=1.2),
+        axis.line = element_line(color = "#333333",size = 1, linetype = "solid"))
+```
+
+
+

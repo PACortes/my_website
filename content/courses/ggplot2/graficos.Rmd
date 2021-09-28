@@ -41,14 +41,14 @@ En donde:
 * `geom_point()`: Especifica que queremos generar un gráfico de dispersión.
 
 
-3. Visualización 
+# 3. Visualización 
 Ahora, generemos un gráfico de dispersión con las variables *Petal.Length* y *Petal.Width* de la base de datos `iris`.
 
 ```{r}
 ggplot(data=iris, mapping =aes(x=Petal.Length, y =Petal.Width))+geom_point()
 ```
 
-## 3.1 Título y etiquetas
+## 3.1. Título y etiquetas
 Ajustemos el título del gráfico las etiquetas de los ejes con la función `labs()`:
 
 ```{r}
@@ -61,7 +61,7 @@ ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
 ```
 
 
-## 3.2 Límites de los ejes
+## 3.2. Límites de los ejes
 
 ```{r}
 ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
@@ -74,7 +74,7 @@ labs(title="Largo vs Ancho del Pétalo",
 ```
 
 
-## 3.3 Título y etiquetas: tamaño de las letras
+## 3.3. Título y etiquetas: tamaño de las letras
 
 Ahora, aumentemos el tamaños de las letras de títulos (y su color) y etiquetas con a función `theme()`, la cuál nos permite controlar aspectos como fuentes, marcas, fondos, entre muchos otros. 
 
@@ -109,7 +109,7 @@ ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
 ```
 
 
-## 3.4 Tamaño de los puntos
+## 3.4. Tamaño de los puntos
 Para cambiar el tamaño de los puntos (aumentar o disminuir), utilizamos la función `size =`(valor por defecto:0.5) dentro de `geom_point()`. 
 
 Por ejemplo, podemos especificar que todos los puntos tendrán un diamtero de 2.5
@@ -146,7 +146,7 @@ ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
 También, podemos 
 
 
-## 3.5 Color de los puntos
+## 3.5. Color de los puntos
 
 Ajustemos el tamaño y color de los puntos
 
@@ -218,7 +218,7 @@ ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
 ```
 
 
-## 3.6 Finalmente... 
+# 4. Finalmente... 
 
 ```{r}
 ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+

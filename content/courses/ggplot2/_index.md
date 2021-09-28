@@ -23,12 +23,4 @@ La sintáxis básica de ggplot2 para generar un gráfico es:
 `ggplot(data, mapping=aes(x,y))+ geom_function()`
 
 
-## Visualizaciones a realizar
-
-{{< list_children >}}
-
-
-## Enlaces de interés
-
-
-{{< cta cta_text="Comencemos con el taller" cta_link="python" >}}
+{{< cta cta_text="Comencemos con el taller" cta_link="scatterplot" >}}

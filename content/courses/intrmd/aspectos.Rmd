@@ -1,6 +1,6 @@
 ---
 title: "Aspectos generales"
-date: '2021-09-28T21:13:14-05:00'
+date: '2021-09-27T21:13:14-05:00'
 categories: R
 tags:
 - RMarkdown

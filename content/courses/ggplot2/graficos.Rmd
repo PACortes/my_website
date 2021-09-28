@@ -8,23 +8,24 @@ tags:
 output:
   blogdown::html_page:
     toc: true
+    toc_float: true
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
+# 1. Definición
 Los gráficos de dispersión (*scatterplot* en inglés) se utilizan para observar asociación entre dos variablesnuméricas diferentes. 
 
 La posición de cada punto en el eje horizontal y vertical indica valores para una misma unidad experimental.
 
-# 1. Cargando la librería
-Para comenzar, carguemos la libreía ggplot2 usando la función `library()`.
+Recordemos que antes de realizar nuestro gráfico, debemos cargar la libreía ggplot2 usando la función `library()`.
 
 ```{r }
 library(ggplot2)
 ```
 
-# 2.Sintáxis 
+# 2. Sintáxis 
 
 La sintáxis básica de ggplot2 para generar un gráfico de dipersión es:
 
@@ -218,7 +219,7 @@ ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
 ```
 
 
-# 4. Finalmente... 
+# 4. Juntando todas las piezas
 
 ```{r}
 ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
@@ -237,7 +238,7 @@ ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
 ```
 
 
+# 5. Referencias
 
-
-Theme elements [https://ggplot2.tidyverse.org/reference/element.html]
+* Theme elements [https://ggplot2.tidyverse.org/reference/element.html]
 

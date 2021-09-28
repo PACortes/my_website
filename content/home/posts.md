@@ -11,8 +11,8 @@ headless: true
 # Order that this section appears on the page.
 weight: 60
 
-title: Apariciones en prensa
-subtitle:
+title: Artículos de opinión
+subtitle: Aquí encontrarás de todo un poco(prensa, charlas, psots, etc.)
 
 content:
   # Page type to display. E.g. post, talk, publication...

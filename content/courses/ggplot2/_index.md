@@ -10,7 +10,7 @@ type: book
 
 {{< toc hide_on="xl" >}}
 
-## ¿Qué es ggplot2?
+## ¿Qué es `ggplot2`?
 
 `ggplot2` es un paquete de visualización altamente versátil que permite crear gráficos elegantes y atractivos.
 

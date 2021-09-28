@@ -1,7 +1,7 @@
 ---
 date: "2021-09-19"
 linkTitle: bibliometrix
-summary: En este taller, aprenderemos a visualizar nuestros datos usando el paquete biliometrix.
+summary: En este módulo exploraremos el paquete `bibliometrix`, una herramienta de R para realizar análisis bibliométricos.
 title: "bibliometrix"
 type: book
 thumbnail: "featured.png"
@@ -11,30 +11,25 @@ thumbnail: "featured.png"
 
 {{< toc hide_on="xl" >}}
 
-## Resumen
+## ¿Qué es `bibliometrix`?
 
-- Fundamental {{<hl>}}Python programming skills{{</hl>}}
-- {{<hl>}}Statistical concepts{{</hl>}} and how to apply them in practice
-- Gain experience with the {{<hl>}}Scikit{{</hl>}}, including data visualization with {{<hl>}}Plotly{{</hl>}} and data wrangling with {{<hl>}}Pandas{{</hl>}}
+`bliometrix` es un paquete de R que proporciona un conjunto de herramientas analíticas para la investigación cuantitativa en bibliometría.
 
-## ¿Qué es ggplot2?
 
-ggplot2 es un paquete de visualización altamente versátil que permite crear gráficos elegantes y atractivos.
+## Bibliometría
+La bibliometría es la aplicación de análisis cuantitativos y estadísticas a publicaciones como artículos de revistas y los recuentos de citas que los acompañan. Este tipo de análisis es clave al momento de establecer el estado del arte de una disciplina o tópicos de investigación específicos.
 
-El paquete ggplot2 implementa un único sistema para describir y construir gráficos, el cuál funciona en capas (se agrega una a una) y se aplica a diferentes tipos de visualizaciones. 
 
-En general, ggplot2 divide un gráfico (plot) en tres partes fundamentales diferentes: 
+## ¿Por qué ?
 
-```r
-ggplot(data = MisDatos, mapping=aes(x=Variable1, y =Variable2))+ geom_function()
-```
+`bliometrix` proveé una serie de rutinas que permite importar datos bibliográficos desde bases académicas como Web of Science, SCOPUS, PubMed, Digital Science Dimensions y Cochrane.
 
-## Visualizaciones a realizar
-
-{{< list_children >}}
+Además, `bliometrix` incluye una shiny app (`biblioshiny()`) que proporciona una interfaz web para facilitar el uso de las herramientas. 
 
 
 ## Enlaces de interés
 
+* Bibliometrix https://www.bibliometrix.org/index.html
 
-{{< cta cta_text="Comencemos con el taller" cta_link="python" >}}
+
+{{< cta cta_text="Comencemos" cta_link="python" >}}

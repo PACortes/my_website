@@ -54,6 +54,15 @@ El encabezado YAML (en inglés *yet another markup language*) determina los par�
 
 El encabezado comienza y termina con tres rayas (- - -). Veamos el siguiente ejemplo que incluye algunos parámetros (existen muchos más) que definirán el formato del documento:
 
+```
+---
+title: "Título del documento"
+author: "Quien desarrolla el documento"
+date: "Fecha en la cual desarrollamos el documento"
+output:
+  html_document: default
+---
+```
 
 En este ejemplo hemos especificado que el documento se generará en formato *HTML*. Otras opciones de *output* son:
 

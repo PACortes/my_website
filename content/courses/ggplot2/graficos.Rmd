@@ -1,244 +1,189 @@
 ---
-title: "Grafico de dispersión"
+title: "Aspectos generales"
 date: '2020-12-01T21:13:14-05:00'
 categories: R
 tags:
-- Visualización
+- RMarkdown
 - ggplot
 output:
   blogdown::html_page:
     toc: true
-    toc_float: true
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-# 1. Definición
-Los gráficos de dispersión (*scatterplot* en inglés) se utilizan para observar asociación entre dos variablesnuméricas diferentes. 
+# 1. ¿Como funciona?
+Debemos comenzar abriendo un archivo R Markdown, un archivo de texto sin formato, que tiene la extensión `.Rmd`.
 
-La posición de cada punto en el eje horizontal y vertical indica valores para una misma unidad experimental.
+En el menú debemos hacer click en:
+**File --> New File --> R Markdown...**
 
-Recordemos que antes de realizar nuestro gráfico, debemos cargar la libreía ggplot2 usando la función `library()`.
+Esto abrirá un fichero que nos permitirá elegir el formato de salida de nuestro informe:
+
+* página web que se podrá ver con un navegador,
+* documento PDF o
+* documento Word.
+
+*Importante*: Si deseamos generar una documento PDF, necesitaremos instalar LaTeX. Para los usuarios de Markdown R que no hayan instalado LaTeX anteriormente, se recomienda instalarTinyTeX (https://yihui.name/tinytex/):
+
+# 2. Requisitos
+Al momento de comenzar un proyecto, debemos tener instalado los siguientes programas:
+
+a. La versión mas reciente de R <https://www.r-project.org>.
+b. RStudio <https://rstudio.com>.
+c. Instalar los paquetes `knitr` y `rmarkdown`. Podemos instalar cada paquete desde el CRAN con:
+
+```{r warning=FALSE}
+#install.packages("rmarkdown")
+library(rmarkdown)
+#install.packages("knitr")
+library(knitr)
+```
+
+El paquete `Knitr` integra en un sólo archivo markdown el texto ingresado en formato RMarkdown y los resultados de la ejecución de los códigos construidos mediante R.
+
+d. Conocimientos basicos en markdown (para eso está este tutorial, no?).
+
+
+# 3.  Estructura del archivo `.Rmd`.
+
+Cuando se utiliza el botón de `Knit` se generan documentos los cuales contienen sintaxis en markdown con codigos de R en *chunks*.
+
+## 3.1. **Encabezado YAML**
+
+El encabezado YAML (en inglés *yet another markup language*) determina los parámetros generales de formato para el documento a generar. Es importante tener presente que este encabezado define el formato del archivo resultante, más no su contenido.
+
+El encabezado comienza y termina con tres rayas (- - -). Veamos el siguiente ejemplo que incluye algunos parámetros (existen muchos más) que definirán el formato del documento:
+
+```
+---
+title: "Título del documento"
+author: "Quien desarrolla el documento"
+date: "Fecha en la cual desarrollamos el documento"
+output:
+  html_document: default
+---
+```
+
+En este ejemplo hemos especificado que el documento se generará en formato *HTML*. Otras opciones de *output* son:
+
+* **output: html_document**...           archivo html (página web)
+* **output: pdf_document**...             archivo pdf
+* **output: word_document**...            Microsoft Word .docx 
+* **output: beamer_presentation**...      presentación beamer (pdf)
+* **output: ioslides_presentation**...    presentación ioslides (html)
+
+
+## 3.2. **Texto**
+El documento lo podemos escribir en forma de texto plano (el contenido que deseas escribir). Para ello podemos usar la sintaxis de markdown para describir el formato del texto en el documento final. Dedicaremos una sección independiente para revisar la sintaxis de RMarkdown.
+
+
+Podemos escribir lo que queramos, pero siempre...
+
+
+![](respeto.jpg)
+
+
+Podemos agregar imágenes a un informe de R Markdown a partir de imágenes disponibles en nuestro directorio de trabajo. Para ello utilziaremos la siguiente sintaxis: 
+
+```
+![AQUÍ PODEMOS INCORPORAR TEXTO ](respeto.jpg)
+
+```
+
+Un aspecto importante es que la separación de párrafos se realiza saltando una línea en blanco. 
+
+```
+Me salto
+una
+
+línea
+```
+
+## 3.3. ### **Trozos (*chunk*) de código**
+
+Los trozos (*chunk*) de código en un documento de R Markdown contendrán  tu código R. Todos los fragmentos de código comienzan y terminan con ` ``` `.
+
+Un *chunk* básico se ve de la siguiente forma:
 
 ```{r }
-library(ggplot2)
-```
 
-# 2. Sintáxis 
+# ``` {r } 
 
-La sintáxis básica de ggplot2 para generar un gráfico de dipersión es:
+#Aquí va el código
 
-`ggplot(data, mapping=aes(x,y))+ geom_point()`
-
-En donde:
-
-* `data`: es la base de datos.
-
-* `aes()`: especifica las variables en los ejes x e y.
-
-* `+`: Da aviso a R para que suga leyendo el código, ya que se agregará una nueva capa.
-
-* `geom_point()`: Especifica que queremos generar un gráfico de dispersión.
-
-
-# 3. Visualización 
-Generemos un gráfico de dispersión con las variables **Petal.Length** y **Petal.Width** de la base de datos `iris`.
-
-```{r}
-ggplot(data=iris, mapping =aes(x=Petal.Length, y =Petal.Width))+geom_point()
+# ```
 ```
 
 
-## 3.1. Límites de los ejes
+Veamos un ejemplo:
 
-Ahora
-```{r}
-ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
-  geom_point()+
-  xlim(c(0, 8))+
-  ylim(c(0, 3))+
-labs(title="Largo vs Ancho del Pétalo", 
-       x="Largo de Pétalo (cms)",
-       y="Ancho de Pétalo (cms)")
+```{r }
+# sumemos
+x <- 1+12
+
+y <- 90
+
+# generemos un objeto que contenga la resta de "x" con "y" 
+respuesta <- x - y
+
+# revisemos el resultado de nuestro objeto llamado respuesta
+respuesta
+
 ```
 
+Ahora, insertemos un nuevo *chunk*. Para ello podemos escribirlo o podemos utilizar una combinación desde el teclado para generar un *chunk* por defecto:
 
-## 3.1. Título y etiquetas
-Las etiquetas por defecto de los ejes mostrará los nombres de las variables. Ahora bien, podemos personalizar las etiquetas de los ejes, e incluso el título del gráfico, con la función `labs()`:
+* **Windows**: Ctrl + Alt + I 
+* **OS X**: Cmd + Option + I 
 
-```{r}
+```{r }
+#```{r }
 
-ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
-  geom_point()+
-  labs(title="Largo vs Ancho del Pétalo", 
-       x="Largo de Pétalo (cms)",
-       y="Ancho de Pétalo (cms)")
+#```
 ```
 
+## 4. Syntaxis
+La syntaxis de Markdown es muy secilla y nos permite añadir estilo, imágenes, enlaces y expresiones mátematicas a nuestro documento de texto. Las palabras o frases deben comenzar y terminar con los siguientes simbolos: 
 
-Ahora, aumentemos el tamaños de las letras de títulos (y su color) y etiquetas con a función `theme()`, la cuál nos permite controlar aspectos como fuentes, marcas, fondos, entre muchos otros. 
-
-`theme()` incluye dos componentes principales:
-
-* **Elementos del tema**: especifica los elementos que queremos controlar.Por ejemplo, `plot.title` controla la apariencia del título. 
-
-* **Función del tema**: describe la propiedad visual del elemento que queremos controlar.Por ejemplo, `element_text()` establece el tamaño de fuente, el color, entre otros:
-
-
-  + Para cambiar el tamaño de un elemento, utilizamos la función `size =`.
-
-  + Para cambiar el color de un elemento, utilizamos la función `color =`.
-  
-  + Para cambiar la familia de letra de un elemento, utilizamos `family =`.
-  
-  + Para cambiar el tipo de letra de un elemento, utilizamos `face =`.
-  
-    + Para cambiar el tipo de línea, utilizamos `linetype =`.
-  
-  
-```{r}
-ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
-  geom_point()+
-  xlim(c(0, 8))+
-  ylim(c(0, 3))+
-  labs(title="Largo vs Ancho del Pétalo", 
-       y="Ancho (cms)", x="Largo (cms)")+
-  theme(axis.text =element_text(size=16),
-        axis.title=element_text(size=23),
-        plot.title=element_text(size=25,colour="darkblue"))
-```
+Syntaxis      | Resultado
+------------- | -------------
+* *    | **cursiva**
+_ _   | **cursiva**
+** **      | **negrita**
+__ __      | **negrita**
+superindice ^ ^    | superindice ^2^
+tachado ~~ ~~| ~~tachado~~
+eslabon [ ] |[https://www.umayor.cl/um/]
 
 
-## 3.4. Tamaño de los puntos
-Para cambiar el tamaño de los puntos (aumentar o disminuir), utilizamos la función `size =`(valor por defecto:0.5) dentro de `geom_point()`. 
+También podemos generar listas no numeradas:
 
-Por ejemplo, podemos especificar que todos los puntos tendrán un diamtero de 2.5
+* Item 1
+* Item 2
+    + Item 2a
+    + Item 2b
 
-```{r}
-ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
-  geom_point(size=2.5)+
-  xlim(c(0, 8))+
-  ylim(c(0, 3))+
-  labs(title="Largo vs Ancho del Pétalo", 
-       y="Ancho (cms)", x="Largo (cms)")+
-  theme(axis.text =element_text(size=16),
-        axis.title=element_text(size=23),
-        plot.title=element_text(size=25),
-        plot.subtitle=element_text(size=20))
-```
+y listas numeradas:
 
-También, podríamos especificar diferentes tamaños según un valor específico de una de nuestras variables. Para ello debemos incorporar una dimensión `aes()` dentro de `geom_point()`.
+1. Item 1
+2. Item 2
+3. Item 2
+    + Item 3a
+    + Item 3b
 
 
-```{r}
-ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
-  geom_point(aes(size=Petal.Length>2.5))+
-  xlim(c(0, 8))+
-  ylim(c(0, 3))+
-  labs(title="Largo vs Ancho del Pétalo", 
-       y="Ancho (cms)", x="Largo (cms)")+
-  theme(axis.text =element_text(size=16),
-        axis.title=element_text(size=23),
-        plot.title=element_text(size=25),
-        plot.subtitle=element_text(size=20))
-```
+En algunas ocasiones, estaremos interesados en establecer secciones dentro de nuestro documento. Para ello podemos diferenciar mmúltiples encabezados, según el tamaño del texto.
 
-También, podemos 
+* # Encabezado 1 | *# texto* 
 
+* ## Encabezado 2 | *## texto* 
 
-## 3.5. Color de los puntos
+*  ### Encabezado 3 | *### texto* 
 
-Ajustemos el tamaño y color de los puntos
+* #### Encabezado 4 | *#### texto* 
 
+* ##### Encabezado 5 | *##### texto*  
 
-```{r}
-ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
-  geom_point(col="steelblue", size=2.5)+
-  xlim(c(0, 8))+
-  ylim(c(0, 3))+
-  labs(title="Largo vs Ancho del Pétalo", 
-       y="Ancho (cms)", x="Largo (cms)")+
-  theme(axis.text =element_text(size=16),
-        axis.title=element_text(size=23),
-        plot.title=element_text(size=25),
-        plot.subtitle=element_text(size=20))
-```
-
-De acuerdo a categorías en otra variable.
-
-```{r}
-ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
-  geom_point(aes(col=Species), size=2.5)+
-  xlim(c(0, 8))+
-  ylim(c(0, 3))+
-  labs(title="Largo vs Ancho del Pétalo", 
-       y="Ancho (cms)", x="Largo (cms)")+
-  theme(axis.text =element_text(size=16),
-        axis.title=element_text(size=23),
-        plot.title=element_text(size=25),
-        plot.subtitle=element_text(size=20))
-```
-De acuerdo a categorías en otra variable con valores específicos.
-
-Ajustemos manualmente color de los puntos de acuerdo a categorías en otra variable
-
-```{r}
-ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
-  geom_point(aes(col=Species), size=2.5)+
-  scale_colour_manual(values=c("#BC3C29FF", "#0072B5FF","#E18727FF"))+
-  xlim(c(0, 8))+
-  ylim(c(0, 3))+
-  labs(title="Largo vs Ancho del Pétalo", 
-       y="Ancho (cms)", x="Largo (cms)")+
-  theme(axis.text =element_text(size=16),
-        axis.title=element_text(size=23),
-        plot.title=element_text(size=25),
-        plot.subtitle=element_text(size=20))
-```
-
-
-
-Ajustemos manualmente color de los puntos de acuerdo a categorías en otra variable
-
-```{r}
-ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
-  geom_point(aes(col=Species), size=2.5)+
-  scale_colour_manual(values=c("#BC3C29FF", "#0072B5FF","#E18727FF"))+
-  xlim(c(0, 8))+
-  ylim(c(0, 3))+
-  labs(title="Mi primer gráfico en R", 
-       y="Ancho (cms)", x="Largo (cms)")+
-  theme(axis.text =element_text(size=16),
-        axis.title=element_text(size=23),
-        plot.title=element_text(size=25),
-        legend.position = c(0.13, 0.85),
-        legend.box.background = element_rect(fill = "transparent", colour = "#333333",size=1.2),
-        legend.title = element_text(size = 15),
-        legend.text = element_text(size = 12))
-```
-
-
-# 4. Juntando todas las piezas
-
-```{r}
-ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
-  geom_point(aes(col=Species), size=2.5)+
-  scale_colour_manual(values=c("#BC3C29FF", "#0072B5FF","#E18727FF"))+
-  xlim(c(0, 8))+
-  ylim(c(0, 3))+
-  labs(title="Largo vs Ancho del Petalo",
-       y="Ancho (cms)", x="Largo (cms)")+
-  theme(axis.text =element_text(size=16),
-        axis.title=element_text(size=23),
-        plot.title=element_text(size=25),
-        legend.position = c(0.13, 0.85),
-        legend.box.background = element_rect(fill = "transparent", colour = "#333333",size=1.2),
-        axis.line = element_line(color = "#333333",size = 1, linetype = "solid"))
-```
-
-
-# 5. Referencias
-
-* Theme elements [https://ggplot2.tidyverse.org/reference/element.html]
-
+* ###### Encabezado 6 | *###### texto* 

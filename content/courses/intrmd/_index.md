@@ -16,9 +16,9 @@ type: book
 - {{<hl>}}Statistical concepts{{</hl>}} and how to apply them in practice
 - Gain experience with the {{<hl>}}Scikit{{</hl>}}, including data visualization with {{<hl>}}Plotly{{</hl>}} and data wrangling with {{<hl>}}Pandas{{</hl>}}
 
-## Program overview
+## ¿Qué es RMarkdown?
 
-The demand for skilled data science practitioners is rapidly growing. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi.
+Rmarkdown nos permite generar informes a partir de R. Utiliza un lenguaje llamado Markdown para enriquecer el informe final. Este permite incluir texto, comandos de R, imágenes y gráficos a un documento. Pero lo más importante es que permite que se reproduzca el análisis realizado y si se incorporan nuevos datos, los resultados se actualizarán. Para mas detalles visitar <http://rmarkdown.rstudio.com>.
 
 ## Courses in this program
 

@@ -16,8 +16,8 @@ output:
 <li><a href="#requisitos">2. Requisitos</a></li>
 <li><a href="#estructura-del-archivo-.rmd.">3. Estructura del archivo <code>.Rmd</code>.</a><ul>
 <li><a href="#encabezado-yaml">3.1. Encabezado YAML</a></li>
-<li><a href="#texto">3.2. Texto</a></li>
-<li><a href="#trozos-chunk-de-código">3.3. Trozos (<em>chunk</em>) de código</a></li>
+<li><a href="#trozos-chunk-de-código">3.2. Trozos (<em>chunk</em>) de código</a></li>
+<li><a href="#texto">3.3. Texto</a></li>
 </ul></li>
 <li><a href="#syntaxis">4. Syntaxis</a></li>
 <li><a href="#primer-informe-con-rmarkdown">5. Primer informe con RMarkdown</a><ul>
@@ -79,17 +79,8 @@ output:
 <li><strong>output: ioslides_presentation</strong>… presentación ioslides (html)</li>
 </ul>
 </div>
-<div id="texto" class="section level2">
-<h2>3.2. Texto</h2>
-<p>El documento lo podemos escribir en forma de texto plano (el contenido que deseas escribir). Para ello podemos usar la sintaxis de markdown para describir el formato del texto en el documento final. Dedicaremos una sección independiente para revisar la sintaxis de RMarkdown.</p>
-<p>Un aspecto importante es que la separación de párrafos se realiza saltando una línea en blanco.</p>
-<pre><code>Me salto
-una
-
-línea</code></pre>
-</div>
 <div id="trozos-chunk-de-código" class="section level2">
-<h2>3.3. Trozos (<em>chunk</em>) de código</h2>
+<h2>3.2. Trozos (<em>chunk</em>) de código</h2>
 <p>Los trozos (<em>chunk</em>) de código en un documento de R Markdown contendrán tu código R. Todos los fragmentos de código comienzan y terminan con <code>```</code>.</p>
 <p>Un <em>chunk</em> básico se ve de la siguiente forma:</p>
 <pre class="r"><code># ``` {r } 
@@ -114,6 +105,18 @@ respuesta
 <li><strong>Windows</strong>: Ctrl + Alt + I</li>
 <li><strong>OS X</strong>: Cmd + Option + I</li>
 </ul>
+<pre class="r"><code>#```{r }
+
+#```</code></pre>
+</div>
+<div id="texto" class="section level2">
+<h2>3.3. Texto</h2>
+<p>El documento lo podemos escribir en forma de texto plano (el contenido que deseas escribir). Para ello podemos usar la sintaxis de markdown para describir el formato del texto en el documento final. Dedicaremos una sección independiente para revisar la sintaxis de RMarkdown.</p>
+<p>Un aspecto importante es que la separación de párrafos se realiza saltando una línea en blanco.</p>
+<pre><code>Me salto
+una
+
+línea</code></pre>
 </div>
 </div>
 <div id="syntaxis" class="section level1">
@@ -225,6 +228,6 @@ glimpse(iris)
         legend.position = c(0.13, 0.85),
         legend.box.background = element_rect(fill = &quot;transparent&quot;, colour = &quot;#333333&quot;,size=1.2),
         axis.line = element_line(color = &quot;#333333&quot;,size = 1, linetype = &quot;solid&quot;))</code></pre>
-<p><img src="/courses/intrmd/aspectos_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="/courses/intrmd/aspectos_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 </div>
 </div>

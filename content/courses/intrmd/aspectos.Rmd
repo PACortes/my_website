@@ -73,19 +73,7 @@ En este ejemplo hemos especificado que el documento se generará en formato *HTM
 * **output: ioslides_presentation**...    presentación ioslides (html)
 
 
-## 3.2. Texto
-El documento lo podemos escribir en forma de texto plano (el contenido que deseas escribir). Para ello podemos usar la sintaxis de markdown para describir el formato del texto en el documento final. Dedicaremos una sección independiente para revisar la sintaxis de RMarkdown.
-
-Un aspecto importante es que la separación de párrafos se realiza saltando una línea en blanco. 
-
-```
-Me salto
-una
-
-línea
-```
-
-## 3.3. Trozos (*chunk*) de código
+## 3.2. Trozos (*chunk*) de código
 
 Los trozos (*chunk*) de código en un documento de R Markdown contendrán  tu código R. Todos los fragmentos de código comienzan y terminan con ` ``` `.
 
@@ -121,6 +109,25 @@ Ahora, insertemos un nuevo *chunk*. Para ello podemos escribirlo o podemos utili
 
 * **Windows**: Ctrl + Alt + I 
 * **OS X**: Cmd + Option + I 
+
+```{r }
+#```{r }
+
+#```
+```
+
+## 3.3. Texto
+El documento lo podemos escribir en forma de texto plano (el contenido que deseas escribir). Para ello podemos usar la sintaxis de markdown para describir el formato del texto en el documento final. Dedicaremos una sección independiente para revisar la sintaxis de RMarkdown.
+
+Un aspecto importante es que la separación de párrafos se realiza saltando una línea en blanco. 
+
+```
+Me salto
+una
+
+línea
+```
+
 
 # 4. Syntaxis
 La syntaxis de Markdown es muy secilla y nos permite añadir estilo, imágenes, enlaces y expresiones mátematicas a nuestro documento de texto. Las palabras o frases deben comenzar y terminar con los siguientes simbolos: 

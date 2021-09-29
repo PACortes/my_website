@@ -7,7 +7,7 @@ theme: "starter-hugo-academic"
 title: Pablo Cortes # Website name
 baseurl: 'https://academic-demo.netlify.app/' # Website URL
 copyright: '' # Footer text, e.g. '© {year} Me'
-googleAnalytics: "UA-1988641-2"
+
 ############################
 ## LANGUAGE
 ############################

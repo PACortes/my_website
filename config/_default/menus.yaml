@@ -16,9 +16,6 @@ main:
   - name: R
     url: courses/
     weight: 40
-  - name: Python
-    url: courses_python/
-    weight: 50
   - name: Contacto
     url: '#contact'
-    weight: 60
+    weight: 50

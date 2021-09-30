@@ -13,7 +13,7 @@ output:
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-# 1. Instalando rvest
+# 1. Instalando  y cargando `rvest`
 
 Para instalar el paquete, tenemos dos posibles caminos:
 
@@ -32,5 +32,39 @@ Para este camino, debemos tener instalado el paquete `devtools`.
 # install.packages("devtools")
 #devtools::install_github("tidyverse/rvest")
 ```
+
+
+## No olvidemos que siempre debemos cargar el paquete antes de usarlo
+
+```{r }
+library(rvest)
+```
+
+
+# 2 Funciones básicas en `rvest`
+
+A continuación se listan las funciones más importantes y sus respectivas descripciones. 
+
+* `read_html()`:  crea un objeto que contiene todo el código o etiquetas HTML.
+
+* `html_nodes()`: selecciona partes del objeto que contiene todo el código html. 
+
+* `html_elements()`: devuelve un conjunto de nodos específicos.
+
+* `html_name()`: obtiene los atributos html.
+
+* `html_text()`: extrae el texto html, sin procesar.
+
+* `html_text2()`: extrae el texto html, procesa el texto.
+
+* `html_attr()`: regresa los atributos específicos html.
+
+* `html_attrs()`: obtiene los atributos html.
+
+* `html_chilren()`: obtiene atributos hijos.
+
+* `html_table()`: convierte una tabla html en una estructura de datos en R.
+
+* `minimal_html()`: genera una pagina html mínima.
 
 

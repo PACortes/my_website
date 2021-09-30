@@ -2,7 +2,7 @@
 date: "2021-09-19"
 linkTitle: rvest
 summary: En este módulo vamos a extraer datos desde sitios web (Web scraping).
-title: "rvest: Extracción automática de datos desde sitios WEB"
+title: "rvest: Extracción automática de datos desde sitios web"
 type: book
 ---
 
@@ -20,5 +20,10 @@ Es un paquete de la librería `tidyverse` que permite extraer ("scrape") datos d
 Web Scraping es una técnica para obtener datos no estructurado (etiquetas HTML) de una página web, a un formato estructurado de columnas y renglones, en los cuales se puede acceder y usar más fácilmente. 
 
 
+## Enlaces de interés
+
+* Package ‘rvest’ [https://cran.r-project.org/web/packages/rvest/index.html]
+
+* Package ‘rvest’ https://cran.r-project.org/web/packages/rvest/index.html
 
 {{< cta cta_text="Comencemos con el taller" cta_link="00Instalar" >}}

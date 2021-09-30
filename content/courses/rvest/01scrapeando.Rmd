@@ -1,0 +1,59 @@
+---
+title: "Extraer datos desde una página específica"
+date: '2021-09-20T21:13:14-05:00'
+categories: R
+tags:
+- Web scraping
+- Recuperación de información
+output:
+  blogdown::html_page:
+    toc: true
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+Imaginemos que queremos extraer información de prensa sobre el proceso constituyente desde el periodico chileno [LaTercera].
+
+En este ejemplo, vamos a extraer datos desde una noticia específica que acaba de ser publicada.
+
+# 1.  Cargar el paquete `rvest`
+
+Lo primero que debemos hacer es cargar el paquete `rvest` y todos los paquetes adicionales que necesitemos para trabajar. En este ejemplo usaremos `dplyr`.
+
+
+```{r message=FALSE}
+library(rvest)
+library(dplyr)
+```
+
+# 2. URL de la página de interés.
+
+URL significa Uniform Resource Locator y es la dirección única y específica que se asigna a cada uno de los recursos disponibles de la World Wide Web para que puedan ser localizados por el navegador y visitados por los usuarios.
+
+Ahora, lo que debemos hacer es ir a la página de interés, copiar su URL y guardarla como un objeto.
+
+
+```{r }
+url_interes<- "https://www.latercera.com/politica/noticia/convencion-aprueba-que-sea-el-pleno-por-mayoria-simple-el-que-califique-la-renuncia-de-un-convencional-se-descarta-participacion-del-tc/7KTM6K5JZFC4HOUYQOOUGSU5YQ/"
+
+```
+
+# Extraer información desde el título de la noticia
+
+*h1* es el elemento HTML utilizado para identificar la cabecera más importante en una página web, tales como el título de una página, el título de un post, el nombre de un producto, etc. <h1> es el más importante, y <h6>  el menos importante.
+
+Utilicemos las funciones `read_html`, `html_elements()` y `html_text()` par leer la URL, obtener el elemento *h1* y extraer el texto contenido en el elemento,respectivamente.
+
+```{r }
+titulo_pagina <- read_html(url_interes)%>% 
+  html_element("h1") %>% 
+  html_text()
+```
+
+Ahora, revisemos el texto obtenido desde el título de la página.
+
+
+```{r }
+titulo_pagina
+```

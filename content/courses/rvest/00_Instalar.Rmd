@@ -20,7 +20,7 @@ Para instalar el paquete, tenemos dos posibles caminos:
 ## 1.1. Desde el CRAN
 
 ```{r }
-install.packages("rvest")
+#install.packages("rvest")
 ```
 
 
@@ -30,7 +30,7 @@ Para esta instalación, debemos tener isntalado el paquete `devtools`.
 
 ```{r }
 # install.packages("devtools")
-devtools::install_github("tidyverse/rvest")
+#devtools::install_github("tidyverse/rvest")
 ```
 
 

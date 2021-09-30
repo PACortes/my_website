@@ -26,7 +26,7 @@ Para instalar el paquete, tenemos dos posibles caminos:
 
 ## 1.1. Desde GitHub
 
-Para esta instalación, debemos tener isntalado el paquete `devtools`.
+Para este camino, debemos tener instalado el paquete `devtools`.
 
 ```{r }
 # install.packages("devtools")

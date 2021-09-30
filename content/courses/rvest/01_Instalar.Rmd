@@ -1,5 +1,5 @@
 ---
-title: "Instalando rvest"
+title: "1. Aspectos básicos"
 date: '2021-09-20T21:13:14-05:00'
 categories: R
 tags:
@@ -13,18 +13,20 @@ output:
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-# 1. Instalando  y cargando `rvest`
+# 1. Aspectos básicos de `rvest`
+Antes de extraer información de una página web, debemos instalar y cargar el paquete `rvest`, así como conocer las principales funciones contenidas en él.
+
+## 1.1. Instalando y cargando `rvest`
 
 Para instalar el paquete, tenemos dos posibles caminos:
 
-## 1.1. Desde el CRAN
+### Desde el CRAN
 
 ```{r }
 #install.packages("rvest")
 ```
 
-
-## 1.2. Desde GitHub
+### Desde GitHub
 
 Para este camino, debemos tener instalado el paquete `devtools`.
 
@@ -34,14 +36,14 @@ Para este camino, debemos tener instalado el paquete `devtools`.
 ```
 
 
-## 1.3. No olvidemos que siempre debemos cargar el paquete antes de usarlo
+## 1.2. No olvidemos que siempre debemos cargar el paquete antes de usarlo
 
 ```{r }
 library(rvest)
 ```
 
 
-# 2 Funciones básicas en `rvest`
+## 1.3. Funciones básicas en `rvest`
 
 A continuación se listan las funciones más importantes y sus respectivas descripciones. 
 

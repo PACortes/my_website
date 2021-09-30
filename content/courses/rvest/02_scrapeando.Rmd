@@ -1,5 +1,5 @@
 ---
-title: "Extracción desde una página específica"
+title: "2. Extracción desde una página"
 date: '2021-09-29T21:13:14-05:00'
 categories: R
 tags:
@@ -13,11 +13,12 @@ output:
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
+# 2. Extracción de texto desde una página específica
 Imaginemos que queremos extraer información de prensa sobre el proceso constituyente desde el periodico chileno [LaTercera].
 
 En este ejemplo, vamos a extraer datos desde una noticia específica que acaba de ser publicada.
 
-# 1.  Cargar el paquete `rvest`
+## 2.1. Cargar el paquete `rvest`
 
 Lo primero que debemos hacer es cargar el paquete `rvest` y todos los paquetes adicionales que necesitemos para trabajar. En este ejemplo usaremos `dplyr`.
 
@@ -27,7 +28,7 @@ library(rvest)
 library(dplyr)
 ```
 
-# 2. URL de la página de interés.
+## 2.2. URL de la página de interés.
 
 URL significa Uniform Resource Locator y es la dirección única y específica que se asigna a cada uno de los recursos disponibles de la World Wide Web para que puedan ser localizados por el navegador y visitados por los usuarios.
 
@@ -39,7 +40,7 @@ url_interes<- "https://www.latercera.com/politica/noticia/convencion-aprueba-que
 
 ```
 
-# 3. Extraer información desde el título de la noticia
+## 2.3. Extraer información desde el título de la noticia
 
 **h1** es el elemento HTML utilizado para identificar la cabecera más importante en una página web, tales como el título de una página, el título de un post, el nombre de un producto, etc. 
 

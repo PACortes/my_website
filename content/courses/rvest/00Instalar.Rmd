@@ -24,7 +24,7 @@ Para instalar el paquete, tenemos dos posibles caminos:
 ```
 
 
-## 1.1. Desde GitHub
+## 1.2. Desde GitHub
 
 Para este camino, debemos tener instalado el paquete `devtools`.
 
@@ -34,7 +34,7 @@ Para este camino, debemos tener instalado el paquete `devtools`.
 ```
 
 
-## No olvidemos que siempre debemos cargar el paquete antes de usarlo
+## 1.3. No olvidemos que siempre debemos cargar el paquete antes de usarlo
 
 ```{r }
 library(rvest)

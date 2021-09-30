@@ -1,6 +1,6 @@
 ---
 title: "Extraer datos desde una página específica"
-date: '2021-09-30T21:13:14-05:00'
+date: '2021-09-29T21:13:14-05:00'
 categories: R
 tags:
 - Web scraping
@@ -36,7 +36,7 @@ library(dplyr)</code></pre>
 <div id="extraer-información-desde-el-título-de-la-noticia" class="section level1">
 <h1>3. Extraer información desde el título de la noticia</h1>
 <p><strong>h1</strong> es el elemento HTML utilizado para identificar la cabecera más importante en una página web, tales como el título de una página, el título de un post, el nombre de un producto, etc.</p>
-<p>Utilicemos las funciones <code>read_html</code>, <code>html_elements()</code> y <code>html_text()</code> par leer la URL, obtener el elemento <strong>h1</strong> y extraer el texto contenido en el elemento,respectivamente.</p>
+<p>Utilicemos las funciones <code>read_html</code>, <code>html_elements()</code> y <code>html_text()</code> par leer la URL, obtener el elemento <strong>h1</strong> y extraer el texto contenido en el elemento, respectivamente.</p>
 <pre class="r"><code>titulo_pagina &lt;- read_html(url_interes)%&gt;% 
   html_element(&quot;h1&quot;) %&gt;% 
   html_text()</code></pre>

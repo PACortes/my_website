@@ -1,0 +1,36 @@
+---
+title: "Instalando rvest"
+date: '2021-09-20T21:13:14-05:00'
+categories: R
+tags:
+- Web scraping
+- Recuperación de información
+output:
+  blogdown::html_page:
+    toc: true
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+# 1. Instalando rvest
+
+Para instalar el paquete, tenemos dos posibles caminos:
+
+## 1.1. Desde el CRAN
+
+```{r }
+install.packages("rvest")
+```
+
+
+## 1.1. Desde GitHub
+
+Para esta instalación, debemos tener isntalado el paquete `devtools`.
+
+```{r }
+# install.packages("devtools")
+devtools::install_github("tidyverse/rvest")
+```
+
+

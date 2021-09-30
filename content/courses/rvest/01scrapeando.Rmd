@@ -1,6 +1,6 @@
 ---
 title: "Extraer datos desde una página específica"
-date: '2021-09-20T21:13:14-05:00'
+date: '2021-09-30T21:13:14-05:00'
 categories: R
 tags:
 - Web scraping
@@ -41,9 +41,9 @@ url_interes<- "https://www.latercera.com/politica/noticia/convencion-aprueba-que
 
 # Extraer información desde el título de la noticia
 
-*h1* es el elemento HTML utilizado para identificar la cabecera más importante en una página web, tales como el título de una página, el título de un post, el nombre de un producto, etc. <h1> es el más importante, y <h6>  el menos importante.
+**h1** es el elemento HTML utilizado para identificar la cabecera más importante en una página web, tales como el título de una página, el título de un post, el nombre de un producto, etc. 
 
-Utilicemos las funciones `read_html`, `html_elements()` y `html_text()` par leer la URL, obtener el elemento *h1* y extraer el texto contenido en el elemento,respectivamente.
+Utilicemos las funciones `read_html`, `html_elements()` y `html_text()` par leer la URL, obtener el elemento **h1** y extraer el texto contenido en el elemento,respectivamente.
 
 ```{r }
 titulo_pagina <- read_html(url_interes)%>% 

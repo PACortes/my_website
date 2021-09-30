@@ -22,7 +22,7 @@ Web Scraping es una técnica para obtener datos no estructurado (etiquetas HTML)
 
 ## Enlaces de interés
 
-* Package ‘rvest’ [https://cran.r-project.org/web/packages/rvest/index.html]
+* Package ‘rvest’ (https://cran.r-project.org/web/packages/rvest/index.html)
 
 * Package ‘rvest’ https://cran.r-project.org/web/packages/rvest/index.html
 

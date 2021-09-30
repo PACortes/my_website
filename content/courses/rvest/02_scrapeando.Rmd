@@ -15,9 +15,11 @@ knitr::opts_chunk$set(collapse = TRUE)
 ```
 
 # 2. Extracción de texto desde una página específica
-Imaginemos que queremos extraer información de prensa sobre el proceso constituyente desde el periodico chileno [LaTercera].
+Imaginemos que queremos extraer información de prensa sobre el proceso constituyente que se lleva a cabo en Chile.
 
-En este ejemplo, vamos a extraer datos desde una noticia específica que acaba de ser publicada.
+En este ejemplo, vamos a extraer datos desde una noticia específica recientemente publicada en el periodico chileno [https://www.latercera.com].
+
+![](latercera.png)
 
 ## 2.1. Cargar el paquete `rvest`
 

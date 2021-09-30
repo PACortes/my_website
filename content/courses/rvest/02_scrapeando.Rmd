@@ -19,7 +19,10 @@ Imaginemos que queremos extraer información de prensa sobre el proceso constitu
 
 En este ejemplo, vamos a extraer datos desde una noticia específica recientemente publicada en el periodico chileno [https://www.latercera.com].
 
-![](latercera.png)
+```{r echo =FALSE}
+knitr::include_graphics("latercera.png")
+```
+
 
 ## 2.1. Cargar el paquete `rvest`
 

@@ -15,7 +15,7 @@ output:
 <ul>
 <li><a href="#cargar-el-paquete-rvest">1. Cargar el paquete <code>rvest</code></a></li>
 <li><a href="#url-de-la-página-de-interés.">2. URL de la página de interés.</a></li>
-<li><a href="#extraer-información-desde-el-título-de-la-noticia">Extraer información desde el título de la noticia</a></li>
+<li><a href="#extraer-información-desde-el-título-de-la-noticia">3. Extraer información desde el título de la noticia</a></li>
 </ul>
 </div>
 
@@ -34,7 +34,7 @@ library(dplyr)</code></pre>
 <pre class="r"><code>url_interes&lt;- &quot;https://www.latercera.com/politica/noticia/convencion-aprueba-que-sea-el-pleno-por-mayoria-simple-el-que-califique-la-renuncia-de-un-convencional-se-descarta-participacion-del-tc/7KTM6K5JZFC4HOUYQOOUGSU5YQ/&quot;</code></pre>
 </div>
 <div id="extraer-información-desde-el-título-de-la-noticia" class="section level1">
-<h1>Extraer información desde el título de la noticia</h1>
+<h1>3. Extraer información desde el título de la noticia</h1>
 <p><strong>h1</strong> es el elemento HTML utilizado para identificar la cabecera más importante en una página web, tales como el título de una página, el título de un post, el nombre de un producto, etc.</p>
 <p>Utilicemos las funciones <code>read_html</code>, <code>html_elements()</code> y <code>html_text()</code> par leer la URL, obtener el elemento <strong>h1</strong> y extraer el texto contenido en el elemento,respectivamente.</p>
 <pre class="r"><code>titulo_pagina &lt;- read_html(url_interes)%&gt;% 

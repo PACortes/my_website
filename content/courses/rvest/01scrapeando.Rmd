@@ -39,7 +39,7 @@ url_interes<- "https://www.latercera.com/politica/noticia/convencion-aprueba-que
 
 ```
 
-# Extraer información desde el título de la noticia
+# 3. Extraer información desde el título de la noticia
 
 **h1** es el elemento HTML utilizado para identificar la cabecera más importante en una página web, tales como el título de una página, el título de un post, el nombre de un producto, etc. 
 

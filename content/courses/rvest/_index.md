@@ -21,4 +21,4 @@ Web Scraping es una técnica para obtener datos no estructurado (etiquetas HTML)
 
 
 
-{{< cta cta_text="Comencemos con el taller" cta_link="00_Instalar" >}}
+{{< cta cta_text="Comencemos con el taller" cta_link="00Instalar" >}}

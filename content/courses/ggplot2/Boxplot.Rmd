@@ -22,7 +22,7 @@ Cada gráfico de caja está compuesto por un rectángulo (la «caja») y dos bra
 ![](/courses/ggplot2/Boxplot_files/boxplot.png){width=400px height=200px}
 
 
-Recordemos que antes de realizar nuestro gráfico, debemos cargar la libreía ggplot2 usando la función `library()`.
+Recordemos que antes de realizar nuestro gráfico, debemos cargar el paquete ggplot2 usando la función `library()`.
 
 ```{r warning = FALSE}
 library(ggplot2)
@@ -97,7 +97,7 @@ glimpse(MaterialParticulado)
 # 4. Visualización 
 
 ## 4.1. Gráfico de cajas para una variable
-Generemos un gráfico de cajas para la variable dispersión con la variables **PM2.5**.
+Generemos un gráfico de cajas para visualizar la distribución de la variable **PM2.5**.
 
 ```{r warning = FALSE}
 ggplot(data=MaterialParticulado, mapping =aes(y=PM2.5))+
@@ -105,14 +105,13 @@ ggplot(data=MaterialParticulado, mapping =aes(y=PM2.5))+
 ```
 
 ## 4.2. Gráfico de cajas para dos variables
-Ahora, generemos el mismo gráfico de cajas pero incluyamos una segunda variable categórica. Por ejemplo, podemos ver la distribución de la variable **PM2.5** dependiendo de la **Ciudad** en la cuál se levantó la información.
+Ahora, generemos el mismo gráfico de cajas pero incluyamos una segunda variable categórica. Por ejemplo, podemos ver la distribución de la variable **PM2.5** para cada **Ciudad** en la que se levantó información.
 
 
 ```{r warning = FALSE}
 ggplot(data=MaterialParticulado, mapping =aes(x=Ciudad, y=PM2.5))+
       geom_boxplot()
 ```
-
 
 # 5. Juntando todas las piezas
 

@@ -1,5 +1,5 @@
 ---
-title: "1. Gráfico de dispersión"
+title: "2. Gráfico de cajas"
 date: '2021-10-05T21:13:14-05:00'
 categories: R
 tags:
@@ -8,7 +8,7 @@ tags:
 output:
   blogdown::html_page:
     toc: true
-weight: 10
+weight: 20
 ---
 
 
@@ -31,26 +31,27 @@ weight: 10
 
 <div id="definición" class="section level1">
 <h1>1. Definición</h1>
-<p>Los gráficos de dispersión (<em>scatterplot</em> en inglés) se utilizan para observar asociación entre dos variablesnuméricas diferentes.</p>
-<p>La posición de cada punto en el eje horizontal y vertical indica valores para una misma unidad experimental.</p>
+<p>Los gráficos de cajas y bigotes (<em>boxplot</em> en inglés) se utilizan para visualizar grupos de datos numéricos a través de sus cuartiles.</p>
+<p>Cada gráfico de caja está compuesto por un rectángulo (la «caja») y dos brazos (los «bigotes»). La caja está definida por el segundo y tercer cuartil, mientras que los bigotes por el primero y el cuarto cuartil. La línea gruesa es la mediana (y no la media). Este tipo de representación es también útil para detectar valores atípicos (outliers).</p>
+<p><img src="/courses/ggplot2/Boxplot_files/boxplot.png" width="400" height="200" /></p>
 <p>Recordemos que antes de realizar nuestro gráfico, debemos cargar la libreía ggplot2 usando la función <code>library()</code>.</p>
 <pre class="r"><code>library(ggplot2)</code></pre>
 </div>
 <div id="sintáxis" class="section level1">
 <h1>2. Sintáxis</h1>
-<p>La sintáxis básica de ggplot2 para generar un gráfico de dipersión es:</p>
-<p><code>ggplot(data, mapping=aes(x,y))+ geom_point()</code></p>
+<p>La sintáxis básica de ggplot2 para generar un gráfico de cajas es:</p>
+<p><code>ggplot(data, mapping=aes(x,y))+ box_point()</code></p>
 <p>En donde:</p>
 <ul>
 <li><p><code>data</code>: es la base de datos.</p></li>
 <li><p><code>aes()</code>: especifica las variables en los ejes x e y.</p></li>
 <li><p><code>+</code>: Da aviso a R para que suga leyendo el código, ya que se agregará una nueva capa.</p></li>
-<li><p><code>geom_point()</code>: Especifica que queremos generar un gráfico de dispersión.</p></li>
+<li><p><code>box_point()</code>: Especifica que queremos generar un gráfico de cajas.</p></li>
 </ul>
 </div>
 <div id="base-de-datos" class="section level1">
 <h1>3. Base de datos</h1>
-<p>Para el presente tutorial, utilizaremos el conjunto de datos <strong>flor Iris</strong>, multivariante introducido por Sir. Ronald Fisher en su artículo de 1936, <a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1936.tb02137.x">The use of multiple measurements in taxonomic problems</a>.</p>
+<p>Para el presente tutorial, utilizaremos una base deel conjunto de datos <strong>flor Iris</strong>, multivariante introducido por Sir. Ronald Fisher en su artículo de 1936, <a href="https://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1936.tb02137.x">The use of multiple measurements in taxonomic problems</a>.</p>
 <p><img src="/courses/ggplot2/scatterplot_files/iris.png" width="400" height="200" /></p>
 <p>La base de datos <strong>iris</strong> viene incluida en R y contiene las mediciones en centímetros de las variables longitud de los pétalos (<strong>Petal.Length</strong> y <strong>Petal.Width</strong>) y sépalos (<strong>Setal.Length</strong> y <strong>Setal.Width</strong>) de 50 flores de tres especies (<strong>Species</strong>) del género Iris: <em>Iris setosa</em>, <em>Iris versicolor</em> e <em>Iris virginica</em>.</p>
 <p>Exploremos el encabezado de la base de datos <strong>iris</strong>.</p>
@@ -67,7 +68,7 @@ weight: 10
 <h1>4. Visualización</h1>
 <p>Generemos un gráfico de dispersión con las variables <strong>Petal.Length</strong> y <strong>Petal.Width</strong> de la base de datos <code>iris</code>.</p>
 <pre class="r"><code>ggplot(data=iris, mapping =aes(x=Petal.Length, y =Petal.Width))+geom_point()</code></pre>
-<p><img src="/courses/ggplot2/scatterplot_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="/courses/ggplot2/Boxplot_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <div id="límites-de-los-ejes" class="section level2">
 <h2>4.1. Límites de los ejes</h2>
 <p>Un primer ajuste que podemos hacer a nuestro gráfico es modificar los límites de los ejes. Para ello utilizamos las funciónes <code>xlim()</code> y <code>ylim()</code> para modificar los ejes x e y, respectivamente.</p>
@@ -75,7 +76,7 @@ weight: 10
   geom_point()+
   xlim(c(0, 8))+
   ylim(c(0, 3))</code></pre>
-<p><img src="/courses/ggplot2/scatterplot_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="/courses/ggplot2/Boxplot_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 </div>
 <div id="título-y-etiquetas" class="section level2">
 <h2>4.2. Título y etiquetas</h2>
@@ -87,7 +88,7 @@ weight: 10
   labs(title=&quot;Largo vs Ancho del Pétalo&quot;, 
        x=&quot;Largo de Pétalo (cms)&quot;,
        y=&quot;Ancho de Pétalo (cms)&quot;)</code></pre>
-<p><img src="/courses/ggplot2/scatterplot_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="/courses/ggplot2/Boxplot_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>Ahora, aumentemos el tamaño de las letras del título (y su color) y las etiquetas con a función <code>theme()</code>, la cuál nos permite controlar aspectos como fuentes, marcas, fondos, entre muchos otros.</p>
 <p><code>theme()</code> incluye dos componentes principales:</p>
 <ul>
@@ -110,7 +111,7 @@ weight: 10
   theme(axis.text =element_text(size=16),
         axis.title=element_text(size=23),
         plot.title=element_text(size=25,colour=&quot;darkblue&quot;))</code></pre>
-<p><img src="/courses/ggplot2/scatterplot_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="/courses/ggplot2/Boxplot_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 <div id="tamaño-de-los-puntos" class="section level2">
 <h2>4.3. Tamaño de los puntos</h2>
@@ -124,7 +125,7 @@ weight: 10
   theme(axis.text =element_text(size=16),
         axis.title=element_text(size=23),
         plot.title=element_text(size=25))</code></pre>
-<p><img src="/courses/ggplot2/scatterplot_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="/courses/ggplot2/Boxplot_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>También, podríamos especificar diferentes tamaños según un valor específico de una de nuestras variables. Para ello debemos incorporar una dimensión <code>aes()</code> dentro de <code>geom_point()</code>.</p>
 <p>Por ejemplo, asignemos un tamaño de punto diferente para aquellas muestran con un diametro de <strong>Petal.Length</strong> mayor a 2.5.</p>
 <pre class="r"><code>ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
@@ -137,7 +138,7 @@ weight: 10
         axis.title=element_text(size=23),
         plot.title=element_text(size=25))
 ## Warning: Using size for a discrete variable is not advised.</code></pre>
-<p><img src="/courses/ggplot2/scatterplot_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="/courses/ggplot2/Boxplot_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 </div>
 <div id="color-de-los-puntos" class="section level2">
 <h2>4.4. Color de los puntos</h2>
@@ -151,7 +152,7 @@ weight: 10
   theme(axis.text =element_text(size=16),
         axis.title=element_text(size=23),
         plot.title=element_text(size=25))</code></pre>
-<p><img src="/courses/ggplot2/scatterplot_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="/courses/ggplot2/Boxplot_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>También, podemos asignar colores específicos que diferencien entre las categorías de una tercera variable.</p>
 <p>Por ejemplo, asignemos diferentes colores para cada una de las especies en la base de datos.</p>
 <pre class="r"><code>ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
@@ -164,7 +165,7 @@ weight: 10
         axis.title=element_text(size=23),
         plot.title=element_text(size=25),
         plot.subtitle=element_text(size=20))</code></pre>
-<p><img src="/courses/ggplot2/scatterplot_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="/courses/ggplot2/Boxplot_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p>Podemos realizar lo mismo, pero especificando los colores que queremos asignar a las especies. Para ello, utilizamos la función <code>scale_colour_manual()</code>.</p>
 <pre class="r"><code>ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
   geom_point(aes(col=Species), size=2.5)+
@@ -177,7 +178,7 @@ weight: 10
         axis.title=element_text(size=23),
         plot.title=element_text(size=25),
         plot.subtitle=element_text(size=20))</code></pre>
-<p><img src="/courses/ggplot2/scatterplot_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="/courses/ggplot2/Boxplot_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 </div>
 <div id="leyenda" class="section level2">
 <h2>4.5. Leyenda</h2>
@@ -203,7 +204,7 @@ weight: 10
         legend.box.background = element_rect(fill = &quot;transparent&quot;, colour = &quot;#333333&quot;,size=1.2),
         legend.title = element_text(size = 15),
         legend.text = element_text(size = 12))</code></pre>
-<p><img src="/courses/ggplot2/scatterplot_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="/courses/ggplot2/Boxplot_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 </div>
 </div>
 <div id="juntando-todas-las-piezas" class="section level1">
@@ -221,7 +222,7 @@ weight: 10
         legend.position = c(0.13, 0.85),
         legend.box.background = element_rect(fill = &quot;transparent&quot;, colour = &quot;#333333&quot;,size=1.2),
         axis.line = element_line(color = &quot;#333333&quot;,size = 1, linetype = &quot;solid&quot;))</code></pre>
-<p><img src="/courses/ggplot2/scatterplot_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="/courses/ggplot2/Boxplot_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 </div>
 <div id="referencias" class="section level1">
 <h1>6. Referencias</h1>

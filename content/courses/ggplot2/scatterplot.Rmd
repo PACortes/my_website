@@ -24,7 +24,7 @@ Recordemos que antes de realizar nuestro gráfico, debemos cargar la libreía gg
 library(ggplot2)
 ```
 
-# 2. Sintáxis 
+# 3. Sintáxis 
 
 La sintáxis básica de ggplot2 para generar un gráfico de dipersión es:
 
@@ -40,8 +40,19 @@ En donde:
 
 * `geom_point()`: Especifica que queremos generar un gráfico de dispersión.
 
+# 3. Base de datos
 
-# 3. Visualización 
+Para el presente tutorial, utilizaremos el conjunto de datos **flor Iris**,  multivariante introducido por Sir. Ronald Fisher en su artículo de 1936, *The use of multiple measurements in taxonomic problems* [https://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1936.tb02137.x].
+
+La base de datos **iris** viene incluida en R y contiene las mediciones en centímetros de las variables longitud de los pétalos (**Petal.Length** y **Petal.Width**) y sépalos (**Setal.Length** y **Setal.Width**) de 50 flores de tres especies (**Species**) del género Iris: *Iris setosa*, *Iris versicolor* e *Iris virginica*. 
+
+Exploremos el encabezado de la base de datos **iris**
+
+```{r warning = FALSE}
+head (iris)
+```
+
+# 4. Visualización 
 Generemos un gráfico de dispersión con las variables **Petal.Length** y **Petal.Width** de la base de datos `iris`.
 
 ```{r warning = FALSE}
@@ -49,7 +60,7 @@ ggplot(data=iris, mapping =aes(x=Petal.Length, y =Petal.Width))+geom_point()
 ```
 
 
-## 3.1. Límites de los ejes
+## 4.1. Límites de los ejes
 
 Un primer ajuste que podemos hacer a nuestro gráfico es modificar los límites de los ejes. Para ello utilizamos las funciónes `xlim()` y `ylim()` para modificar los ejes x e y, respectivamente.
 
@@ -61,7 +72,7 @@ ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
 ```
 
 
-## 3.2. Título y etiquetas
+## 4.2. Título y etiquetas
 Por defecto, las etiquetas de los ejes muestran los nombres de las variables. Ahora bien, podemos personalizar las etiquetas, e incluso el título del gráfico, con la función `labs()`:
 
 ```{r warning = FALSE}
@@ -108,7 +119,7 @@ ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
 ```
 
 
-## 3.3. Tamaño de los puntos
+## 4.3. Tamaño de los puntos
 Ahora, para cambiar el tamaño de los puntos (aumentar o disminuir), utilizamos la función `size =` (valor por defecto: 0.5) dentro de `geom_point()`. 
 
 ```{r}
@@ -141,7 +152,7 @@ ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
 ```
 
 
-## 3.4. Color de los puntos
+## 4.4. Color de los puntos
 
 Para mejorar la presentación de nuestro gráfico, podemos ajustar el color de los puntos incorporando la función `col=` dentro de `geom_point()`.
 
@@ -191,7 +202,7 @@ ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
         plot.subtitle=element_text(size=20))
 ```
 
-## 3.5. Leyenda
+## 4.5. Leyenda
 
 Al momento de espcificar colores (o formas) que diferencien entre las categorías de una tercera variable, automáticamente se genera una leyenda especificando la codificación.  
 
@@ -225,7 +236,7 @@ ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
 ```
 
 
-# 4. Juntando todas las piezas
+# 5. Juntando todas las piezas
 
 ```{r}
 ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
@@ -244,7 +255,7 @@ ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
 ```
 
 
-# 5. Referencias
+# 6. Referencias
 
 * Theme elements [https://ggplot2.tidyverse.org/reference/element.html]
 

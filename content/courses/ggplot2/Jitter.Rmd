@@ -46,6 +46,14 @@ Para el presente tutorial, utilizaremos información de contaminación atmosfér
 La base de datos **MaterialParticulado.txt** se encuentra disponible en el repositorio github [PACortes/pacortes_datos](https://github.com/PACortes/pacortes_datos).
 
 
+```{r inclide= FALSE,message = FALSE}
+library(readr)
+MaterialParticulado <- read_delim("MaterialParticulado.txt", 
+delim = "\t", escape_double = FALSE, 
+col_types = cols(Year = col_factor(levels = c("2018", "2019", "2020", "2021")), Mes = col_factor(levels = c("1", "2", "3", "4", "5", "6", "7", "8", 
+"9", "10", "11", "12"))), trim_ws = TRUE)
+```
+
 # 4. Visualización 
 
 ## 4.1. Gráfico jitter para una variable

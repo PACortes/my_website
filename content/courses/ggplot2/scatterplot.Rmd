@@ -44,7 +44,7 @@ En donde:
 
 Para el presente tutorial, utilizaremos el conjunto de datos **flor Iris**,  multivariante introducido por Sir. Ronald Fisher en su artículo de 1936, *The use of multiple measurements in taxonomic problems* [https://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1936.tb02137.x].
 
-![](iris.PNG)
+![](iris.png)
 
 
 La base de datos **iris** viene incluida en R y contiene las mediciones en centímetros de las variables longitud de los pétalos (**Petal.Length** y **Petal.Width**) y sépalos (**Setal.Length** y **Setal.Width**) de 50 flores de tres especies (**Species**) del género Iris: *Iris setosa*, *Iris versicolor* e *Iris virginica*. 

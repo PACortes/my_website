@@ -32,7 +32,7 @@ library(ggplot2)
 
 La sintáxis básica de ggplot2 para generar un gráfico de cajas es:
 
-`ggplot(data, mapping=aes(x,y))+ box_point()`
+`ggplot(data, mapping=aes(x,y))+ geom_boxplot()`
 
 En donde:
 
@@ -42,230 +42,88 @@ En donde:
 
 * `+`: Da aviso a R para que suga leyendo el código, ya que se agregará una nueva capa.
 
-* `box_point()`: Especifica que queremos generar un gráfico de cajas.
+* `geom_boxplot()`: Especifica que queremos generar un gráfico de cajas.
 
-# 3. Base de datos
+# 3. Datos
 
-Para el presente tutorial, utilizaremos una base deel conjunto de datos **flor Iris**,  multivariante introducido por Sir. Ronald Fisher en su artículo de 1936, [The use of multiple measurements in taxonomic problems](https://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1936.tb02137.x).
+Para el presente tutorial, utilizaremos información de contaminación atmosférica para tres ciudades de Chile obtenida a partir de la plataforma oficial del [Sistema de Información Nacional de Calidad del Aire (SINCA)](https://sinca.mma.gob.cl/#) del Minsiterio de Medio Ambiente de Chile.
+
+## 3.1. Material Particulado (PM)
+
+Se denomina [Material Particulado (MP)](https://sinca.mma.gob.cl/index.php/pagina/index/id/glosario) a una mezcla de partículas líquidas y sólidas que se encuentran en suspensión en el aire. Los MPs son de generados a partir de algúna actividad antropogénica o natural, y forman pare de la contaminación atmosférica que impacta negativamente la salud humana. 
+
+Estos contaminantes se clasifican en función de su diámetro aerodinámico en PM10 (partículas con un diámetro inferior a 10 micras) o PM2.5 (diámetro inferior a 2,5 micra).
 
 
-![](/courses/ggplot2/scatterplot_files/iris.png){width=400px height=200px}
+## 3.2. Base de datos: descripción
 
-La base de datos **iris** viene incluida en R y contiene las mediciones en centímetros de las variables longitud de los pétalos (**Petal.Length** y **Petal.Width**) y sépalos (**Setal.Length** y **Setal.Width**) de 50 flores de tres especies (**Species**) del género Iris: *Iris setosa*, *Iris versicolor* e *Iris virginica*. 
+La base de datos **MaterialParticulado** fue generada a partir de la información recuperada desde la plataforma SINCA el día 06-10-2021, y contiene la siguiente información:
 
-Exploremos el encabezado de la base de datos **iris**.
+* **Ciudad**: Localidad del país en la cuál se encuentra la estación de monitoreo que registra la calidad del aire.
 
-```{r warning = FALSE}
-head (iris)
+* **Fecha**: Momento en el cuál se registra la calidad del aire (Año/Mes/día).
+
+* **Año**: Año en el cuál se registra la calidad del aire.
+
+* **Mes**: Mes del año en el cuál se registra la calidad del aire.
+
+* **PM2.5**: Promedio mensual del registro diario de partículas de diámetro aerodinámico menor a 2.5 μm.
+
+* **PM10**: Promedio mensual del registro diario de partículas de diámetro aerodinámico menor a 10 μm.
+
+
+## 3.3. Base de datos: descarga
+
+La base de datos **MaterialParticulado.txt** se encuentra disponible en el repositorio github [PACortes/pacortes_datos](https://github.com/PACortes/pacortes_datos).
+
+
+```{r inclide= FALSE,message = FALSE}
+library(readr)
+MaterialParticulado <- read_delim("MaterialParticulado.txt", 
+delim = "\t", escape_double = FALSE, 
+col_types = cols(Year = col_factor(levels = c("2018", "2019", "2020", "2021")), Mes = col_factor(levels = c("1", "2", "3", "4", "5", "6", "7", "8", 
+"9", "10", "11", "12"))), trim_ws = TRUE)
 ```
+
+Exploremos el encabezado de la base de datos **MaterialParticulado**. Para ello, utilizaremos la función `glimpse()`. del paquete `dplyr()`.
+
+```{r warning = FALSE, message = FALSE}
+library(dplyr)
+
+glimpse(MaterialParticulado)
+```
+
 
 # 4. Visualización 
-Generemos un gráfico de dispersión con las variables **Petal.Length** y **Petal.Width** de la base de datos `iris`.
+
+## 4.1. Gráfico de cajas para una variable
+Generemos un gráfico de cajas para la variable dispersión con la variables **PM2.5**.
 
 ```{r warning = FALSE}
-ggplot(data=iris, mapping =aes(x=Petal.Length, y =Petal.Width))+geom_point()
+ggplot(data=MaterialParticulado, mapping =aes(y=PM2.5))+
+      geom_boxplot()
 ```
 
+## 4.2. Gráfico de cajas para dos variables
+Ahora, generemos el mismo gráfico de cajas pero incluyamos una segunda variable categórica. Por ejemplo, podemos ver la distribución de la variable **PM2.5** dependiendo de la **Ciudad** en la cuál se levantó la información.
 
-## 4.1. Límites de los ejes
-
-Un primer ajuste que podemos hacer a nuestro gráfico es modificar los límites de los ejes. Para ello utilizamos las funciónes `xlim()` y `ylim()` para modificar los ejes x e y, respectivamente.
 
 ```{r warning = FALSE}
-ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
-  geom_point()+
-  xlim(c(0, 8))+
-  ylim(c(0, 3))
-```
-
-
-## 4.2. Título y etiquetas
-Por defecto, las etiquetas de los ejes muestran los nombres de las variables. Ahora bien, podemos personalizar las etiquetas, e incluso el título del gráfico, con la función `labs()`:
-
-```{r warning = FALSE}
-ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
-  geom_point()+
-  xlim(c(0, 8))+
-  ylim(c(0, 3))+
-  labs(title="Largo vs Ancho del Pétalo", 
-       x="Largo de Pétalo (cms)",
-       y="Ancho de Pétalo (cms)")
-```
-
-
-Ahora, aumentemos el tamaño de las letras del título (y su color) y las etiquetas con a función `theme()`, la cuál nos permite controlar aspectos como fuentes, marcas, fondos, entre muchos otros. 
-
-`theme()` incluye dos componentes principales:
-
-* **Elementos del tema**: especifica los elementos que queremos controlar.Por ejemplo, `plot.title` controla la apariencia del título. 
-
-* **Función del tema**: describe la propiedad visual del elemento que queremos controlar. Por ejemplo, `element_text()` establece el tamaño de fuente, el color, entre otros:
-
-
-  + `size =`: Para cambiar el tamaño de un elemento.
-
-  + `color =`: Para cambiar el color de un elemento.
-  
-  + `family =`: Para cambiar la familia de letra de un elemento.
-  
-  + `face =`: Para cambiar el tipo de letra de un elemento.
-  
-  + `linetype =`: Para cambiar el tipo de línea.
-  
-  
-```{r}
-ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
-  geom_point()+
-  xlim(c(0, 8))+
-  ylim(c(0, 3))+
-  labs(title="Largo vs Ancho del Pétalo", 
-       y="Ancho (cms)", x="Largo (cms)")+
-  theme(axis.text =element_text(size=16),
-        axis.title=element_text(size=23),
-        plot.title=element_text(size=25,colour="darkblue"))
-```
-
-
-## 4.3. Tamaño de los puntos
-Ahora, para cambiar el tamaño de los puntos (aumentar o disminuir), utilizamos la función `size =` (valor por defecto: 0.5) dentro de `geom_point()`. 
-
-```{r}
-ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
-  geom_point(size=2.5)+
-  xlim(c(0, 8))+
-  ylim(c(0, 3))+
-  labs(title="Largo vs Ancho del Pétalo", 
-       y="Ancho (cms)", x="Largo (cms)")+
-  theme(axis.text =element_text(size=16),
-        axis.title=element_text(size=23),
-        plot.title=element_text(size=25))
-```
-
-También, podríamos especificar diferentes tamaños según un valor específico de una de nuestras variables. Para ello debemos incorporar una dimensión `aes()` dentro de `geom_point()`.
-
-Por ejemplo, asignemos un tamaño de punto diferente para aquellas muestran con un diametro de **Petal.Length** mayor a 2.5.
-
-
-```{r}
-ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
-  geom_point(aes(size=Petal.Length>2.5))+
-  xlim(c(0, 8))+
-  ylim(c(0, 3))+
-  labs(title="Largo vs Ancho del Pétalo", 
-       y="Ancho (cms)", x="Largo (cms)")+
-  theme(axis.text =element_text(size=16),
-        axis.title=element_text(size=23),
-        plot.title=element_text(size=25))
-```
-
-
-## 4.4. Color de los puntos
-
-Para mejorar la presentación de nuestro gráfico, podemos ajustar el color de los puntos incorporando la función `col=` dentro de `geom_point()`.
-
-
-```{r}
-ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
-  geom_point(col="steelblue", size=2.5)+
-  xlim(c(0, 8))+
-  ylim(c(0, 3))+
-  labs(title="Largo vs Ancho del Pétalo", 
-       y="Ancho (cms)", x="Largo (cms)")+
-  theme(axis.text =element_text(size=16),
-        axis.title=element_text(size=23),
-        plot.title=element_text(size=25))
-```
-
-También, podemos asignar colores específicos que diferencien entre las categorías de una tercera variable. 
-
-Por ejemplo, asignemos diferentes colores para cada una de las especies en la base de datos.
-
-```{r}
-ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
-  geom_point(aes(col=Species), size=2.5)+
-  xlim(c(0, 8))+
-  ylim(c(0, 3))+
-  labs(title="Largo vs Ancho del Pétalo", 
-       y="Ancho (cms)", x="Largo (cms)")+
-  theme(axis.text =element_text(size=16),
-        axis.title=element_text(size=23),
-        plot.title=element_text(size=25),
-        plot.subtitle=element_text(size=20))
-```
-
-Podemos realizar lo mismo, pero especificando los colores que queremos asignar a las especies. Para ello, utilizamos la función `scale_colour_manual()`.
-
-```{r}
-ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
-  geom_point(aes(col=Species), size=2.5)+
-  scale_colour_manual(values=c("#BC3C29FF", "#0072B5FF","#E18727FF"))+
-  xlim(c(0, 8))+
-  ylim(c(0, 3))+
-  labs(title="Largo vs Ancho del Pétalo", 
-       y="Ancho (cms)", x="Largo (cms)")+
-  theme(axis.text =element_text(size=16),
-        axis.title=element_text(size=23),
-        plot.title=element_text(size=25),
-        plot.subtitle=element_text(size=20))
-```
-
-## 4.5. Leyenda
-
-Al momento de espcificar colores (o formas) que diferencien entre las categorías de una tercera variable, automáticamente se genera una leyenda especificando la codificación.  
-
-ggplot2 nos permite realizar ajustes a parámetros gráficos de la leyenda dentro de la función `theme()`. Algúnos de estos ajustes incluyen: 
-
-  + `legend.position =`: Especifica la posición de la leyenda.  Los valores opcionales pueden ser "none", "left", "right", "bottom", "top" o un vector numérico de dos elementos.
-
-  + `legend.box.background =`: Para dar formato al fondo de la leyenda.
-  
-
-  + `legend.title =`: Para cambiar el foramto del título de la leyenda.
-
-  + `legend.text =`: Para dar formato a las etiquetas de la leyenda.
-
-
-```{r}
-ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
-  geom_point(aes(col=Species), size=2.5)+
-  scale_colour_manual(values=c("#BC3C29FF", "#0072B5FF","#E18727FF"))+
-  xlim(c(0, 8))+
-  ylim(c(0, 3))+
-  labs(title="Mi primer gráfico en R", 
-       y="Ancho (cms)", x="Largo (cms)")+
-  theme(axis.text =element_text(size=16),
-        axis.title=element_text(size=23),
-        plot.title=element_text(size=25),
-        legend.position = c(0.13, 0.85),
-        legend.box.background = element_rect(fill = "transparent", colour = "#333333",size=1.2),
-        legend.title = element_text(size = 15),
-        legend.text = element_text(size = 12))
+ggplot(data=MaterialParticulado, mapping =aes(x=Ciudad, y=PM2.5))+
+      geom_boxplot()
 ```
 
 
 # 5. Juntando todas las piezas
 
 ```{r}
-ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
-  geom_point(aes(col=Species), size=2.5)+
-  scale_colour_manual(values=c("#BC3C29FF", "#0072B5FF","#E18727FF"))+
-  xlim(c(0, 8))+
-  ylim(c(0, 3))+
-  labs(title="Largo vs Ancho del Petalo",
-       y="Ancho (cms)", x="Largo (cms)")+
+ggplot(data=MaterialParticulado, mapping =aes(x=Ciudad, y=PM2.5))+
+      geom_boxplot(fill="#0072B5FF")+
+  labs(title="PM2.5 según ciudad",
+       y="PM2.5 (μm)", x="Ciudad")+
   theme(axis.text =element_text(size=16),
         axis.title=element_text(size=23),
         plot.title=element_text(size=25),
-        legend.position = c(0.13, 0.85),
-        legend.box.background = element_rect(fill = "transparent", colour = "#333333",size=1.2),
         axis.line = element_line(color = "#333333",size = 1, linetype = "solid"))
 ```
 
-
-# 6. Referencias
-
-* [Theme elements](https://ggplot2.tidyverse.org/reference/element.html)
-
-* [Legends](http://www.cookbook-r.com/Graphs/Legends_(ggplot2)/)
-
-* [Conjunto de datos iris](https://es.wikipedia.org/wiki/Conjunto_de_datos_flor_iris)

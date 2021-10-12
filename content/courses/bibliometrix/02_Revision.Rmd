@@ -17,9 +17,8 @@ knitr::opts_chunk$set(collapse = TRUE)
 
 ![](/courses/bibliometrix/02_Revision_files/SR.png){width=400px height=200px}
 
-# 1. Revisión Sistemática
+# 1. Revisión Sistemática (RS)
 Artículo de “síntesis de la evidencia disponible”, en el que se realiza una revisión de aspectos cuantitativos y cualitativos de estudios primarios, con el objetivo de resumir la información existente sobre una pregunta de investigación en una determinada disciplina.
-
 
 Las revisiones sistemáticas permiten:
 
@@ -33,24 +32,71 @@ Las revisiones sistemáticas permiten:
 
 * Formular problemas e hipótesis de trabajos. 
 
-# 2. Revisión Sistemática vs narrativa
+# 2. RS vs narrativa
 Las revisiones sistemáticas se diferencian de las revisiones narrativas tradicionales en varios aspectos. 
 
 Las **revisiones narrativas** tienden a ser principalmente descriptivas, no implican una búsqueda sistemática de la literatura y, por lo tanto, a menudo se centran en un subconjunto de estudios sobre un tema en particular. Si bien son informativas, a menudo pueden incluir un elemento de sesgo de selección. 
 
 Las **revisiones sistemáticas** involucran una estrategia de búsqueda establecida  *a priori*, con el objetivo de reducir el sesgo al identificar, evaluar y sintetizar todos los estudios relevantes sobre un tema en particular. A menudo, las revisiones sistemáticas incluyen un componente de metanálisis que implica el uso de técnicas estadísticas para sintetizar los datos de varios estudios en una sola estimación cuantitativa.
 
-# 3. Etapas de un revisión Sistemática
+# 3. Etapas de una RS
 
 ## 3.1 Formular la pregunta de investigación
 La primera etapa, y la más importante, implica definir la pregunta de investigación de la revisión. Esta pregunta representa algúna dimensión sobre un tema en particular sobre el cuál queremos saber más.
 
-Por ejemplo, si el tema que nos interesa es la [gestión de Residuos Domiciliarios en Chile](https://www.cepal.org/es/publicaciones/40407-guia-general-la-gestion-residuos-solidos-domiciliarios), existen múltiples dimensionadas relacionadas sobre las cuales quisieramos ahondar.
+Para crear una pregunta de investigación, debemos:
+
+* Elegir un tema que nos interese.
+* Reducir el tema a un aspecto/dimensión particular.
+* Pensar en algúnas preguntas sobre las dimensiones del tema.
+* Hacer más específica la pregunta. Según sea el caso, podemos aplicar la técnica de las 5 Ws y 1H (en inglés): 
+
+  - **Who**: ¿Sobre quién trata?
+  - **What**: ¿Que ocurre?
+  - **When**: ¿Cuando tendrá lugar?
+  - **Where**: ¿Donde tendrá lugar?
+  - **Why**: ¿Por qué ocurre?
+  - **How**: ¿Cómo ocurre?
+
+### 3.1.1 Ejemplo
+Por ejemplo, si el tema que nos interesa es la [gestión de residuos domiciliarios en Chile](https://www.cepal.org/es/publicaciones/40407-guia-general-la-gestion-residuos-solidos-domiciliarios), existen múltiples dimensiones relacionadas sobre las cuales quisieramos ahondar.
 
 ![](/courses/bibliometrix/02_Revision_files/preview_384592.png){width=600px height=300px}
 
-En términos de la Gestión Domiciliaria de Residuos, podríamos preguntarnos ¿La gestión de residiuos en Chile está relacionda con el poder adquisitivo?
+Si la dimensión de interés es el poder adquisitivo. Entonces, podríamos preguntarnos *¿Cómo la gestión de residiuos domiciliarios en Chile se relaciona con el poder adquisitivo?*.
 
+Siempre debemos corroborar si la pregunta de investigación es una buena pregunta: no utiliza palabras o conceptos vagos, es específica, no presenta ambiguedades, es interesante, etc.
+
+Si analizamos detalladamente la pregunta de nuestro ejemplo, surgen dos preguntas inmediatamente:
+
+* ¿Donde tendrá lugar?. Podríamos aclarar si la investigación se realizará a escala nacional, regional, municpial?
+
+* ¿Sobre quién trata?. Podríamos aclarar si la investigación considerará el poder adquisitivo a escala nacional, de algúna instituciones, de las personas, etc.
+
+Entonces, una versión mejorada de nuestra pregunta sería: *¿Cómo la gestión de residiuos domiciliarios a escala municipal se relaciona con el poder adquisitivo de los habitantes de [Valdivia] (https://es.wikipedia.org/wiki/Valdivia)?*.
+
+### 3.1.2 Estrategia PICO
+Esta estrategia permite formular una pregunta estructurada, dividida en componentes. El acrónimo PICO  hace referencia a:
+
+* **P** (Problema): características del problema de interés. ¿Sobre quién trata?.
+
+* **I** (intervención): Técnicas existentes utilizadas para abordar el problema identificado. ¿Que ocurre? o ¿Cómo ocurre?
+
+* **C** (comparación): Técnicas alternativas utilizadas para abordar el problema identificado. Contraste de intervenciones. ¿Comparado con qué?
+
+* **O** (resultados, outcomes): Medidas/variables para evaluar los conocimientos y las lagunas en las publicaciones seleccionadas. ¿Qué está tratando de lograr / mejorar?
+
+En la actualidad, la estrategia PICO es el más empleada en la construcción de preguntas de investigación en revisiones sistemáticas, principalmnte en el ámbito de las ciencias de la salud y también en otras disciplinas no afines.
+
+### 3.1.3 Estrategia PICOT
+Esta estrategia representa una extensión de la estrategia PICO, que incorpora el comoponente T:
+
+* **T** (tiempo): período de tiempo en el que se realiza la investigación, o el tiempo que se estima para la obtención de resultados. ¿Cuando ocurre?
+
+### 3.1.4 Estrategia PICOC
+Estrategia representa una extensión de la estrategia PICO, que incorpora el comoponente C:
+
+* **C** (Contexto): característica de las circunstancias en las que se concibe, desarrolla, implementa y evalúa una intervención. ¿En qué circunstancias ocurre?
 
 ## 3.2 Definir criterios de inclusión y exclusión
 
@@ -71,3 +117,5 @@ En términos de la Gestión Domiciliaria de Residuos, podríamos preguntarnos ¿
 * [What is a systematic review](https://ebn.bmj.com/content/14/3/64)
 
 * [Systematic reviews and Meta-Analyses](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3024725/)
+
+* [Estrategia PICO para la construcción de la pregunta de investigación y la búsqueda de evidencias](https://www.scielo.br/j/rlae/a/CfKNnz8mvSqVjZ37Z77pFsy/?lang=es)

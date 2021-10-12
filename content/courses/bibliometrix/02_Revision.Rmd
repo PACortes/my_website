@@ -15,7 +15,7 @@ weight: 20
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-![](/courses/bibliometrix/02_Revision_files/SR.png)
+![](/courses/bibliometrix/02_Revision_files/SR.png){width=400px height=200px}
 
 # 1. Revisión Sistemática
 Artículo de “síntesis de la evidencia disponible”, en el que se realiza una revisión de aspectos cuantitativos y cualitativos de estudios primarios, con el objetivo de resumir la información existente sobre una pregunta de investigación en una determinada disciplina.
@@ -47,9 +47,7 @@ La primera etapa, y la más importante, implica definir la pregunta de investiga
 
 Por ejemplo, si el tema que nos interesa es la [gestión de Residuos Domiciliarios en Chile](https://www.cepal.org/es/publicaciones/40407-guia-general-la-gestion-residuos-solidos-domiciliarios), existen múltiples dimensionadas relacionadas sobre las cuales quisieramos ahondar.
 
-
-![](/courses/bibliometrix/02_Revision_files/preview_384592.png){width=400px height=200px}
-
+![](/courses/bibliometrix/02_Revision_files/preview_384592.png){width=600px height=300px}
 
 En términos de la Gestión Domiciliaria de Residuos, podríamos preguntarnos ¿La gestión de residiuos en Chile está relacionda con el poder adquisitivo?
 

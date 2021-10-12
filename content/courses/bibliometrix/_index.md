@@ -32,4 +32,4 @@ Además, `bliometrix` incluye una shiny app (`biblioshiny()`) que proporciona un
 * Bibliometrix https://www.bibliometrix.org/index.html
 
 
-{{< cta cta_text="Comencemos" cta_link="python" >}}
+{{< cta cta_text="Comencemos" cta_link="01_Bibliometria" >}}

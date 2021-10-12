@@ -1,10 +1,11 @@
 ---
-title: "2. Extracción desde una página"
+title: "2. Revisión Sistemática"
 date: '2021-09-29T21:13:14-05:00'
 categories: R
 tags:
-- Web scraping
-- Recuperación de información
+- Bibliometría
+- Bibliometrix
+- Revisión Sistemática
 output:
   blogdown::html_page:
     toc: true
@@ -14,52 +15,61 @@ weight: 20
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-# 2. Extracción de texto desde una página específica
-Imaginemos que queremos extraer información de prensa sobre el proceso constituyente que se lleva a cabo en Chile.
+![](/courses/bibliometrix/02_Revision_files/SR.png)
 
-En este ejemplo, vamos a extraer datos desde una noticia específica recientemente publicada en el periodico chileno [https://www.latercera.com].
-
-
-![](/courses/rvest/02_scrapeando_files/latercera.png){width=400px height=200px}
+# 1. Revisión Sistemática
+Artículo de “síntesis de la evidencia disponible”, en el que se realiza una revisión de aspectos cuantitativos y cualitativos de estudios primarios, con el objetivo de resumir la información existente sobre una pregunta de investigación en una determinada disciplina.
 
 
-## 2.1. Cargar el paquete `rvest`
+Las revisiones sistemáticas permiten:
 
-Lo primero que debemos hacer es cargar el paquete `rvest` y todos los paquetes adicionales que necesitemos para trabajar. En este ejemplo usaremos `dplyr`.
+* Analizar el conocimiento en torno a una pregunta de investigación a través del análisis de trabajos publicados.
 
+* Realizar una descripción general de lo que se hizo, y lo que debería investigarse más a fondo, en torno a una pregunta e investigación. 
 
-```{r message=FALSE}
-library(rvest)
-library(dplyr)
-```
+* Identificar tendencias generales asociadas a un fenómeno de interés.
 
-## 2.2. URL de la página de interés.
+* Discutir y razonar la importancia de una pregunta de investigación
 
-URL significa Uniform Resource Locator y es la dirección única y específica que se asigna a cada uno de los recursos disponibles de la World Wide Web para que puedan ser localizados por el navegador y visitados por los usuarios.
+* Formular problemas e hipótesis de trabajos. 
 
-Ahora, lo que debemos hacer es ir a la página de interés, copiar su URL y guardarla como un objeto.
+# 2. Revisión Sistemática vs narrativa
+Las revisiones sistemáticas se diferencian de las revisiones narrativas tradicionales en varios aspectos. 
 
+Las **revisiones narrativas** tienden a ser principalmente descriptivas, no implican una búsqueda sistemática de la literatura y, por lo tanto, a menudo se centran en un subconjunto de estudios sobre un tema en particular. Si bien son informativas, a menudo pueden incluir un elemento de sesgo de selección. 
 
-```{r }
-url_interes<- "https://www.latercera.com/politica/noticia/convencion-aprueba-que-sea-el-pleno-por-mayoria-simple-el-que-califique-la-renuncia-de-un-convencional-se-descarta-participacion-del-tc/7KTM6K5JZFC4HOUYQOOUGSU5YQ/"
+Las **revisiones sistemáticas** involucran una estrategia de búsqueda establecida  *a priori*, con el objetivo de reducir el sesgo al identificar, evaluar y sintetizar todos los estudios relevantes sobre un tema en particular. A menudo, las revisiones sistemáticas incluyen un componente de metanálisis que implica el uso de técnicas estadísticas para sintetizar los datos de varios estudios en una sola estimación cuantitativa.
 
-```
+# 3. Etapas de un revisión Sistemática
 
-## 2.3. Extraer información desde el título de la noticia
+## 3.1 Formular la pregunta de investigación
+La primera etapa, y la más importante, implica definir la pregunta de investigación de la revisión. Esta pregunta representa algúna dimensión sobre un tema en particular sobre el cuál queremos saber más.
 
-**h1** es el elemento HTML utilizado para identificar la cabecera más importante en una página web, tales como el título de una página, el título de un post, el nombre de un producto, etc. 
-
-Utilicemos las funciones `read_html`, `html_elements()` y `html_text()` par leer la URL, obtener el elemento **h1** y extraer el texto contenido en el elemento, respectivamente.
-
-```{r }
-titulo_pagina <- read_html(url_interes)%>% 
-  html_element("h1") %>% 
-  html_text()
-```
-
-Ahora, revisemos el texto obtenido desde el título de la página.
+Por ejemplo, si el tema que nos interesa es la [gestión de Residuos Domiciliarios en Chile](https://www.cepal.org/es/publicaciones/40407-guia-general-la-gestion-residuos-solidos-domiciliarios), existen múltiples dimensionadas relacionadas sobre las cuales quisieramos ahondar.
 
 
-```{r }
-titulo_pagina
-```
+![](/courses/bibliometrix/02_Revision_files/preview_384592.png){width=400px height=200px}
+
+
+En términos de la Gestión Domiciliaria de Residuos, podríamos preguntarnos ¿La gestión de residiuos en Chile está relacionda con el poder adquisitivo?
+
+
+## 3.2 Definir criterios de inclusión y exclusión
+
+## 3.3 Estrategia de búsqueda
+
+## 3.4 Selección de estudios
+
+## 3.5 Extraer los datos
+
+## 3.6 Analizar e interpretar los resultados
+
+
+
+## Referencias
+
+* [Systematic Reviews of the Literature](https://www.elsevier.es/pt-revista-cirugia-espanola-english-edition--436-articulo-systematic-reviews-literature-what-should-S2173507713000914)
+
+* [What is a systematic review](https://ebn.bmj.com/content/14/3/64)
+
+* [Systematic reviews and Meta-Analyses](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3024725/)

@@ -1,10 +1,10 @@
 ---
 title: "1. Análisis Bibliométrico"
-date: '2021-09-20T21:13:14-05:00'
+date: '2021-10-12T21:13:14-05:00'
 categories: R
 tags:
-- Web scraping
-- Recuperación de información
+- Bibliometría
+- Bibliometrix
 output:
   blogdown::html_page:
     toc: true
@@ -79,7 +79,7 @@ Las Bases de datos bibliográficas constituyen una de las principales fuentes de
 
 Actualmente, las bases de datos más utilizadas son Web of Science, Scopus y PubMed.
 
-![](/courses/rvest/01_Instalar_files/logos.png){width=400px height=200px}
+![](/courses/rvest/01_Instalar_files/logos.png){width=800px height=400px}
 
   
 * [Web of Science (WoS)](https://www.webofscience.com/wos/woscc/basic-search): plataforma on-line de suscipción propiedad de la empresa Clarivate Analytics. Es una colección de bases de datos de referencias bibliográficas y citas de publicaciones periódicas que recogen información desde 1900 a la actualidad. WOS está compuesta por la colección básica Core Collection que abarca los índices de Ciencias, Ciencias Sociales y Artes y Humanidades. Además, cuenta con bases de datos complementarias (Medline, Scielo y Korean cITATION index).

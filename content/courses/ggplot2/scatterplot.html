@@ -8,6 +8,7 @@ tags:
 output:
   blogdown::html_page:
     toc: true
+type: book
 weight: 10
 ---
 
@@ -88,10 +89,10 @@ weight: 10
        x=&quot;Largo de Pétalo (cms)&quot;,
        y=&quot;Ancho de Pétalo (cms)&quot;)</code></pre>
 <p><img src="/courses/ggplot2/scatterplot_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p>Ahora, aumentemos el tamaño de las letras del título (y su color) y las etiquetas con a función <code>theme()</code>, la cuál nos permite controlar aspectos como fuentes, marcas, fondos, entre muchos otros.</p>
+<p>Ahora, aumentemos el tamaño de las letras del título (y su color) y las etiquetas con la función <code>theme()</code>, la cuál nos permite controlar aspectos como fuentes, marcas, fondos, entre muchos otros.</p>
 <p><code>theme()</code> incluye dos componentes principales:</p>
 <ul>
-<li><p><strong>Elementos del tema</strong>: especifica los elementos que queremos controlar.Por ejemplo, <code>plot.title</code> controla la apariencia del título.</p></li>
+<li><p><strong>Elementos del tema</strong>: especifica los elementos que queremos controlar. Por ejemplo, <code>plot.title</code> controla la apariencia del título y <code>axis.line</code> controla la apariencia de las líneas de los ejes.</p></li>
 <li><p><strong>Función del tema</strong>: describe la propiedad visual del elemento que queremos controlar. Por ejemplo, <code>element_text()</code> establece el tamaño de fuente, el color, entre otros:</p>
 <ul>
 <li><p><code>size =</code>: Para cambiar el tamaño de un elemento.</p></li>
@@ -109,7 +110,8 @@ weight: 10
        y=&quot;Ancho (cms)&quot;, x=&quot;Largo (cms)&quot;)+
   theme(axis.text =element_text(size=16),
         axis.title=element_text(size=23),
-        plot.title=element_text(size=25,colour=&quot;darkblue&quot;))</code></pre>
+        plot.title=element_text(size=25,colour=&quot;darkblue&quot;),
+        axis.line = element_line(color = &quot;#333333&quot;,size = 1, linetype = &quot;solid&quot;))</code></pre>
 <p><img src="/courses/ggplot2/scatterplot_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 <div id="tamaño-de-los-puntos" class="section level2">
@@ -123,7 +125,8 @@ weight: 10
        y=&quot;Ancho (cms)&quot;, x=&quot;Largo (cms)&quot;)+
   theme(axis.text =element_text(size=16),
         axis.title=element_text(size=23),
-        plot.title=element_text(size=25))</code></pre>
+        plot.title=element_text(size=25),
+        axis.line = element_line(color = &quot;#333333&quot;,size = 1, linetype = &quot;solid&quot;))</code></pre>
 <p><img src="/courses/ggplot2/scatterplot_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>También, podríamos especificar diferentes tamaños según un valor específico de una de nuestras variables. Para ello debemos incorporar una dimensión <code>aes()</code> dentro de <code>geom_point()</code>.</p>
 <p>Por ejemplo, asignemos un tamaño de punto diferente para aquellas muestran con un diametro de <strong>Petal.Length</strong> mayor a 2.5.</p>
@@ -135,7 +138,8 @@ weight: 10
        y=&quot;Ancho (cms)&quot;, x=&quot;Largo (cms)&quot;)+
   theme(axis.text =element_text(size=16),
         axis.title=element_text(size=23),
-        plot.title=element_text(size=25))
+        plot.title=element_text(size=25),
+        axis.line = element_line(color = &quot;#333333&quot;,size = 1, linetype = &quot;solid&quot;))
 ## Warning: Using size for a discrete variable is not advised.</code></pre>
 <p><img src="/courses/ggplot2/scatterplot_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 </div>
@@ -150,7 +154,8 @@ weight: 10
        y=&quot;Ancho (cms)&quot;, x=&quot;Largo (cms)&quot;)+
   theme(axis.text =element_text(size=16),
         axis.title=element_text(size=23),
-        plot.title=element_text(size=25))</code></pre>
+        plot.title=element_text(size=25),
+        axis.line = element_line(color = &quot;#333333&quot;,size = 1, linetype = &quot;solid&quot;))</code></pre>
 <p><img src="/courses/ggplot2/scatterplot_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p>También, podemos asignar colores específicos que diferencien entre las categorías de una tercera variable.</p>
 <p>Por ejemplo, asignemos diferentes colores para cada una de las especies en la base de datos.</p>
@@ -163,7 +168,8 @@ weight: 10
   theme(axis.text =element_text(size=16),
         axis.title=element_text(size=23),
         plot.title=element_text(size=25),
-        plot.subtitle=element_text(size=20))</code></pre>
+        plot.subtitle=element_text(size=20),
+        axis.line = element_line(color = &quot;#333333&quot;,size = 1, linetype = &quot;solid&quot;))</code></pre>
 <p><img src="/courses/ggplot2/scatterplot_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p>Podemos realizar lo mismo, pero especificando los colores que queremos asignar a las especies. Para ello, utilizamos la función <code>scale_colour_manual()</code>.</p>
 <pre class="r"><code>ggplot(data = iris, mapping=aes(x=Petal.Length , y =Petal.Width))+
@@ -176,7 +182,8 @@ weight: 10
   theme(axis.text =element_text(size=16),
         axis.title=element_text(size=23),
         plot.title=element_text(size=25),
-        plot.subtitle=element_text(size=20))</code></pre>
+        plot.subtitle=element_text(size=20),
+        axis.line = element_line(color = &quot;#333333&quot;,size = 1, linetype = &quot;solid&quot;))</code></pre>
 <p><img src="/courses/ggplot2/scatterplot_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 </div>
 <div id="leyenda" class="section level2">
@@ -202,7 +209,8 @@ weight: 10
         legend.position = c(0.13, 0.85),
         legend.box.background = element_rect(fill = &quot;transparent&quot;, colour = &quot;#333333&quot;,size=1.2),
         legend.title = element_text(size = 15),
-        legend.text = element_text(size = 12))</code></pre>
+        legend.text = element_text(size = 12),
+        axis.line = element_line(color = &quot;#333333&quot;,size = 1, linetype = &quot;solid&quot;))</code></pre>
 <p><img src="/courses/ggplot2/scatterplot_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 </div>
 </div>

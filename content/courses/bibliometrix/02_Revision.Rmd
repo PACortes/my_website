@@ -15,7 +15,7 @@ weight: 20
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-![](/courses/bibliometrix/02_Revision_files/SR.png){width=400px height=200px}
+![](/courses/bibliometrix/02_Revision_files/SR.png){width=200px height=100px}
 
 # 1. Revisión Sistemática (RS)
 Artículo de “síntesis de la evidencia disponible”, en el que se realiza una revisión de aspectos cuantitativos y cualitativos de estudios primarios, con el objetivo de resumir la información existente sobre una pregunta de investigación en una determinada disciplina.
@@ -32,7 +32,7 @@ Las revisiones sistemáticas permiten:
 
 * Formular problemas e hipótesis de trabajos. 
 
-# 2. RS vs narrativa
+# 2. RS vs Revisión Narrativa
 Las revisiones sistemáticas se diferencian de las revisiones narrativas tradicionales en varios aspectos. 
 
 Las **revisiones narrativas** tienden a ser principalmente descriptivas, no implican una búsqueda sistemática de la literatura y, por lo tanto, a menudo se centran en un subconjunto de estudios sobre un tema en particular. Si bien son informativas, a menudo pueden incluir un elemento de sesgo de selección. 
@@ -54,26 +54,28 @@ Para crear una pregunta de investigación, debemos:
   - **Who**: ¿Sobre quién trata?
   - **What**: ¿Que ocurre?
   - **When**: ¿Cuando tendrá lugar?
-  - **Where**: ¿Donde tendrá lugar?
+  - **Where**: ¿Dónde tendrá lugar?
   - **Why**: ¿Por qué ocurre?
   - **How**: ¿Cómo ocurre?
 
 ### 3.1.1 Ejemplo
-Por ejemplo, si el tema que nos interesa es la [gestión de residuos domiciliarios en Chile](https://www.cepal.org/es/publicaciones/40407-guia-general-la-gestion-residuos-solidos-domiciliarios), existen múltiples dimensiones relacionadas sobre las cuales quisieramos ahondar.
+Si el tema que nos interesa es la [gestión de residuos domiciliarios en Chile](https://www.cepal.org/es/publicaciones/40407-guia-general-la-gestion-residuos-solidos-domiciliarios), existen múltiples dimensiones relacionadas sobre las cuales quisieramos ahondar.
 
 ![](/courses/bibliometrix/02_Revision_files/preview_384592.png){width=600px height=300px}
 
-Si la dimensión de interés es el poder adquisitivo. Entonces, podríamos preguntarnos *¿Cómo la gestión de residiuos domiciliarios en Chile se relaciona con el poder adquisitivo?*.
+Si la dimensión de interés es el poder adquisitivo. Entonces, podríamos preguntarnos:
+*¿Cómo la gestión de residuos domiciliarios en Chile se relaciona con el poder adquisitivo?*.
 
 Siempre debemos corroborar si la pregunta de investigación es una buena pregunta: no utiliza palabras o conceptos vagos, es específica, no presenta ambiguedades, es interesante, etc.
 
-Si analizamos detalladamente la pregunta de nuestro ejemplo, surgen dos preguntas inmediatamente:
+Si analizamos detalladamente la pregunta de nuestro ejemplo, inmediatamente surgen dos preguntas:
 
-* ¿Donde tendrá lugar?. Podríamos aclarar si la investigación se realizará a escala nacional, regional, municpial?
+* ¿Donde tendrá lugar?. Podríamos aclarar si la investigación se realizará a escala nacional, regional, municipal, etc.
 
 * ¿Sobre quién trata?. Podríamos aclarar si la investigación considerará el poder adquisitivo a escala nacional, de algúna instituciones, de las personas, etc.
 
-Entonces, una versión mejorada de nuestra pregunta sería: *¿Cómo la gestión de residiuos domiciliarios a escala municipal se relaciona con el poder adquisitivo de los habitantes de [Valdivia] (https://es.wikipedia.org/wiki/Valdivia)?*.
+Entonces, una versión mejorada de nuestra pregunta sería: 
+*¿Cómo la gestión de residiuos domiciliarios a escala municipal se relaciona con el poder adquisitivo de los habitantes de la ciudad de?*.
 
 ### 3.1.2 Estrategia PICO
 Esta estrategia permite formular una pregunta estructurada, dividida en componentes. El acrónimo PICO  hace referencia a:
@@ -98,19 +100,55 @@ Estrategia representa una extensión de la estrategia PICO, que incorpora el com
 
 * **C** (Contexto): característica de las circunstancias en las que se concibe, desarrolla, implementa y evalúa una intervención. ¿En qué circunstancias ocurre?
 
-## 3.2 Definir criterios de inclusión y exclusión
+## 3.2 Definir criterios de de inclusión/exclusión de documentos
+Una vez formulada la pregunta de investigación, debemos definir características que harán que un estudio sea elegible, o no, para ser incluido de nuestra revisión. Los criterios de inclusión/exclusión son importantes para asegurar la homogeneidad de los estudios.
+
+Algunos de los criterios de inclusión/exclusión comunes que se utilizan en las revisiones sistemáticas son:
+
+* Relación con el problema de interés.
+* Tipo de diseño del estudio.
+* Fecha de publicación.
+* Idioma de la publicacion.
+* Tipo de publicación.
+
+Por lo general, aplicamos los criterios de inclusión/exclusión a las funciones de búsqueda avanzada de la base de datos bibliográfica. En el caso de la relación con el problema de interés, se recomienda examinar el título y resúmen de los documentos obtenidos desde la búsqueda de literatura. En caso de ser necesario, debemos realizar una evaluación del texto completo. Así, los documentos que son irrelevantes pueden excluirse.
 
 ## 3.3 Estrategia de búsqueda
+Esta etapa es clave para encontrar el tipo de evidencia adecuado para nuestra revisión sistemática. La estrategia de búsqueda hace referencia a las palabras claves y conectores específicos que utilizaremos para encontrar literatura relevante. Un aspecto a considerar, es que debemos tener conocimientos de técnicas de búsqueda como la lógica booleana (el uso de Y, O, NO para conectar términos entre sí). 
+
+
+Para realizar una búsqueda de literatura podemos utilizar los motores de búsqueda entregados por bases de datos digitales, lo que implica una búsqueda automatizada de términos. En la actualidad, las bases de datos más utilizadas son Web of Science, Scopus y PubMed. Cada una de ellas tiene características diferentes y puede proporcionar diferentes servicios. Dependiendo de nuestra pregunta de investigación, es posible que debamos buscar en varias bases de datos de forma simultánea. 
 
 ## 3.4 Selección de estudios
+Una vez realzada la búsqueda, debermos seleccionar aquellos estudios que cumplen con nuestros criterios de inclusión. Será útil considerar los siguientes pasos en esta etapa:
+
+* Eliminar documentos duplicados. Al buscar en más de una base de datos, es inevitable que tengamos resultados duplicados.
+
+* Primer filtro. Para asegurarnos que los documentos cumplen con nuestros creiterios de inclusión/exclusión, sobre todo su relación con el problema de interés, debemmos leer el título y resúmen de cada publicación obtenida en la búsqueda. 
+
+* Segundo filtro: Los documentos que pasaron el primer filtro se someten a su lectura y análisis completo.
+
+Para evitar cualquier tipo de sesgos en la selección de los estudios, es recomendable que esta etapa se lleve a cabo por más de una persona de forma independiente. En caso de discrepancias, los documentos en cuestión deben ser analizados caso a caso.
 
 ## 3.5 Extraer los datos
+La extracción de datos es el proceso mediante el cual, a partir de los estudios primarios, obtenemos la información necesaria para contestar a la pregunta de investigación planteada. Los datos extraídos se utilizan para describir los estudios incluidos y los resultados contenidos en ellos.
 
-## 3.6 Analizar e interpretar los resultados
+Es recomendable que más de una persona realice la extracción de datos con el propósito de evitar errores y garantizar la reproducibilidad. Esto se debe a que los datos no siempre se encuentran en lugares consistentes en los artículos y un solo extractor de datos puede pasar por alto o malinterpretar la información.
+
+## 3.6 Síntesis de los resultados
+Esta etapa tiene como objetivo analizar y combinar los datos extraídos y evaluados en un todo coherente. 
+
+La primera parte de la síntesis  consiste en describir los estudios incluidos en la revisión. Información importante que podríamos obtener incluye: número de estudios encontrados, tendencias temporales de los estudios, país del estudio, número de participantes, proporción de hombres y mujeres, etc.
+
+El análisis posterior y la síntesis de los datos obtenidos pueden ser narrativos o cuantitativos. Por un lado, una síntesis narrativa implica una descripción estructurada de las características y los resultados de los estudios, así como sus implicaciones generales. Esto se suele hacer cuando el diseño o los enfoques de los estudios son demasiado heterogéneos para combinarlos entre sí. Por otro lado,  una síntesis cuantitativa implica el análisis estadístico (como el meta-análisis) de los resultados de múltiples estudios incluidos en la revisión.
 
 
+## 3.7 Redacción de la revisión sistemática
+En esta etapa debemps interpetar los resultados en relación con nuestra pregunta de investigación inicial. La redacción de los resultados de la revisión sistemática debe centrarse en la solidez de las pruebas y las limitaciones de los estudios utilizados para la revisión. ambién es importante discutir las limitaciones de la revisión, la aplicabilidad (generalización) de los resultados, las tendencias generales asociadas al fenómeno de interés, los vaciós de conocimientos y las implicancis de los hallazgos para futuras investigaciones.
 
 ## Referencias
+
+*[Anotaciones para estructurar una revisión sistemática](https://scielo.isciii.es/scielo.php?script=sci_arttext&pid=S2444-79862020000200005)
 
 * [Systematic Reviews of the Literature](https://www.elsevier.es/pt-revista-cirugia-espanola-english-edition--436-articulo-systematic-reviews-literature-what-should-S2173507713000914)
 

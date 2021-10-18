@@ -48,7 +48,6 @@ Los indicadores bibliométricos son datos numéricos calculados a partir de las 
 
 * **Indicadores de impacto**: Toman como datos citaciones de artículos y factor de impacto de la revista para indicar la "influencia" de la producción científica.
 
-
   - Factor de impacto de la fuente.
   - Citación de los artículos.
   - Índice de inmediatez.
@@ -57,17 +56,15 @@ Los indicadores bibliométricos son datos numéricos calculados a partir de las 
 
 * **Indicadores de colaboración**: Miden el nivel de relación entre autores,instituciones o países que han realzado una publicación científica.
 
-
   - Índice de multiautoría.
   - Índice de institucionalidad.
   - Tipo de internacionalización.
   - Índice de inmediatez.
   - Redes de colaboración.
 
+
 * **Indicadores de contenido**: Describen los temas abordados en las publicaciones científicas. Permiten identificar cuáles son los temas más importantes y los más recientes.
 
-
-  - Índice de multiautoría.
   - Modelamiento de tópicos.
   - Frecuencia de palabras claves. 
   - Redes de co-ocurrencia de palabras.

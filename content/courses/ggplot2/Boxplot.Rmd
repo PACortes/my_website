@@ -121,7 +121,7 @@ Ahora, mejoremos la calidad de nuestro gráfico. Primero, vamos a personalizar l
 
 ```{r}
 ggplot(data=MaterialParticulado, mapping =aes(x=Ciudad, y=PM2.5))+
-      geom_boxplot(fill="#5F9EA0")+
+      geom_boxplot()+
   labs(title="PM2.5 según ciudad",
        y="PM2.5 (μm)", x="Ciudad")+
   theme(axis.text =element_text(size=16),

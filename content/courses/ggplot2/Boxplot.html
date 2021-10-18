@@ -1,5 +1,5 @@
 ---
-title: "2. Gráfico de cajas"
+title: "Gráfico de cajas"
 date: '2021-10-05T21:13:14-05:00'
 categories: R
 tags:
@@ -25,8 +25,8 @@ weight: 20
 <li><a href="#visualización">4. Visualización</a><ul>
 <li><a href="#gráfico-de-cajas-para-una-variable">4.1. Gráfico de cajas para una variable</a></li>
 <li><a href="#gráfico-de-cajas-para-dos-variables">4.2. Gráfico de cajas para dos variables</a></li>
-<li><a href="#título-y-etiquetas">4.3. Título y etiquetas</a></li>
-<li><a href="#título-etiquetasy-ejes">4.4. Título, etiquetasy ejes</a></li>
+<li><a href="#título-etiquetas-y-ejes">4.3. Título, etiquetas y ejes</a></li>
+<li><a href="#color-de-las-cajas">4.4. Color de las cajas</a></li>
 </ul></li>
 <li><a href="#juntando-todas-las-piezas">5. Juntando todas las piezas</a></li>
 </ul>
@@ -111,20 +111,8 @@ glimpse(MaterialParticulado)
       geom_boxplot()</code></pre>
 <p><img src="/courses/ggplot2/Boxplot_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 </div>
-<div id="título-y-etiquetas" class="section level2">
-<h2>4.3. Título y etiquetas</h2>
-<p>Ahora, mejoremos la calidad de nuestro gráfico. Primero, vamos a personalizar la información de las etiquetaas de los ejes y título del gráfico con la función <code>labs()</code>. Además, vamos a aumentar el tamaño de cada una de estas etiquetas con la función <code>theme()</code>.</p>
-<pre class="r"><code>ggplot(data=MaterialParticulado, mapping =aes(x=Ciudad, y=PM2.5))+
-      geom_boxplot(fill=&quot;#5F9EA0&quot;)+
-  labs(title=&quot;PM2.5 según ciudad&quot;,
-       y=&quot;PM2.5 (μm)&quot;, x=&quot;Ciudad&quot;)+
-  theme(axis.text =element_text(size=16),
-        axis.title=element_text(size=23),
-        plot.title=element_text(size=25))</code></pre>
-<p><img src="/courses/ggplot2/Boxplot_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
-</div>
-<div id="título-etiquetasy-ejes" class="section level2">
-<h2>4.4. Título, etiquetasy ejes</h2>
+<div id="título-etiquetas-y-ejes" class="section level2">
+<h2>4.3. Título, etiquetas y ejes</h2>
 <p>Ahora, mejoremos la calidad de nuestro gráfico. Primero, vamos a personalizar la información de las etiquetaas de los ejes y título del gráfico con la función <code>labs()</code>. Además, vamos a aumentar el tamaño de cada una de estas etiquetas, y personalizar la línea de los ejes, con la función <code>theme()</code>.</p>
 <pre class="r"><code>ggplot(data=MaterialParticulado, mapping =aes(x=Ciudad, y=PM2.5))+
       geom_boxplot(fill=&quot;#5F9EA0&quot;)+
@@ -134,11 +122,12 @@ glimpse(MaterialParticulado)
         axis.title=element_text(size=23),
         plot.title=element_text(size=25),
         axis.line = element_line(color = &quot;#333333&quot;,size = 1, linetype = &quot;solid&quot;))</code></pre>
-<p><img src="/courses/ggplot2/Boxplot_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="/courses/ggplot2/Boxplot_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
-</div>
-<div id="juntando-todas-las-piezas" class="section level1">
-<h1>5. Juntando todas las piezas</h1>
+<div id="color-de-las-cajas" class="section level2">
+<h2>4.4. Color de las cajas</h2>
+<p>Para mejorar la presentación de nuestro gráfico, podemos ajustar el color de los puntos incorporando la función <code>fill=</code> dentro de <code>geom_boxplot()</code>.</p>
+<p>Pra nuestro ejemplo, se utilizará el color <em>cadet blue</em> en formato <a href="https://flaviocopes.com/rgb-color-codes/">RGB</a>:</p>
 <pre class="r"><code>ggplot(data=MaterialParticulado, mapping =aes(x=Ciudad, y=PM2.5))+
       geom_boxplot(fill=&quot;#5F9EA0&quot;)+
   labs(title=&quot;PM2.5 según ciudad&quot;,
@@ -147,5 +136,28 @@ glimpse(MaterialParticulado)
         axis.title=element_text(size=23),
         plot.title=element_text(size=25),
         axis.line = element_line(color = &quot;#333333&quot;,size = 1, linetype = &quot;solid&quot;))</code></pre>
+<p><img src="/courses/ggplot2/Boxplot_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>También, podemos ajustar la intensidad del color con la función <code>alpha=</code> (valor por defecto: 1):</p>
+</div>
+</div>
+<div id="juntando-todas-las-piezas" class="section level1">
+<h1>5. Juntando todas las piezas</h1>
+<pre class="r"><code>ggplot(data=MaterialParticulado, mapping =aes(x=Ciudad, y=PM2.5))+
+      geom_boxplot(fill=&quot;#5F9EA0&quot;, alpha=0.5)+
+  labs(title=&quot;PM2.5 según ciudad&quot;,
+       y=&quot;PM2.5 (μm)&quot;, x=&quot;Ciudad&quot;)+
+  theme(axis.text =element_text(size=16),
+        axis.title=element_text(size=23),
+        plot.title=element_text(size=25),
+        axis.line = element_line(color = &quot;#333333&quot;,size = 1, linetype = &quot;solid&quot;))</code></pre>
 <p><img src="/courses/ggplot2/Boxplot_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<pre class="r"><code>ggplot(data=MaterialParticulado, mapping =aes(x=Ciudad, y=PM2.5))+
+      geom_boxplot(fill=&quot;#5F9EA0&quot;, alpha =0.5)+
+  labs(title=&quot;PM2.5 según ciudad&quot;,
+       y=&quot;PM2.5 (μm)&quot;, x=&quot;Ciudad&quot;)+
+  theme(axis.text =element_text(size=16),
+        axis.title=element_text(size=23),
+        plot.title=element_text(size=25),
+        axis.line = element_line(color = &quot;#333333&quot;,size = 1, linetype = &quot;solid&quot;))</code></pre>
+<p><img src="/courses/ggplot2/Boxplot_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 </div>

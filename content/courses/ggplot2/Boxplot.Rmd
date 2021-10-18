@@ -1,5 +1,5 @@
 ---
-title: "2. Gráfico de cajas"
+title: "Gráfico de cajas"
 date: '2021-10-05T21:13:14-05:00'
 categories: R
 tags:
@@ -116,20 +116,7 @@ ggplot(data=MaterialParticulado, mapping =aes(x=Ciudad, y=PM2.5))+
       geom_boxplot()
 ```
 
-## 4.3. Título y etiquetas
-Ahora, mejoremos la calidad de nuestro gráfico. Primero, vamos a personalizar la información de las etiquetaas de los ejes y título del gráfico  con la función `labs()`. Además, vamos a aumentar el tamaño de cada una de estas etiquetas con la función `theme()`.
-
-```{r}
-ggplot(data=MaterialParticulado, mapping =aes(x=Ciudad, y=PM2.5))+
-      geom_boxplot(fill="#5F9EA0")+
-  labs(title="PM2.5 según ciudad",
-       y="PM2.5 (μm)", x="Ciudad")+
-  theme(axis.text =element_text(size=16),
-        axis.title=element_text(size=23),
-        plot.title=element_text(size=25))
-```
-
-## 4.4. Título, etiquetasy ejes
+## 4.3. Título, etiquetas y ejes
 Ahora, mejoremos la calidad de nuestro gráfico. Primero, vamos a personalizar la información de las etiquetaas de los ejes y título del gráfico  con la función `labs()`. Además, vamos a aumentar el tamaño de cada una de estas etiquetas, y personalizar la línea de los ejes, con la función `theme()`.
 
 ```{r}
@@ -143,11 +130,44 @@ ggplot(data=MaterialParticulado, mapping =aes(x=Ciudad, y=PM2.5))+
         axis.line = element_line(color = "#333333",size = 1, linetype = "solid"))
 ```
 
-# 5. Juntando todas las piezas
+## 4.4. Color de las cajas
+Para mejorar la presentación de nuestro gráfico, podemos ajustar el color de los puntos incorporando la función `fill=` dentro de `geom_boxplot()`.
+
+Pra nuestro ejemplo, se utilizará el color *cadet blue* en formato [RGB](https://flaviocopes.com/rgb-color-codes/):
 
 ```{r}
 ggplot(data=MaterialParticulado, mapping =aes(x=Ciudad, y=PM2.5))+
       geom_boxplot(fill="#5F9EA0")+
+  labs(title="PM2.5 según ciudad",
+       y="PM2.5 (μm)", x="Ciudad")+
+  theme(axis.text =element_text(size=16),
+        axis.title=element_text(size=23),
+        plot.title=element_text(size=25),
+        axis.line = element_line(color = "#333333",size = 1, linetype = "solid"))
+```
+
+
+También, podemos ajustar la intensidad del color con la función `alpha=` (valor por defecto: 1): 
+
+# 5. Juntando todas las piezas
+
+
+```{r}
+ggplot(data=MaterialParticulado, mapping =aes(x=Ciudad, y=PM2.5))+
+      geom_boxplot(fill="#5F9EA0", alpha=0.5)+
+  labs(title="PM2.5 según ciudad",
+       y="PM2.5 (μm)", x="Ciudad")+
+  theme(axis.text =element_text(size=16),
+        axis.title=element_text(size=23),
+        plot.title=element_text(size=25),
+        axis.line = element_line(color = "#333333",size = 1, linetype = "solid"))
+```
+
+
+
+```{r}
+ggplot(data=MaterialParticulado, mapping =aes(x=Ciudad, y=PM2.5))+
+      geom_boxplot(fill="#5F9EA0", alpha =0.5)+
   labs(title="PM2.5 según ciudad",
        y="PM2.5 (μm)", x="Ciudad")+
   theme(axis.text =element_text(size=16),

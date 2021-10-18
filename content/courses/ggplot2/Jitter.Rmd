@@ -1,5 +1,5 @@
 ---
-title: "3. Gráfico jitter"
+title: "Gráfico jitter"
 date: '2021-10-05T21:13:14-05:00'
 categories: R
 tags:
@@ -17,7 +17,10 @@ knitr::opts_chunk$set(collapse = TRUE)
 
 # 1. Definición
 
-Este tipo de gráfico permite observar la densidad de puntos en cada categoría de una variable categórica, incorporando un grado de "ruido" para evitar sobreposición de puntos.
+Con frecuencia, al generar un gráfico de dispersión, es posible que muchos puntos se sobrepongan unos con otros. Esto puede ser un problema ya que no podremos visualizar y apreciar la cantidad de datos de forma clara e informativa. 
+
+Una solución es realizar un gráfico tipo jitter, el cuál permite observar la densidad de puntos en cada categoría de una variable categórica, incorporando un grado de "ruido" para evitar sobreposición de puntos.
+
 Recordemos que antes de realizar nuestro gráfico, debemos cargar el paquete ggplot2 usando la función `library()`.
 
 ```{r warning = FALSE}
@@ -38,7 +41,7 @@ En donde:
 
 * `+`: Da aviso a R para que suga leyendo el código, ya que se agregará una nueva capa.
 
-* `geom_boxplot()`: Especifica que queremos generar un gráfico de cajas.
+* `geom_jitter()`: Especifica que queremos generar un gráfico de tipo jitter.
 
 # 3. Datos
 
@@ -46,8 +49,7 @@ Para el presente tutorial, utilizaremos información de contaminación atmosfér
 
 La base de datos **MaterialParticulado.txt** se encuentra disponible en el repositorio github [PACortes/pacortes_datos](https://github.com/PACortes/pacortes_datos).
 
-
-```{r inclide= FALSE,message = FALSE}
+```{r include= FALSE,message = FALSE}
 library(readr)
 MaterialParticulado <- read_delim("MaterialParticulado.txt", 
 delim = "\t", escape_double = FALSE, 
@@ -58,19 +60,76 @@ col_types = cols(Year = col_factor(levels = c("2018", "2019", "2020", "2021")), 
 # 4. Visualización 
 
 ## 4.1. Gráfico jitter para una variable
-Generemos un gráfico jitter para visualziar los datos de la variable **PM2.5**.
+Generemos un gráfico jitter para visualizar los datos de la variable PM2.5 para cada Ciudad en la que se levantó información.
 
 ```{r}
 ggplot(data=MaterialParticulado, mapping =aes(x=Ciudad, y=PM2.5))+
   geom_jitter()
 ```
 
-# 5. Juntando todas las piezas
+## 4.2. Título, etiquetas y ejes
+Ahora, mejoremos la calidad de nuestro gráfico. Primero, vamos a personalizar la información de las etiquetaas de los ejes y título del gráfico  con la función `labs()`. Además, vamos a aumentar el tamaño de cada una de estas etiquetas, y personalizar la línea de los ejes, con la función `theme()`.
 
 ```{r}
 ggplot(data=MaterialParticulado, mapping =aes(x=Ciudad, y=PM2.5))+
-  geom_boxplot()+
-  geom_jitter(position=position_jitter(0.1), color="#0072B5FF")+
+  geom_jitter()+
+  labs(title="PM2.5 según ciudad",
+       y="PM2.5 (μm)", x="Ciudad")+
+  theme(axis.text =element_text(size=16),
+        axis.title=element_text(size=23),
+        plot.title=element_text(size=25),
+        axis.line = element_line(color = "#333333",size = 1, linetype = "solid"))
+```
+
+## 4.3. Dispersión de los datos
+Para controlar el grado de dispersión de los puntos, podemos personalizar utilizamos la función `width =` (valor por defecto: 40% de la resolución de los datos) dentro de `geom_jitter()`. 
+
+Por ejemplo, disminuyamos a un 20% la dispersión de los puntos:
+
+```{r}
+ggplot(data=MaterialParticulado, mapping =aes(x=Ciudad, y=PM2.5))+
+  geom_jitter(width = 0.2)+
+  labs(title="PM2.5 según ciudad",
+       y="PM2.5 (μm)", x="Ciudad")+
+  theme(axis.text =element_text(size=16),
+        axis.title=element_text(size=23),
+        plot.title=element_text(size=25),
+        axis.line = element_line(color = "#333333",size = 1, linetype = "solid"))
+```
+
+## 4.4. Color, forma y tamaño de los puntos
+Para mejorar la presentación de nuestro gráfico, podemos ajustar el color, forma y tamaño de los puntos con las funciones `color =`, `shape =` y `size =` dentro de `geom_jitter()`. 
+
+```{r}
+ggplot(data=MaterialParticulado, mapping =aes(x=Ciudad, y=PM2.5))+
+  geom_jitter(width = 0.2, color = "#5F9EA0", shape = 17, size =2)+
+  labs(title="PM2.5 según ciudad",
+       y="PM2.5 (μm)", x="Ciudad")+
+  theme(axis.text =element_text(size=16),
+        axis.title=element_text(size=23),
+        plot.title=element_text(size=25),
+        axis.line = element_line(color = "#333333",size = 1, linetype = "solid"))
+```
+# 5. Gráfico de cajas con jitter
+Cuando tenemos una variable categórica que representa grupos, podemos crear un gráfico de cajas y sobreponer los puntos a cada grupo. Para ello, debemos agregar una capa adicional con la información del gráfico jitter.
+
+```{r}
+ggplot(data=MaterialParticulado, mapping =aes(x=Ciudad, y=PM2.5))+
+  geom_boxplot(fill="#5F9EA0", alpha= 0.5)+
+  geom_jitter(width = 0.2, alpha=0.8)+
+  labs(title="PM2.5 según ciudad",
+       y="PM2.5 (μm)", x="Ciudad")+
+  theme(axis.text =element_text(size=16),
+        axis.title=element_text(size=23),
+        plot.title=element_text(size=25),
+        axis.line = element_line(color = "#333333",size = 1, linetype = "solid"))
+```
+# 6. Juntando todas las piezas
+
+```{r}
+ggplot(data=MaterialParticulado, mapping =aes(x=Ciudad, y=PM2.5))+
+  geom_boxplot(fill="#5F9EA0", alpha= 0.5)+
+  geom_jitter(width = 0.2, alpha=0.8)+
   labs(title="PM2.5 según ciudad",
        y="PM2.5 (μm)", x="Ciudad")+
   theme(axis.text =element_text(size=16),

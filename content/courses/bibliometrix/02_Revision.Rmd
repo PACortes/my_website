@@ -118,41 +118,41 @@ Esta etapa es clave para encontrar el tipo de evidencia adecuado para nuestra re
 
 Los operadores booleanos permiten combinar términos mediante operadores lógicos.
 
-* Operador Y (en inglés AND): asocia dos términos o frases y busca un registro coincidente si ambos términos o frases existen en un registro. Es equivalente a la intersección de dos conjuntos. 
+* **Operador Y (en inglés AND)**: asocia dos términos o frases y busca un registro coincidente si ambos términos o frases existen en un registro. Es equivalente a la intersección de dos conjuntos. 
 
 Ejemplo. Para buscar registros que contengan tanto la frase "Gestión de Residuos" como la palabra "Chile", utilizamos la siguiente consulta:
 
-![](/courses/bibliometrix/02_Revision_files/AND.png){width=400px height=200px}
+![](/courses/bibliometrix/02_Revision_files/AND.png){width=300px height=150px}
 
-* Operador O (en inglés OR):asocia dos términos o frases y busca un registro coincidente si uno de los términos o frases existe en un registro. Es equivalente a la unión de dos conjuntos.
+* **Operador O (en inglés OR)**:asocia dos términos o frases y busca un registro coincidente si uno de los términos o frases existe en un registro. Es equivalente a la unión de dos conjuntos.
 
-Ejemplo. Para buscar registros que contenganla frase "Gestión de Residuos" o la palabra "Chile", utilizamos la siguiente consulta:
+Ejemplo. Para buscar registros que contengan la frase "Gestión de Residuos" o la palabra "Chile", utilizamos la siguiente consulta:
 
-![](/courses/bibliometrix/02_Revision_files/OR.png){width=400px height=200px}
+![](/courses/bibliometrix/02_Revision_files/OR.png){width=300px height=150px}
 
-* Operador NO (en inglés NOT): excluye los registros que contienen el término o frase detrás del operador NOT. Es equivalente a una diferencia entre conjuntos. 
+* **Operador NO (en inglés NOT)**: excluye los registros que contienen el término o frase detrás del operador NOT. Es equivalente a una diferencia entre conjuntos. 
 
-Ejemplo. Para buscar registros que contenganla frase "Gestión de Residuos" pero no la palabra "Chile", utilizamos la siguiente consulta:
+Ejemplo. Para buscar registros que contengan la frase "Gestión de Residuos" pero no la palabra "Chile", utilizamos la siguiente consulta:
 
-![](/courses/bibliometrix/02_Revision_files/NOT.png){width=400px height=200px}
-
+![](/courses/bibliometrix/02_Revision_files/NOT.png){width=300px height=150px}
 Para realizar una búsqueda de literatura podemos utilizar los motores de búsqueda entregados por bases de datos digitales, lo que implica una búsqueda automatizada de términos. En la actualidad, las bases de datos más utilizadas son Web of Science, Scopus y PubMed. Cada una de ellas tiene características diferentes y puede proporcionar diferentes servicios. Dependiendo de nuestra pregunta de investigación, es posible que debamos buscar en varias bases de datos de forma simultánea. 
 
 ## 3.4 Selección de estudios
-Una vez realzada la búsqueda, debermos seleccionar aquellos estudios que cumplen con nuestros criterios de inclusión. Será útil considerar los siguientes pasos en esta etapa:
+Una vez realizada la búsqueda, debemos seleccionar aquellos estudios que cumplen con nuestros criterios de inclusión. Será útil considerar los siguientes pasos en esta etapa:
 
-* Eliminar documentos duplicados. Al buscar en más de una base de datos, es inevitable que tengamos resultados duplicados.
+* **Eliminar documentos duplicados**. Al buscar en más de una base de datos, es inevitable que tengamos resultados duplicados.
 
-* Primer filtro. Para asegurarnos que los documentos cumplen con nuestros creiterios de inclusión/exclusión, sobre todo su relación con el problema de interés, debemmos leer el título y resúmen de cada publicación obtenida en la búsqueda. 
+* **Primer filtro**. Para asegurarnos que los documentos cumplen con nuestros creiterios de inclusión/exclusión, sobre todo su relación con el problema de interés, debemos leer el título y resúmen de cada publicación obtenida en la búsqueda. 
 
-* Segundo filtro: Los documentos que pasaron el primer filtro se someten a su lectura y análisis completo.
+* **Segundo filtro**: Los documentos que pasaron el primer filtro se someten a su lectura y análisis completo.
 
 Para evitar cualquier tipo de sesgos en la selección de los estudios, es recomendable que esta etapa se lleve a cabo por más de una persona de forma independiente. En caso de discrepancias, los documentos en cuestión deben ser analizados caso a caso.
 
 ## 3.5 Extracción los datos
-La extracción de datos es el proceso mediante el cual, a partir de los estudios primarios, obtenemos la información necesaria para contestar a la pregunta de investigación planteada. Los datos extraídos se utilizan para describir los estudios incluidos y los resultados contenidos en ellos.
+La extracción de datos es el proceso mediante el cual, a partir de los estudios primarios, obtenemos la información necesaria para contestar a la pregunta de investigación. Los datos extraídos se utilizan para describir los estudios incluidos y los resultados contenidos en ellos.
 
-Es recomendable que más de una persona realice la extracción de datos con el propósito de evitar errores y garantizar la reproducibilidad. Esto se debe a que los datos no siempre se encuentran en lugares consistentes en los artículos y un solo extractor de datos puede pasar por alto o malinterpretar la información.
+Es recomendable que más de una persona realice la extracción de datos para así 
+evitar errores y garantizar la reproducibilidad. Esto se debe a que los datos no siempre se encuentran en lugares consistentes en los artículos y un solo extractor de datos puede pasar por alto o malinterpretar la información.
 
 ## 3.6 Síntesis de los resultados
 Esta etapa tiene como objetivo analizar y combinar los datos extraídos y evaluados en un todo coherente. 
@@ -163,7 +163,7 @@ El análisis posterior y la síntesis de los datos obtenidos pueden ser narrativ
 
 
 ## 3.7 Redacción de la revisión sistemática
-En esta etapa debemps interpetar los resultados en relación con nuestra pregunta de investigación inicial. La redacción de los resultados de la revisión sistemática debe centrarse en la solidez de las pruebas y las limitaciones de los estudios utilizados para la revisión. ambién es importante discutir las limitaciones de la revisión, la aplicabilidad (generalización) de los resultados, las tendencias generales asociadas al fenómeno de interés, los vaciós de conocimientos y las implicancis de los hallazgos para futuras investigaciones.
+Finalmente, debemos interpetar los resultados en relación con nuestra pregunta de investigación. La redacción de los resultados de la revisión sistemática debe centrarse en la solidez de las información cpntenida en los estudios utilizados para la revisión. También es importante discutir las limitaciones de la revisión, la aplicabilidad (generalización) de los resultados, las tendencias generales asociadas al fenómeno de interés, los vaciós de conocimientos y las implicancias de los hallazgos para futuras investigaciones.
 
 ## Referencias
 

@@ -8,6 +8,7 @@ tags:
 output:
   blogdown::html_page:
     toc: true
+type: book
 weight: 10
 ---
 ```{r setup, include=FALSE}

@@ -9,6 +9,7 @@ tags:
 output:
   blogdown::html_page:
     toc: true
+type: book
 weight: 20
 ---
 ```{r setup, include=FALSE}
@@ -167,7 +168,7 @@ Finalmente, debemos interpetar los resultados en relación con nuestra pregunta 
 
 ## Referencias
 
-*[Anotaciones para estructurar una revisión sistemática](https://scielo.isciii.es/scielo.php?script=sci_arttext&pid=S2444-79862020000200005)
+* [Anotaciones para estructurar una revisión sistemática](https://scielo.isciii.es/scielo.php?script=sci_arttext&pid=S2444-79862020000200005)
 
 * [Systematic Reviews of the Literature](https://www.elsevier.es/pt-revista-cirugia-espanola-english-edition--436-articulo-systematic-reviews-literature-what-should-S2173507713000914)
 

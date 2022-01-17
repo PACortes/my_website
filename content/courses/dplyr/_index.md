@@ -27,10 +27,6 @@ Para el presente tutorial, utilizaremos el conjunto de datos **flor Iris**,  mul
 La base de datos **iris** viene incluida en R y contiene las mediciones en centímetros de las variables longitud de los pétalos (**Petal.Length** y **Petal.Width**) y sépalos (**Setal.Length** y **Setal.Width**) de 50 flores de tres especies (**Species**) del género Iris: *Iris setosa*, *Iris versicolor* e *Iris virginica*. 
 
 
-## Contenidos del tutorial
-
-{{< list_children >}}
-
 ## Enlaces de interés
 
 * [dplyr](https://dplyr.tidyverse.org/)

@@ -3,7 +3,7 @@ authors:
 - admin
 - Martina Le-Bert
 categories:
-date: "2020-12-13T00:00:00Z"
+date: "2022-01-15T00:00:00Z"
 draft: false
 featured: false
 image:
@@ -11,7 +11,7 @@ image:
   focal_point: ""
   placement: 2
   preview_only: false
-lastmod: "2020-12-13T00:00:00Z"
+lastmod: "2022-01-15T00:00:00Z"
 projects: []
 subtitle: ""
 summary: "La negación implicatoria a menudo expresa una falsa preocupación por un aspecto de bajo (o menor) impacto como causa de pérdida de biodiversidad, sin exponerlo comparativamente con su símil de gran (o mayor) impacto. Por ejemplo, la energía eólica, aunque no está exenta de impactos negativos, es una amenaza relativamente menor en comparación con la pérdida de hábitat de otras formas de producción de energía, como extracción de combustible fósil o carbón."
@@ -19,7 +19,7 @@ tags:
 - Negacionismo
 - Biodiversidad
 - Prensa
-title: Crisis climatica
+title: Crisis Climatica: definiciones y vocablario común
 ---
 
 Un entendimiento armónico de la naturaleza es clave para el bienestar humano. Nuestra sobrevivencia depende de un desarrollo sostenible que tenga como eje central la protección del medioambiente y biodiversidad, que hoy se encuentran amenazadas. Científicos conservacionistas han realizado un enorme esfuerzo por traer a la luz pública esta crisis. Sin embargo, este debate no ha estado exento de una creciente retórica negacionista.

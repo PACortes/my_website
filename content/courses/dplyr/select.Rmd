@@ -16,7 +16,7 @@ knitr::opts_chunk$set(collapse = TRUE)
 ```
 
 # 1. Definición
-La función `select` permite elegir un subconjunto de las variables (columnas) de la base de datos.
+La función `select` permite elegir un subconjunto de las variables (columnas) de la base de datos en base a su nombre y/o posición.
 
 Recordemos que antes de utilizar la función `select`, debemos cargar el paquete `dplyr` usando la función `library()`.
 
@@ -119,18 +119,68 @@ head(select(iris,-Petal.Length))
 
 
 ## 2.5. Seleccionemos una variable que comienza con cierto carácter
+Dependiendo de las etiquetas asignadas a las variables de una base de datos, algunas veces será de utilidad seleccionar una o más variables en base a los caracteres con los cuales comienzan sus nombres.
+
+Por ejemplo, en nuestra base de datos, podemos seleccionar variables que comiencen con **Petal**. Para ello, utilizaremos la función `starts_with()`:
+
+```{r warning = FALSE,message = FALSE,results=FALSE}
+select(iris,starts_with("Petal"))
+```
+
+
+```{r warning = FALSE, message = FALSE, echo=FALSE}
+head(select(iris,starts_with("Petal")))
+```
 
 ## 2.6. Seleccionemos una variable que termina con cierto carácter
 
-## 2.7. Seleccionemos una variable que contiene un valor
+De forma similar al ejemplo anterior, select nos permite seleccionar variables que terminen con ciertos caracteres. Por ejemplo, podemos seleccionar variables cuyo nombre finalice con **Length**. Para ello, utilizaremos la función `ends_with()`:
 
 
+```{r warning = FALSE,message = FALSE,results=FALSE}
+select(iris,ends_with("Length"))
+```
 
 
-# 6. Referencias
+```{r warning = FALSE, message = FALSE, echo=FALSE}
+head(select(iris,ends_with("Length")))
+```
 
-* [Theme elements](https://ggplot2.tidyverse.org/reference/element.html)
+## 2.7. Seleccionemos una variable que contiene un patrón determinado
 
-* [Legends](http://www.cookbook-r.com/Graphs/Legends_(ggplot2)/)
+Podríamos seleccionar variables en base a la prescencia de uno o más caracteres específicos en su nombre. Para ello, debemos utilizar la función `contains()`:
 
-* [Conjunto de datos iris](https://es.wikipedia.org/wiki/Conjunto_de_datos_flor_iris)
+```{r warning = FALSE,message = FALSE,results=FALSE}
+select(iris,contains("S"))
+```
+
+
+```{r warning = FALSE, message = FALSE, echo=FALSE}
+head(select(iris,contains("S")))
+```
+
+La selección anterior nos permitió seleccionar todas las variables que incluyen la letra **S** en su nombre. 
+
+## 2.8. Seleccionemos variables especificadas en un vector
+
+Finalmente, podríamos seleccionar las variables especificadas en un vector. Para ello, debemos utilizar la función `one_of()`. Generemos un vector llamados **Petalo** que contendrá los nombres de las variables **Petal.Length** y **Petal.Width**:
+
+```{r warning = FALSE,message = FALSE,results=FALSE}
+Petalo<-c("Petal.Length","Petal.Width")
+```
+
+Ahora, seleccionemos las variables:
+
+```{r warning = FALSE,message = FALSE,results=FALSE}
+select(iris,one_of(Petalo))
+```
+
+
+```{r warning = FALSE, message = FALSE, echo=FALSE}
+head(select(iris,one_of(Petalo)))
+```
+
+
+# 3. Referencias
+
+* [select](https://dplyr.tidyverse.org/reference/select.html)

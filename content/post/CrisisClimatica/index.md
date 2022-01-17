@@ -2,7 +2,7 @@
 authors:
 - admin
 categories:
-date: "2020-12-13T00:00:00Z"
+date: "2022-01-17T00:00:00Z"
 draft: false
 featured: false
 image:
@@ -10,14 +10,14 @@ image:
   focal_point: ""
   placement: 2
   preview_only: false
-lastmod: "2020-12-13T00:00:00Z"
+lastmod: "2022-01-17T00:00:00Z"
 projects: []
 subtitle: ""
 summary: ""
 tags:
 - Crisis Climática
 - Cambio Climático
-title: Crisis Climática: definiciones y un vocabulario común.
+title: Crisis Climática: definiciones y un vocabulario común
 ---
 
 La crisis climática es el desafío más profundo que hayan enfrentado los sistemas naturales, sociales, políticos y económicos del mundo. La mayoría de las acciones tomadas para reducir la vulnerabilidad de estos sistemas a los impactos del cambio climático se sustentan en dos enfoques complementarios: mitigar y adaptar. Mientras que las medidas de mitigación tienen como objetivo abordar las causas del cambio climático, las medidas de adaptación analizan cómo reducir sus efectos negativos y cómo aprovechar las oportunidades que podrían surgir. Contar con la participación de todos los actores de la sociedad, y construir una ciudadanía informada científicamente, son aspectos imprescindibles para avanzar en el combate a la crisis climática. Para lograr lo anterior, todos debemos entender lo mismo, y contar con un vocabulario común es primordial. A continuación, se definen algunos conceptos claves, y a veces confundidos, que representan un mínimo al momento de comunicar y entender la actual crisis climática.

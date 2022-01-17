@@ -2,7 +2,7 @@
 authors:
 - admin
 categories:
-date: "2020-12-13T00:00:00Z"
+date: "2021-12-13T00:00:00Z"
 draft: false
 featured: false
 image:
@@ -10,7 +10,7 @@ image:
   focal_point: ""
   placement: 2
   preview_only: false
-lastmod: "2020-12-13T00:00:00Z"
+lastmod: "2021-12-13T00:00:00Z"
 projects: []
 subtitle: ""
 summary: ""

@@ -1,7 +1,6 @@
 ---
 authors:
 - admin
-- Martina Le-Bert
 categories:
 date: "2022-01-15T00:00:00Z"
 draft: false
@@ -33,4 +32,4 @@ Finalmente, debemos diferenciar entre dos estrategias complementarias para enfre
 
 Los párrafos anteriores son una pequeña muestra de la complejidad y diversidad del vocabulario básico asociado a la crisis climática. Para entender este problema y enfrentar los desafíos que nos impone, es fundamental generar espacios para una conversación entre los expertos y la ciudadanía, que promueva el entendimiento de la crisis climática, fomentando la educación y sensibilización en esta temática. En particular, la comunidad científica y la ciudadanía representan dos interlocutores que requieren un vocabulario común para comunicarse de forma activa y clara, y así lograr que más personas se unan a la acción climática.
 
-Quizás mucho se ha escrito antes sobre estos aspectos, pero no está de más reforzar que el combate al cambio climático es una actividad colectiva, que requiere de una ciudadanía informada, activa y consciente. Y el actual contexto demanda una acción urgente.  Durante el pasado mes de agosto, el Grupo Intergubernamental de Expertos sobre el Cambio Climático (IPCC(https://www.ipcc.ch/)) , órgano internacional para la evaluación del Cambio Climático de la Organización de las Naciones Unidas, nos envió un contundente mensaje: el aumento de los gases invernadero en la atmósfera producido cambios en el Planeta que serán irreversibles durante siglos o milenios. Así, “o actuamos en conjunto, o nos extinguimos por separado”.
+Quizás mucho se ha escrito antes sobre estos aspectos, pero no está de más reforzar que el combate al cambio climático es una actividad colectiva, que requiere de una ciudadanía informada, activa y consciente. Y el actual contexto demanda una acción urgente.  Durante el pasado mes de agosto, el Grupo Intergubernamental de Expertos sobre el Cambio Climático [IPCC](https://www.ipcc.ch/) , órgano internacional para la evaluación del Cambio Climático de la Organización de las Naciones Unidas, nos envió un contundente mensaje: el aumento de los gases invernadero en la atmósfera producido cambios en el Planeta que serán irreversibles durante siglos o milenios. Así, “o actuamos en conjunto, o nos extinguimos por separado”.

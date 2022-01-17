@@ -19,7 +19,7 @@ tags:
 - Negacionismo
 - Biodiversidad
 - Prensa
-title: Crisis Climatica: definiciones y vocablario común
+title: Crisis Climatica, definiciones y vocablario común
 ---
 
 Un entendimiento armónico de la naturaleza es clave para el bienestar humano. Nuestra sobrevivencia depende de un desarrollo sostenible que tenga como eje central la protección del medioambiente y biodiversidad, que hoy se encuentran amenazadas. Científicos conservacionistas han realizado un enorme esfuerzo por traer a la luz pública esta crisis. Sin embargo, este debate no ha estado exento de una creciente retórica negacionista.

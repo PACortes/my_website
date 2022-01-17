@@ -14,7 +14,7 @@ type: book
 
 Es un paquete de R que contiene una colección de funciones para realizar operaciones de manipulación de datos, tales como : filtrar por fila, seleccionar columnas específicas, reordenar filas, añadir nuevas filas, agregar datos, entre muchas otras.
 
-Lo fantástico de este paquete es que cada función en `dplyr` hace solo una cosa, de manera muy rápida y ectiva
+Lo fantástico de este paquete es que cada función en `dplyr` hace solo una cosa, de manera muy rápida y efectiva.
 
 
 # Base de datos
@@ -39,4 +39,4 @@ head (iris)
 
 ## Enlaces de interés
 
-{{< cta cta_text="Comencemos con el taller" cta_link="python" >}}
+{{< cta cta_text="Comencemos con el taller" cta_link="dplyr" >}}

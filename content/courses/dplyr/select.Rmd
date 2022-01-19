@@ -18,6 +18,9 @@ knitr::opts_chunk$set(collapse = TRUE)
 # 1. Definición
 La función `select` permite elegir un subconjunto de las variables (columnas) de la base de datos en base a su nombre y/o posición.
 
+
+Cuando ejecutamos una operación de filtrado y `select` devuelve un nuevo *data frame*. Por defecto, R imprime todos los resultados.
+
 Recordemos que antes de utilizar la función `select`, debemos cargar el paquete `dplyr` usando la función `library()`.
 
 

@@ -16,7 +16,6 @@ Es un paquete de R que contiene una colección de funciones para realizar operac
 
 Lo fantástico de este paquete es que cada función en `dplyr` hace solo una cosa, de manera muy rápida y efectiva.
 
-
 ## Base de datos
 
 Para el presente tutorial, utilizaremos el conjunto de datos **flor Iris**,  multivariante introducido por Sir. Ronald Fisher en su artículo de 1936, [The use of multiple measurements in taxonomic problems](https://onlinelibrary.wiley.com/doi/10.1111/j.1469-1809.1936.tb02137.x).

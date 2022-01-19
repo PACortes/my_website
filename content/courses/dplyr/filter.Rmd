@@ -16,9 +16,13 @@ knitr::opts_chunk$set(collapse = TRUE)
 ```
 
 # 1. Definición
-Así como la función `select` es utilizada para seleccionar variables (columnas), la función `filter` hace lo propio con las observaciones (filas) de la base de datos que cumplen con una condición de interés.
+Así como la función `select` es utilizada para seleccionar variables (columnas), la función `filter` hace lo propio con las observaciones (filas) de la base de datos que cumplen con una condición de interés. En otras palabras `filter`permite filtrar un subconjunto de observaciones según sus valores.
 
-Recordemos que antes de utilizar la función `select`, debemos cargar el paquete `dplyr` usando la función `library()`.
+Cuando ejecutamos una operación de filtrado y `dplyr` devuelve un nuevo *data frame*. Por defecto, R imprime todos los resultados.
+
+`filter` solo incluye observaciones donde la condición es `TRUE`; excluye tanto los valores `FALSE` como `NA`. 
+
+Recordemos que antes de utilizar la función `filter`, debemos cargar el paquete `dplyr` usando la función `library()`.
 
 
 ```{r warning = FALSE, message = FALSE }
@@ -46,7 +50,7 @@ Existen múltiples operadoores que serán útiles para especificar las condicone
   
   + `%in%`: Comprueba si un valor está en una conjunto de valores.
   
-  + `is.na()`: Comprueba si un valor es un NA.
+  + `is.na()`: Comprueba si un valor es NA (valor faltante).
 
 Además, podemps usar operadores Booleanas para establecer combinaciones de condiciones:
 
@@ -57,7 +61,7 @@ Además, podemps usar operadores Booleanas para establecer combinaciones de cond
   + `!`: es "no"; lo utilizamos para negar una condición.
   
 
-# 2. Sintáxis 
+# 3. Sintáxis 
 
 La sintáxis básica de `filter` para seleccionar observaciones es:
 
@@ -70,7 +74,7 @@ En donde:
 * `condición`: condición de interés que deben cumplir las observaciones.
 
 
-## 2.1 Condición de interés en una variable
+## 3.1 Condición de interés en una variable
 Filtremos información específica de una variable. Por ejemplo, podríamos estar interesados en todas aquellas observaciones que tengan un **Largo de Sépalo** mayor a 5.8. Para aplicar el filtro, utilizaremos el operador lógico `x > y`:
 
 ```{r warning = FALSE,message = FALSE,results=FALSE}
@@ -82,7 +86,7 @@ filter(iris,Sepal.Length>5.8)
 head(filter(iris,Sepal.Length>5.8))
 ```
 
-## 2.2 Condición de interés en dos variables
+## 3.2 Condición de interés en dos variables
 Ahora bien, podríamos estar interesados en observaciones que cumplan criterios en dos (o más variables). Por ejemplo, queremos trabajar con las observaciones de la especie **versicolor** que tengan un **Largo de Sépalo** mayor a 5.8. Para aplicar el filtro, utilizaremos los operadores lógicos `x > y` y `x == y`, además del operador booleano `&`:
 
 ```{r warning = FALSE,message = FALSE,results=FALSE}
@@ -105,7 +109,7 @@ head(filter(iris,Sepal.Length>5.8 & Species!="versicolor"))
 ```
 
 
-## 2.3 Condición de interés en una u otra variable
+## 3.3 Condición de interés en una u otra variable
 Ahora bien, podríamos estar interesados en observaciones que cumplan criterios en una u otra variable. Por ejemplo, queremos trabajar con las observaciones de la especie **versicolor** y todas aquellas que tengan un **Largo de Sépalo** mayor a 5.8 (independiente de la especie). Para aplicar el filtro, utilizaremos los operadores lógicos `x > y` y `x == y`, además del operador booleano `|`:
 
 
@@ -119,7 +123,7 @@ head(filter(iris, Sepal.Length>5.8 | Species=="versicolor"))
 ```
 
 
-## 2.4 Filtrar observaciones que no contienen un valor en una variable
+## 3.4 Filtrar observaciones que no contienen un valor en una variable
 Cuando trabajamos con variables que contienen una gran cantidad de niveles, podríamos estar interesados en algúnas de ellas para futuros análisis. Por ejemplo, queremos trabajar solamente con las observaciones de la **especie** **virginica**. Dicho de otro modo, queremos excluir las observaciones de las especies **setosa** y  **versicolor**. Para aplicar el filtro, utilizaremos los operadores lógicos `!` y ``%in%``, además del operador booleano `|`.
 
 ```{r warning = FALSE,message = FALSE,results=FALSE}
@@ -134,7 +138,7 @@ head(filter(iris, !Species %in% c("setosa","versicolor")))
 Acabamos de filtrar la base de datos para quedarnos con todas aquellas observaciones de la variable **Species** que no contienen los valores **setosa** y  **versicolor**.
 
 
-## 2.5 Filtrar observaciones que no contienen valores en múltiples variables
+## 3.5 Filtrar observaciones que no contienen valores en múltiples variables
 De igual forma, podríamos estar interesados en observaciones que cumplan condiciones en más de una varible. Por ejemplo, queremos trabajar solamente con las observaciones de la especie **virginica** que tienen un **Largo de Sépalo** diferente a 5.8. Dicho de otra forma, queremos excluir las observaciones de las especies **setosa** y **versicolor** que tengan un **Largo de Sépalo** igual 5.8.
 
 
@@ -150,6 +154,6 @@ head(filter(iris, !Species %in% c("setosa","versicolor") &
 ```
 
 
-# 3. Referencias
+# 4. Referencias
 
-* [select](https://dplyr.tidyverse.org/reference/select.html)
+* [filter](https://es.r4ds.hadley.nz/transform.html#filtrar-filas-con-filter)

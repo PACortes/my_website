@@ -1,5 +1,5 @@
 ---
-title: "select"
+title: "filter"
 date: '2022-01-15T21:13:14-05:00'
 categories: R
 tags:
@@ -9,7 +9,7 @@ output:
   blogdown::html_page:
     toc: true
 type: book
-weight: 10
+weight: 20
 ---
 
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
@@ -17,7 +17,8 @@ weight: 10
 <div id="TOC">
 <ul>
 <li><a href="#definición">1. Definición</a></li>
-<li><a href="#sintáxis">2. Sintáxis</a>
+<li><a href="#sintáxis">2. Sintáxis</a></li>
+<li><a href="#operadores-lógicos">3. Operadores lógicos</a>
 <ul>
 <li><a href="#seleccionemos-una-variable">2.1. Seleccionemos una variable</a></li>
 <li><a href="#seleccionemos-una-variable-por-posición-en-la-base-de-datos">2.2. Seleccionemos una variable por posición en la base de datos</a></li>
@@ -35,22 +36,43 @@ weight: 10
 
 <div id="definición" class="section level1">
 <h1>1. Definición</h1>
-<p>La función <code>select</code> permite elegir un subconjunto de las variables (columnas) de la base de datos en base a su nombre y/o posición.</p>
+<p>Así como la función <code>select</code> es utilizada para seleccionar variables (columnas), la función <code>filter</code> hace lo propio con las observaciones (filas) de la base de datos que cumplen con una condición de interés.</p>
 <p>Recordemos que antes de utilizar la función <code>select</code>, debemos cargar el paquete <code>dplyr</code> usando la función <code>library()</code>.</p>
 <pre class="r"><code>library(dplyr)</code></pre>
 </div>
 <div id="sintáxis" class="section level1">
 <h1>2. Sintáxis</h1>
-<p>La sintáxis básica de <code>select</code> para seleccionar una variable es:</p>
-<p><code>select(data, variable)</code></p>
+<p>La sintáxis básica de <code>filter</code> para seleccionar observaciones es:</p>
+<p><code>select(filter, condición)</code></p>
 <p>En donde:</p>
 <ul>
 <li><p><code>data</code>: es la base de datos.</p></li>
-<li><p><code>variable</code>: especifica la variable a seleccionar</p></li>
+<li><p><code>condición</code>: condición de interés que deben cumplir las observaciones.</p></li>
+</ul>
+</div>
+<div id="operadores-lógicos" class="section level1">
+<h1>3. Operadores lógicos</h1>
+<p>Existen múltiples operadoores que será útiles para especificar las condicones de interés al momento de filtrar los datos.</p>
+<ul>
+<li><p><code>x &lt; y</code>: x menor que y.</p></li>
+<li><p><code>x &gt; y =</code>: x mayor que y.</p></li>
+<li><p><code>x &lt;= y</code>: x menor o igual que y.</p></li>
+<li><p><code>x &gt;= y</code>: x mayor o igual que y.</p></li>
+<li><p><code>x == y</code>: x igual a y.</p></li>
+<li><p><code>x != y</code>: x no es igual a y.</p></li>
+</ul>
+<p>Además, podemos usar las siguientes funciones:</p>
+<ul>
+<li><code>between(x, A, B)</code>: x &gt;= A &amp; x &lt;= B;</li>
+</ul>
+<p>En donde:</p>
+<ul>
+<li><p><code>data</code>: es la base de datos.</p></li>
+<li><p><code>condición</code>: condición de interés que deben cumplir las observaciones.</p></li>
 </ul>
 <div id="seleccionemos-una-variable" class="section level2">
 <h2>2.1. Seleccionemos una variable</h2>
-<p>Seleccionemos la variable <strong>Petal.Length</strong> de la base de datos <code>iris</code>.</p>
+<p>Seleccionaremos la variable <strong>Petal.Length</strong> base de datos <code>iris</code>.</p>
 <pre class="r"><code>select(iris,Petal.Length)</code></pre>
 <pre><code>##   Petal.Length
 ## 1          1.4

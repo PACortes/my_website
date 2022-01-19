@@ -1,5 +1,5 @@
 ---
-title: "select"
+title: "filter"
 date: '2022-01-15T21:13:14-05:00'
 categories: R
 tags:
@@ -9,14 +9,14 @@ output:
   blogdown::html_page:
     toc: true
 type: book
-weight: 10
+weight: 20
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
 # 1. Definición
-La función `select` permite elegir un subconjunto de las variables (columnas) de la base de datos en base a su nombre y/o posición.
+Así como la función `select` es utilizada para seleccionar variables (columnas), la función `filter` hace lo propio con las observaciones (filas) de la base de datos que cumplen con una condición de interés.
 
 Recordemos que antes de utilizar la función `select`, debemos cargar el paquete `dplyr` usando la función `library()`.
 
@@ -28,19 +28,46 @@ library(dplyr)
 
 # 2. Sintáxis 
 
-La sintáxis básica de `select` para seleccionar una variable es:
+La sintáxis básica de `filter` para seleccionar observaciones es:
 
-`select(data, variable)`
+`select(filter, condición)`
 
 En donde:
 
 * `data`: es la base de datos.
 
-* `variable`: especifica la variable a seleccionar
+* `condición`: condición de interés que deben cumplir las observaciones.
+
+# 3. Operadores lógicos
+
+Existen múltiples operadoores que será útiles para especificar las condicones de interés al momento de filtrar los datos.
+
+  + `x < y`: x menor que y.
+
+  + `x > y =`: x mayor que y.
+  
+  + `x <= y`: x menor o igual que y.
+  
+  + `x >= y`: x mayor o igual que y.
+
+  + `x == y`: x igual a y.
+
+  + `x != y`: x no es igual a y.
+
+Además, podemos usar las siguientes funciones:
+
+  + `between(x, A, B)`: x >= A & x <= B; 
+
+
+En donde:
+
+* `data`: es la base de datos.
+
+* `condición`: condición de interés que deben cumplir las observaciones.
 
 
 ## 2.1. Seleccionemos una variable
-Seleccionemos la variable **Petal.Length** de la base de datos `iris`.
+Seleccionaremos la variable **Petal.Length** base de datos `iris`.
 
 ```{r warning = FALSE,message = FALSE,results=FALSE}
 select(iris,Petal.Length)

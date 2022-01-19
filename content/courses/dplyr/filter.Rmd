@@ -26,21 +26,9 @@ library(dplyr)
 ```
 
 
-# 2. Sintáxis 
+# 2. Operadores lógicos y booleanos
 
-La sintáxis básica de `filter` para seleccionar observaciones es:
-
-`select(filter, condición)`
-
-En donde:
-
-* `data`: es la base de datos.
-
-* `condición`: condición de interés que deben cumplir las observaciones.
-
-# 3. Operadores lógicos
-
-Existen múltiples operadoores que será útiles para especificar las condicones de interés al momento de filtrar los datos.
+Existen múltiples operadoores que serán útiles para especificar las condicones de interés al momento de filtrar los datos.
 
   + `x < y`: x menor que y.
 
@@ -54,10 +42,26 @@ Existen múltiples operadoores que será útiles para especificar las condicones
 
   + `x != y`: x no es igual a y.
 
-Además, podemos usar las siguientes funciones:
+  + `between(x, A, B)`: x >= A & x <= B.
+  
+  + `%in%`: Comprueba si un valor está en una conjunto de valores.
+  
+  + `is.na()`: Comprueba si un valor es un NA.
 
-  + `between(x, A, B)`: x >= A & x <= B; 
+Además, podemps usar operadores Booleanas para establecer combinaciones de condiciones:
 
+  + `&`: es "y": lo utilizamos para múltiples condiciones.
+  
+  + `|`: es "o".
+  
+  + `!`: es "no"; lo utilizamos para negar una condición.
+  
+
+# 2. Sintáxis 
+
+La sintáxis básica de `filter` para seleccionar observaciones es:
+
+`select(filter, condición)`
 
 En donde:
 
@@ -66,145 +70,76 @@ En donde:
 * `condición`: condición de interés que deben cumplir las observaciones.
 
 
-## 2.1. Seleccionemos una variable
-Seleccionaremos la variable **Petal.Length** base de datos `iris`.
+## 2.1 Condición de interés en una variable
+Filtremos información específica de una variable. Por ejemplo, podríamos estar interesados en todas aquellas observaciones que tengan un **Largo de Sépalo** mayor a 5.8. Para aplicar el filtro, utilizaremos el operador lógico `x > y`:
 
 ```{r warning = FALSE,message = FALSE,results=FALSE}
-select(iris,Petal.Length)
+filter(iris,Sepal.Length>5.8)
 ```
 
 
 ```{r warning = FALSE, message = FALSE, echo=FALSE}
-head(select(iris,Petal.Length))
+head(filter(iris,Sepal.Length>5.8))
 ```
 
-## 2.2. Seleccionemos una variable por posición en la base de datos
-Una alternativa a lo anterior, es seleccionar una variable que se encuentre en un orden específico detro de la base de datos. Por ejemplo, seleccionemos la quinta variable en la base de datos `iris`:
+## 2.2 Condición de interés en dos variables
+Ahora bien, podríamos estar interesados en observaciones que cumplan criterios en dos (o más variables). Por ejemplo, queremos trabajar con las observaciones de la especie **versicolor** que tengan un **Largo de Sépalo** mayor a 5.8. Para aplicar el filtro, utilizaremos los operadores lógicos `x > y` y `x == y`, además del operador booleano `&`:
 
 ```{r warning = FALSE,message = FALSE,results=FALSE}
-select(iris,5)
+filter(iris,Sepal.Length>5.8 & Species=="versicolor")
 ```
 
 ```{r warning = FALSE, message = FALSE, echo=FALSE}
-head(select(iris,5))
+head(filter(iris,Sepal.Length>5.8 & Species=="versicolor"))
 ```
 
-El resultado nos muestra que la variable ubicada en la quinta posición es **Species**. Para corroborar el orden, podemos utilizar la función `glimpse`:
+De forma similar, si estuviesemos interesados en las observaciones de todas las especies excepto **versicolor**, podemos utilizar el operador lógico`x > y` y `x != y`:
 
 ```{r warning = FALSE,message = FALSE,results=FALSE}
-glimpse(iris)
-```
-
-## 2.3. Seleccionemos más de una variable
-Ahora, seleccionemos las variables **Petal.Length** y **Petal.Width**. Esto lo podemos realizar nombrando las variables de interés:
-
-```{r warning = FALSE,message = FALSE,results=FALSE}
-select(iris,Petal.Length, Petal.Width)
-```
-
-```{r warning = FALSE, message = FALSE, echo=FALSE}
-head(select(iris,Petal.Length, Petal.Width))
-```
-
-
-## 2.4. Seleccionemos un rango de variables
-De forma alternativa, podemos selccionar un rango de variables utilizando `:`. Aquí, las variables de interes deben estar ubicadas en posiciones contiguas dentro de la base de datos:
-
-```{r warning = FALSE,message = FALSE,results=FALSE}
-
+filter(iris,Sepal.Length>5.8 & Species!="versicolor")
 ```
 
 
 ```{r warning = FALSE, message = FALSE, echo=FALSE}
-head(select(iris,3:4))
+head(filter(iris,Sepal.Length>5.8 & Species!="versicolor"))
 ```
 
-Cuando las varables no se encuentran contiguas, podemos especificar las variables a seleccionar utilizando `c(,)`:
+
+## 2.3 Condición de interés en una u otra variable
+Ahora bien, podríamos estar interesados en observaciones que cumplan criterios en una u otra variable. Por ejemplo, queremos trabajar con las observaciones de la especie **setosa** y todas aquellas que tengan un **Largo de Sépalo** mayor a 5.8 (independiente de la especie). Para aplicar el filtro, utilizaremos los operadores lógicos `x > y` y `x == y`, además del operador booleano `|`:
+
+
+
+## 2.3 Filtrar observaciones que no contienen un valor en una variable
+Cuando trabajamos con variables que contienen una gran cantidad de niveles, podríamos estar interesados en excluir algúnas de ellas para futuros análisis. Por ejemplo, queremos excluir las observaciones de las especies **setosa** y  **versicolor**. Para aplicar el filtro, utilizaremos los operadores lógicos `!` y ``%in%``, además del operador booleano `|`.
 
 ```{r warning = FALSE,message = FALSE,results=FALSE}
-select(iris,c(,c(1,3:4)))
-```
-
-```{r warning = FALSE, message = FALSE, echo=FALSE}
-head(select(iris,c(,c(1,3:4))))
-```
-
-En este ejemplo, especificamos que queremos todas las filas, y las columnas 1, 3 y 4.
-
-## 2.4. Seleccionemos todas las variables excepto una
-Para seleccionar todas las variables excepto una, debemos anteponer el signo `-`a la variable que **no** es de nuestro interés. Por ejemplo, vamos a excluir la variable **Petal.Length**:
-
-
-```{r warning = FALSE,message = FALSE,results=FALSE}
-select(iris,-Petal.Length)
+filter(iris, !Species %in% c("setosa","versicolor"))
 ```
 
 
 ```{r warning = FALSE, message = FALSE, echo=FALSE}
-head(select(iris,-Petal.Length))
+head(filter(iris, !Species %in% c("setosa","versicolor")))
 ```
 
 
-## 2.5. Seleccionemos una variable que comienza con cierto carácter
-Dependiendo de las etiquetas asignadas a las variables de una base de datos, algunas veces será de utilidad seleccionar una o más variables en base a los caracteres con los cuales comienzan sus nombres.
 
-Por ejemplo, en nuestra base de datos, podemos seleccionar variables que comiencen con **Petal**. Para ello, utilizaremos la función `starts_with()`:
+Acabamos de filtrar la base de datos para quedarnos con todas aquellas observaciones de la variable **Species** que no contienen los valores **setosa** y  **versicolor**.
+
+
+## 2.3 Filtrar observaciones que no contienen valores en múltiples variables
+De igual forma, podríamos estar interesados en excluir observaciones que no cumplan condiciones en más de una varible. Por ejemplo, Por ejemplo, queremos excluir las observaciones de las especies **setosa** y  **versicolor** que tengan un **Largo de Sépalo** igual 5.8.
+
 
 ```{r warning = FALSE,message = FALSE,results=FALSE}
-select(iris,starts_with("Petal"))
+filter(iris, !Species %in% c("setosa","versicolor") & 
+             !Sepal.Length %in% c(5.8))
 ```
 
 
 ```{r warning = FALSE, message = FALSE, echo=FALSE}
-head(select(iris,starts_with("Petal")))
-```
-
-## 2.6. Seleccionemos una variable que termina con cierto carácter
-
-De forma similar al ejemplo anterior, select nos permite seleccionar variables que terminen con ciertos caracteres. Por ejemplo, podemos seleccionar variables cuyo nombre finalice con **Length**. Para ello, utilizaremos la función `ends_with()`:
-
-
-```{r warning = FALSE,message = FALSE,results=FALSE}
-select(iris,ends_with("Length"))
-```
-
-
-```{r warning = FALSE, message = FALSE, echo=FALSE}
-head(select(iris,ends_with("Length")))
-```
-
-## 2.7. Seleccionemos una variable que contiene un patrón determinado
-
-Podríamos seleccionar variables en base a la prescencia de uno o más caracteres específicos en su nombre. Para ello, debemos utilizar la función `contains()`:
-
-```{r warning = FALSE,message = FALSE,results=FALSE}
-select(iris,contains("S"))
-```
-
-
-```{r warning = FALSE, message = FALSE, echo=FALSE}
-head(select(iris,contains("S")))
-```
-
-La selección anterior nos permitió seleccionar todas las variables que incluyen la letra **S** en su nombre. 
-
-## 2.8. Seleccionemos variables especificadas en un vector
-
-Finalmente, podríamos seleccionar las variables especificadas en un vector. Para ello, debemos utilizar la función `one_of()`. Generemos un vector llamados **Petalo** que contendrá los nombres de las variables **Petal.Length** y **Petal.Width**:
-
-```{r warning = FALSE,message = FALSE,results=FALSE}
-Petalo<-c("Petal.Length","Petal.Width")
-```
-
-Ahora, seleccionemos las variables:
-
-```{r warning = FALSE,message = FALSE,results=FALSE}
-select(iris,one_of(Petalo))
-```
-
-
-```{r warning = FALSE, message = FALSE, echo=FALSE}
-head(select(iris,one_of(Petalo)))
+head(filter(iris, !Species %in% c("setosa","versicolor") & 
+             !Sepal.Length %in% c(5.8)))
 ```
 
 

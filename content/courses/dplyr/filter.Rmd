@@ -106,12 +106,21 @@ head(filter(iris,Sepal.Length>5.8 & Species!="versicolor"))
 
 
 ## 2.3 Condición de interés en una u otra variable
-Ahora bien, podríamos estar interesados en observaciones que cumplan criterios en una u otra variable. Por ejemplo, queremos trabajar con las observaciones de la especie **setosa** y todas aquellas que tengan un **Largo de Sépalo** mayor a 5.8 (independiente de la especie). Para aplicar el filtro, utilizaremos los operadores lógicos `x > y` y `x == y`, además del operador booleano `|`:
+Ahora bien, podríamos estar interesados en observaciones que cumplan criterios en una u otra variable. Por ejemplo, queremos trabajar con las observaciones de la especie **versicolor** y todas aquellas que tengan un **Largo de Sépalo** mayor a 5.8 (independiente de la especie). Para aplicar el filtro, utilizaremos los operadores lógicos `x > y` y `x == y`, además del operador booleano `|`:
 
 
+```{r warning = FALSE,message = FALSE,results=FALSE}
+filter(iris,Sepal.Length>5.8 | Species=="versicolor")
+```
 
-## 2.3 Filtrar observaciones que no contienen un valor en una variable
-Cuando trabajamos con variables que contienen una gran cantidad de niveles, podríamos estar interesados en excluir algúnas de ellas para futuros análisis. Por ejemplo, queremos excluir las observaciones de las especies **setosa** y  **versicolor**. Para aplicar el filtro, utilizaremos los operadores lógicos `!` y ``%in%``, además del operador booleano `|`.
+
+```{r warning = FALSE, message = FALSE, echo=FALSE}
+head(filter(iris, Sepal.Length>5.8 | Species=="versicolor"))
+```
+
+
+## 2.4 Filtrar observaciones que no contienen un valor en una variable
+Cuando trabajamos con variables que contienen una gran cantidad de niveles, podríamos estar interesados en algúnas de ellas para futuros análisis. Por ejemplo, queremos trabajar solamente con las observaciones de la **especie** **virginica**. Dicho de otro modo, queremos excluir las observaciones de las especies **setosa** y  **versicolor**. Para aplicar el filtro, utilizaremos los operadores lógicos `!` y ``%in%``, además del operador booleano `|`.
 
 ```{r warning = FALSE,message = FALSE,results=FALSE}
 filter(iris, !Species %in% c("setosa","versicolor"))
@@ -122,13 +131,11 @@ filter(iris, !Species %in% c("setosa","versicolor"))
 head(filter(iris, !Species %in% c("setosa","versicolor")))
 ```
 
-
-
 Acabamos de filtrar la base de datos para quedarnos con todas aquellas observaciones de la variable **Species** que no contienen los valores **setosa** y  **versicolor**.
 
 
-## 2.3 Filtrar observaciones que no contienen valores en múltiples variables
-De igual forma, podríamos estar interesados en excluir observaciones que no cumplan condiciones en más de una varible. Por ejemplo, Por ejemplo, queremos excluir las observaciones de las especies **setosa** y  **versicolor** que tengan un **Largo de Sépalo** igual 5.8.
+## 2.5 Filtrar observaciones que no contienen valores en múltiples variables
+De igual forma, podríamos estar interesados en observaciones que cumplan condiciones en más de una varible. Por ejemplo, queremos trabajar solamente con las observaciones de la especie **virginica** que tienen un **Largo de Sépalo** diferente a 5.8. Dicho de otra forma, queremos excluir las observaciones de las especies **setosa** y **versicolor** que tengan un **Largo de Sépalo** igual 5.8.
 
 
 ```{r warning = FALSE,message = FALSE,results=FALSE}

@@ -1,5 +1,5 @@
 ---
-title: "Gráfico jitter"
+title: "Grafico jitter"
 date: '2021-10-05T21:13:14-05:00'
 categories: R
 tags:

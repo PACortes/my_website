@@ -49,4 +49,4 @@ Licenciado en Ciencias Biológicas (2004- 2008), Doctor en Ciencias mención Eco
 
 {{< icon name="download" pack="fas" >}} Descarga mi {{< staticref "uploads/CV_2022_espanol.pdf" "newtab" >}}CV {{< /staticref >}}.
 
-{{< icon name="download" pack="fas" >}} Download my{{< staticref "uploads/CV_CortesPA_English.pdf" "newtab" >}}CV{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Download my{{< staticref "uploads/CV_CortesPA_English.pdf" "newtab" >}}CV {{< /staticref >}}.

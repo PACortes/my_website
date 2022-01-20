@@ -1,5 +1,5 @@
 ---
-title: "select"
+title: "select()"
 date: '2022-01-15T21:13:14-05:00'
 categories: R
 tags:
@@ -35,17 +35,18 @@ weight: 10
 
 <div id="definición" class="section level1">
 <h1>1. Definición</h1>
-<p>La función <code>select</code> permite elegir un subconjunto de las variables (columnas) de la base de datos en base a su nombre y/o posición.</p>
-<p>Recordemos que antes de utilizar la función <code>select</code>, debemos cargar el paquete <code>dplyr</code> usando la función <code>library()</code>.</p>
+<p>La función <code>select()</code> permite elegir un subconjunto de las variables (columnas) de la base de datos en base a su nombre y/o posición.</p>
+<p>Cuando ejecutamos una operación de filtrado, <code>select()</code> devuelve un nuevo <em>data frame</em>. Por defecto, R imprime todos los resultados.</p>
+<p>Recordemos que antes de utilizar la función <code>select()</code>, debemos cargar el paquete <code>dplyr</code> usando la función <code>library()</code>.</p>
 <pre class="r"><code>library(dplyr)</code></pre>
 </div>
 <div id="sintáxis" class="section level1">
 <h1>2. Sintáxis</h1>
-<p>La sintáxis básica de <code>select</code> para seleccionar una variable es:</p>
+<p>La sintáxis básica de <code>select()</code> para seleccionar una variable es:</p>
 <p><code>select(data, variable)</code></p>
 <p>En donde:</p>
 <ul>
-<li><p><code>data</code>: es la base de datos.</p></li>
+<li><p><code>data</code>: data frame (nuestros datos).</p></li>
 <li><p><code>variable</code>: especifica la variable a seleccionar</p></li>
 </ul>
 <div id="seleccionemos-una-variable" class="section level2">

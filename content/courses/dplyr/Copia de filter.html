@@ -1,5 +1,5 @@
 ---
-title: "filter()"
+title: "filter"
 date: '2022-01-15T21:13:14-05:00'
 categories: R
 tags:
@@ -12,7 +12,7 @@ type: book
 weight: 20
 ---
 
-<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+<script src="Copia de filter_files/header-attrs/header-attrs.js"></script>
 
 <div id="TOC">
 <ul>
@@ -32,10 +32,10 @@ weight: 20
 
 <div id="definición" class="section level1">
 <h1>1. Definición</h1>
-<p>Así como la función <code>select()</code> es utilizada para seleccionar variables (columnas), la función <code>filter()</code> hace lo propio con las observaciones (filas) de la base de datos que cumplen con una condición de interés. En otras palabras <code>filter()</code>permite filtrar un subconjunto de observaciones según sus valores.</p>
-<p>Cuando ejecutamos una operación de filtrado, <code>dplyr</code> devuelve un nuevo <em>data frame</em>. Por defecto, R imprime todos los resultados.</p>
-<p><code>filter()</code> solo incluye observaciones donde la condición es <code>TRUE</code>; excluye tanto los valores <code>FALSE</code> como <code>NA</code>.</p>
-<p>Recordemos que antes de utilizar la función <code>filter()</code>, debemos cargar el paquete <code>dplyr</code> usando la función <code>library()</code>.</p>
+<p>Así como la función <code>select</code> es utilizada para seleccionar variables (columnas), la función <code>filter</code> hace lo propio con las observaciones (filas) de la base de datos que cumplen con una condición de interés. En otras palabras <code>filter</code>permite filtrar un subconjunto de observaciones según sus valores.</p>
+<p>Cuando ejecutamos una operación de filtrado y <code>dplyr</code> devuelve un nuevo <em>data frame</em>. Por defecto, R imprime todos los resultados.</p>
+<p><code>filter</code> solo incluye observaciones donde la condición es <code>TRUE</code>; excluye tanto los valores <code>FALSE</code> como <code>NA</code>.</p>
+<p>Recordemos que antes de utilizar la función <code>filter</code>, debemos cargar el paquete <code>dplyr</code> usando la función <code>library()</code>.</p>
 <pre class="r"><code>library(dplyr)</code></pre>
 </div>
 <div id="operadores-lógicos-y-booleanos" class="section level1">
@@ -61,11 +61,11 @@ weight: 20
 </div>
 <div id="sintáxis" class="section level1">
 <h1>3. Sintáxis</h1>
-<p>La sintáxis básica de <code>filter()</code> para seleccionar observaciones es:</p>
-<p><code>filter(data, condición)</code></p>
+<p>La sintáxis básica de <code>filter</code> para seleccionar observaciones es:</p>
+<p><code>select(filter, condición)</code></p>
 <p>En donde:</p>
 <ul>
-<li><p><code>data</code>: data frame (nuestros datos).</p></li>
+<li><p><code>data</code>: es la base de datos.</p></li>
 <li><p><code>condición</code>: condición de interés que deben cumplir las observaciones.</p></li>
 </ul>
 <div id="condición-de-interés-en-una-variable" class="section level2">

@@ -1,5 +1,5 @@
 ---
-title: "select"
+title: "select()"
 date: '2022-01-15T21:13:14-05:00'
 categories: R
 tags:
@@ -16,12 +16,12 @@ knitr::opts_chunk$set(collapse = TRUE)
 ```
 
 # 1. Definición
-La función `select` permite elegir un subconjunto de las variables (columnas) de la base de datos en base a su nombre y/o posición.
+La función `select()` permite elegir un subconjunto de las variables (columnas) de la base de datos en base a su nombre y/o posición.
 
 
-Cuando ejecutamos una operación de filtrado y `select` devuelve un nuevo *data frame*. Por defecto, R imprime todos los resultados.
+Cuando ejecutamos una operación de filtrado, `select()` devuelve un nuevo *data frame*. Por defecto, R imprime todos los resultados.
 
-Recordemos que antes de utilizar la función `select`, debemos cargar el paquete `dplyr` usando la función `library()`.
+Recordemos que antes de utilizar la función `select()`, debemos cargar el paquete `dplyr` usando la función `library()`.
 
 
 ```{r warning = FALSE, message = FALSE }
@@ -31,13 +31,13 @@ library(dplyr)
 
 # 2. Sintáxis 
 
-La sintáxis básica de `select` para seleccionar una variable es:
+La sintáxis básica de `select()` para seleccionar una variable es:
 
 `select(data, variable)`
 
 En donde:
 
-* `data`: es la base de datos.
+* `data`: data frame (nuestros datos).
 
 * `variable`: especifica la variable a seleccionar
 

@@ -1,0 +1,129 @@
+---
+title: "mutate()"
+date: '2022-01-15T21:13:14-05:00'
+categories: R
+tags:
+- Manipulación
+- dplyr
+output:
+  blogdown::html_page:
+    toc: true
+type: book
+weight: 30
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+# 1. Definición
+El verbo `mutate()` permite crear nuevas variables (columnas) a partir de variables existentes, conservando las variables existentes.
+
+`mutate()` siempre agrega nuevas variables (columnas) al final de un conjunto de datos. Además, `mutate()` puede combinarse con otras grandes funciones para tareas más avanzadas. 
+
+Recordemos que antes de utilizar la función ``mutate()``, debemos cargar el paquete `dplyr` usando la función `library()`.
+
+
+```{r warning = FALSE, message = FALSE }
+library(dplyr)
+```
+
+# 2. Sintáxis 
+
+La sintáxis básica de `mutate()` para seleccionar observaciones es:
+
+`mutate(data, ...)`
+
+En donde:
+
+* `data`: data frame (nuestros datos).
+
+* `...`: Nombre y valor de la expresión que determinará la nueva variable (e.g. Nueva_variable = variable_original*2).
+
+
+## 2.1 Razón entre dos variables
+`mutate()` nos permite calcular una variable que represente la razón entre dos variables en nuestra base de datos. Por ejemplo, asignaremos el nombre **Razon_Petalo** a la razón entre el **Largo del Pétalo** y el **Ancho del Pétalo**.
+
+
+```{r warning = FALSE,message = FALSE,results=FALSE}
+mutate(iris,Razon_Petalo=Petal.Length/Petal.Width)
+```
+
+
+```{r warning = FALSE, message = FALSE, echo=FALSE}
+head(mutate(iris,Razon_Petalo=Petal.Length/Petal.Width))
+```
+Podemos apreciar que se ha agreagdo una nueva variable (columna)  al final del conjunto de datos.
+
+## 2.2 Multiplicamos una variable por una constante
+Las variables de la base de datos iris están medidas en milimetros. Si quisieramos transformarlas a centimetros, debemos multiplicarlas por una constante. A modo de ejemplo, transformemos la variable **Sepal.Length**:
+
+```{r warning = FALSE,message = FALSE,results=FALSE}
+mutate(iris,Sepal.length.cm=Sepal.Length*0.1)
+```
+
+```{r warning = FALSE, message = FALSE, echo=FALSE}
+head(mutate(iris,Sepal.length.cm=Sepal.Length*0.1))
+```
+
+Ahora, nuestra abse de datos tiene 7 columnas, igual que el ejemplo anterior. ¿Por qué no vemos la variable **Razon_Petalo**?. Para que los cambios se mantengan a l olargo de la rutina de trabajo debemos (i) generar un objeto con el nuevo *data frame* (p.e. iris_1) o (ii) asignar los cambios al *data frame*.
+
+## 2.3 Generamos dos nuevas variables
+`mutate()` nos permite generar múltiples variables. A continuación, generaremos simultáneamente las variables **Razon_Petalo** y Sepal.length.cm: 
+
+
+```{r warning = FALSE,message = FALSE,results=FALSE}
+mutate(iris,Razon_Petalo=Petal.Length/Petal.Width,
+            Sepal.length.cm=Sepal.Length*0.1)
+```
+
+
+
+```{r warning = FALSE, message = FALSE, echo=FALSE}
+head(mutate(iris,Razon_Petalo=Petal.Length/Petal.Width,
+            Sepal.length.cm=Sepal.Length*0.1))
+```
+
+
+## Combinando `mutate()` con `recode()`
+`recode()` permite cambiar las observaciones dentro de una variable. Por ejemplo, cambiemos el nombre a las especies contenidas en la base datos.
+
+```{r warning = FALSE,message = FALSE,results=FALSE}
+mutate(iris,Species_nueva=recode(Species, 
+                                 "setosa"="Iris_setosa",
+                                 "virginica"="Iris_virginica",
+                                 "versicolor"="Iris_versicolor"))
+```
+
+```{r warning = FALSE, message = FALSE, echo=FALSE}
+head(mutate(iris,Species_nueva=recode(Species, 
+                                 "setosa"="Iris_setosa",
+                                 "virginica"="Iris_virginica",
+                                 "versicolor"="Iris_versicolor")))
+```
+
+## Combinando `mutate()` con `cut`()`
+`cut()` transforma las observaciones en rangos de valores, poniendo los valores dentro de segementos definidos por el usuario. Genermos rangos de valores para saber si las observaciones de la variable **Petal.Length** se encuentran bajo o sobre la media:
+
+
+```{r warning = FALSE,message = FALSE,results=FALSE}
+mutate(iris,Petal.Length.Segmento=cut(Petal.Length, 
+                       c(-Inf,mean(Petal.Length), max(Petal.Length)),
+                       c("Bajo la media","Sobre la media")))
+```
+
+```{r warning = FALSE, message = FALSE, echo=FALSE}
+head(mutate(iris,Petal.Length.Segmento=cut(Petal.Length, 
+                       c(-Inf,mean(Petal.Length), max(Petal.Length)),
+                       c("Bajo la media","Sobre la media"))))
+```
+
+
+
+
+
+
+# 3. Referencias
+
+* [tidyverse.org](https://dplyr.tidyverse.org/reference/mutate.html)
+
+* [R documentation](https://www.rdocumentation.org/packages/dplyr/versions/0.5.0/topics/mutate)

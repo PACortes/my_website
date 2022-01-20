@@ -1,5 +1,5 @@
 ---
-title: "filter"
+title: "filter()"
 date: '2022-01-15T21:13:14-05:00'
 categories: R
 tags:
@@ -16,13 +16,13 @@ knitr::opts_chunk$set(collapse = TRUE)
 ```
 
 # 1. Definición
-Así como la función `select` es utilizada para seleccionar variables (columnas), la función `filter` hace lo propio con las observaciones (filas) de la base de datos que cumplen con una condición de interés. En otras palabras `filter`permite filtrar un subconjunto de observaciones según sus valores.
+Así como la función `select()` es utilizada para seleccionar variables (columnas), la función `filter()` hace lo propio con las observaciones (filas) de la base de datos que cumplen con una condición de interés. En otras palabras `filter()`permite filtrar un subconjunto de observaciones según sus valores.
 
-Cuando ejecutamos una operación de filtrado y `dplyr` devuelve un nuevo *data frame*. Por defecto, R imprime todos los resultados.
+Cuando ejecutamos una operación de filtrado, `dplyr` devuelve un nuevo *data frame*. Por defecto, R imprime todos los resultados.
 
-`filter` solo incluye observaciones donde la condición es `TRUE`; excluye tanto los valores `FALSE` como `NA`. 
+`filter()` solo incluye observaciones donde la condición es `TRUE`; excluye tanto los valores `FALSE` como `NA`. 
 
-Recordemos que antes de utilizar la función `filter`, debemos cargar el paquete `dplyr` usando la función `library()`.
+Recordemos que antes de utilizar la función `filter()`, debemos cargar el paquete `dplyr` usando la función `library()`.
 
 
 ```{r warning = FALSE, message = FALSE }
@@ -63,13 +63,13 @@ Además, podemps usar operadores Booleanas para establecer combinaciones de cond
 
 # 3. Sintáxis 
 
-La sintáxis básica de `filter` para seleccionar observaciones es:
+La sintáxis básica de `filter()` para seleccionar observaciones es:
 
-`select(filter, condición)`
+`filter(data, condición)`
 
 En donde:
 
-* `data`: es la base de datos.
+* `data`: data frame (nuestros datos).
 
 * `condición`: condición de interés que deben cumplir las observaciones.
 

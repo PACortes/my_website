@@ -47,4 +47,6 @@ title: Pablo Cortés García
 
 Licenciado en Ciencias Biológicas (2004- 2008), Doctor en Ciencias mención Ecología y Evolución por la Universidad Austral de Chile (2010-2014) y candidato a Magíster en Procesamiento y Gestión de la Información de la Pontificia Universidad Católica de Chile (2020-2021). 
 
-{{< icon name="download" pack="fas" >}} Descarga mi {{< staticref "uploads/CV_CortesPA_2021.pdf" "newtab" >}}CV{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Descarga mi {{< staticref "uploads/CV_2022_espanol.pdf" "newtab" >}}CV {{< /staticref >}}.
+
+{{< icon name="download" pack="fas" >}} Download my{{< staticref "uploads/CV_CortesPA_English.pdf" "newtab" >}}CV{{< /staticref >}}.

@@ -20,7 +20,7 @@ Es un paquete de R que proporciona un conjunto de herramientas analíticas para 
 La bibliometría es la aplicación de análisis cuantitativos y estadísticas a publicaciones como artículos de revistas y los recuentos de citas que los acompañan. Este tipo de análisis es clave al momento de establecer el estado del arte de una disciplina o tópicos de investigación específicos.
 
 
-## ¿Por qué `bliometrix`?
+## ¿Por qué `bibliometrix`?
 
 Proveé una serie de rutinas que permite importar datos bibliográficos desde bases académicas como Web of Science, SCOPUS, PubMed, Digital Science Dimensions y Cochrane.
 

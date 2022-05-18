@@ -6,7 +6,7 @@ title: "MMAD109: visualización y análisis de datos"
 type: book
 ---
 
-{{< figure src="ggplot2_logo.png" >}}
+{{< figure src="foto1.png" >}}
 
 {{< toc hide_on="xl" >}}
 
@@ -30,7 +30,7 @@ type: book
 
 A continuación, se definen conceptos que serán de utilidad al momento de comenzar a explorar el mundo `R`.
 
-** CRAN**:  The Comprehensive R Archive Network es una red de servidores web en todo el mundo donde podemos encontrar el código fuente R, los manuales y la documentación R, y los paquetes.
+**CRAN**:  The Comprehensive R Archive Network es una red de servidores web en todo el mundo donde podemos encontrar el código fuente R, los manuales y la documentación R, y los paquetes.
 
 **Paquete**: Colección de funciones diseñadas para atender una tarea específica. 
 

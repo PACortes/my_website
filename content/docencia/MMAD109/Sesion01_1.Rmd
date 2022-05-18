@@ -36,7 +36,6 @@ En el script escribiremos y ejecutaremos nuestras líneas de código. Además, e
 
 * Para geneerar notas personales, las(s) línea(s) de texto y/o códigolaLas deben estar precedidas por el el símbolo *#*.
 
-
 # 2. Tipos de datos en R
 
 Los tipos de datos de uso más común en R son:
@@ -99,7 +98,36 @@ tabla %>%
   
 ```
 
-# 3. Estructura de datos en R
+# 3. Operadores
+
+
+
+## Operador de asignación
+Nos permite asignar datos a un objeto. Para ello podems utilizar los símbolos *<-* o *=*.
+
+
+```{r}
+dos<-2
+
+letra<-"a"
+```
+
+
+Es importante tener en cuenta que:
+
+* Si asignamos un datos a un objetoal que ya habíamos asignado datos, nuestro objeto conserva los datos más recientes.
+
+* Esta operación nos permite “guardar” el resultado de operaciones, de modo que podemos recuperarlos sin necesidad de realizar las operaciones otra vez (Revisar *Environment*).
+
+* A lo largo del taller utilizaremos *<-* por ser característico de R y fácil de reconocer visualmente.
+
+## Operador de concatenación
+
+```{r}
+dos_digitos<-c(15, 2)
+```
+
+# 4. Estructura de datos en R
 
 ## Vector
 Colección de uno o más datos del mismo tipo.

@@ -1,5 +1,5 @@
 ---
-title: "Conceptos básicos de R"
+title: "Introducción a RStudio"
 date: '2021-10-05T21:13:14-05:00'
 categories: R
 tags:
@@ -15,7 +15,17 @@ weight: 20
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-# 1. Definición
+`RStudio` no es `R`. Es un programa que ejecuta `R` y proporciona herramientas adicionales que son útiles al escribir código `R`, algo así como su sistema operativo puede ejecutar un navegador web. 
+
+Este taller asumirá que está utilizando `RStudio` para interactuar con `R`y , aunque todo lo que veremos se puede hacer directament en `R`.
+
+# 1. Instalación de `RStudio`
+`RStudio` es gratuito y de código abierto. Haz click [aquí](https://www.rstudio.com/products/rstudio/download/) para descargar la versión que corresponda a tu sitema operativo.
+
+`RStudio` requiere la instalación de `R` (versión 3.0. 1 o superior). Para descargar `R`, haz click [aquí](https://cran.r-project.org/bin/windows/base/) si tu sistema operativo es Windows, y [aquí](https://cran.r-project.org/bin/macosx/) en caso de que sea macOS.
+
+# 2. Las partes de `RStudio`
+Cuando abras RStudio, notarás muchas ventanas diferentes, cada una con algunas pestañas. En primera instancia, puede que esto sea abrumador. Afortunadamente. solo necesitaremos usar algunos de estas opciones para lograr los objetivos de este taller.
 
 ![](/docencia/MMAD109/Sesion01_1_files/RSTUDIO.png){width=400px height=400px}
 

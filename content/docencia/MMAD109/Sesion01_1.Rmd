@@ -15,9 +15,9 @@ weight: 20
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-`RStudio` no es `R`. Es un programa que ejecuta `R` y proporciona herramientas adicionales que son útiles al escribir código `R`, algo así como su sistema operativo puede ejecutar un navegador web. 
+Recordemos que `RStudio` no es `R`. Es un programa que ejecuta `R` y proporciona herramientas adicionales que son útiles al escribir código `R`, algo así como su sistema operativo puede ejecutar un navegador web. 
 
-Este taller asumirá que está utilizando `RStudio` para interactuar con `R`y , aunque todo lo que veremos se puede hacer directament en `R`.
+Este taller asumirá que estamos utilizando `RStudio` para interactuar con `R`, aunque todo lo que veremos se puede hacer directament en `R`.
 
 # 1. Instalación de `RStudio`
 `RStudio` es gratuito y de código abierto. Haz clic [aquí](https://www.rstudio.com/products/rstudio/download/) para descargar la versión que corresponda a tu sitema operativo.
@@ -29,11 +29,11 @@ Cuando abras RStudio, notarás una ventana con cuatro paneles principales, cada 
 
 
 ## 2.1. Consola
-En el panel inferior izquierdo, encontraremos la consola de `RStudio`. Es aquí donde se está el donde está el prompt *>*, y  donde podemos escribir las lineas de comando para interactuar con `R`, y en donde nuestro código es interpretado. El panel "Consola" es la única parte de `RStudio` que en realidad es `R`; todo lo demás son herramientas opcionales.
+En el panel inferior izquierdo, encontraremos la consola de `RStudio`. Es aquí donde podemos escribir las lineas de comando para interactuar con `R`, y en donde nuestro código es interpretado. La consola es la única parte de `RStudio` que en realidad es `R`; todo lo demás son herramientas opcionales.
 
   
 ## 2.2. Script
-En el panel superior izquierdo, encontraremos el *script*, editor de texto con la extensión de archivo *.R* que puede ser leido por `R`. En el script escribiremos comandos que serán ejecutados en la consola. Además, en el script podemos agregar comentarios. Para geneerar comentarios, las(s) línea(s) de texto  deben estar precedidas por el el símbolo *#*.
+En el panel superior izquierdo, encontraremos el script, editor de texto con la extensión de archivo *.R* que puede ser leido por `R`. En el script escribiremos comandos que serán ejecutados en la consola. Además, en el script podemos agregar comentarios. Para ello, la(s) línea(s) de texto debe(n) estar precedidas por el el símbolo *#*.
 
 Para guardar el script:
 
@@ -41,23 +41,22 @@ Para guardar el script:
   + Hacer clic en el botón *Guardar* que se encuentra en la parte izquierda de la cinta de opciones del script.
 
 
-## 2.3. Ambiente/Historial/Conecciones/Tutorial
+## 2.3. Ambiente, Historial, Conecciones y Tutorial
 En el panel superior derecho, encontraremos cuatro pestañas:
 
-  + *Environment*: Aquí se irán registrando el trabajo realizado (resultados, variables, gráficos, etc.) durante una determinada sesión. También tenemos la opción de cargar y guardar una sesión de trabajo, importar datos y limpiar los objetos de la sesión.
-  + *History*: Aquí se registran las instrucciones ejecutadas. Como opciones, podemos cargar y guardar el historial de la sesión, seleccionar una o más instrucciones y enviarlas a la consola o al script, además de poder limpiar el historial.
-  + *Connections*: Auí puedes conectar `RStudio` a diferentes fuentes de datos. Por ejemplo ODBC, Spark, Oracle, SQLServer, entre otras.
-  + *Tutorial*: Aquí encontraremos ayuda usando el paquete `learnr`.
+  + **Environment**: En el ambiente de trabajo se irán registrando el trabajo realizado (resultados, variables, gráficos, etc.) durante una determinada sesión. También tenemos la opción de cargar y guardar una sesión de trabajo, importar datos y limpiar los objetos de la sesión.
+  + **History**: En el hisotrial se registran las instrucciones ejecutadas. Como opciones, podemos cargar y guardar el historial de la sesión, seleccionar una o más instrucciones y enviarlas a la consola o al script, además de poder limpiar el historial.
+  + **Connections**: En conecciones,  puedes conectar `RStudio` a diferentes fuentes de datos. Por ejemplo ODBC, Spark, Oracle, SQLServer, entre otras.
+  + **Tutorial**: Aquí encontraremos ayuda usando el paquete `learnr`.
 
 
-## 2.4. Archivos, Visualizaciones, Paquetes, Ayuda
-En el panel inferior derecho, encontraremos cinco pestañas:
+## 2.4. Archivos, Visualizaciones, Paquetes y Ayuda
+En el panel inferior derecho, encontraremos cuatro pestañas:
 
-+ *Files*: Permite ver el historial de archivos trabajados con el programa.
-+ *Plots*: Aquí se visualizan los gráficos que generamos. 
-+ *Packages*: Entrega un listado de los paquetes instalados en `R` y los que han sido cargados en la sesión. A través de las opciones de esta pestaña podemos instalar nuevos paquetes o actualizar los existentes.
-+ *Help*: Permite acceder al CRAN (siempre que se cuente con conexión a Internet), página oficial del software que ofrece diferentes recursos para el programa: información general,  de los paquetes instalados, de funciones de interés, entre otros.
-+ *Viewer*: Aquí podemos ver los resultados al construir reportes mediante funcionalidades tipo `rmarkdown`.
++ **Files**: En la pestaña archivos podemos ver el historial de archivos trabajados.
++ **Plots**: Aquí se visualizan los gráficos que generamos. 
++ **Packages**: Entrega un listado de los paquetes instalados en `R` y los que han sido cargados en la sesión. A través de las opciones de esta pestaña podemos instalar nuevos paquetes o actualizar los existentes.
++ **Help**: Permite acceder al CRAN (siempre que se cuente con conexión a Internet), página oficial del software que ofrece diferentes recursos para el programa: información general,  de los paquetes instalados, de funciones de interés, entre otros.
 
 Es importante señalar que podemos reorganizar los paneles en *Ver -> Paneles -> Diseño de panel*. Además. podemos agregar y eliminar pestañas de los paneles en *Ver* y seleccionando o deseleccionando las opciones de pestañas que se enumeran en la parte inferior.
 

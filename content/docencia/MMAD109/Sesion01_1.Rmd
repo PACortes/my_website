@@ -9,7 +9,7 @@ output:
   blogdown::html_page:
     toc: true
 type: book
-weight: 20
+weight: 10
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE)
@@ -22,7 +22,7 @@ Este taller asumirá que estamos utilizando `RStudio` para interactuar con `R`, 
 # 1. Instalación de `RStudio`
 `RStudio` es gratuito y de código abierto. Haz clic [aquí](https://www.rstudio.com/products/rstudio/download/) para descargar la versión que corresponda a tu sitema operativo.
 
-`RStudio` requiere la instalación de `R` (versión 3.0. 1 o superior). Para descargar `R`, haz clic [aquí](https://cran.r-project.org/bin/windows/base/) si tu sistema operativo es Windows, y [aquí](https://cran.r-project.org/bin/macosx/) en caso de que sea macOS.
+`RStudio` requiere la instalación de `R` (versión 3.0.1 o superior). Para descargar `R`, haz clic [aquí](https://cran.r-project.org/bin/windows/base/) si tu sistema operativo es Windows, y [aquí](https://cran.r-project.org/bin/macosx/) en caso de que sea macOS.
 
 # 2. Entorno de trabajo de `RStudio`
 Cuando abras RStudio, notarás una ventana con cuatro paneles principales, cada uno con algunas pestañas.

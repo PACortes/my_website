@@ -77,7 +77,7 @@ Podemos verificar si un dato es de un tipo específico con la familia de funcion
 
 
 
-```{r}
+```{r, echo=FALSE}
 #library(tableHTML)
 library(gt)
 tabla <- data.frame(

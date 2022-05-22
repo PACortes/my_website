@@ -20,33 +20,62 @@ knitr::opts_chunk$set(collapse = TRUE)
 Este taller asumirá que está utilizando `RStudio` para interactuar con `R`y , aunque todo lo que veremos se puede hacer directament en `R`.
 
 # 1. Instalación de `RStudio`
-`RStudio` es gratuito y de código abierto. Haz click [aquí](https://www.rstudio.com/products/rstudio/download/) para descargar la versión que corresponda a tu sitema operativo.
+`RStudio` es gratuito y de código abierto. Haz clic [aquí](https://www.rstudio.com/products/rstudio/download/) para descargar la versión que corresponda a tu sitema operativo.
 
-`RStudio` requiere la instalación de `R` (versión 3.0. 1 o superior). Para descargar `R`, haz click [aquí](https://cran.r-project.org/bin/windows/base/) si tu sistema operativo es Windows, y [aquí](https://cran.r-project.org/bin/macosx/) en caso de que sea macOS.
+`RStudio` requiere la instalación de `R` (versión 3.0. 1 o superior). Para descargar `R`, haz clic [aquí](https://cran.r-project.org/bin/windows/base/) si tu sistema operativo es Windows, y [aquí](https://cran.r-project.org/bin/macosx/) en caso de que sea macOS.
 
-# 2. Las partes de `RStudio`
-Cuando abras RStudio, notarás muchas ventanas diferentes, cada una con algunas pestañas. En primera instancia, puede que esto sea abrumador. Afortunadamente. solo necesitaremos usar algunos de estas opciones para lograr los objetivos de este taller.
+# 2. Entorno de trabajo de `RStudio`
+Cuando abras RStudio, notarás una ventana con cuatro paneles principales, cada uno con algunas pestañas.
 
-![](static/docencia/MMAD109/Sesion01_1_files/rstudio.png){width=400px height=400px}
 
-## Consola
+## 2.1. Consola
+En el panel inferior izquierdo, encontraremos la consola de `RStudio`. Es aquí donde se está el donde está el prompt *>*, y  donde podemos escribir las lineas de comando para interactuar con `R`, y en donde nuestro código es interpretado. El panel "Consola" es la única parte de `RStudio` que en realidad es `R`; todo lo demás son herramientas opcionales.
 
-Es el corazón de `R`y `RStudio`. Aquí escribiremos las lineas de comando para "pedir" cosas a RStudio. En la consola también visualzaremos los resultados de las petición realizada (excepto gráficos). Es importante tener en cuenta que:
   
-  + Cuando la consola tiene el cursor *>* significa que le podemos dar comandos para ejecutar.
-  + Si es que tiene el símbolo *+* quiere decir que nos falta completar el comando anterior. 
-  + El texto en rojo nos avisa y explica, errores en la solicitud realizada.
+## 2.2. Script
+En el panel superior izquierdo, encontraremos el *script*, editor de texto con la extensión de archivo *.R* que puede ser leido por `R`. En el script escribiremos comandos que serán ejecutados en la consola. Además, en el script podemos agregar comentarios. Para geneerar comentarios, las(s) línea(s) de texto  deben estar precedidas por el el símbolo *#*.
+
+Para guardar el script:
+
+  + *File > Save as* y seleccionar la ruta donde se quiere guardar el archivo con la extensión *.R*
+  + Hacer clic en el botón *Guardar* que se encuentra en la parte izquierda de la cinta de opciones del script.
+
+
+## 2.3. Ambiente/Historial/Conecciones/Tutorial
+En el panel superior derecho, encontraremos cuatro pestañas:
+
+  + *Environment*: Aquí se irán registrando el trabajo realizado (resultados, variables, gráficos, etc.) durante una determinada sesión. También tenemos la opción de cargar y guardar una sesión de trabajo, importar datos y limpiar los objetos de la sesión.
+  + *History*: Aquí se registran las instrucciones ejecutadas. Como opciones, podemos cargar y guardar el historial de la sesión, seleccionar una o más instrucciones y enviarlas a la consola o al script, además de poder limpiar el historial.
+  + *Connections*: Auí puedes conectar `RStudio` a diferentes fuentes de datos. Por ejemplo ODBC, Spark, Oracle, SQLServer, entre otras.
+  + *Tutorial*: Aquí encontraremos ayuda usando el paquete `learnr`.
+
+
+## 2.4. Archivos, Visualizaciones, Paquetes, Ayuda
+En el panel inferior derecho, encontraremos cinco pestañas:
+
++ *Files*: Permite ver el historial de archivos trabajados con el programa.
++ *Plots*: Aquí se visualizan los gráficos que generamos. 
++ *Packages*: Entrega un listado de los paquetes instalados en `R` y los que han sido cargados en la sesión. A través de las opciones de esta pestaña podemos instalar nuevos paquetes o actualizar los existentes.
++ *Help*: Permite acceder al CRAN (siempre que se cuente con conexión a Internet), página oficial del software que ofrece diferentes recursos para el programa: información general,  de los paquetes instalados, de funciones de interés, entre otros.
++ *Viewer*: Aquí podemos ver los resultados al construir reportes mediante funcionalidades tipo `rmarkdown`.
+
+Es importante señalar que podemos reorganizar los paneles en *Ver -> Paneles -> Diseño de panel*. Además. podemos agregar y eliminar pestañas de los paneles en *Ver* y seleccionando o deseleccionando las opciones de pestañas que se enumeran en la parte inferior.
+
+# 3. Interactuando con `RStudio`
+Interactuar con `RStudio` es simple. Básicamente, debemos escribir el código `R` en la línea inferior de la consola y luego haga clic en *Enter* para ejecutarlo. También podemos enviar código desde el *script*, presionando *<Ctrl + R>* (Windows) o *<Ctrl +Enter>* (Mac).
+
+El código que escribimos se llama comando, porque dará la orden a nuestro computador que haga algo por nosotros. La línea en la que escribimos se llama línea de comando.
+
+Cuando escribimos un comando en el prompt *>* y presionamos *Enter*, o lo enviamos desde el *script*, `R` ejecutará el comando y nos mostará los resultados en la consola. Junto a nuestros resultados, aparecerá *[1]*, informando que en esta línea comienza con el primer valor del resultado. Luego, RStudio muestra un nuevo *>* para su próximo comando.
+
+Es importante tener en cuenta que:
   
-## Script
-Es un documento de texto con la extensión de archivo *.R* que puede ser leido por `R`. 
+  + Cuando la consola muestra el prompt *>*, significa que podemos dar nuevos comandos para ejecutar.
+  + Si escribimos un comando incompleto y presionamos *Enter*, la consola mostrará un indicador *+*, lo que significa que está esperando que escribamos el resto del comando. 
+  + Si escribimos un comando que R no reconoce, R devolverá un mensaje de error. Esto no es para alarmarno. R simplemente nos está diciendo que no puede entender o hacer lo que le pedimos. El texto en rojo nos avisa y explica, los errores en la solicitud realizada.
 
-En el script escribiremos y ejecutaremos nuestras líneas de código. Además, en el script podemos escribir notas personales. Es importante tener en cuenta que:
 
-* Para ejecutar una(s) línea(s) de comandos, debemos presionar *<Ctrl + R>* (Windows) o *<Ctrl +Enter>* (Mac). Los resultados se visualizaran en la consola.
-
-* Para geneerar notas personales, las(s) línea(s) de texto y/o códigolaLas deben estar precedidas por el el símbolo *#*.
-
-# 2. Tipos de datos en R
+# 4. Tipos de datos en R
 
 Los tipos de datos de uso más común en R son:
 

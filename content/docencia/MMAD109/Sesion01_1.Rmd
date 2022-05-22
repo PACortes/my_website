@@ -74,108 +74,17 @@ Es importante tener en cuenta que:
   + Si escribimos un comando que R no reconoce, R devolverá un mensaje de error. Esto no es para alarmarno. R simplemente nos está diciendo que no puede entender o hacer lo que le pedimos. El texto en rojo nos avisa y explica, los errores en la solicitud realizada.
 
 
-# 4. Tipos de datos en R
+# 5. Sintáxis
+`R` es un lenguaje de programación. Tanto en `R`, así como de la interfaz `RStudio`, podemos  interactuará con el programa mediante códigos. La sintaxis es un conjunto de códigos. Su uso en `R` y `RStudio` es bastante intuitivo y sigue un patrón lógico. 
 
-Los tipos de datos de uso más común en R son:
+De modo general, la sintáxis de `R` sigue la siguiente estructura básica:
 
-## Numérico
-Representan números que tienen una parte decimal o fraccionaria.
+`comando(objeto)`
 
-```{r}
-5
+En donde:
 
-25.3
+* `comandos`: función a ejecutar a un objeto.
 
-123890.85544
-```
+* `objeto`: estructura de datos que tiene algunos atributos y métodos que actúan sobre sus atributos.
 
-## Cadena de texto
-Secuencias de caracteres. Puede contener letras, números, espacios, signos de puntuación y símbolos especiales.
-
-```{r}
-"a"
-
-"a"
-
-"Contaminacion"
-```
-
-## Factor
-Dato numérico representado por una etiqueta.
-
-## Lógico
-Sólo tienen dos valores posibles: verdadero (TRUE) y falso (FALSE). Representan si una condición o estado se cumple, es verdadero, o no, es falso.
-
-## Perdido (NA) y Vacío (NULL)
-En R, usamos NA para representar datos perdidos, mientras que NULL representa la ausencia de datos. La diferencia entre las dos es que un dato NULL aparece sólo cuando R intenta recuperar un dato y no encuentra nada, mientras que NA es usado para representar explícitamente datos perdidos, omitidos o que por alguna razón son faltantes.
-
-
-## Verificando el tipo de dato
-Podemos verificar si un dato es de un tipo específico con la familia de funciones `is()`. Estas funciones toman como argumento un dato, si este es del tipo que estamos verificando, nos devolverán TRUE y en caso contrario devolverán FALSE
-
-
-
-```{r, echo=FALSE}
-library(gt)
-tabla <- data.frame(
-  FU=c("is.integer()","is.numeric","is.character()","is.factor()","is.logical()","is.na()","is.null()" ),
-                 TD=c("Entero","Numérico","Cadena de texto","Factor","Lógico","NA","NULL"))
-
-tabla %>%
-  gt() %>% 
-  cols_label(FU="Función",
-             TD= "Tipo de dato") %>%
-  tab_style(locations=cells_column_labels(columns=everything()),
-            style = list(
-              cell_borders(sides="bottom",weight=px(3)),
-              cell_text(weight = "bold"))) %>%
-  tab_options(table.font.size = px(20L),
-              column_labels.font.size = px(25L))
-  
-  
-```
-
-# 3. Operadores
-
-
-
-## Operador de asignación
-Nos permite asignar datos a un objeto. Para ello podems utilizar los símbolos *<-* o *=*.
-
-
-```{r}
-dos<-2
-
-letra<-"a"
-```
-
-
-Es importante tener en cuenta que:
-
-* Si asignamos un datos a un objetoal que ya habíamos asignado datos, nuestro objeto conserva los datos más recientes.
-
-* Esta operación nos permite “guardar” el resultado de operaciones, de modo que podemos recuperarlos sin necesidad de realizar las operaciones otra vez (Revisar *Environment*).
-
-* A lo largo del taller utilizaremos *<-* por ser característico de R y fácil de reconocer visualmente.
-
-## Operador de concatenación
-
-```{r}
-dos_digitos<-c(15, 2)
-```
-
-# 4. Estructura de datos en R
-
-## Vector
-Colección de uno o más datos del mismo tipo.
-
-```{r}
-c(15, 2, 3.3, 5, 8)
-```
-
-
-```{r}
-vector_numerio<-c(15, 2, 3.3, 5, 8)
-```
-
-
+Este ejemplo es una operación simple. Al aumentar la complejidad de los análisis la especificación de los comandos y los objetos irá requiriendo una mayor cantidad de información.

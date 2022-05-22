@@ -27,7 +27,7 @@ Este taller asumirá que está utilizando `RStudio` para interactuar con `R`y , 
 # 2. Las partes de `RStudio`
 Cuando abras RStudio, notarás muchas ventanas diferentes, cada una con algunas pestañas. En primera instancia, puede que esto sea abrumador. Afortunadamente. solo necesitaremos usar algunos de estas opciones para lograr los objetivos de este taller.
 
-![](/docencia/MMAD109/Sesion01_1_files/rstudio.png){width=400px height=400px}
+![](static/docencia/MMAD109/Sesion01_1_files/rstudio.png){width=400px height=400px}
 
 ## Consola
 

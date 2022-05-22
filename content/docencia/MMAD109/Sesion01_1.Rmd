@@ -77,7 +77,7 @@ Podemos verificar si un dato es de un tipo específico con la familia de funcion
 
 
 
-```{r, include=FALSE}
+```{r, echo=FALSE}
 library(gt)
 tabla <- data.frame(
   FU=c("is.integer()","is.numeric","is.character()","is.factor()","is.logical()","is.na()","is.null()" ),

@@ -49,5 +49,5 @@ A continuación, se definen conceptos que serán de utilidad al momento de comen
 * CRAN https://CRAN.R-project.org/
 
 
-{{< cta cta_text="Comencemos con el taller" cta_link="scatterplot" >}}
+{{< cta cta_text="Comencemos con el taller" cta_link="Sesion01_1" >}}
 

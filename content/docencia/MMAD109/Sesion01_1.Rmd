@@ -17,7 +17,8 @@ knitr::opts_chunk$set(collapse = TRUE)
 
 # 1. Definición
 
-![](/docencia/MMAD109/Sesion01_1_files/RSTUDIO.png){width=400px height=200px}
+![](/docencia/MMAD109/Sesion01_1_files/RSTUDIO.png){width=400px height=400px}
+
 ## Consola
 
 Es el corazón de `R`y `RStudio`. Aquí escribiremos las lineas de comando para "pedir" cosas a RStudio. En la consola también visualzaremos los resultados de las petición realizada (excepto gráficos). Es importante tener en cuenta que:

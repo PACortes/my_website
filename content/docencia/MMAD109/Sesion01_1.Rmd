@@ -27,7 +27,7 @@ Este taller asumirá que estamos utilizando `RStudio` para interactuar con `R`, 
 # 2. Entorno de trabajo de `RStudio`
 Cuando abras RStudio, notarás una ventana con cuatro paneles principales, cada uno con algunas pestañas.
 
-![](rstuidio.png){width=100% height=100%}
+![hola](rstuidio.png){width=100% height=100%}
 
 ## 2.1. Consola
 En el panel inferior izquierdo, encontraremos la consola de `RStudio`. Es aquí donde podemos escribir las lineas de comando para interactuar con `R`, y en donde nuestro código es interpretado. La consola es la única parte de `RStudio` que en realidad es `R`; todo lo demás son herramientas opcionales.

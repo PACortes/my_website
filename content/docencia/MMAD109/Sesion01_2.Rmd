@@ -15,19 +15,18 @@ weight: 20
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-# 1. Tipos de datos en R
+# 1. Tipos de datos en `R`
+En `R` los datos pueden ser de diferentes tipos. Cada tipo tiene características particulares que lo distinguen de los demás. Entre otras cosas algunas operaciones sólo pueden realizarse con tipos de datos específicos. Los tipos de datos de uso más común en R son:
 
-Los tipos de datos de uso más común en R son:
-
-## 1.1. Numérico
-Representan números que tienen una parte decimal o fraccionaria.
+## 1.2. Numericos
+Los tipos de datos numéricos son bastante sencillos. Estos son solo números, escritos como números enteros o decimales. 
 
 ```{r}
 5
+```
 
+```{r}
 25.3
-
-123890.85544
 ```
 
 ## 1.2. Cadena de texto
@@ -35,27 +34,41 @@ Secuencias de caracteres. Puede contener letras, números, espacios, signos de p
 
 ```{r}
 "a"
+```
 
-"a"
-
+```{r}
 "Contaminacion"
 ```
 
 ## 1.3. Factor
-Dato numérico representado por una etiqueta.
+Este tipo de dato almacena variables categóricas o cualitativas. Los factores en `R` son, por lo tanto, las variables categóricas que empleamos. 
 
-Por último, cada una de las etiquetas o valores que puedes asumir un factor se conoce como nivel. En nuestro ejemplo con femenino y masculino, tendríamos dos niveles.
+Por definición, las variables categóricas cuentan con un número limitado de factores (o categorías). Por ejemplo, la variable sexo solo tendría dos factores: hombre o mujer. Pero estos factores o categorías también pueden ser numéricos, como el número de personas que asisten a cada clase de esta asignatura.
+
+Para crear un factor a partir de un vector, podemos usar la función `factor()`. Por ejemplo, si generamos un vector con 10 elementos que indiquen el sexo de 10 personas, es importante convertirlo en factorial porque así R evalúa el número de factores que hay (2) en vez de tratarlos de modo independiente..
+
+
+```{r}
+sexo <- c("hombre", "mujer", "mujer", "mujer", "hombre", "mujer", "mujer", "mujer", "hombre", "mujer")
+```
+
+```{r}
+factor(sexo)
+```
 
 
 ## 1.4. Lógico
-Sólo tienen dos valores posibles: verdadero (TRUE) y falso (FALSE). Representan si una condición o estado se cumple, es verdadero, o no, es falso.
+Sólo tienen dos valores posibles: verdadero (*TRUE*) y falso (*FALSE*). Representan si una condición o estado se cumple, es verdadero, o no, es falso.
 
-## 1.5.Perdido (NA) y Vacío (NULL)
-En R, usamos NA para representar datos perdidos, mientras que NULL representa la ausencia de datos. La diferencia entre las dos es que un dato NULL aparece sólo cuando R intenta recuperar un dato y no encuentra nada, mientras que NA es usado para representar explícitamente datos perdidos, omitidos o que por alguna razón son faltantes.
+
+## 1.5.Perdido (*NA*) y Vacío (*NULL*)
+En R, usamos *NA* para representar datos perdidos, mientras que *NULL* representa la ausencia de datos. 
+
+La diferencia entre las dos es que un dato *NULL* aparece sólo cuando `R` intenta recuperar un dato y no encuentra nada, mientras que *NA* es usado para representar explícitamente datos perdidos, omitidos o que por alguna razón son faltantes.
 
 
 ## 1.6. Verificando el tipo de dato
-Podemos verificar si un dato es de un tipo específico con la familia de funciones `is()`. Estas funciones toman como argumento un dato, si este es del tipo que estamos verificando, nos devolverán TRUE y en caso contrario devolverán FALSE
+Podemos verificar si un dato es de un tipo específico con la familia de funciones `is()`. Estas funciones toman como argumento un dato, si este es del tipo que estamos verificando, nos devolverán *TRUE* y en caso contrario devolverán *FALSE*
 
 
 ```{r, echo=FALSE}
@@ -343,4 +356,26 @@ Ciudad<-c("Santiago","Valdivia")
 Ciudad<-rep(Ciudad,each=5)
 Ciudad
 
+```
+
+
+## Data frames
+Es una lista de vectores de la misma longitud. Los data frame permiten tipos de datos mixtos (por ejemplo, numérico, lógico, caracter). Esto les permite almacenar diferentes tipos de objetos (variables), lo cual es muy útil en el análisis estadístico.
+
+Primero, generemos tres diferentes objetos.
+
+```{r}
+Ciudad<-rep(c("Santiago","Valdivia"),each=5)
+Sitio_Muestreo<-rep(c(1:5), times=2)
+PM2.5<-c(73,75,79,84,80, 67, 65, 70, 61,65)
+```
+
+Ahora, utilizaremos la función `data.frame`para generar nuestro data frame:
+
+```{r}
+data<-data.frame(Ciudad,Sitio_Muestreo, PM2.5)
+```
+
+```{r}
+data
 ```

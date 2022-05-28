@@ -26,8 +26,8 @@ Este taller asumirá que estamos utilizando `RStudio` para interactuar con `R`, 
 
 # 2. Entorno de trabajo de `RStudio`
 Cuando abras RStudio, notarás una ventana con cuatro paneles principales, cada uno con algunas pestañas.
- getwd() 
-![hola](rstuidio.png){width=100% height=100%}
+ 
+ 
 ## 2.1. Consola
 En el panel inferior izquierdo, encontraremos la consola de `RStudio`. Es aquí donde podemos escribir las lineas de comando para interactuar con `R`, y en donde nuestro código es interpretado. La consola es la única parte de `RStudio` que en realidad es `R`; todo lo demás son herramientas opcionales.
 
@@ -41,7 +41,7 @@ Para guardar el script:
   + Hacer clic en el botón *Guardar* que se encuentra en la parte izquierda de la cinta de opciones del script.
 
 
-## 2.3. Ambiente, Historial, Conecciones y Tutorial
+## 2.3. Ambiente, Historial, Conexiones y Tutorial
 En el panel superior derecho, encontraremos cuatro pestañas:
 
   + **Environment**: En el ambiente de trabajo se irán registrando el trabajo realizado (resultados, variables, gráficos, etc.) durante una determinada sesión. También tenemos la opción de cargar y guardar una sesión de trabajo, importar datos y limpiar los objetos de la sesión.
@@ -83,7 +83,7 @@ De modo general, la sintáxis de `R` sigue la siguiente estructura básica:
 
 En donde:
 
-* `comandos`: función a ejecutar a un objeto.
+* `comando`: función a ejecutar a un objeto.
 
 * `objeto`: estructura de datos que tiene algunos atributos y métodos que actúan sobre sus atributos.
 

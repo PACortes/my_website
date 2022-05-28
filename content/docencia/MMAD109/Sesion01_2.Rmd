@@ -370,7 +370,7 @@ Sitio_Muestreo<-rep(c(1:5), times=2)
 PM2.5<-c(73,75,79,84,80, 67, 65, 70, 61,65)
 ```
 
-Ahora, utilizaremos la función `data.frame`para generar nuestro data frame:
+Ahora, utilizaremos la función `data.frame` para generar nuestro data frame.
 
 ```{r}
 data<-data.frame(Ciudad,Sitio_Muestreo, PM2.5)

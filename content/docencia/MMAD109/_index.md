@@ -1,5 +1,5 @@
 ---
-date: "2021-09-19"
+date: "2022-03-01"
 linkTitle: MMAD109
 summary: En este taller vamos a  introducir el software R.  Aprenderemos herramientas básicas para la visualización y el análisis de datos. Finalmente, aprenderemos a realizar informes automáticos.
 title: "MMAD109: visualización y análisis de datos"
@@ -47,7 +47,7 @@ A continuación, se definen conceptos que serán de utilidad al momento de comen
 
 **Cargar  un paquete**: Esta acción se realiza cada vez que iniciemos sesión y que necesitemos utilizar un determinado paquete. Para ello usaremos la función `library()`, dando como argumento el nombre del paquete que deseamos instalar, esta vez sin utilizar comillas. 
 
-`Función`: Serie de operaciones a la que les hemos asignados un nombre. Las funciones aceptan argumentos, es decir, especificaciones sobre cómo deben funcionar.
+**Función**: Serie de operaciones a la que les hemos asignados un nombre. Las funciones aceptan argumentos, es decir, especificaciones sobre cómo deben funcionar.
 
 
 {{< cta cta_text="Comencemos con el taller" cta_link="sesion01_1" >}}

@@ -19,9 +19,9 @@ interests:
 - Análisis de texto computacional 
 - Búsqueda y recuperación de información
 organizations:
-- name: Escuela de Ingeniería en Medio Ambiente y Sustentabilidad, Universidad Mayor
-  url: www.umayor.cl
-role: Profesor Adjunto
+- name: NEOM
+  url: https://www.neom.com/en-us
+role: Faculty Affairs Specialists (NEOM U)
 social:
 - icon: envelope
   icon_pack: fas

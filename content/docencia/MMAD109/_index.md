@@ -10,20 +10,29 @@ type: book
 
 {{< toc hide_on="xl" >}}
 
+
+##  Gestión de la contaminación y pasivos ambientales (MMAD119)
+
+La asignatura tiene por objetivo proporcionar al estudiante una base conceptual general sobre los diferentes problemas de contaminación ambiental asociados al desarrollo urbano e industrial y las herramientas e instrumentos de gestión y control que se aplican en Chile y el mundo para manejar la contaminación y los pasivos ambientales del territorio, en el marco de la institucionalidad y normativa vigentes en el país.
+
 ## Objetivos del taller
 
-* Conocer sobre `R` y `RStudio` para poder explorar, manipular, visualizar y analizar nuestros datos.
-
-* Generar reportes automáticos y hacer reproducibles nuestros análisis.
+En el presente taller aprenderemos a manejar `R` y `RStudio` como herramienta para poder explorar, visualizar, analizar y comunicar de manera eficaz datos de contaminación atmosférica. 
 
 ## ¿Qué es `R`?
 
-`R` es un lenguaje y entorno para computación y estadística. En este entorno se implementan técnicas estadísticas y se extiende muy fácilmente a través de paquetes.
+`R`  es un tipo de lenguaje de programación con software libre, que, a su vez, es un tipo de lenguaje interpretado. Es decir, los comandos o instrucciones son ejecutados directamente sin ningún tipo de software externo.
+
+El código `R`   es desarrollado actualmente por R Development Core Team, y su proyecto es colaborativo y abierto, por lo que otros usuarios programadores pueden ser partícipes del proyecto mediante la publicación de paquetes que extienden su configuración básica. 
+
+`R`  incluye una amplia variedad de técnicas estadísticas y de visualización de datos.
 
 
 ## ¿Qué es `RStudio`?
 
-`RStudio` es un entorno de desarrollo integrado para `R`. Incluye varios elementos que facilitan las tareas que llevamos a cabo en `R`. Tiene un editor de código (permite auto completar).
+`RStudio` es un entorno de desarrollo integrado para `R`. `RStudio` incluye una interfaz gráfica que nos permite interactuar con `R` de una forma más amigable. 
+
+Es importante señalar que `RStudio` es un programa que ejecuta `R` y proporciona herramientas adicionales que son útiles al escribir código `R`, por ende RStudio` y `R` no son lo mismo.
 
 
 ## Definiciones
@@ -39,14 +48,6 @@ A continuación, se definen conceptos que serán de utilidad al momento de comen
 **Cargar  un paquete**: Esta acción se realiza cada vez que iniciemos sesión y que necesitemos utilizar un determinado paquete. Para ello usaremos la función `library()`, dando como argumento el nombre del paquete que deseamos instalar, esta vez sin utilizar comillas. 
 
 `Función`: Serie de operaciones a la que les hemos asignados un nombre. Las funciones aceptan argumentos, es decir, especificaciones sobre cómo deben funcionar.
-
-## Enlaces de interés
-
-* Descarga de R
-
-* Descarga de RStudio
-
-* CRAN https://CRAN.R-project.org/
 
 
 {{< cta cta_text="Comencemos con el taller" cta_link="sesion01_1" >}}

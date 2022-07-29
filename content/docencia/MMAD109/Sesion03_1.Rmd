@@ -81,7 +81,7 @@ En este ejemplo hemos especificado que el documento se generará en formato *HTM
 * **output: ioslides_presentation**...    presentación ioslides (html)
 
 
-### **Texto**
+### Texto
 El documento lo podemos escribir en forma de texto plano (el contenido que deseas escribir). Para ello podemos usar la sintaxis de markdown para describir el formato del texto en el documento final. Dedicaremos una sección independiente para revisar la sintaxis de RMarkdown.
 
 Podemos agregar imágenes a un informe de R Markdown a partir de imágenes disponibles en nuestro directorio de trabajo. Para ello utilziaremos la siguiente sintaxis: 

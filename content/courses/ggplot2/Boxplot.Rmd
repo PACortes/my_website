@@ -78,7 +78,7 @@ La base de datos **MaterialParticulado** fue generada a partir de la informació
 La base de datos **MaterialParticulado.txt** se encuentra disponible en el repositorio github [PACortes/pacortes_datos](https://github.com/PACortes/pacortes_datos).
 
 
-```{r inclide= FALSE,message = FALSE}
+```{r include= FALSE,message = FALSE}
 library(readr)
 MaterialParticulado <- read_delim("MaterialParticulado.txt", 
 delim = "\t", escape_double = FALSE, 

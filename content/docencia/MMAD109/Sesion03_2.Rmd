@@ -1,6 +1,6 @@
 ---
-title: "Primer informe con RMarkdown"
-date: '2021-10-05T21:13:14-05:00'
+title: "Primer informe con R Markdown"
+date: '2021-10-05'
 categories: R
 tags:
 - R
@@ -57,9 +57,12 @@ library(ggplot2)
 ```
 
 
-```{r warning=FALSE}
+```{r}
 data$Region<-factor(data$Region, levels=c("Valparaiso", "Metropolitana","LosRios"))
+```
 
+
+```{r }
 ggplot(data,mapping=aes(x=Region,y=PM25))+
   geom_boxplot(fill="#BC3C29FF",alpha=0.7)+
   geom_jitter(width = 0.2, alpha=0.7)+
@@ -90,7 +93,7 @@ Recordemos que `ggplot2` divide un gráfico en tres partes fundamentales:
 2) la estética.
 3) la geometría.
 
-```{r warning=FALSE}
+```{r }
 ggplot(data_ejemplo, mapping=aes(x=PM25 , y =PM10))+
   geom_point(size=2.5, col="#BC3C29FF")+
   labs(x= "PM 2.5 (μg/m3)",

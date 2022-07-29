@@ -1,6 +1,6 @@
 ---
-title: "Primer informe con RMarkdown"
-date: '2021-10-05T21:13:14-05:00'
+title: "Primer informe con R Markdown"
+date: '2021-10-05'
 categories: R
 tags:
 - R
@@ -65,9 +65,8 @@ data&lt;-read_excel(&quot;data.xlsx&quot;)</code></pre>
 <p>Ahora, debemos asegurarnos de llamar a la librería <code>ggplot2</code>.</p>
 <pre class="r"><code>#install.packages(&quot;ggplot2&quot;)
 library(ggplot2)</code></pre>
-<pre class="r"><code>data$Region&lt;-factor(data$Region, levels=c(&quot;Valparaiso&quot;, &quot;Metropolitana&quot;,&quot;LosRios&quot;))
-
-ggplot(data,mapping=aes(x=Region,y=PM25))+
+<pre class="r"><code>data$Region&lt;-factor(data$Region, levels=c(&quot;Valparaiso&quot;, &quot;Metropolitana&quot;,&quot;LosRios&quot;))</code></pre>
+<pre class="r"><code>ggplot(data,mapping=aes(x=Region,y=PM25))+
   geom_boxplot(fill=&quot;#BC3C29FF&quot;,alpha=0.7)+
   geom_jitter(width = 0.2, alpha=0.7)+
   labs(x=&quot;Region&quot;,
@@ -77,7 +76,7 @@ ggplot(data,mapping=aes(x=Region,y=PM25))+
   theme(axis.text =element_text(size=14),
         axis.title=element_text(size=20),
         plot.title=element_text(size=20))</code></pre>
-<p><img src="/docencia/MMAD109/Sesion03_2_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="/docencia/MMAD109/Sesion03_2_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 <div id="gráfico-de-dispersión" class="section level3">
 <h3>Gráfico de dispersión</h3>
@@ -99,7 +98,7 @@ ggplot(data,mapping=aes(x=Region,y=PM25))+
   theme(axis.text =element_text(size=14),
         axis.title=element_text(size=20),
         plot.title=element_text(size=20))</code></pre>
-<p><img src="/docencia/MMAD109/Sesion03_2_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="/docencia/MMAD109/Sesion03_2_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 </div>
 </div>
 <div id="paso-3.-analicemos-nuestros-datos" class="section level2">
@@ -198,7 +197,7 @@ ggplot(data,mapping=aes(x=Region,y=PM25))+
 </ul>
 <p>En nuestro ejemplo, podemos establecer que existe una relación significativa positiva y fuerte entre las emisiones de PM2.5 y PM10 en la Región Metropolitana (R= 0.86, P &lt; 0.05).</p>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="/docencia/MMAD109/Sesion03_2_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="/docencia/MMAD109/Sesion03_2_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 </div>
 </div>
 </div>

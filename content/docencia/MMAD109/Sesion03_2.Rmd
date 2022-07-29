@@ -9,7 +9,7 @@ output:
   blogdown::html_page:
     toc: true
 type: book
-weight: 20
+weight: 40
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE)
@@ -17,7 +17,7 @@ knitr::opts_chunk$set(collapse = TRUE)
 
 # Objetivo del informe
 
-Generar un informe automatizado en el cuál se explorarán y visualizarán los los datos de la base de datos de emisiones de PM2.5 y PM10 para tres regiones de nuestro país.Para ello utilizaremos los conocimientos que hemos aprendido sobre las librerías `dplyr`, `ggplot2` y `rmarkdown`.
+Generar un informe automatizado en el cuál se explorarán y visualizarán los los datos de la base de datos de emisiones de PM2.5 y PM10 para tres regiones de nuestro país. Para ello utilizaremos los conocimientos que hemos aprendido sobre las librerías `dplyr`, `ggplot2` y `rmarkdown`.
 
 ## Paso 1.  Exploremos nuestros datos
 

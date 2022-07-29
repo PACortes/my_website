@@ -9,7 +9,7 @@ output:
   blogdown::html_page:
     toc: true
 type: book
-weight: 20
+weight: 30
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE)
@@ -56,7 +56,7 @@ d. Conocimientos basicos en markdown (para eso está este tutorial, no?).
 
 Cuando se utiliza el botón de `Knit` se generan documentos los cuales contienen sintaxis en markdown con codigos de R en *chunks*.
 
-### **Encabezado YAML**
+### Encabezado YAML
 
 El encabezado YAML (en inglés *yet another markup language*) determina los parámetros generales de formato para el documento a generar. Es importante tener presente que este encabezado define el formato del archivo resultante, más no su contenido.
 
@@ -100,7 +100,7 @@ una
 línea
 ```
 
-### **Trozos (*chunk*) de código**
+### Trozos (*chunk*) de código
 
 Los trozos (*chunk*) de código en un documento de R Markdown contendrán  tu código R. Los trozos de código
 está delimitado por tres apóstrofes  seguidos por un r entre corchetes curvos ` {r} `, y su cierre por otros tres apóstrofes (` ``` `). Eso delimita lo que se ejecutará como código. 
@@ -157,13 +157,13 @@ La syntaxis de RMarkdown es muy secilla y nos permite añadir estilo, imágenes,
 
 Syntaxis      | Resultado
 ------------- | -------------
-* *    | **cursiva**
-_ _   | **cursiva**
+* *    | *cursiva*
+_ _   | _cursiva_
 ** **      | **negrita**
-__ __      | **negrita**
+__ __      | ___negrita__
 superindice ^ ^    | superindice ^2^
 tachado ~~ ~~| ~~tachado~~
-eslabon [ ] |[https://www.umayor.cl/um/]
+enlace [ ] |[https://pacortes.github.io/]
 
 
 También podemos generar listas no numeradas:

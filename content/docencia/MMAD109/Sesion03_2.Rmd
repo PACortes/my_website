@@ -1,0 +1,226 @@
+---
+title: "Primer informe con RMarkdown"
+date: '2021-10-05T21:13:14-05:00'
+categories: R
+tags:
+- R
+- RStudio
+output:
+  blogdown::html_page:
+    toc: true
+type: book
+weight: 20
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+# Objetivo del informe
+
+Generar un informe automatizado en el cuál se explorarán y visualizarán los los datos de la base de datos de emisiones de PM2.5 y PM10 para tres regiones de nuestro país.Para ello utilizaremos los conocimientos que hemos aprendido sobre las librerías `dplyr`, `ggplot2` y `rmarkdown`.
+
+## Paso 1.  Exploremos nuestros datos
+
+Utilizaremos el verbo `glimpse()` de la librería *dplyr* para explorar la estructura de la base de datos. Recordemos que asignamos el nombre *data* a nuestra base de datos
+
+Primero debemos asegurarnos de llamar a la librería `dplyr`. También explicitaremos el argumento `warning = FALSE` para evitar que aparezcan mensajes o advertencias en el archivo final.
+
+```{r warning=FALSE, message=FALSE}
+#install.packages("dplyr")
+library(dplyr)
+```
+
+Ahora, importemos nuestros datos: 
+
+```{r message=FALSE}
+library(readxl)
+data<-read_excel("data.xlsx")
+```
+
+Finalmente, exploremos la estructura de nuestros datos:
+
+```{r message=FALSE}
+glimpse(data)
+```
+
+## Paso 2. Visualicemos nuestros datos
+
+### Gráfico de cajas
+Objetivo: Comparar las emisiones de PM2.5 entre las tres regiones en nuestra base de datos.
+
+Ahora, debemos asegurarnos de llamar a la librería `ggplot2`. 
+
+```{r warning=FALSE}
+#install.packages("ggplot2")
+library(ggplot2)
+
+```
+
+
+```{r warning=FALSE}
+data$Region<-factor(data$Region, levels=c("Valparaiso", "Metropolitana","LosRios"))
+
+ggplot(data,mapping=aes(x=Region,y=PM25))+
+  geom_boxplot(fill="#BC3C29FF",alpha=0.7)+
+  geom_jitter(width = 0.2, alpha=0.7)+
+  labs(x="Region",
+       y= "PM 2.5 (μg/m3)",
+       title = "PM 2.5 en tres regiones de Chile")+
+  scale_y_continuous(breaks=c(0,10,20) ,limits = c(0,20))+
+  theme(axis.text =element_text(size=14),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=20))
+```
+
+
+### Gráfico de dispersión
+Generemos un  gráfico de dispersión con la función `geom_point ()` para las variables PM2.5 y PM10 en la región Metropolitana.
+
+Primero, debemos asegurarnos de trabajar solo con los datos que se nos solicitan. Para ello, utilzaremos las funciones `select ()` and `filter ()` de la librería *dplyr*.
+
+```{r warning=FALSE}
+data_ejemplo<-data %>% 
+  filter (Region == "Metropolitana")
+```
+
+
+Recordemos que `ggplot2` divide un gráfico en tres partes fundamentales:
+
+1) los datos.
+2) la estética.
+3) la geometría.
+
+```{r warning=FALSE}
+ggplot(data_ejemplo, mapping=aes(x=PM25 , y =PM10))+
+  geom_point(size=2.5, col="#BC3C29FF")+
+  labs(x= "PM 2.5 (μg/m3)",
+       y= "PM 10 (μg/m3)",
+       title = "Fig.2. Relación PM 2.5 y PM10 en la RM")+
+  theme(axis.text =element_text(size=14),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=20))
+```
+
+
+## Paso 3. Analicemos nuestros datos
+
+### Correlación Lineal
+La correlación es un método estadístico que permite evaluar la relación lineal (cambian conjuntamente a una tasa fija) entre dos variables. En particular, el interés es cuantificar la intensidad de de la variación conjunta entre las dos variables.
+
+Los posibles escenarios de esta relación son:
+
+*  **Correlación positiva**: El aumento de una de las variables viene acompañado del aumento de la otra.
+
+* **Correlación negativa**: El aumento de una variable viene acompañado de una disminución en la otra.
+
+* **No correlación**: Ambas variables no muestren ningún tipo de relación entre si.
+
+El hecho de que dos variables estén correlacionadas no quiere decir que una sea la responsable de la otra. Dicho de otro modo, a existencia de correlación entre variables no implica causalidad.
+
+
+### Coeficiente de Correlación
+
+El coeficiente de correlación es la medida específica que cuantifica la intensidad de la relación lineal entre dos variables en un análisis de correlación. Este coeficiente se simboliza con la letra **r**.
+
+El coeficiente de correlación **r** es un valor sin unidades entre -1 y 1, en donde:
+
+* Cuanto más se aproxima a cero, más débil es la relación lineal.
+
+* Los valores de positivos indican una correlación positiva.
+
+* Los valores de negativos indican una correlación negativa.
+
+* Los valores 1 y -1 representan una correlación "perfecta" positiva y negativa, respectivamente. 
+
+* Si r = 0  nos dice que no hay correlación lineal. Sin embargo, podría exisitr relación de otro tipo.
+
+Un coeficiente de correlación es el **Coeficiente de Correlación de Pearson**, que se usa para evaluar la relación lineal entre dos variables aleatorias cuantitativas. 
+
+### Prueba de Hipótesis
+Una vez estimado el coeficiente de correlación, debemos realizar una prueba o contraste de hipótesis de la "significancia del coeficiente de correlación".
+
+La prueba de hipótesis nos permite decidir si el valor del coeficiente de correlación es “cercano a cero” o “significativamente diferente de cero”. 
+
+Si la prueba concluye que el coeficiente de correlación es significativamente diferente de cero, decimos que el coeficiente de correlación es "significativo".
+
+En simple, la prueba de hipótesis contrasta una hipótesis nula y una alternativa, las cuales son dos enunciados mutuamente excluyentes. Una prueba de hipótesis utiliza los datos para determinar si se puede rechazar la hipótesis nula.
+
+* **hipótesis nula**: las variables x e y no están correlacionadas.
+
+* **hipótesis alternativa**: las variables x e y  están correlacionadas.
+
+
+La prueba, o contraste, de hipótesis funciona de la siguiente forma:
+
+1. Establecer hipótesis de investigación en base a nuestro interés como investigadores. Por ejemplo, Existe una relación entre las variables X e Y.
+
+
+2. Expresar hipótesis de investigación como una hipótesis estadística. 
+
+  * Hipótesis nula: No existe correlación entre las variables X e Y.
+  * Hipótesis alternativa: Existe correlación entre las variables X e Y.
+
+3. Elegir la prueba (test) estadística de acuerdo al diseño experimental y el tipo de datos. La cifra que resulta de la prueba a partir de los datos se conoce como el estadístico del test.
+
+  * Correlación de Pearson para evaluar la relacióne entre X e Y
+
+4. Elegir nivel de significncia (α) de la prueba (límite para rechazar hipótesis nula). En general, se acepta α = 0,01 ó 0,05 de probabilidad de equivocarnos al rechazar la hipótesis nula.
+
+
+5. Calcular el valor de babilidad (p). Probabilidad de obtener los resultados observados u otros más extremos si la hipótesis nula es verdadera.
+
+
+6. Comparar el nivel de significancia con el valor de p.
+
+  + Si p < α, se rechaza hipotetesis nula. Existe correlación significativa entre las variables.
+  + Si p > α, no se rechaza hipotetesis nula. No existe suficiente evidencia para establecer que existe correlación significativa entre las variables.
+
+### Función `cor.test()`
+
+La función `cor` permite calcular el coeficiente de correlación de Pearson (y otros) para dos variables cuantitativas. 
+
+La estructura de la función es la siguiente:
+
+`cor.test(x, y, method = c("pearson", "kendall", "spearman"))`
+
+
+En donde:
+
+* `x, y`: son las variables a evaluar, deben tener la misma longitud.
+
+* `method tipo de coeficiente de correlación a calcular, por defecto es pearson, otros valores posibles son kendall y spearman.
+
+La interpretación se hace examinando el valor de p (p-value) y el coeficiente de correlación (cor).
+
+### Ejemplo
+Evaluemos si existe relación entre las emisiones de PM2.5 Y PM10 enel nivel de las variables PM2.5 y PM10 en la Región Metropolitana.
+
+Recordemos que previamente, generamos el objeto data_ejemplo para trabajar exclusivamente con los datos de la región Metropolitana.
+
+```{r}
+cor.test(data_ejemplo$PM25,data_ejemplo$PM10)
+```
+
+Del resultado, debemos destacar la siguiente información:
+
+* `cor`: coeficiente correlación de Person.
+
+* `p-value`: valor de probabilidad. Si es menor al nivel de significancia (α = 0.05), podemos rechazar la hipótesis nula.
+
+En nuestro ejemplo, podemos establecer que existe una relación significativa positiva y fuerte entre las emisiones de PM2.5 y PM10 en la Región Metropolitana (R= 0.86, P < 0.05).
+
+```{r warning=FALSE, echo = FALSE}
+library(ggpubr)
+
+ggplot(data_ejemplo, mapping=aes(x=PM25 , y =PM10))+
+  geom_point(size=2.5, col="#BC3C29FF")+
+  labs(x= "PM 2.5 (μg/m3)",
+       y= "PM 10 (μg/m3)",
+       title = "Fig.3. Relación PM 2.5 y PM10 en la RM")+
+  theme(axis.text =element_text(size=14),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=20))+
+  stat_cor(method = "pearson", vjust = "inward", hjust = "inward", size=5)+
+  geom_smooth(method = "lm", se = FALSE, colour="#333333")
+
+```

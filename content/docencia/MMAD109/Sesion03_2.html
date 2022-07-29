@@ -1,0 +1,204 @@
+---
+title: "Primer informe con RMarkdown"
+date: '2021-10-05T21:13:14-05:00'
+categories: R
+tags:
+- R
+- RStudio
+output:
+  blogdown::html_page:
+    toc: true
+type: book
+weight: 20
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+<div id="TOC">
+<ul>
+<li><a href="#objetivo-del-informe">Objetivo del informe</a>
+<ul>
+<li><a href="#paso-1.-exploremos-nuestros-datos">Paso 1. Exploremos nuestros datos</a></li>
+<li><a href="#paso-2.-visualicemos-nuestros-datos">Paso 2. Visualicemos nuestros datos</a>
+<ul>
+<li><a href="#gráfico-de-cajas">Gráfico de cajas</a></li>
+<li><a href="#gráfico-de-dispersión">Gráfico de dispersión</a></li>
+</ul></li>
+<li><a href="#paso-3.-analicemos-nuestros-datos">Paso 3. Analicemos nuestros datos</a>
+<ul>
+<li><a href="#correlación-lineal">Correlación Lineal</a></li>
+<li><a href="#coeficiente-de-correlación">Coeficiente de Correlación</a></li>
+<li><a href="#prueba-de-hipótesis">Prueba de Hipótesis</a></li>
+<li><a href="#función-cor.test">Función <code>cor.test()</code></a></li>
+<li><a href="#ejemplo">Ejemplo</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="objetivo-del-informe" class="section level1">
+<h1>Objetivo del informe</h1>
+<p>Generar un informe automatizado en el cuál se explorarán y visualizarán los los datos de la base de datos de emisiones de PM2.5 y PM10 para tres regiones de nuestro país.Para ello utilizaremos los conocimientos que hemos aprendido sobre las librerías <code>dplyr</code>, <code>ggplot2</code> y <code>rmarkdown</code>.</p>
+<div id="paso-1.-exploremos-nuestros-datos" class="section level2">
+<h2>Paso 1. Exploremos nuestros datos</h2>
+<p>Utilizaremos el verbo <code>glimpse()</code> de la librería <em>dplyr</em> para explorar la estructura de la base de datos. Recordemos que asignamos el nombre <em>data</em> a nuestra base de datos</p>
+<p>Primero debemos asegurarnos de llamar a la librería <code>dplyr</code>. También explicitaremos el argumento <code>warning = FALSE</code> para evitar que aparezcan mensajes o advertencias en el archivo final.</p>
+<pre class="r"><code>#install.packages(&quot;dplyr&quot;)
+library(dplyr)</code></pre>
+<p>Ahora, importemos nuestros datos:</p>
+<pre class="r"><code>library(readxl)
+data&lt;-read_excel(&quot;data.xlsx&quot;)</code></pre>
+<p>Finalmente, exploremos la estructura de nuestros datos:</p>
+<pre class="r"><code>glimpse(data)
+## Rows: 71
+## Columns: 4
+## $ Region &lt;chr&gt; &quot;Metropolitana&quot;, &quot;Metropolitana&quot;, &quot;Metropolitana&quot;, &quot;Metropolita…
+## $ Comuna &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, …
+## $ PM25   &lt;dbl&gt; 13, 15, 14, 13, 12, 16, 14, 10, 5, 10, 11, 11, 12, 11, 11, 14, …
+## $ PM10   &lt;dbl&gt; 54, 55, 57, 52, 53, 66, 58, 33, 24, 42, 47, 53, 58, 51, 55, 51,…</code></pre>
+</div>
+<div id="paso-2.-visualicemos-nuestros-datos" class="section level2">
+<h2>Paso 2. Visualicemos nuestros datos</h2>
+<div id="gráfico-de-cajas" class="section level3">
+<h3>Gráfico de cajas</h3>
+<p>Objetivo: Comparar las emisiones de PM2.5 entre las tres regiones en nuestra base de datos.</p>
+<p>Ahora, debemos asegurarnos de llamar a la librería <code>ggplot2</code>.</p>
+<pre class="r"><code>#install.packages(&quot;ggplot2&quot;)
+library(ggplot2)</code></pre>
+<pre class="r"><code>data$Region&lt;-factor(data$Region, levels=c(&quot;Valparaiso&quot;, &quot;Metropolitana&quot;,&quot;LosRios&quot;))
+
+ggplot(data,mapping=aes(x=Region,y=PM25))+
+  geom_boxplot(fill=&quot;#BC3C29FF&quot;,alpha=0.7)+
+  geom_jitter(width = 0.2, alpha=0.7)+
+  labs(x=&quot;Region&quot;,
+       y= &quot;PM 2.5 (μg/m3)&quot;,
+       title = &quot;PM 2.5 en tres regiones de Chile&quot;)+
+  scale_y_continuous(breaks=c(0,10,20) ,limits = c(0,20))+
+  theme(axis.text =element_text(size=14),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=20))</code></pre>
+<p><img src="/docencia/MMAD109/Sesion03_2_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="gráfico-de-dispersión" class="section level3">
+<h3>Gráfico de dispersión</h3>
+<p>Generemos un gráfico de dispersión con la función <code>geom_point ()</code> para las variables PM2.5 y PM10 en la región Metropolitana.</p>
+<p>Primero, debemos asegurarnos de trabajar solo con los datos que se nos solicitan. Para ello, utilzaremos las funciones <code>select ()</code> and <code>filter ()</code> de la librería <em>dplyr</em>.</p>
+<pre class="r"><code>data_ejemplo&lt;-data %&gt;% 
+  filter (Region == &quot;Metropolitana&quot;)</code></pre>
+<p>Recordemos que <code>ggplot2</code> divide un gráfico en tres partes fundamentales:</p>
+<ol style="list-style-type: decimal">
+<li>los datos.</li>
+<li>la estética.</li>
+<li>la geometría.</li>
+</ol>
+<pre class="r"><code>ggplot(data_ejemplo, mapping=aes(x=PM25 , y =PM10))+
+  geom_point(size=2.5, col=&quot;#BC3C29FF&quot;)+
+  labs(x= &quot;PM 2.5 (μg/m3)&quot;,
+       y= &quot;PM 10 (μg/m3)&quot;,
+       title = &quot;Fig.2. Relación PM 2.5 y PM10 en la RM&quot;)+
+  theme(axis.text =element_text(size=14),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=20))</code></pre>
+<p><img src="/docencia/MMAD109/Sesion03_2_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+</div>
+<div id="paso-3.-analicemos-nuestros-datos" class="section level2">
+<h2>Paso 3. Analicemos nuestros datos</h2>
+<div id="correlación-lineal" class="section level3">
+<h3>Correlación Lineal</h3>
+<p>La correlación es un método estadístico que permite evaluar la relación lineal (cambian conjuntamente a una tasa fija) entre dos variables. En particular, el interés es cuantificar la intensidad de de la variación conjunta entre las dos variables.</p>
+<p>Los posibles escenarios de esta relación son:</p>
+<ul>
+<li><p><strong>Correlación positiva</strong>: El aumento de una de las variables viene acompañado del aumento de la otra.</p></li>
+<li><p><strong>Correlación negativa</strong>: El aumento de una variable viene acompañado de una disminución en la otra.</p></li>
+<li><p><strong>No correlación</strong>: Ambas variables no muestren ningún tipo de relación entre si.</p></li>
+</ul>
+<p>El hecho de que dos variables estén correlacionadas no quiere decir que una sea la responsable de la otra. Dicho de otro modo, a existencia de correlación entre variables no implica causalidad.</p>
+</div>
+<div id="coeficiente-de-correlación" class="section level3">
+<h3>Coeficiente de Correlación</h3>
+<p>El coeficiente de correlación es la medida específica que cuantifica la intensidad de la relación lineal entre dos variables en un análisis de correlación. Este coeficiente se simboliza con la letra <strong>r</strong>.</p>
+<p>El coeficiente de correlación <strong>r</strong> es un valor sin unidades entre -1 y 1, en donde:</p>
+<ul>
+<li><p>Cuanto más se aproxima a cero, más débil es la relación lineal.</p></li>
+<li><p>Los valores de positivos indican una correlación positiva.</p></li>
+<li><p>Los valores de negativos indican una correlación negativa.</p></li>
+<li><p>Los valores 1 y -1 representan una correlación “perfecta” positiva y negativa, respectivamente.</p></li>
+<li><p>Si r = 0 nos dice que no hay correlación lineal. Sin embargo, podría exisitr relación de otro tipo.</p></li>
+</ul>
+<p>Un coeficiente de correlación es el <strong>Coeficiente de Correlación de Pearson</strong>, que se usa para evaluar la relación lineal entre dos variables aleatorias cuantitativas.</p>
+</div>
+<div id="prueba-de-hipótesis" class="section level3">
+<h3>Prueba de Hipótesis</h3>
+<p>Una vez estimado el coeficiente de correlación, debemos realizar una prueba o contraste de hipótesis de la “significancia del coeficiente de correlación”.</p>
+<p>La prueba de hipótesis nos permite decidir si el valor del coeficiente de correlación es “cercano a cero” o “significativamente diferente de cero”.</p>
+<p>Si la prueba concluye que el coeficiente de correlación es significativamente diferente de cero, decimos que el coeficiente de correlación es “significativo”.</p>
+<p>En simple, la prueba de hipótesis contrasta una hipótesis nula y una alternativa, las cuales son dos enunciados mutuamente excluyentes. Una prueba de hipótesis utiliza los datos para determinar si se puede rechazar la hipótesis nula.</p>
+<ul>
+<li><p><strong>hipótesis nula</strong>: las variables x e y no están correlacionadas.</p></li>
+<li><p><strong>hipótesis alternativa</strong>: las variables x e y están correlacionadas.</p></li>
+</ul>
+<p>La prueba, o contraste, de hipótesis funciona de la siguiente forma:</p>
+<ol style="list-style-type: decimal">
+<li><p>Establecer hipótesis de investigación en base a nuestro interés como investigadores. Por ejemplo, Existe una relación entre las variables X e Y.</p></li>
+<li><p>Expresar hipótesis de investigación como una hipótesis estadística.</p></li>
+</ol>
+<ul>
+<li>Hipótesis nula: No existe correlación entre las variables X e Y.</li>
+<li>Hipótesis alternativa: Existe correlación entre las variables X e Y.</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Elegir la prueba (test) estadística de acuerdo al diseño experimental y el tipo de datos. La cifra que resulta de la prueba a partir de los datos se conoce como el estadístico del test.</li>
+</ol>
+<ul>
+<li>Correlación de Pearson para evaluar la relacióne entre X e Y</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Elegir nivel de significncia (α) de la prueba (límite para rechazar hipótesis nula). En general, se acepta α = 0,01 ó 0,05 de probabilidad de equivocarnos al rechazar la hipótesis nula.</p></li>
+<li><p>Calcular el valor de babilidad (p). Probabilidad de obtener los resultados observados u otros más extremos si la hipótesis nula es verdadera.</p></li>
+<li><p>Comparar el nivel de significancia con el valor de p.</p></li>
+</ol>
+<ul>
+<li>Si p &lt; α, se rechaza hipotetesis nula. Existe correlación significativa entre las variables.</li>
+<li>Si p &gt; α, no se rechaza hipotetesis nula. No existe suficiente evidencia para establecer que existe correlación significativa entre las variables.</li>
+</ul>
+</div>
+<div id="función-cor.test" class="section level3">
+<h3>Función <code>cor.test()</code></h3>
+<p>La función <code>cor</code> permite calcular el coeficiente de correlación de Pearson (y otros) para dos variables cuantitativas.</p>
+<p>La estructura de la función es la siguiente:</p>
+<p><code>cor.test(x, y, method = c("pearson", "kendall", "spearman"))</code></p>
+<p>En donde:</p>
+<ul>
+<li><p><code>x, y</code>: son las variables a evaluar, deben tener la misma longitud.</p></li>
+<li><p>`method tipo de coeficiente de correlación a calcular, por defecto es pearson, otros valores posibles son kendall y spearman.</p></li>
+</ul>
+<p>La interpretación se hace examinando el valor de p (p-value) y el coeficiente de correlación (cor).</p>
+</div>
+<div id="ejemplo" class="section level3">
+<h3>Ejemplo</h3>
+<p>Evaluemos si existe relación entre las emisiones de PM2.5 Y PM10 enel nivel de las variables PM2.5 y PM10 en la Región Metropolitana.</p>
+<p>Recordemos que previamente, generamos el objeto data_ejemplo para trabajar exclusivamente con los datos de la región Metropolitana.</p>
+<pre class="r"><code>cor.test(data_ejemplo$PM25,data_ejemplo$PM10)
+## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  data_ejemplo$PM25 and data_ejemplo$PM10
+## t = 12.08, df = 50, p-value &lt; 2.2e-16
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  0.7719094 0.9193830
+## sample estimates:
+##       cor 
+## 0.8630124</code></pre>
+<p>Del resultado, debemos destacar la siguiente información:</p>
+<ul>
+<li><p><code>cor</code>: coeficiente correlación de Person.</p></li>
+<li><p><code>p-value</code>: valor de probabilidad. Si es menor al nivel de significancia (α = 0.05), podemos rechazar la hipótesis nula.</p></li>
+</ul>
+<p>En nuestro ejemplo, podemos establecer que existe una relación significativa positiva y fuerte entre las emisiones de PM2.5 y PM10 en la Región Metropolitana (R= 0.86, P &lt; 0.05).</p>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="/docencia/MMAD109/Sesion03_2_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+</div>
+</div>

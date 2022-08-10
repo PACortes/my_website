@@ -20,6 +20,6 @@ knitr::opts_chunk$set(collapse = TRUE)
 ## Context
 Evaluating university faculty teaching and research performance is necessary for multiple reasons, including assurance of student learning and informing administrative decision-making.
 
-In this workshop, we will use a simulated dataset consisting of faculty employees information. The data set will be use for learning data visualization in R. You can download the database here here[https://www.dropbox.com/s/rsee0jk8v205jba/FacultyAffairs.xlsx?dl=0]. 
+In this workshop, we will use a simulated dataset consisting of faculty employees information. The data set will be use for learning data visualization in R. You can download the database [here](https://www.dropbox.com/s/rsee0jk8v205jba/FacultyAffairs.xlsx?dl=0). 
 
 

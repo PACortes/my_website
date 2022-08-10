@@ -45,6 +45,8 @@ The R language programming environment is a fully planned and coherent system bu
 
 ![Credit: @allison_horst](/workshops/NEOMU/aboutr_files/r_rollercoaster.png)
 
+![credit:](/workshops/NEOMU/aboutr_files/r_rollercoaster.png)
+
 The R language programming environment is a fully planned and
 
 ## ¿What is `RStudio`?

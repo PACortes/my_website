@@ -45,7 +45,7 @@ The R language programming environment is a fully planned and coherent system bu
 
 ![](/workshops/neomu/aboutr_files/r_rollercoaster.png){width=400px height=200px}
 
-<img alt = 'my new screenshot' width='200' src='/workshops/NEOMU/aboutr_files/r_rollercoaster.png'/>
+<img alt = 'my new screenshot' width='200' src='/workshops/neomu/aboutr_files/r_rollercoaster.png'/>
 
 ## ¿What is `RStudio`?
 

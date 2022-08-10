@@ -43,7 +43,7 @@ The R language programming environment is a fully planned and coherent system bu
 
 -   It's fun... probably not at the beginning of the learning process.
 
-![](/workshops/NEOMU/aboutr_files/r_rollercoaster.png)width=400px height=200px}
+![](/workshops/NEOMU/aboutr_files/r_rollercoaster.png)¨{width=400px height=200px}
 
 ![credit:](/workshops/NEOMU/aboutr_files/r_rollercoaster.png)
 

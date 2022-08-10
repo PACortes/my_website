@@ -7,9 +7,11 @@ type: book
 format: hugo
 ---
 
-{{< figure src="NeomLogo.png" >}}
 
-{{< toc hide_on="xl" >}}
+
+{{< figure src=“NeomLogo.png” >}}
+
+{{< toc hide_on=“xl” >}}
 
 ## About this Workshop
 
@@ -45,7 +47,7 @@ The R language programming environment is a fully planned and coherent system bu
 
 -   It's fun... probably not at the beginning of the learning process.
 
-    ![Credit: \@allison_horst](r_rollercoaster.png)
+    ![Credit: @allison_horst](r_rollercoaster.png)
 
 The R language programming environment is a fully planned and
 
@@ -71,4 +73,4 @@ In order to use a package, it needs to be installed on your computer by running 
 
 Once the package is installed, you must load the package and only after it has been loaded you can use all the functions and datasets it contains. To load a package, run `library(name_of_package)` (this time `""` around the name of the package are optional).
 
-{{< cta cta_text= "" cta_link="sesion01_1" >}}
+{{< cta cta_text= “” cta_link=“sesion01_1” >}}

@@ -16,8 +16,8 @@ main:
   - name: R
     url: courses/
     weight: 40
-  - name: Docencia
-    url: docencia/
+  - name: Workshops
+    url: workshop/
     weight: 50
   - name: Contacto
     url: '#contact'

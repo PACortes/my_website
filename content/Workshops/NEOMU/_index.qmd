@@ -27,7 +27,7 @@ R provides a wide variety of statistical and graphical techniques, and is highly
 
 It is one of the most popular languages used by statisticians, data analysts, researchers and marketers to retrieve, clean, analyze, visualize and present data.
 
-## The R software environment
+## The `R` software environment
 
 The R language programming environment is a fully planned and coherent system built around a standard command-line interface. Users leverage this to read data and load it to the workspace, specify commands and receive results.
 

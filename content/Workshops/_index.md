@@ -2,7 +2,7 @@
 header:
   caption: ""
   image: ""
-title: Docencia
+title: Workshops and Training Courses
 type: page
 view: 2
 ---

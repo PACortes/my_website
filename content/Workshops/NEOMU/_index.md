@@ -44,8 +44,6 @@ The R language programming environment is a fully planned and coherent system bu
 
 -   It's fun... probably not at the beginning of the learning process.
 
-    ![Credit: @allison_horst](r_rollercoaster.png)
-
 The R language programming environment is a fully planned and
 
 ## ¿What is `RStudio`?

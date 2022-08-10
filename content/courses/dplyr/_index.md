@@ -4,6 +4,7 @@ linkTitle: dplyr
 summary: En este taller, aprenderemos a manipular nuestros datos usando el paquete `dplyr`.
 title: "dplyr: manipulación de datos"
 type: book
+thumbnail: "featured.png"
 ---
 
 {{< figure src="dplyr_logo.png" >}}

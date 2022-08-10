@@ -1,54 +1,71 @@
 ---
-date: "2022-03-01"
-linkTitle: MMAD109
-summary: En este taller vamos a  introducir el software R.  Aprenderemos herramientas básicas para la visualización y el análisis de datos. Finalmente, aprenderemos a realizar informes automáticos.
-title: "MMAD109: visualización y análisis de datos"
+date: "2022-08-10"
+linkTitle: NEOM
+summary: In this workshop we will introduce the R software. We will learn basic tools for data visualization and analysis. Finally, we will learn how to create automatic reports..
+title: "NEOM ERI-U-TA"
 type: book
 ---
 
-{{< figure src="foto1.png" >}}
-
 {{< toc hide_on="xl" >}}
 
+## About this Workshop
 
-##  Gestión de la contaminación y pasivos ambientales (MMAD119)
+The aim of this five-day introductory workshop is to guide you through the basics of using `R` via `RStudio` for analysis of institutional data. It is ideal for people new to R or who have limited experience.
 
-La asignatura tiene por objetivo proporcionar al estudiante una base conceptual general sobre los diferentes problemas de contaminación ambiental asociados al desarrollo urbano e industrial y las herramientas e instrumentos de gestión y control que se aplican en Chile y el mundo para manejar la contaminación y los pasivos ambientales del territorio, en el marco de la institucionalidad y normativa vigentes en el país.
+I assume no prior coding language for this workshop. My goals are to equip you to work comfortably from the RStudio environment, process, and explore data, and make very nice graphical representations of data.
 
-## Objetivos del taller
+Specific topics covered include the R environment (directories, workspace, scripts, and packages), data structures (vector, matrix, data frames, lists), and data visualization (scatterplots, boxplots, histograms, etc.).
 
-En el presente taller aprenderemos a manejar `R` y `RStudio` como herramienta para poder explorar, visualizar, analizar y comunicar de manera eficaz datos de contaminación atmosférica. 
+## ¿What is `R`?
 
-## ¿Qué es `R`?
+`R` is a language and software environment for statistical computing and graphics.
 
-`R`  es un tipo de lenguaje de programación con software libre, que, a su vez, es un tipo de lenguaje interpretado. Es decir, los comandos o instrucciones son ejecutados directamente sin ningún tipo de software externo.
+R provides a wide variety of statistical and graphical techniques, and is highly extensible.
 
-El código `R`   es desarrollado actualmente por R Development Core Team, y su proyecto es colaborativo y abierto, por lo que otros usuarios programadores pueden ser partícipes del proyecto mediante la publicación de paquetes que extienden su configuración básica. 
+It is one of the most popular languages used by statisticians, data analysts, researchers and marketers to retrieve, clean, analyze, visualize and present data.
 
-`R`  incluye una amplia variedad de técnicas estadísticas y de visualización de datos.
+## The R software environment
 
+The R language programming environment is a fully planned and coherent system built around a standard command-line interface. Users leverage this to read data and load it to the workspace, specify commands and receive results.
 
-## ¿Qué es `RStudio`?
+## Why use R?
 
-`RStudio` es un entorno de desarrollo integrado para `R`. `RStudio` incluye una interfaz gráfica que nos permite interactuar con `R` de una forma más amigable. 
+-   R is open-source and free!
 
-Es importante señalar que `RStudio` es un programa que ejecuta `R` y proporciona herramientas adicionales que son útiles al escribir código `R`, por ende RStudio` y `R` no son lo mismo.
+-   R is popular and R community is huge
 
+-   R runs on all platforms (Available for Windows, Macintosh, and Linux).
 
-## Definiciones
+-   Publication-quality graphs. With R you have complete control over plotting/graphing options and are able to output publication quality figures with ease.
 
-A continuación, se definen conceptos que serán de utilidad al momento de comenzar a explorar el mundo `R`.
+-   Packages for *literate statistical programming* - weaving written reports and analysis code in one document.
 
-**CRAN**:  The Comprehensive R Archive Network es una red de servidores web en todo el mundo donde podemos encontrar el código fuente R, los manuales y la documentación R, y los paquetes.
+-   It's fun... probably not at the beginning of the learning process.
 
-**Paquete**: Colección de funciones diseñadas para atender una tarea específica. 
+    ![Credit: \@allison_horst](r_rollercoaster.png)
 
-**Instalar un paquete**: Esta acción se realiza una sola vez. Para ello usaremos la función `install.packages()`, dando como argumento el nombre del paquete que deseamos instalar, entre comillas. 
+The R language programming environment is a fully planned and
 
-**Cargar  un paquete**: Esta acción se realiza cada vez que iniciemos sesión y que necesitemos utilizar un determinado paquete. Para ello usaremos la función `library()`, dando como argumento el nombre del paquete que deseamos instalar, esta vez sin utilizar comillas. 
+## ¿What is `RStudio`?
 
-**Función**: Serie de operaciones a la que les hemos asignados un nombre. Las funciones aceptan argumentos, es decir, especificaciones sobre cómo deben funcionar.
+`RStudio` is a free, open source IDE (integrated development environment) for R. Its interface is organized so that the user can clearly view graphs, data tables, R code, and output all at the same time. It also offers an Import-Wizard-like feature that allows users to import *CSV*, *Excel*, *SAS*, *SPSS* and *Stata* files into R without having to write the code to do so.
 
+It is important to note that `RStudio` is a software that runs `R` and provides additional tools that are useful when writing `R` code. So `R` and `RStudio` are not the same.
+
+## Definitions
+
+The following concepts will be helpful as you begin to explore the `R` world.
+
+**CRAN**: The Comprehensive R Archive Network is a network of web servers around the world that store identical, up-to-date, versions of code and documentation for R.
+
+**R packages**: Extensions to the R programming language. R packages contain code, data, and documentation in a standardised collection format that can be installed by users of R, typically via a centralised software repository such as CRAN. The location where the packages are stored is called the library. If there is a particular functionality that you require, you can download the package from the appropriate site and it will be stored in your library.
+
+**Function**: is a set of statements organized together to perform a specific task. R has a large number of in-built functions and the user can create their own functions.
+
+## Installing and Loading Packages
+
+In order to use a package, it needs to be installed on your computer by running `install.packages("name_of_package")` (do not forget `""` around the name of the package).
+
+Once the package is installed, you must load the package and only after it has been loaded you can use all the functions and datasets it contains. To load a package, run `library(name_of_package)` (this time `""` around the name of the package are optional).
 
 {{< cta cta_text="Comencemos con el taller" cta_link="sesion01_1" >}}
-

@@ -7,4 +7,4 @@ type: page
 view: 2
 ---
 
-A continuación, encontrarás tutoriales para realizar análsis y visualización de datos con el lenguaje de programación R.
+A continuación, encontrarás tutoriales para realizar análisis y visualización de datos con el lenguaje de programación R.

@@ -9,7 +9,6 @@ output:
   blogdown::html_page:
     toc: true
     number-sections: true
-    toc_float: yes
 type: book
 weight: 10
 ---

@@ -18,4 +18,4 @@ I assume no prior coding language for this workshop. My goals are to equip you t
 
 Specific topics covered include the R environment (directories, workspace, scripts, and packages), data structures (vector, matrix, data frames, lists), and data visualization (scatterplots, boxplots, histograms, etc.).
 
-{{< cta cta_text="Comencemos con el taller" cta_link="aboutr" >}}
+{{< cta cta_text="Let's start" cta_link="aboutr" >}}

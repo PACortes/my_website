@@ -43,9 +43,7 @@ The R language programming environment is a fully planned and coherent system bu
 
 -   It's fun... probably not at the beginning of the learning process.
 
-![](/workshops/neomu/aboutr_files/r_rollercoaster.png){width=400px height=200px}
-
-<img alt = 'my new screenshot' width='200' src='/workshops/neomu/aboutr_files/r_rollercoaster.png'/>
+![Credits: allison_horst](/workshops/neomu/aboutr_files/r_rollercoaster.png){width=800px height=400px}
 
 ## ¿What is `RStudio`?
 

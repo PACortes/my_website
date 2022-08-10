@@ -8,18 +8,42 @@ tags:
 output:
   blogdown::html_page:
     toc: true
-    number-sections: true
 type: book
 weight: 20
 ---
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-
 ## Context
+
 Evaluating university faculty teaching and research performance is necessary for multiple reasons, including assurance of student learning and informing administrative decision-making.
 
-In this workshop, we will use a simulated dataset consisting of faculty employees information. The data set will be use for learning data visualization in R. You can download the database [here](https://www.dropbox.com/s/rsee0jk8v205jba/FacultyAffairs.xlsx?dl=0). 
+In this workshop, we will use a simulated dataset consisting of faculty employees information. The data set will be use for learning data visualization in R. The dataset is available in ´xlsx´ and you can download it [here](https://www.dropbox.com/s/rsee0jk8v205jba/FacultyAffairs.xlsx?dl=0).
+
+## Content
+
+The dataset contains 20 variables and 311 rows of data (number of faculty employees). It reports data metrics related to faculty´s demographics, salary, teaching and research performance, among others.
+
+## Data Dictionary
+
+```{r}
+
+```
+
+```{r, echo=FALSE}
+
+library(kableExtra)
+
+Variable <- c("EmployeeName","Salary","Sex","MaritalDesc","DaysLateLast30", "Absences","Age","YearBirth","Nationality","School","Course","Appointment","Satisfaction","ResearchBudget","FirstYear","Articles","Students","Evaluation","Community", "ResearchArea")
 
 
+Description <- c("Faculty’s full name", "The faculty´s yearly salary. $ U.S. Dollars", " 	Sex - M or F", " The marital status of the faculty (divorced, single, widowed, separated, etc)", " The number of times that the faculty was late to work during the last 30 days" ," No. of times the faculty was absent from work during the year", "Age", "Faculty's year of birth", "Faculty's nationality","School of faculty´s appointment", "No. of courses instructed during the year", "Appointment ranks - 1 = Assistant Professor, 2 = Associate Professor, 3 = Professor", "Results from the last labour satisfaction survey - Value between 0 to 5", "Annual Research Budget", "Year of firts appointment", "No.of articles per year published in peer-reviewed journals during the year", "No.of supervised theses during the year", "Results from the last Teacher evaluation survey - Value between 0 to 5","No.of outreach activities during the year", "Faculty’s research fueld")
+                 
+Datatype <- c("Character","Numeric","Character","Character","Numeric","Numeric","Numeric","Numeric","Character","Character","Numeric","Numeric","Numeric","Character","Numeric","Numeric","Numeric","Numeric","Numeric","Character")
+
+
+datadic<-data.frame(Variable,Datatype,Description)
+kable(datadic)
+```

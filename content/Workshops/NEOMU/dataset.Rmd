@@ -1,5 +1,5 @@
 ---
-title: "About R & RStudio"
+title: "Faculty Data Set"
 date: "`r Sys.Date()`"
 categories: R
 tags:
@@ -10,16 +10,24 @@ output:
     toc: true
     number-sections: true
 type: book
-weight: 10
+weight: 20
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
 
-## ¿What is `R`?
+## Context
+Evaluating university faculty teaching and research performance is necessary for multiple reasons, including assurance of student learning and informing administrative decision-making.
 
-`R` is a language and software environment for statistical computing and graphics.
+In this workshop, we will use a simulated dataset consisting of faculty employees information. The data set will be use for learning data visualization in R. You can download the database here {{< staticref "uploads/FacultyAffairs.xlsx" "newtab" >}}here {{< /staticref >}}.
+
+
+
+
+In this workshop, we will work with a simulated dataset 
+The data used in this workshop is a set used for learning data visualization.
+
 
 R provides a wide variety of statistical and graphical techniques, and is highly extensible.
 

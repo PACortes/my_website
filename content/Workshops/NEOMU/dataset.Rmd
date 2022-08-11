@@ -26,11 +26,41 @@ In this workshop, we will use a simulated dataset consisting of faculty employee
 
 The dataset contains 20 variables and 311 rows of data (number of faculty employees). It reports data metrics related to faculty´s demographics, salary, teaching and research performance, among others.
 
-## Data Dictionary
+```{r, echo=FALSE}
+
+library(kableExtra)
+
+Dimension <- c("Human Resources","Human Resources", "Human Resources", "Teaching","Teaching","Teaching","Teaching","Research","Research","Service","Service")
+
+Element <- c("Demographic information","Personal information","Employmnet information", "Effectiveness of course delivery",
+"Quality of course content","
+Effectiveness in Managing Multiple Courses",
+"Effectiveness in Mentoring Students",
+"Quality of Research",
+"Productivity in Research",
+"Service to the Institution",
+"Service to Society")
+
+Description <- c("Demographic characteristics of the faculty members","Personal information of the faculty members","Information related to appointments of faculty members", "The extent to which a faculty member can lecture, lead discussion, respond to student questions, evaluate assignments and use instructional technology",
+"The extent to which knowledge presented is valid. Course content includes: course readings, instructor-developed resources, class exercises, clinical practice, and experiments",
+"Ability to manage multuple courses",
+"Ability to encourage students and to help them understand the factors that contribute to academic success",
+"Evidence of making a substantive contribution to one or more fields of study",
+"Capacity to conduct research that is of a high enough quality to regularly appear in refereed publications and be regularly included in conference presentations",
+"Involvement in university committees",
+"Engaging in community outreach or community engagement effort")
+
+```
 
 ```{r}
 
+datadic<-data.frame(Element,Description)
+kable(datadic,booktabs = T) %>% 
+  kable_styling() %>%
+  pack_rows(index=c("Human Resources " = 3, "Teaching" = 4, "Research" = 2, "Service" = 2))
 ```
+
+## Data Dictionary
 
 ```{r, echo=FALSE}
 

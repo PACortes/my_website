@@ -52,11 +52,11 @@ Description <- c("Demographic characteristics of the faculty members","Personal 
 
 ```
 
-```{r}
+```{r, echo=FALSE}
 
 datadic<-data.frame(Element,Description)
 kable(datadic,booktabs = T) %>% 
-  kable_styling() %>%
+  row_spec(0,font_size = 22) %>% 
   pack_rows(index=c("Human Resources " = 3, "Teaching" = 4, "Research" = 2, "Service" = 2))
 ```
 

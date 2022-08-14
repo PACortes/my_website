@@ -60,7 +60,7 @@ To get started with `R` & `RStudio`, you need to acquire your own copy. Here, I 
 When you open `RStudio`, a window appears with three panes in it.
 
 
-![RStudio IDE for R in Mac](/workshops/neomu/aboutr_files/rstudio){width=800px height=400px}
+![RStudio IDE for R in Mac](/workshops/neomu/exploringr_files/rstudio){width=800px height=400px}
 
 
 

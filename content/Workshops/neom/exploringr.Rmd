@@ -20,7 +20,7 @@ knitr::opts_chunk$set(collapse = TRUE)
 # Opneing `RStudio`
 When you open `RStudio`, a window appears with three panels in it.
 
-![RStudio IDE for R in Mac](/workshops/neomu/exploringr_files/rstudio.png){width=800px height=400px}
+![RStudio IDE for R in Mac](/workshops/neom/exploringr_files/rstudio.png){width=800px height=400px}
 
 The largest panel is a **console** window. This is where you’ll run your R code and see results. The console window is exactly what you’d see if you ran R. Everything else you see is unique to RStudio. Hidden in the other panes are a text editor, a graphics window, a debugger, a file manager, and much more. 
 

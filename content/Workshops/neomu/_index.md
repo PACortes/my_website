@@ -1,6 +1,6 @@
 ---
 date: "2022-08-10"
-linkTitle: Introduction
+linkTitle: neomu
 summary: In this workshop we will introduce the R software. We will learn basic tools for data visualization and analysis. Finally, we will learn how to create automatic reports.
 title: "NEOM ERI-U-TA"
 type: book

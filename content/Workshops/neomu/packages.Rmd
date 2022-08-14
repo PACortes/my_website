@@ -34,9 +34,7 @@ In order to use a package, it needs to be installed on your computer by running 
 
 In the following example, the library ggplot2 is installed from CRAN.
 
-```{r}
-install.packages("ggplot2")
-```
+`install.packages("ggplot2")`
 
 The installation is usually straightforward and if any other packages need to be installed, RStudio will install those as well as long as the Install dependencies option is checked.
 
@@ -45,7 +43,4 @@ Once the package is installed, or is a base package, you must load the package a
 
 In the following example, the library ggplot2 is loaded.
 
-```{r}
-library(ggplot2)
-```
-
+`library(ggplot2)`

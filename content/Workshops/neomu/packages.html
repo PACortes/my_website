@@ -1,0 +1,45 @@
+---
+title: "Day 1: Packages"
+date: "2022-08-14"
+categories: R
+tags:
+- R
+- RStudio
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: true
+type: book
+weight: 30
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+<div id="TOC">
+<ul>
+<li><a href="#base-packages" id="toc-base-packages"><span class="toc-section-number">1</span> Base packages</a></li>
+<li><a href="#installing-packages-from-cran" id="toc-installing-packages-from-cran"><span class="toc-section-number">2</span> Installing Packages from CRAN</a></li>
+<li><a href="#loading-packages" id="toc-loading-packages"><span class="toc-section-number">3</span> Loading Packages</a></li>
+</ul>
+</div>
+
+<div id="base-packages" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Base packages</h1>
+<p>One of R’s attractive features is its rich collection of packages designed for specific applications and techniques.</p>
+<p>Packages allow users to share R functions and data with other users.</p>
+<p>Some packages come already installed with R, others must be downloaded separately from a CRAN repository or other locations such as GitHub or personal websites.</p>
+</div>
+<div id="installing-packages-from-cran" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Installing Packages from CRAN</h1>
+<p>There are thousands of additional R packages to choose from. Most can be accessed from the CRAN repository.</p>
+<p>In order to use a package, it needs to be installed on your computer by running <code>install.packages("name_of_package")</code> (do not forget <code>""</code> around the name of the package).</p>
+<p>In the following example, the library ggplot2 is installed from CRAN.</p>
+<p><code>install.packages("ggplot2")</code></p>
+<p>The installation is usually straightforward and if any other packages need to be installed, RStudio will install those as well as long as the Install dependencies option is checked.</p>
+</div>
+<div id="loading-packages" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Loading Packages</h1>
+<p>Once the package is installed, or is a base package, you must load the package and only after it has been loaded you can use all the functions and datasets it contains. To load a package, run <code>library(name_of_package)</code> (this time <code>""</code> around the name of the package are optional).</p>
+<p>In the following example, the library ggplot2 is loaded.</p>
+<p><code>library(ggplot2)</code></p>
+</div>

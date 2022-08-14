@@ -17,7 +17,7 @@ knitr::opts_chunk$set(collapse = TRUE)
 ```
 
 
-## ¿What is `R`?
+# ¿What is `R`?
 
 `R` is a language and software environment for statistical computing and graphics.
 
@@ -25,11 +25,11 @@ R provides a wide variety of statistical and graphical techniques, and is highly
 
 It is one of the most popular languages used by statisticians, data analysts, researchers and marketers to retrieve, clean, analyze, visualize and present data.
 
-## The `R` software environment
+# The `R` software environment
 
 The R language programming environment is a fully planned and coherent system built around a standard command-line interface. Users leverage this to read data and load it to the workspace, specify commands and receive results.
 
-## Why use `R`?
+# Why use `R`?
 
 -   R is open-source and free!
 
@@ -45,13 +45,13 @@ The R language programming environment is a fully planned and coherent system bu
 
 ![Credits: allison_horst](/workshops/neomu/aboutr_files/r_rollercoaster.png){width=800px height=400px}
 
-## ¿What is `RStudio`?
+# ¿What is `RStudio`?
 
 `RStudio` is a free, open source IDE (integrated development environment) for R. Its interface is organized so that the user can clearly view graphs, data tables, R code, and output all at the same time. It also offers an Import-Wizard-like feature that allows users to import *CSV*, *Excel*, *SAS*, *SPSS* and *Stata* files into R without having to write the code to do so.
 
 It is important to note that `RStudio` is a software that runs `R` and provides additional tools that are useful when writing `R` code. So `R` and `RStudio` are not the same.
 
-## Definitions
+# Definitions
 
 The following concepts will be helpful as you begin to explore the `R` world.
 
@@ -63,7 +63,48 @@ The following concepts will be helpful as you begin to explore the `R` world.
 
 -   **Objects**: R lets you save data by storing it inside an R object. 
 
-## Installing and Loading Packages
+
+# `R` & `RStudio`?
+
+Let us remember that `R` and `RStudio` are two distinctly different applications that serve different purposes. `R` is the software that performs the actual instructions. It's the workhorse. Without `R` installed on your computer, you would not be able to run any commands. `RStudio` is a software that provides an nifty interface to R.
+
+# Installing `R` & `RStudio`
+
+To get started with `R` & `RStudio`, you need to acquire your own copy. Here, I will show you how to download it. Follow the link that describes your operating system: Windows or Mac.
+
+## Window Users
+### To install R
+-   Open an internet browser and go to [www.r-project.org](www.r-project.org).
+-   Click the "download R" link in the middle of the page under "Getting Started."
+-   Select a CRAN location (a mirror site) and click the corresponding link.
+-   Click on the "Download R for Windows" link at the top of the page.
+-   Click on the "install R for the first time" link at the top of the page.
+-   Click "Download R for Windows" and save the executable file somewhere on your computer. Run the .exe file and follow the installation instructions.
+-   Now that R is installed, you need to download and install RStudio.
+
+### To install RStudio
+-   Go to (www.rstudio.com)[www.rstudio.com].
+-   Click on [Download] (https://www.rstudio.com/products/rstudio/download/) and then "Download" under "RStudio Desktop".
+-   Click "Download RStudio for Mac" to get the latest Windows version; save the .dmg file on your computer; double-click it to open; and then drag and drop it to your applications folder.
+
+
+## Mac Users
+### To install R
+-   Open an internet browser and go to [www.r-project.org](www.r-project.org).
+-   Click the "download R" link in the middle of the page under "Getting Started."
+-   Select a CRAN location (a mirror site) and click the corresponding link.
+-   Click on the "Download R for macOS" link at the top of the page.
+-   Click on the file containing the latest version of R, as appropriate for your hardware.
+-   Save the .pkg file, double-click it to open, and follow the installation instructions.
+-   Now that R is installed, you need to download and install RStudio.
+
+### To install RStudio
+-   Go to (www.rstudio.com)[www.rstudio.com].
+-   Click on [Download] (https://www.rstudio.com/products/rstudio/download/) and then "Download" under "RStudio Desktop".
+-   Click "Download RStudio for Mac" to get the latest Mac version; save the .dmg file on your computer; double-click it to open; and then drag and drop it to your applications folder.
+
+
+# Installing and Loading Packages
 
 In order to use a package, it needs to be installed on your computer by running `install.packages("name_of_package")` (do not forget `""` around the name of the package).
 

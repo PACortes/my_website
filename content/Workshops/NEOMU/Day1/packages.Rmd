@@ -1,0 +1,51 @@
+---
+title: "Exploring R & RStudio"
+date: "`r Sys.Date()`"
+categories: R
+tags:
+- R
+- RStudio
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: true
+type: book
+weight: 30
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+# Base packages
+One of R’s attractive features is its rich collection of packages designed for specific applications and techniques. 
+
+Packages allow users to share R functions and data with other users. 
+
+Some packages come already installed with R, others must be downloaded separately from a CRAN repository or other locations such as GitHub or personal websites.
+
+
+
+# Installing Packages from CRAN
+There are thousands of additional R packages to choose from. Most can be accessed from the CRAN repository. 
+
+In order to use a package, it needs to be installed on your computer by running `install.packages("name_of_package")` (do not forget `""` around the name of the package).
+
+
+In the following example, the library ggplot2 is installed from CRAN.
+
+```{r}
+install.packages("ggplot2")
+```
+
+The installation is usually straightforward and if any other packages need to be installed, RStudio will install those as well as long as the Install dependencies option is checked.
+
+# Loading Packages 
+Once the package is installed, or is a base package, you must load the package and only after it has been loaded you can use all the functions and datasets it contains. To load a package, run `library(name_of_package)` (this time `""` around the name of the package are optional).
+
+In the following example, the library ggplot2 is loaded.
+
+```{r}
+library(ggplot2)
+```
+

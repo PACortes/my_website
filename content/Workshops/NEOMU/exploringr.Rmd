@@ -8,7 +8,7 @@ tags:
 output:
   blogdown::html_page:
     toc: true
-    number-sections: true
+    number_sections: true
 type: book
 weight: 20
 ---
@@ -17,16 +17,16 @@ weight: 20
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-## `R` & `RStudio`?
+# `R` & `RStudio`?
 
 Let us remember that `R` and `RStudio` are two distinctly different applications that serve different purposes. `R` is the software that performs the actual instructions. It's the workhorse. Without `R` installed on your computer, you would not be able to run any commands. `RStudio` is a software that provides an nifty interface to R.
 
-## Installing `R` & `RStudio`
+# Installing `R` & `RStudio`
 
 To get started with `R` & `RStudio`, you need to acquire your own copy. Here, I will show you how to download it. Follow the link that describes your operating system: Windows or Mac.
 
-### Window Users
-#### To install R
+## Window Users
+### To install R
 -   Open an internet browser and go to [www.r-project.org](www.r-project.org).
 -   Click the "download R" link in the middle of the page under "Getting Started."
 -   Select a CRAN location (a mirror site) and click the corresponding link.
@@ -35,14 +35,14 @@ To get started with `R` & `RStudio`, you need to acquire your own copy. Here, I 
 -   Click "Download R for Windows" and save the executable file somewhere on your computer. Run the .exe file and follow the installation instructions.
 -   Now that R is installed, you need to download and install RStudio.
 
-#### To install RStudio
+### To install RStudio
 -   Go to (www.rstudio.com)[www.rstudio.com].
 -   Click on [Download] (https://www.rstudio.com/products/rstudio/download/) and then "Download" under "RStudio Desktop".
 -   Click "Download RStudio for Mac" to get the latest Windows version; save the .dmg file on your computer; double-click it to open; and then drag and drop it to your applications folder.
 
 
-### Mac Users
-#### To install R
+## Mac Users
+### To install R
 -   Open an internet browser and go to [www.r-project.org](www.r-project.org).
 -   Click the "download R" link in the middle of the page under "Getting Started."
 -   Select a CRAN location (a mirror site) and click the corresponding link.
@@ -51,19 +51,19 @@ To get started with `R` & `RStudio`, you need to acquire your own copy. Here, I 
 -   Save the .pkg file, double-click it to open, and follow the installation instructions.
 -   Now that R is installed, you need to download and install RStudio.
 
-#### To install RStudio
+### To install RStudio
 -   Go to (www.rstudio.com)[www.rstudio.com].
 -   Click on [Download] (https://www.rstudio.com/products/rstudio/download/) and then "Download" under "RStudio Desktop".
 -   Click "Download RStudio for Mac" to get the latest Mac version; save the .dmg file on your computer; double-click it to open; and then drag and drop it to your applications folder.
 
-## Opneing `RStudio`
+# Opneing `RStudio`
 When you open `RStudio`, a window appears with three panels in it.
 
 ![RStudio IDE for R in Mac](/workshops/neomu/exploringr_files/rstudio.png){width=800px height=400px}
 
 The largest panel is a **console** window. This is where you’ll run your R code and see results. The console window is exactly what you’d see if you ran R. Everything else you see is unique to RStudio. Hidden in the other panes are a text editor, a graphics window, a debugger, a file manager, and much more. 
 
-### Console
+## Console
 The **console** panel (in RStudio, the bottom left panel) is the place where R is waiting for you to tell it what to do, and where it will show the results of a command. 
 
 You type R code into the bottom line of the RStudio console pane and then click Enter to run it. The code you type is called a command, because it will command your computer to do something for you. The line you type it into is called the command line.
@@ -90,35 +90,35 @@ Some useful features of console panel:
 
 -   **Console Title Bar**: Display of the current working directory. The ability to interrupt R during a long computation. Minimizing and maximizing the Console in relation to the Source pane (using the buttons at the top-right or by double-clicking the title bar).
 
-### Environment/History/Git
+## Environment/History/Git
 
-#### Environment
+### Environment
 The Environment tab provides meta-project information such as what values you have stored in variables and your custom functions.
 
-#### History
-The **History** tab runs through your previously-executed commands.
+### History
+The History tab runs through your previously-executed commands.
 
-#### Git
-**Git** is an additional optional tab that is not enabled by default. Git is a version control tool that can be configured by going to Tools -> Global Options and navigating to Git/SVN. 
+### Git
+Git is an additional optional tab that is not enabled by default. Git is a version control tool that can be configured by going to Tools -> Global Options and navigating to Git/SVN. 
 
-### Files/Plots/Packages/Help/Viewer
+## Files/Plots/Packages/Help/Viewer
 
-#### Files
+### Files
 **Files** shows you all files and folders in your current working directory. You can change your working directory by going to Session -> Set Working Directory -> Choose Directory.
 
-#### Plots
+### Plots
 The Plots tab displays any plots, graphs, or charts you run using one of R's visualization tools.
 
-#### Packages
+### Packages
 Packages is the system library of default R packages. Use the checkboxes to select and deselect packages here, or install additional packages by running install.packages("packagename") in the Console.
 
-#### Help
+### Help
 **Help** is the viewer for R documentation. To learn about a function, command, or other tool in R, enter help("topicname") in the Console and refer to the Help viewer.
 
-#### Viewer
+### Viewer
 The **Viewer** displays additional visualizations; for instance, if you are running a Shiny web app or previewing an HTML web document.
 
-### Source Panel
+## Source Panel
 The Source panel is where you create, save, and edit **R scripts**. R scripts are blocks of code that perform a task that you want to save,  and when saved have a´.R extension. 
 
 When you’ve written and saved a script, you can re-use it for future projects. 

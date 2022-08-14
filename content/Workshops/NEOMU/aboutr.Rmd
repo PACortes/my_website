@@ -8,7 +8,7 @@ tags:
 output:
   blogdown::html_page:
     toc: true
-    number-sections: true
+    number_sections: true
 type: book
 weight: 10
 ---

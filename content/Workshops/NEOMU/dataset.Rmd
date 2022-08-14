@@ -8,6 +8,8 @@ tags:
 output:
   blogdown::html_page:
     toc: true
+    number_sections: true
+
 type: book
 weight: 30
 ---
@@ -16,13 +18,13 @@ weight: 30
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-## Context
+# Context
 
 Evaluating university faculty teaching and research performance is necessary for multiple reasons, including assurance of student learning and informing administrative decision-making.
 
 In this workshop, we will use a simulated dataset consisting of faculty employees information. The data set will be use for learning data visualization in R. The dataset is available in ´xlsx´ and you can download it [here](https://www.dropbox.com/s/rsee0jk8v205jba/FacultyAffairs.xlsx?dl=0).
 
-## Content
+# Content
 
 The dataset contains 32 variables and 850 rows of data. It reports data metrics related to four different dimensions: human resources, teaching performance, research performance and services.
 
@@ -57,7 +59,7 @@ kable(datadesc,booktabs = T) %>%
   pack_rows(index=c("Human Resources " = 2, "Teaching" = 3, "Research" = 1, "Service" = 2))
 ```
 
-## Data Dictionary
+# Data Dictionary
 Variables included in th dataset are defined in the data dictionary. 
 
 ```{r, echo=FALSE}
@@ -173,7 +175,7 @@ kable(datadic) %>%
 
 ```
 
-## Visualizations in a glace
+# Visualizations in a glace
 
 I have developed An application programming interface (API) to explore the visualizations that we will explore in this workshop. To do that, follow these steps:
 

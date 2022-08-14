@@ -1,5 +1,5 @@
 ---
-title: "About R & RStudio"
+title: "Day 1: About R & RStudio"
 date: "`r Sys.Date()`"
 categories: R
 tags:

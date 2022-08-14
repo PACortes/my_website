@@ -1,5 +1,5 @@
 ---
-title: "Data Set"
+title: "Day 1: Our Dataset"
 date: "`r Sys.Date()`"
 categories: R
 tags:

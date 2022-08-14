@@ -9,7 +9,7 @@ output:
   blogdown::html_page:
     toc: true
 type: book
-weight: 20
+weight: 30
 ---
 
 ```{r setup, include=FALSE}
@@ -24,7 +24,7 @@ In this workshop, we will use a simulated dataset consisting of faculty employee
 
 ## Content
 
-The dataset contains 32 variables and 850 rows of data. It reports data metrics related to three different dimensions: human resources, teaching performance and research performance.
+The dataset contains 32 variables and 850 rows of data. It reports data metrics related to four different dimensions: human resources, teaching performance, research performance and services.
 
 ```{r, echo=FALSE}
 Dimension <- c("Human Resources", "Human Resources", "Teaching","Teaching","Teaching","Research","Service","Service")

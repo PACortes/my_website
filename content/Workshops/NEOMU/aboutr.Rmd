@@ -61,6 +61,8 @@ The following concepts will be helpful as you begin to explore the `R` world.
 
 -   **Function**: is a set of statements organized together to perform a specific task. R has a large number of in-built functions and the user can create their own functions.
 
+-   **Objects**: R lets you save data by storing it inside an R object. 
+
 ## Installing and Loading Packages
 
 In order to use a package, it needs to be installed on your computer by running `install.packages("name_of_package")` (do not forget `""` around the name of the package).

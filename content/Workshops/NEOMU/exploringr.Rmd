@@ -57,11 +57,83 @@ To get started with `R` & `RStudio`, you need to acquire your own copy. Here, I 
 -   Click "Download RStudio for Mac" to get the latest Mac version; save the .dmg file on your computer; double-click it to open; and then drag and drop it to your applications folder.
 
 ## Opneing `RStudio`
-When you open `RStudio`, a window appears with three panes in it.
+When you open `RStudio`, a window appears with three panels in it.
+
+![RStudio IDE for R in Mac](/workshops/neomu/exploringr_files/rstudio.png){width=800px height=400px}
+
+The largest panel is a **console** window. This is where you’ll run your R code and see results. The console window is exactly what you’d see if you ran R. Everything else you see is unique to RStudio. Hidden in the other panes are a text editor, a graphics window, a debugger, a file manager, and much more. 
+
+### Console
+The **console** panel (in RStudio, the bottom left panel) is the place where R is waiting for you to tell it what to do, and where it will show the results of a command. 
+
+You type R code into the bottom line of the RStudio console pane and then click Enter to run it. The code you type is called a command, because it will command your computer to do something for you. The line you type it into is called the command line.
+
+When you type a command at the prompt and hit Enter, your computer executes the command and shows you the results. Then RStudio displays a fresh prompt for your next command. For example, if you type 1 + 1 and hit Enter, RStudio will display:
 
 
-![RStudio IDE for R in Mac](/workshops/neomu/exploringr_files/rstudio){width=800px height=400px}
+```{r}
+5 + 5
+```
+You’ll notice that a [1] appears next to your result. R is just letting you know that this line begins with the first value in your result. Some commands return more than one value, and their results may fill up multiple lines. For example, the command 1:50 returns 50 values; it creates a sequence of integers from 1 to 50
+
+```{r}
+1:50
+```
+
+You can type commands directly into the console, but they will be forgotten when you close the session.  It is better to enter the commands in the script editor, and save the script. 
+
+Some useful features of console panel:
+
+-   **Code Completion**: The RStudio IDE supports the automatic completion of code using the Tab key. The code completion feature also provides inline help for functions whenever possible.
+
+-   **Retrieving Previous Commands**: As you work with R you'll often want to re-execute a command which you previously entered. As with the standard R console, the RStudio console supports the ability to recall previous commands using the arrow keys: Up (Recall previous commands) and Down (Reverse of Up).
+
+-   **Console Title Bar**: Display of the current working directory. The ability to interrupt R during a long computation. Minimizing and maximizing the Console in relation to the Source pane (using the buttons at the top-right or by double-clicking the title bar).
+
+### Environment/History/Git
+
+#### Environment
+The Environment tab provides meta-project information such as what values you have stored in variables and your custom functions.
+
+#### History
+The **History** tab runs through your previously-executed commands.
+
+#### Git
+**Git** is an additional optional tab that is not enabled by default. Git is a version control tool that can be configured by going to Tools -> Global Options and navigating to Git/SVN. 
+
+### Files/Plots/Packages/Help/Viewer
+
+#### Files
+**Files** shows you all files and folders in your current working directory. You can change your working directory by going to Session -> Set Working Directory -> Choose Directory.
+
+#### Plots
+The Plots tab displays any plots, graphs, or charts you run using one of R's visualization tools.
+
+#### Packages
+Packages is the system library of default R packages. Use the checkboxes to select and deselect packages here, or install additional packages by running install.packages("packagename") in the Console.
+
+#### Help
+**Help** is the viewer for R documentation. To learn about a function, command, or other tool in R, enter help("topicname") in the Console and refer to the Help viewer.
+
+#### Viewer
+The **Viewer** displays additional visualizations; for instance, if you are running a Shiny web app or previewing an HTML web document.
+
+### Source Panel
+The Source panel is where you create, save, and edit **R scripts**. R scripts are blocks of code that perform a task that you want to save,  and when saved have a´.R extension. 
+
+When you’ve written and saved a script, you can re-use it for future projects. 
+
+-   **To create a new script**: In the top menu select File > New File > R Script or or Ctrl/Cmd + Shift + N.
+
+-   **To save a script**: In the top menu select File > Save or 
+Ctrl/Cmd + S.
+
+-   **To open a previous script**: In the top menu select File > Open File or Ctrl/Cmd + O.
 
 
+In RStudio, you can run a line of code of a R script file by placing a cursor anywhere on that line and pressing the shortcut keys Ctrl+Enter on a Windows keyboard or Command+Enter on a Mac.
 
-The largest pane is a console window. This is where you’ll run your R code and see results. The console window is exactly what you’d see if you ran R. Everything else you see is unique to RStudio. Hidden in the other panes are a text editor, a graphics window, a debugger, a file manager, and much more. 
+You can also run an entire block of code by selecting all lines to be run then pressing the shortcut keys Ctrl+Enter/Command+Enter. 
+
+Or, you can run the entire R script by pressing Ctrl+Alt+R in Windows or Command+Option+R on a Mac.
+

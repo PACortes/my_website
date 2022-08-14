@@ -1,6 +1,6 @@
 ---
 title: "Data Set"
-date: "2022-08-11"
+date: "2022-08-14"
 categories: R
 tags:
 - Visualización
@@ -21,6 +21,7 @@ weight: 20
 <li><a href="#context" id="toc-context">Context</a></li>
 <li><a href="#content" id="toc-content">Content</a></li>
 <li><a href="#data-dictionary" id="toc-data-dictionary">Data Dictionary</a></li>
+<li><a href="#visualizations-in-a-glace" id="toc-visualizations-in-a-glace">Visualizations in a glace</a></li>
 </ul>
 </div>
 
@@ -31,8 +32,8 @@ weight: 20
 </div>
 <div id="content" class="section level2">
 <h2>Content</h2>
-<p>The dataset contains 20 variables and 311 rows of data (number of faculty employees). It reports data metrics related to three different dimensions: human resources, teaching performance and research performance.</p>
-<table>
+<p>The dataset contains 32 variables and 850 rows of data. It reports data metrics related to three different dimensions: human resources, teaching performance and research performance.</p>
+<table class="table" style="font-size: 16px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;font-size: 22px;">
@@ -133,7 +134,8 @@ Engaging in community outreach or community engagement effort
 </div>
 <div id="data-dictionary" class="section level2">
 <h2>Data Dictionary</h2>
-<table>
+<p>Variables included in th dataset are defined in the data dictionary.</p>
+<table class="table" style="font-size: 16px; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
 <th style="text-align:left;font-size: 22px;">
@@ -457,17 +459,6 @@ Productivity in research
 </tr>
 <tr>
 <td style="text-align:left;">
-ResBudget
-</td>
-<td style="text-align:left;">
-Annual Research Budget
-</td>
-<td style="text-align:left;">
-Productivity in research
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 ResGrantsAwa
 </td>
 <td style="text-align:left;">
@@ -512,4 +503,13 @@ Service to the society
 </tr>
 </tbody>
 </table>
+</div>
+<div id="visualizations-in-a-glace" class="section level2">
+<h2>Visualizations in a glace</h2>
+<p>I have developed An application programming interface (API) to explore the visualizations that we will explore in this workshop. To do that, follow these steps:</p>
+<ol style="list-style-type: decimal">
+<li><p>Download the data set <a href="https://www.dropbox.com/s/rsee0jk8v205jba/FacultyAffairs.xlsx?dl=0">here</a>.</p></li>
+<li><p>Upload the file.</p></li>
+</ol>
+<p><iframe src="https://liuyanguu.shinyapps.io/bcl_app/" width=1000 height=800"></iframe></p>
 </div>

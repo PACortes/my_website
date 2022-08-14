@@ -24,7 +24,7 @@ In this workshop, we will use a simulated dataset consisting of faculty employee
 
 ## Content
 
-The dataset contains 20 variables and 311 rows of data (number of faculty employees). It reports data metrics related to three different dimensions: human resources, teaching performance and research performance.
+The dataset contains 32 variables and 850 rows of data. It reports data metrics related to three different dimensions: human resources, teaching performance and research performance.
 
 ```{r, echo=FALSE}
 Dimension <- c("Human Resources", "Human Resources", "Teaching","Teaching","Teaching","Research","Service","Service")
@@ -58,6 +58,7 @@ kable(datadesc,booktabs = T) %>%
 ```
 
 ## Data Dictionary
+Variables included in th dataset are defined in the data dictionary. 
 
 ```{r, echo=FALSE}
 Variable <- c("AcadYear",
@@ -88,7 +89,6 @@ Variable <- c("AcadYear",
               "NumCitations",
               "NumBooks",
               "NumConferences",
-              "ResBudget",
               "ResGrantsAwa",
               "ResGrantsSub",
               "NumComUniv",
@@ -123,7 +123,6 @@ Description <- c("Academic year",
                 "Faculty´s cummulative number of citations",
                 "No.of books or book chapters published during the year",
                 "No.of international conferences presentations during the year",
-                "Annual Research Budget",
                 "No.of research grants submitted",
                 "No.of research grants awarded",
                 "No.of  of participations in institutional committee",
@@ -152,7 +151,6 @@ Element <- c( " ",
               "Effectiveness in managing multiple courses",
               "Effectiveness in mentoring students",
               "Effectiveness in mentoring students",
-              "Productivity in research",
               "Productivity in research",
               "Productivity in research",
               "Productivity in research",

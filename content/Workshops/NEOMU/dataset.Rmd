@@ -1,5 +1,5 @@
 ---
-title: "Faculty Data Set"
+title: "Data Set"
 date: "`r Sys.Date()`"
 categories: R
 tags:
@@ -24,28 +24,22 @@ In this workshop, we will use a simulated dataset consisting of faculty employee
 
 ## Content
 
-The dataset contains 20 variables and 311 rows of data (number of faculty employees). It reports data metrics related to faculty´s demographics, salary, teaching and research performance, among others.
+The dataset contains 20 variables and 311 rows of data (number of faculty employees). It reports data metrics related to three different dimensions: human resources, teaching performance and research performance.
 
 ```{r, echo=FALSE}
+Dimension <- c("Human Resources", "Human Resources", "Teaching","Teaching","Teaching","Research","Service","Service")
 
-library(kableExtra)
-
-Dimension <- c("Human Resources","Human Resources", "Human Resources", "Teaching","Teaching","Teaching","Teaching","Research","Research","Service","Service")
-
-Element <- c("Demographic information","Personal information","Employmnet information", "Effectiveness of course delivery",
-"Quality of course content","
+Element <- c("Personal information","Employmnet information", "Effectiveness of course delivery","
 Effectiveness in Managing Multiple Courses",
 "Effectiveness in Mentoring Students",
-"Quality of Research",
 "Productivity in Research",
 "Service to the Institution",
 "Service to Society")
 
-Description <- c("Demographic characteristics of the faculty members","Personal information of the faculty members","Information related to appointments of faculty members", "The extent to which a faculty member can lecture, lead discussion, respond to student questions, evaluate assignments and use instructional technology",
+Description <- c("Personal information of the faculty members","Information related to appointments of faculty members",
 "The extent to which knowledge presented is valid. Course content includes: course readings, instructor-developed resources, class exercises, clinical practice, and experiments",
 "Ability to manage multuple courses",
 "Ability to encourage students and to help them understand the factors that contribute to academic success",
-"Evidence of making a substantive contribution to one or more fields of study",
 "Capacity to conduct research that is of a high enough quality to regularly appear in refereed publications and be regularly included in conference presentations",
 "Involvement in university committees",
 "Engaging in community outreach or community engagement effort")
@@ -53,27 +47,143 @@ Description <- c("Demographic characteristics of the faculty members","Personal 
 ```
 
 ```{r, echo=FALSE}
+library(kableExtra)
 
-datadic<-data.frame(Element,Description)
-kable(datadic,booktabs = T) %>% 
+datadesc<-data.frame(Element,Description)
+
+kable(datadesc,booktabs = T) %>% 
+  kable_styling(font_size = 16) %>% 
   row_spec(0,font_size = 22) %>% 
-  pack_rows(index=c("Human Resources " = 3, "Teaching" = 4, "Research" = 2, "Service" = 2))
+  pack_rows(index=c("Human Resources " = 2, "Teaching" = 3, "Research" = 1, "Service" = 2))
 ```
 
 ## Data Dictionary
 
 ```{r, echo=FALSE}
+Variable <- c("AcadYear",
+              "EmployeeName",
+              "Sex",
+              "YearBirth",
+              "Nationality",
+              "Appointment",
+              "SchoolApp",
+              "FirstYearApp",
+              "Salary",
+              "DaysLateLast30",
+              "Absences",
+              "JobSatisfaction",
+              "SelfEvalResp",
+              "SelfEvalTech",
+              "SelfEvalInnov",
+              "StudentEvalResp",
+              "StudentEvalTech",
+              "StudentEvalInnov",
+              "CoursesUnd",
+              "CoursesGrad",
+              "MentoringResProj",
+              "MentoringTheses",
+              "ResearchArea",
+              "NumPublications",
+              "SubManuscripts",
+              "NumCitations",
+              "NumBooks",
+              "NumConferences",
+              "ResBudget",
+              "ResGrantsAwa",
+              "ResGrantsSub",
+              "NumComUniv",
+              "NumOut")
 
-library(kableExtra)
+              
+Description <- c("Academic year",
+                 "Faculty’s full name",
+                 "Sex (M or F)",
+                 "Faculty's year of birth",
+                 "Faculty's nationality",
+                 "Appointment ranks (1 = Assistant Professor, 2 = Associate Professor, 3 = Professor)",
+                 "School of  appointment",
+                 "Year of first appointment",
+                 "The faculty´s yearly salary ($U.S. Dollars)", 
+                 "No. of times the faculty was late to work during the year",
+                 "No. of times the faculty was absent from work during the year",            
+                 "Results from the last labour satisfaction survey using a 5-point Likert scale (from 1 extremely dissatisfied to 5 extremely satisfied)",
+                  "Results from the last self-assestment survey about spped of response to students using a 5-point Likert scale (from 1 extremely slow to 5 extremely fast)",
+                  "Results from the last self-assestment survey about the use of instructional technology using a 5-point Likert scale (from 1 never to 5 always)",
+                  "Results from the last self-assestment survey about the use of educational innovation approaches using a 5-point Likert scale (from 1 never to 5 always)",
+                "Results from the last evaluation by students about spped of response to students using a 5-point Likert scale (from 1 extremely slow to 5 extremely fast)",
+                "Results from the last evaluation by students about the use of instructional technology using a 5-point Likert scale (from 1 never to 5 always)",
+                "Results from the last evaluation by students about the use of educational innovation approaches using a 5-point Likert scale (from 1 never to 5 always)",
+                "No. of undergraduate courses instructed during the year",
+                "No. of graduate courses instructed during the year",
+                "No. of students mentored in research during the year",
+                "No. of theses supervised during the year", 
+                "Faculty’s research area",
+                "No.of articles published in peer-reviewed journals during the year",
+                "No.of articles submitted to peer-reviewed journals during the year",
+                "Faculty´s cummulative number of citations",
+                "No.of books or book chapters published during the year",
+                "No.of international conferences presentations during the year",
+                "Annual Research Budget",
+                "No.of research grants submitted",
+                "No.of research grants awarded",
+                "No.of  of participations in institutional committee",
+                "No.of  of participations in outreach activities")
+                
+            
+Element <- c( " ",
+              "Personal information",
+              "Personal information",
+              "Personal information",
+              "Personal information",
+              "Employment information",
+              "Employment information",
+              "Employment information",
+              "Employment information",
+              "Employment information",
+              "Employment information",
+              "Employment information",
+              "Effectiveness of course delivery",
+              "Effectiveness of course delivery",
+              "Effectiveness of course delivery",
+              "Effectiveness of course delivery",
+              "Effectiveness of course delivery",
+              "Effectiveness of course delivery",
+              "Effectiveness in managing multiple courses",
+              "Effectiveness in managing multiple courses",
+              "Effectiveness in mentoring students",
+              "Effectiveness in mentoring students",
+              "Productivity in research",
+              "Productivity in research",
+              "Productivity in research",
+              "Productivity in research",
+              "Productivity in research",
+              "Productivity in research",
+              "Productivity in research",
+              "Productivity in research",
+              "Productivity in research",
+              "Service to the institution",
+              "Service to the society")
 
-Variable <- c("EmployeeName","Salary","Sex","MaritalDesc","DaysLateLast30", "Absences","Age","YearBirth","Nationality","School","Course","Appointment","Satisfaction","ResearchBudget","FirstYear","Articles","Students","Evaluation","Community", "ResearchArea")
-
-
-Description <- c("Faculty’s full name", "The faculty´s yearly salary. $ U.S. Dollars", " 	Sex - M or F", " The marital status of the faculty (divorced, single, widowed, separated, etc)", " The number of times that the faculty was late to work during the last 30 days" ," No. of times the faculty was absent from work during the year", "Age", "Faculty's year of birth", "Faculty's nationality","School of faculty´s appointment", "No. of courses instructed during the year", "Appointment ranks - 1 = Assistant Professor, 2 = Associate Professor, 3 = Professor", "Results from the last labour satisfaction survey - Value between 0 to 5", "Annual Research Budget", "Year of firts appointment", "No.of articles per year published in peer-reviewed journals during the year", "No.of supervised theses during the year", "Results from the last Teacher evaluation survey - Value between 0 to 5","No.of outreach activities during the year", "Faculty’s research fueld")
-                 
-Datatype <- c("Character","Numeric","Character","Character","Numeric","Numeric","Numeric","Numeric","Character","Character","Numeric","Numeric","Numeric","Character","Numeric","Numeric","Numeric","Numeric","Numeric","Character")
-
-
-datadic<-data.frame(Variable,Datatype,Description)
-kable(datadic)
 ```
+
+```{r , echo=FALSE}
+library(kableExtra)
+datadic<-data.frame(Variable,Description,Element)
+kable(datadic) %>%
+  kable_styling(font_size = 16) %>% 
+  row_spec(0,font_size = 22)
+
+```
+
+## Visualizations in a glace
+
+I have developed An application programming interface (API) to explore the visualizations that we will explore in this workshop. To do that, follow these steps:
+
+1.   Download the data set [here](https://www.dropbox.com/s/rsee0jk8v205jba/FacultyAffairs.xlsx?dl=0).
+
+2. Upload the file.
+
+ <iframe src="https://liuyanguu.shinyapps.io/bcl_app/" width=1000 height=800"></iframe>
+
+
+

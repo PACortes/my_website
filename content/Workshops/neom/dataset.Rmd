@@ -177,13 +177,15 @@ kable(datadic) %>%
 
 # Visualizations in a glace
 
-I have developed An application programming interface (API) to explore the visualizations that we will explore in this workshop. To do that, follow these steps:
+I have developed an application programming interface (API) to explore the visualizations that we will explore in this workshop. To do that, follow these steps:
 
 1.   Download the data set [here](https://www.dropbox.com/s/rsee0jk8v205jba/FacultyAffairs.xlsx?dl=0).
 
 2. Upload the file.
 
- <iframe src="https://pacortes.shinyapps.io/FacultyReport/" width=1500 height=800"></iframe>
+If this embedment doesn’t appear well on your screen, here is the [link to the API](https://pacortes.shinyapps.io/FacultyReport/). 
+
+ <iframe src="https://pacortes.shinyapps.io/FacultyReport/" width="100%" height=800"></iframe>
 
 
 

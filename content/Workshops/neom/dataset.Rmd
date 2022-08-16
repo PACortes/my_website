@@ -175,7 +175,7 @@ kable(datadic) %>%
 
 ```
 
-# Visualizations in a glace
+# Visualizations in a glance
 
 I have developed an application programming interface (API) to explore the visualizations that we will explore in this workshop. To do that, follow these steps:
 

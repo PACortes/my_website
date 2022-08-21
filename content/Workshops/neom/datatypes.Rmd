@@ -41,7 +41,8 @@ Here, `x` is the variable where the data *2022* is stored. Now, whenever we use 
 
 ```{r}
 x <- 2022
-print(x)
+
+x
 ```
 
 As we can can see, when we print `x` we get 2022 as output.
@@ -177,7 +178,7 @@ The `character` data type is used to specify character or string values in a var
 We can use single quotes `''` or double quotes `""` to represent strings. If we don't use quotes or double quotes, `R` will consider the character and string as an object.
 
 ```{r}
-# assign a single character to word_1
+# assign a string to word_1
 word_1 <- "NC1"
 
 # print the output

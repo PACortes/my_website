@@ -17,7 +17,7 @@ weight: 20
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-# Opneing `RStudio`
+# Opening `RStudio`
 When you open `RStudio`, a window appears with three panels in it.
 
 ![RStudio IDE for R in Mac](/workshops/neom/exploringr_files/rstudio.png){width=800px height=400px}

@@ -11,7 +11,7 @@ output:
     number_sections: true
 
 type: book
-weight: 40
+weight: 50
 ---
 
 ```{r setup, include=FALSE}

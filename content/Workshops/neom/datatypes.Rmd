@@ -1,0 +1,534 @@
+---
+title: "Day 1: R Data Types"
+date: "`r Sys.Date()`"
+categories: R
+tags:
+- R
+- RStudio
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: true
+type: book
+weight: 40
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+# `R` Objects and Classes
+
+`R` is an object-oriented programming language with the fundamental design principle: Everything is an `object.`
+
+An `object` is simply a collection of data (`variables`) and methods (functions).
+
+All `object` in `R` have a specific `class` that can have a set of class-specific attributes. Basically, a `class` is a blueprint for that object.
+
+We would never build a house without a blueprint. The blueprint (prototype) of a house is the `class`, which contains all the details about the floors, doors, windows, etc. Based on these descriptions we build our house. Here, house is the `object`.
+
+# `R` variables
+
+A **variable** is a name given to a memory location, which is used to store values in a computer program. Variables in R programming can be used to store different types of values such as numbers, words, matrices, and even tables. These different types of values are called **data types**.
+
+We can create variables from within the R environment and from files on your computer. `R` uses`=`or `<-` to assign values to a variable name.
+
+```{r}
+x <- 2022
+```
+
+Here, `x` is the variable where the data *2022* is stored. Now, whenever we use `x` in our program, we will get 2022.
+
+```{r}
+x <- 2022
+print(x)
+```
+
+As we can can see, when we print `x` we get 2022 as output.
+
+## Changing Value of Variables
+
+Depending on the conditions or information passed into the program, we can change the value of a variable.
+
+```{r}
+x <- 2022
+x
+```
+
+```{r}
+# changing value of a variable
+x <- 23456722
+x
+```
+
+## Naming `R` variables
+
+In `R`, we can use any name for our variables. However, For a variable to be valid, it should follow some simple rules:
+
+-   It should contain letters, digits, periods, and underscores.
+
+-   It should start with a letter or a period, but not with digits (e.g. *foryou* but not *4you*).
+
+-   It should not start with a dot followed by a digit (e.g. *.4you*).
+
+-   It should not be a reserved keyword. (e.g. *for*, *in*, *NA*,, *NULL*, *TRUE*, *beak*, among many others).
+
+-   R is case sensitive (e.g. *Neom* and *neom* are treated as different variables).
+
+# `R` data types
+
+Each variable in `R` has an associated data type. The fundamental data types in R Programming are as follows:
+
+-   Numeric.
+
+-   Integer.
+
+-   Complex.
+
+-   Character.
+
+-   Logical.
+
+R is able to automatically distinguish between different types of data. We can find out the type of any object using the `class()` function. Alternatively, we can ask if an object is a specific class using using a logical test. The `is.classOfData()` family of functions will return either a `TRUE` or a `FALSE`.
+
+Let's discuss each of these `R` data types one by one.
+
+## Numeric
+
+In `R`, the `numeric` data type represents all real numbers with or without decimal values. It is the default data type for numbers in R.
+
+```{r}
+# assign a decimal to value x
+x <- 150.4
+
+# print the class name of variable
+class(x)
+
+# ask the class name of variable
+is.numeric(x)
+
+```
+
+When R stores a number in a variable, it converts the number into a `double` value or a decimal type with at least two decimal places. This means that a value such as *100* here, is stored as *100.00* with a type of double and a class of numeric.
+
+```{r}
+# assign a decimal to value mynumber
+mynumber <- 100
+
+# print the output
+mynumber
+
+# print the class name of variable
+class(mynumber)
+
+# ask the class name of variable
+is.numeric(mynumber)
+
+# print the type of variable
+typeof(mynumber)
+```
+
+## Integer
+
+The `integer` data type specifies real values without decimal points. We use the suffix `L` to specify integer data. We can also convert a value into an integer type using the `as.integer()` function.
+
+```{r}
+# assign a integer value with the to my_integer
+my_integer <- 100L
+
+# print the output
+my_integer
+
+# print the class name of variable
+class(my_integer)
+
+# ask the class name of variable
+is.numeric(my_integer)
+
+# print the type of variable
+typeof(my_integer)
+```
+
+## Complex
+
+The `complex` data type is used to specify purely imaginary values in R. We use the suffix `i` to specify the imaginary part.
+
+```{r}
+# assign a complex value with the to MyComplex
+MyComplex <- 100i
+
+# print the output
+MyComplex
+
+# print the class name of variable
+class(MyComplex)
+
+# ask the class name of variable
+is.numeric(MyComplex)
+
+# print the type of variable
+typeof(MyComplex)
+```
+
+## Character
+
+The `character` data type is used to specify character or string values in a variable. A string is a set of characters. Strings in `R` can contain alphabets, numbers, and symbols. For example, *N* is a single character and *Neom* is a string.
+
+We can use single quotes `''` or double quotes `""` to represent strings. If we don't use quotes or double quotes, `R` will consider the character and string as an object.
+
+```{r}
+# assign a single character to word_1
+word_1 <- "NC1"
+
+# print the output
+word_1
+
+# print the class name of variable
+class(word_1)
+
+# ask the class name of variable
+is.numeric(word_1)
+
+# print the type of variable
+typeof(word_1)
+```
+
+## Logical
+
+The `logical` data type in R is also known as boolean data type. It can only have two values: `TRUE` and `FALSE`.
+
+## Factors
+
+`Factors` are the data objects which are used to categorize the data and store it as levels (e.g. “MALE” or “FEMALE”). This is useful for storing categorical data. Factors can store both strings and integers. 
+
+We can create factors using the function `factor()`
+
+```{r}
+# Creating factor using factor()
+sex<- factor(c("Small", "Female", "Male", "Female"))
+
+# print the output
+sex
+
+# print the class name of variable
+class(sex)
+
+```
+
+# `R` data structures
+
+# Vectors
+
+A vector is the most common and basic data structure in `R`. A vector is a collection of elements that are most commonly of mode character, logical, integer or numeric. Vectors can contain numbers, characters, or logicals, but the key thing to remember is that all the elements inside a vector must be of the same class. In other words, vectors can contain either numbers, characters or logicals but not mixtures of these types of data.
+
+The function `c()` combines/joins single R objects into a vector of R objects. It is mostly used for creating vectors.
+
+```{r}
+# creating a numeric vector of 5 elements
+NumericVector <- c(1,2,5,7,8)
+
+# print the output
+NumericVector
+
+# print the class name
+class(NumericVector)
+
+
+```
+
+```{r}
+# creating a character vector of 3 elements
+CharacterVector <- c("I", "Love", "Neom")
+
+# print the output
+CharacterVector
+
+# print the class name
+class(CharacterVector)
+
+
+```
+
+# Matrices and arrays
+
+A matrix is simply a vector that has additional attributes called dimensions. Arrays are just multidimensional matrices. Again, matrices and arrays must contain elements all of the same data class.
+
+To create a matrix, we can use the `matrix()` function.
+
+```{r}
+# creating a 3x3 matrix. 
+My_Matrix <- matrix(1:9, nrow=3)
+
+# print the output
+My_Matrix
+
+# print the class name
+class(My_Matrix)
+
+
+```
+
+By default the matrix is filled rather than the default column-wise. We can fill the matrix row-wise using `byrow = TRUE`
+
+```{r}
+# creating a 3x3 matrix. 
+My_Matrix <- matrix(1:9, nrow=3, byrow = TRUE)
+
+# print the output
+My_Matrix
+
+# print the class name
+class(My_Matrix)
+
+
+```
+
+To create an array we can use the `array()` functions.
+
+```{r}
+# An array with one dimension with values ranging from 1 to 12
+array1 <- array(1:12)
+
+# print the output
+array1
+
+# print the class name
+class(array1)
+
+```
+
+We can use the `array()` function to create an array, and the `dim = argument` parameter to specify the dimensions.
+
+```{r}
+# An array with more than one dimension
+array2 <- array(1:12, dim = c(3,4,2))
+
+# print the output
+array2
+
+# print the class name
+class(array2)
+
+```
+
+When using the `array()` function we define the dimensions using the `dim = argument`, in our case 2 rows, 4 columns in 2 different matrices.
+
+# Lists
+
+A list can contain many different data types inside it. A list is a collection of data which is ordered and changeable.
+
+To create a list, use the `list()` function:
+
+```{r}
+# List of three components
+MySelf <- list("John", 36, 1.82)
+
+# Print the output
+MySelf 
+
+# print the type of variable
+typeof(MySelf)
+
+```
+
+We can check de length of the list using the function `length()`.
+
+```{r}
+length(MySelf)
+```
+
+We can examine the structure of the list using the funtion `str()`.
+
+```{r}
+str(MySelf)
+```
+
+We can also crate a list with tags which makes it easier to reference the components of the list.
+
+```{r}
+# List of three components
+MySelf <- list(Name="John", Age=36, Height=1.82)
+
+# Print the output
+MySelf 
+```
+
+We can add more components to the list using the function `c()`.
+
+```{r}
+# List of three components
+MyTeam <- list(c("John", "Steve"), c(36,45), c(1.82, 1.70))
+
+# Give names to the elements in the list.
+names(MyTeam) <- c("Name", "Age", "Height")
+
+# Print the output
+MyTeam 
+```
+
+## Accessing list elements
+
+Elements of the list can be accessed by the index of the element in the list. In case of named lists it can also be accessed using the names.
+
+```{r}
+# Access the first element of the list. As it is also a list, all its elements will be printed.
+MyTeam[1]
+
+
+# Access the list element using the name of the element.
+MyTeam$Age
+```
+
+# Data Frames
+
+A data frame is the most common way of storing data in R and, generally, is the data structure most often used for data analyses. 
+
+Basically, a data frame is a list of equal-length vectors. Each element of the list can be thought of as a column and the length of each element of the list is the number of rows. 
+
+As a result, data frames can store different classes of objects in each column (i.e. numeric, character, factor).
+
+In essence, the easiest way to think of a data frame is as an Excel worksheet that contains columns of different types of data but are all of equal length rows.
+
+## Creating data frames
+
+Data frames can also be created explicitly with the `data.frame()` function.
+
+```{r}
+# data frame with 3 columns and 2 rows
+df <- data.frame(col1 = c("John", "Steve"), 
+                 col2 = c(36,45),
+                 col3 = c(1.82, 1.70))
+
+# Print the output
+df
+```
+
+Note how col1 in df was converted to a column of factors. This is because there is a default setting in `data.frame()` that converts character columns to factors. We can turn this off by setting the `stringsAsFactors = FALSE`. 
+
+We also can create a data frame from other types of objects using `c()`. 
+
+```{r}
+
+# Generate three objects
+Name <- c("John", "Steve")
+Age <-  c(36,45)
+Height <- c(1.82, 1.70)
+
+# data frame with 3 columns
+df <- data.frame(Name, Age, Height)
+
+# Print the output
+df
+```
+
+
+We can explore the structure of a data frame using the function `str()`.
+
+```{r}
+str(df)
+```
+
+## Adding/Changing column names
+We can also also add/change the existing column names by using `colnames()`.
+
+```{r}
+# add/change column names
+colnames(df) <- c("Employee", "Weight", "Other")
+
+# Print the output
+df
+```
+
+## Expanding a Data Frame
+A data frame can be expanded by adding columns and rows. We can add new columns to the data frame using the function `cbind()`.
+
+
+```{r}
+# New vector
+Country <- c("KSA", "Ireland")
+
+# Adding new column
+df1 <- cbind(df, Country)
+
+#Print the output
+df1
+```
+
+
+We can also use the `rbind()` function to add data frame rows together. To add rows appropriately, we need to convert the items being added to a data frame and make sure the columns are the same class as the original data frame.
+
+```{r}
+# New vector
+NewEmployee <- data.frame(Employee="Peter", 
+                          Weight=70,
+                          Other=1.56,
+                          Country="USA")
+
+# Adding new column
+df2 <- rbind(df1, NewEmployee)
+
+#Print the output
+df2
+```
+
+## Subsetting data frames
+
+The most basic way of subsetting a data frame in R is by using square brackets `[row, column]`.
+
+Let´s select all the information of the first row of our data frame.
+
+
+```{r}
+# Information for first employee
+df2[1,]
+```
+
+Now, let´s select all the information of the second and third rows of our data frame.
+
+```{r}
+# Information for two employees
+df2[2:3,]
+```
+
+We can also select information for all rows from a specific column. 
+
+```{r}
+# All employee´s names
+df2[,1]
+```
+
+To select a specific column, we can also type in the name of the data frame, followed by a `$`, and then the name of the column.
+
+
+```{r}
+# All employee´s names
+df2$Employee
+```
+
+Or, maybe we want information from more than one column.
+
+```{r}
+# All employee´s names and weights
+df2[,1:2]
+```
+
+Maybe, we are interested in specific information for one row from a specific column.
+
+```{r}
+# Weight of second employee in our data frame
+df2[2,3]
+```
+
+## Creating data frames from files
+
+We can also create a new data frame  when importing the data into R. In the next section we will explore more about how import data into R.
+
+## Useful Data Frame Functions
+-   `head()`: shows first 6 rows.
+-   `tail()`: shows last 6 rows.
+-   `dim()`: returns the dimensions of data frame.
+-   `nrow()`: number of rows.
+-   `ncol()`: number of columns.
+-   `str()`: structure of data frame.
+-   `names()`: show the names attribute for a data frame.
+

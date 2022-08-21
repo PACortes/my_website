@@ -12,10 +12,10 @@ output:
 type: book
 weight: 10
 ---
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE)
 ```
-
 
 # ¿What is `R`?
 
@@ -43,8 +43,7 @@ The R language programming environment is a fully planned and coherent system bu
 
 -   It's fun... probably not at the beginning of the learning process.
 
-![Credits: allison_horst](/workshops/neom/aboutr_files/r_rollercoaster.png){width=800px height=400px}
-
+![Credits: allison_horst](/workshops/neom/aboutr_files/r_rollercoaster.png){width="800px" height="400px"}
 
 # ¿What is `RStudio`?
 
@@ -62,8 +61,7 @@ The following concepts will be helpful as you begin to explore the `R` world.
 
 -   **Function**: is a set of statements organized together to perform a specific task. R has a large number of in-built functions and the user can create their own functions.
 
--   **Objects**: R lets you save data by storing it inside an R object. 
-
+-   **Objects**: R lets you save data by storing it inside an R object.
 
 # `R` & `RStudio`?
 
@@ -74,7 +72,9 @@ Let us remember that `R` and `RStudio` are two distinctly different applications
 To get started with `R` & `RStudio`, you need to acquire your own copy. Here, I will show you how to download it. Follow the link that describes your operating system: Windows or Mac.
 
 ## Window Users
+
 ### To install R
+
 -   Open an internet browser and go to [www.r-project.org](www.r-project.org).
 -   Click the "download R" link in the middle of the page under "Getting Started."
 -   Select a CRAN location (a mirror site) and click the corresponding link.
@@ -84,13 +84,15 @@ To get started with `R` & `RStudio`, you need to acquire your own copy. Here, I 
 -   Now that R is installed, you need to download and install RStudio.
 
 ### To install RStudio
--   Go to (www.rstudio.com)[www.rstudio.com].
--   Click on [Download] (https://www.rstudio.com/products/rstudio/download/) and then "Download" under "RStudio Desktop".
+
+-   Go to [www.rstudio.com](www.rstudio.com).
+-   Click on [Download](https://www.rstudio.com/products/rstudio/download/) and then "Download" under "RStudio Desktop".
 -   Click "Download RStudio for Mac" to get the latest Windows version; save the .dmg file on your computer; double-click it to open; and then drag and drop it to your applications folder.
 
-
 ## Mac Users
+
 ### To install R
+
 -   Open an internet browser and go to [www.r-project.org](www.r-project.org).
 -   Click the "download R" link in the middle of the page under "Getting Started."
 -   Select a CRAN location (a mirror site) and click the corresponding link.
@@ -100,15 +102,13 @@ To get started with `R` & `RStudio`, you need to acquire your own copy. Here, I 
 -   Now that R is installed, you need to download and install RStudio.
 
 ### To install RStudio
--   Go to (www.rstudio.com)[www.rstudio.com].
--   Click on [Download] (https://www.rstudio.com/products/rstudio/download/) and then "Download" under "RStudio Desktop".
--   Click "Download RStudio for Mac" to get the latest Mac version; save the .dmg file on your computer; double-click it to open; and then drag and drop it to your applications folder.
 
+-   Go to (www.rstudio.com)[www.rstudio.com].
+-   Click on [Download] (<https://www.rstudio.com/products/rstudio/download/>) and then "Download" under "RStudio Desktop".
+-   Click "Download RStudio for Mac" to get the latest Mac version; save the .dmg file on your computer; double-click it to open; and then drag and drop it to your applications folder.
 
 # Installing and Loading Packages
 
 In order to use a package, it needs to be installed on your computer by running `install.packages("name_of_package")` (do not forget `""` around the name of the package).
 
 Once the package is installed, you must load the package and only after it has been loaded you can use all the functions and datasets it contains. To load a package, run `library(name_of_package)` (this time `""` around the name of the package are optional).
-
-

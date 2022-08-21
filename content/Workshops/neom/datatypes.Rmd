@@ -17,7 +17,7 @@ weight: 40
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-# `R` Objects and Classes
+# Objects and Classes
 
 `R` is an object-oriented programming language with the fundamental design principle: Everything is an `object.`
 
@@ -27,9 +27,9 @@ All `object` in `R` have a specific `class` that can have a set of class-specifi
 
 We would never build a house without a blueprint. The blueprint (prototype) of a house is the `class`, which contains all the details about the floors, doors, windows, etc. Based on these descriptions we build our house. Here, house is the `object`.
 
-# `R` variables
+# Variables
 
-A **variable** is a name given to a memory location, which is used to store values in a computer program. Variables in R programming can be used to store different types of values such as numbers, words, matrices, and even tables. These different types of values are called **data types**.
+In R, a **variable** is a name given to a memory location, which is used to store values in a computer program. Variables in R programming can be used to store different types of values such as numbers, words, matrices, and even tables. These different types of values are called **data types**.
 
 We can create variables from within the R environment and from files on your computer. `R` uses`=`or `<-` to assign values to a variable name.
 
@@ -61,7 +61,7 @@ x <- 23456722
 x
 ```
 
-## Naming `R` variables
+## Naming Variables
 
 In `R`, we can use any name for our variables. However, For a variable to be valid, it should follow some simple rules:
 
@@ -75,7 +75,7 @@ In `R`, we can use any name for our variables. However, For a variable to be val
 
 -   R is case sensitive (e.g. *Neom* and *neom* are treated as different variables).
 
-# `R` data types
+# Data Types
 
 Each variable in `R` has an associated data type. The fundamental data types in R Programming are as follows:
 
@@ -215,7 +215,7 @@ class(sex)
 
 ```
 
-# `R` data structures
+# Data Structures
 
 # Vectors
 
@@ -249,7 +249,7 @@ class(CharacterVector)
 
 ```
 
-# Matrices and arrays
+# Matrices and Arrays
 
 A matrix is simply a vector that has additional attributes called dimensions. Arrays are just multidimensional matrices. Again, matrices and arrays must contain elements all of the same data class.
 
@@ -366,7 +366,7 @@ names(MyTeam) <- c("Name", "Age", "Height")
 MyTeam 
 ```
 
-## Accessing list elements
+## Accessing List Elements
 
 Elements of the list can be accessed by the index of the element in the list. In case of named lists it can also be accessed using the names.
 
@@ -389,7 +389,7 @@ As a result, data frames can store different classes of objects in each column (
 
 In essence, the easiest way to think of a data frame is as an Excel worksheet that contains columns of different types of data but are all of equal length rows.
 
-## Creating data frames
+## Creating Data Frames
 
 Data frames can also be created explicitly with the `data.frame()` function.
 
@@ -428,7 +428,7 @@ We can explore the structure of a data frame using the function `str()`.
 str(df)
 ```
 
-## Adding/Changing column names
+## Adding/Changing Column Names
 We can also also add/change the existing column names by using `colnames()`.
 
 ```{r}
@@ -471,7 +471,7 @@ df2 <- rbind(df1, NewEmployee)
 df2
 ```
 
-## Subsetting data frames
+## Subsetting Data Frames
 
 The most basic way of subsetting a data frame in R is by using square brackets `[row, column]`.
 
@@ -519,9 +519,9 @@ Maybe, we are interested in specific information for one row from a specific col
 df2[2,3]
 ```
 
-## Creating data frames from files
+## Creating Data Frames From Files
 
-We can also create a new data frame  when importing the data into R. In the next section we will explore more about how import data into R.
+We can also create a new data frame  when importing the data into R. In the next session we will explore more about how import data into R.
 
 ## Useful Data Frame Functions
 -   `head()`: shows first 6 rows.

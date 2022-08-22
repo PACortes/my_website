@@ -19,27 +19,28 @@ knitr::opts_chunk$set(collapse = TRUE)
 
 # ¿What is `R`?
 
-`R` is a language and software environment for statistical computing and graphics.
+`R` is a free software environment for statistical computing and graphics. 
 
-R provides a wide variety of statistical and graphical techniques, and is highly extensible.
+`R` provides a wide variety of statistical and graphical techniques, and is highly extensible.
 
-It is one of the most popular languages used by statisticians, data analysts, researchers and marketers to retrieve, clean, analyze, visualize and present data.
 
-# The `R` software environment
+# The `R`  environment
 
-The R language programming environment is a fully planned and coherent system built around a standard command-line interface. Users leverage this to read data and load it to the workspace, specify commands and receive results.
+The R environment is a fully planned and coherent system built around a standard command-line interface. Users leverage this to read data and load it to the workspace, specify commands and receive results.
 
-# Why use `R`?
+# Why use/learn `R`?
 
--   R is open-source and free!
+-   `R` is open-source and free.
 
--   R is popular and R community is huge
+-   `R` is popular and R community is huge.
 
--   R runs on all platforms (Available for Windows, Macintosh, and Linux).
+-   `R` runs on all platforms (Available for Windows, Macintosh, and Linux).
 
--   Publication-quality graphs. With R you have complete control over plotting/graphing options and are able to output publication quality figures with ease.
+-   Publication-quality visualizations. With `R`, we have full control over plotting/graphing options and can easily generate publication quality visualizations
 
--   Packages for *literate statistical programming* - weaving written reports and analysis code in one document.
+-   Used in almost every industry.
+
+-   Integrate with other languages and files.
 
 -   It's fun... probably not at the beginning of the learning process.
 
@@ -47,9 +48,13 @@ The R language programming environment is a fully planned and coherent system bu
 
 # ¿What is `RStudio`?
 
-`RStudio` is a free, open source IDE (integrated development environment) for R. Its interface is organized so that the user can clearly view graphs, data tables, R code, and output all at the same time. It also offers an Import-Wizard-like feature that allows users to import *CSV*, *Excel*, *SAS*, *SPSS* and *Stata* files into R without having to write the code to do so.
+`RStudio` is a free, open source IDE (integrated development environment) for R. 
 
-It is important to note that `RStudio` is a software that runs `R` and provides additional tools that are useful when writing `R` code. So `R` and `RStudio` are not the same.
+Its interface is organized so that the user can clearly view graphs, data tables, R code, and output all at the same time. 
+
+`RStudio` also offers an Import-Wizard-like feature that allows users to import *CSV*, *Excel*, *SAS*, *SPSS* and *Stata* files into R without having to write the code to do so.
+
+It is important to note that `RStudio` is a software that runs `R` and provides additional tools that are useful when writing `R` code. **So `R` and `RStudio` are not the same**.
 
 # Definitions
 

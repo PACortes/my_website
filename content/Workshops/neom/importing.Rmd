@@ -115,7 +115,7 @@ We can import import Excel files, **.xls** and **.xlsx**, using the function `re
 
 Syntax:
 
-`library("readxl")` 
+`library(readxl)` 
 
 `read_excel("path/file_name.xlsx")`
 
@@ -123,7 +123,7 @@ We can also import **.xlsx** using the function `read.xlsx()` from `xlsx` packag
 
 Syntax:
 
-`library("xlsx")` 
+`library(xlsx)` 
 
 `read.xlsx("path/file_name.xlsx")`
 

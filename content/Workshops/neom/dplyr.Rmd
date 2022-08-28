@@ -151,7 +151,7 @@ mutate(data,AdjSalary = Salary+Salary*0.1)
 glimpse(mutate(data,AdjSalary = Salary+Salary*0.1))
 ```
 
-### Sumarizing columns
+### Summarizing columns
 The `summarise()` verb is used to provide different summary statistics from a dataframe. 
 
 For example, we want to summarise the means of salary of our faculty during 2019-2022 period.

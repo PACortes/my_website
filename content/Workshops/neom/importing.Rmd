@@ -30,7 +30,7 @@ R is able to recognise a wide variety of file formats, although in reality we wi
 
 ## Format your (tidy) data
 
-Tidy data is a standard way of mapping the meaning of a dataset to its structure. A dataset is messy or tidy depending on how rows, columns and tables are matched up with observations, variables and types. In **tidy data**:
+Tidy data is a standard way of mapping the meaning of a dataset to its structure. A dataset is messy or tidy depending on how rows, columns and tables are matched up with observations, variables and types. In tidy data:
 
 -   Every column is a variable.
 
@@ -62,13 +62,13 @@ Before importing and reading any data, we must set the working directory to the 
 
 We can also set the current working directory clicking the Session tab and then Set Working Directory option.
 
-![](/workshops/neom/importing_files/setwd.png){width=400px height=200px}
+![](/workshops/neom/importing_files/setwd.png){width=600px height=300px}
 
 ## Importing using command
 
 ### csv Files
 
-We can import **.csv** files using basic R function **read.csv()**.
+We can import **.csv** files using basic R function `read.csv()`.
 
 Syntax:
 
@@ -88,7 +88,7 @@ We can import **.txt** or a tab-delimited text files using basic R function `rea
 
 Syntax:
 
-`read.table("path/file_name.csv", header=TRUE)`
+`read.table("path/file_name.txt", header=TRUE)`
 
 Arguments:
 
@@ -115,13 +115,17 @@ We can import import Excel files, **.xls** and **.xlsx**, using the function `re
 
 Syntax:
 
-`library("readxl")` `read_excel("path/file_name.xlsx")`
+`library("readxl")` 
+
+`read_excel("path/file_name.xlsx")`
 
 We can also import **.xlsx** using the function `read.xlsx()` from `xlsx` package.
 
 Syntax:
 
-`library("xlsx")` `read.xlsx("path/file_name.xlsx")`
+`library("xlsx")` 
+
+`read.xlsx("path/file_name.xlsx")`
 
 ## Importing using Environment tab
 

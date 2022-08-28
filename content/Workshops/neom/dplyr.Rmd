@@ -1,5 +1,5 @@
 ---
-title: "Day 2: Data manipulation"
+title: "Day 2: Data Manipulation"
 date: "`r Sys.Date()`"
 categories: R
 tags:
@@ -27,7 +27,7 @@ Data manipulation is the process of organizing data to read and understand it be
 
 `dplyr` is a powerful R-package to transform and summarize tabular data with rows and columns. It was created to enable efficient manipulation of data with the advantages of speed and simplicity of coding.
 
-`dplyr` provides a consistent set of functions,which we sometimes call verbs. Each of these `dplyr` verbs does one thing. Each verb is named in a way that is extremely easy to remember. Some of these include:
+`dplyr` provides a consistent set of functions, which we sometimes call verbs. Each of these `dplyr` verbs does one thing. Each verb is named in a way that is extremely easy to remember. Some of these include:
 
 -   `glimpse()`: to examine our dataset.
 
@@ -57,8 +57,6 @@ Data manipulation is the process of organizing data to read and understand it be
 
 All `dplyr` verbs share a similar syntax.
 
-Syntax:
-
 `dplyr_verb(dataframe, stuff-to-do)`
 
 Arguments:
@@ -75,7 +73,7 @@ To explore the functions of `dplyr`, we need a dataset. We will use the `Faculty
 
 We can load the dataset into the current R session by selecting `Import Dataset>From Excel File...` in the Environment tab.
 
-![](/workshops/neom/dplyr_files/importing.png){width="400px" height="200px"}
+![](/workshops/neom/dplyr_files/importing.png){width="800px" height="400px"}
 
 ```{r echo=FALSE}
 library(readxl)
@@ -109,7 +107,7 @@ For example, let´s select the information about Faculty’s full name. The foll
 select(data,EmployeeName)
 ```
 
-The `select()` verb can also be used to drop columns from a dataframe using the the `-`symbol. The following code can be read as follows: "From the data dataset, select all columns that are not the EmployeeName column".
+The `select()` verb can also be used to drop columns from a dataframe using the the `-` symbol. The following code can be read as follows: "From the data dataset, select all columns that are not the EmployeeName column".
 
 ```{r}
 select(data,-EmployeeName)
@@ -117,7 +115,7 @@ select(data,-EmployeeName)
 
 The above code reduced the dimensions of our data frame [850 × 31].
 
-To select multiple columns, we need to add their names to the select verb. Let´s select information about Faculty’s full name, nationality,sex,  and salary.
+To select multiple columns, we need to add their names to the `select()` verb. Let´s select information about Faculty’s full name, nationality, sex, and salary.
 
 ```{r}
 select(data,EmployeeName,Nationality, Sex, Salary)
@@ -141,13 +139,16 @@ filter(data,Sex == "F" &  AcadYear  == "2021" & NumPublication > 5)
 ```
 
 ### Creating columns
-The `mutate()` verb is useful for adding new columns to a dataframe, which will have the results of operations on already existing columns. 
+The `mutate()` verb is useful for creating new columns to a dataframe, which will have the results of operations on already existing columns. 
 
 For example, we would like to add a new column with a salary adjustment of 10%. Let´s create the `AdjSalary` column.
 
 ```{r}
 mutate(data,AdjSalary = Salary+Salary*0.1)
+
+head(mutate(data,AdjSalary = Salary+Salary*0.1))
 ```
+
 
 ### Sumarizing columns
 The `summarise()` verb is used to provide different summary statistics from a dataframe. 
@@ -183,7 +184,7 @@ data %>%
 ```
 
 The above code reduced the dimensions of our data frame [486 × 4].
-Now, let´s order alphabetically the new dataframe. To reorder the rows of `EmployeeName` column, we will use the `arrange(verb)`.
+Now, let´s order alphabetically the new dataframe. To reorder the rows of `EmployeeName` column, we will use the `arrange()` verb.
 
 ```{r}
 data %>% 
@@ -213,3 +214,4 @@ data %>%
   
 ```
 
+In the next session, we will apply `dplyr` verbs to create visualizations using `ggplot2` package.

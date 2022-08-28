@@ -145,10 +145,11 @@ For example, we would like to add a new column with a salary adjustment of 10%. 
 
 ```{r}
 mutate(data,AdjSalary = Salary+Salary*0.1)
-
-head(mutate(data,AdjSalary = Salary+Salary*0.1))
 ```
 
+```{r}
+glimpse(mutate(data,AdjSalary = Salary+Salary*0.1))
+```
 
 ### Sumarizing columns
 The `summarise()` verb is used to provide different summary statistics from a dataframe. 

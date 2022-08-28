@@ -1,0 +1,215 @@
+---
+title: "Day 2: Data manipulation"
+date: "`r Sys.Date()`"
+categories: R
+tags:
+- R
+- RStudio
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: true
+type: book
+weight: 70
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+# Data Manipulation
+
+In real-life, data is not always presented analysis-ready. Most of the time it has gaps, missing values, incorrect date formats, missing variable names, no variable names, or variables scattered into multiple columns etc. When this kind of data is presented for analysis, it needs intervention to make it tidy.
+
+Data manipulation is the process of organizing data to read and understand it better. We manipulate data for analysis and visualization.
+
+# Data Manipulation with `dplyr`
+
+`dplyr` is a powerful R-package to transform and summarize tabular data with rows and columns. It was created to enable efficient manipulation of data with the advantages of speed and simplicity of coding.
+
+`dplyr` provides a consistent set of functions,which we sometimes call verbs. Each of these `dplyr` verbs does one thing. Each verb is named in a way that is extremely easy to remember. Some of these include:
+
+-   `glimpse()`: to examine our dataset.
+
+-   `select()`: to select columns (variables) by their names.
+
+-   `filter()`: to pick rows (observations/samples) based on their values.
+
+-   `mutate()`: to create new variables.
+
+-   `summarize()`: to compute statistical summaries.
+
+    -   `mean`: calculate the mean, or average.
+    -   `median`: calculate the median.
+    -   `max`: find the maximum value.
+    -   `min`: find the minimum value
+    -   `sum`: add all the values together.
+    -   `n`: count the number of records.
+
+-   `distinct()`: to remove duplicate rows.
+
+-   `arrange()`: to reorder the rows.
+
+-   `group_by()`: to break down the dataset into specified groups of rows.
+
+
+## `dplyr` syntax
+
+All `dplyr` verbs share a similar syntax.
+
+Syntax:
+
+`dplyr_verb(dataframe, stuff-to-do)`
+
+Arguments:
+
+-   dplyr_verb : The name of the dplyr verb.
+-   dataframe : The name of the dataframe to operate on.
+-   stuff-to-do : Syntax that specifies exactly how to execute the dplyr verb.
+
+## Pipe operator
+These verbs can be chained together using the pipe operator (`%>%`) to perform more complex data manipulations. Basically, the pipe operator makes the output of one line of code the input for the next. 
+
+## Loading our data
+To explore the functions of `dplyr`, we need a dataset. We will use the `FacultyAffairs` dataset.
+
+We can load the dataset into the current R session by selecting `Import Dataset>From Excel File...` in the Environment tab.
+
+![](/workshops/neom/dplyr_files/importing.png){width="400px" height="200px"}
+
+```{r echo=FALSE}
+library(readxl)
+data <- read_excel("FacultyAffairs.xlsx")
+```
+
+## `dplyr` verbs
+Before using `dplyr` it is necessary to install it, since it is not a part of base R. 
+
+The `dplyr` package is hosted in the CRAN repository. Any package from the CRAN repository can be installed using the function `install.packages("dplyr")`
+
+Now that we have the dplyr package installed we need to load it to our R workspace. For this purpose we can use the `library()` function. If installed correctly, the message "Attaching package: ‘dplyr’" will appear.
+
+```{r}
+library(dplyr)
+```
+
+### Looking at the data
+The verb `glimpse()` allow us to see the columns selected in the output without printing all the data every time.
+
+```{r}
+glimpse(data)
+```
+
+### Selecting columns
+To select a few columns we need to add their names to the select verb. The order in which we add them, will determine the order in which they appear in the output.
+
+For example, let´s select the information about Faculty’s full name. The following code can be read as follows: "From the data dataset, select only the EmployeeName column".
+
+```{r}
+select(data,EmployeeName)
+```
+
+The `select()` verb can also be used to drop columns from a dataframe using the the `-`symbol. The following code can be read as follows: "From the data dataset, select all columns that are not the EmployeeName column".
+
+```{r}
+select(data,-EmployeeName)
+```
+
+The above code reduced the dimensions of our data frame [850 × 31].
+
+To select multiple columns, we need to add their names to the select verb. Let´s select information about Faculty’s full name, nationality,sex,  and salary.
+
+```{r}
+select(data,EmployeeName,Nationality, Sex, Salary)
+```
+
+### Filtering rows
+The `filter()` verb is used to extract rows, based on a specified condition. 
+
+For example,  we want to extract only the rows belonging to female faculty.
+
+```{r}
+filter(data,Sex == "F")
+```
+
+The above code reduced the dimensions of our data frame [486 × 32].
+
+The `filter()` verb can also be used to extract rows, based on multiple conditions.  Let´s extract the rows belonging to female faculty who published at least five research articles during  academic year 2021.
+
+```{r}
+filter(data,Sex == "F" &  AcadYear  == "2021" & NumPublication > 5)
+```
+
+### Creating columns
+The `mutate()` verb is useful for adding new columns to a dataframe, which will have the results of operations on already existing columns. 
+
+For example, we would like to add a new column with a salary adjustment of 10%. Let´s create the `AdjSalary` column.
+
+```{r}
+mutate(data,AdjSalary = Salary+Salary*0.1)
+```
+
+### Sumarizing columns
+The `summarise()` verb is used to provide different summary statistics from a dataframe. 
+
+For example, we want to summarise the means of salary of our faculty during 2019-2022 period.
+
+```{r}
+summarise(data,
+          MeanSalary=mean(Salary))
+          
+```
+
+Now, let´s try to compute the salary and the minumum, mean and maximum number of publications of our faculty during 2019-2022 period.
+
+```{r}
+summarise(data,
+          MeanSalary=mean(Salary),
+          MinPublications=min(NumPublication),
+          MeanPublications=mean(NumPublication),
+          MaxPublications=max(NumPublication))
+          
+```
+
+### Multiple verbs at once 
+So far, we have only used one verb in each command line. However, these verbs can be chained together using the pipe operator (`%>%`) to perform more complex data manipulations.
+
+Let´s try to reduce the dimension of our dataframe to work only with personal information of female faculty. To do that, we will use the pipe operator (`%>%`) and `select ()` and `filter()` verbs.
+
+```{r}
+data %>% 
+  select(EmployeeName,Sex,YearBirth,Nationality) %>% 
+  filter(Sex=="F")
+```
+
+The above code reduced the dimensions of our data frame [486 × 4].
+Now, let´s order alphabetically the new dataframe. To reorder the rows of `EmployeeName` column, we will use the `arrange(verb)`.
+
+```{r}
+data %>% 
+  select(EmployeeName,Sex,YearBirth,Nationality) %>% 
+  filter(Sex=="F") %>% 
+  arrange(EmployeeName)
+```
+
+However, there is something wrong with this output. We have repeated information for each faculty. We can use `distinct()` to remove all duplicate rows.
+
+```{r}
+data %>% 
+  select(EmployeeName,Sex,YearBirth,Nationality) %>% 
+  filter(Sex=="F") %>% 
+  distinct(EmployeeName)
+```
+
+Now, let´s try something more complex. We want to compate the average salary and number of publications for male and female faculty during academic year 2021
+
+
+```{r}
+data %>% 
+  filter(AcadYear  == "2021") %>% 
+  group_by(Sex) %>% 
+  summarize(MeanSalary=mean(Salary),
+            MeanPublications=mean(NumPublication))
+  
+```
+

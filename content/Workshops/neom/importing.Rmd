@@ -62,8 +62,7 @@ Before importing and reading any data, we must set the working directory to the 
 
 We can also set the current working directory clicking the Session tab and then Set Working Directory option.
 
-![Set Working Directory
-option.](/workshops/neom/importing_files/setwd.png){width="400px" height="200px"}
+![](/workshops/neom/importing_files/setwd.png){width=400px height=200px}
 
 ## Importing using command
 

@@ -1,0 +1,146 @@
+---
+title: "Day 2: Importing data"
+date: "`r Sys.Date()`"
+categories: R
+tags:
+- R
+- RStudio
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: true
+type: book
+weight: 60
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+# Importing data into `RStudio`
+
+Although creating data frames from existing data structures is extremely useful, by far the most common approach is to create a data frame by importing data from an external file.
+
+To do this, we need to have our data correctly formatted (tidy data) and saved in a file format that R is able to recognise.
+
+R is able to recognise a wide variety of file formats, although in reality we will probably end up only using one or two regularly.
+
+## Format your (tidy) data
+
+Tidy data is a standard way of mapping the meaning of a dataset to its structure. A dataset is messy or tidy depending on how rows, columns and tables are matched up with observations, variables and types. In **tidy data**:
+
+-   Every column is a variable.
+
+-   Every row is an observation.
+
+-   Every cell is a single value (usually either numbers or strings).
+
+When tidying our data we should ensure that:
+
+-   Each variable has its own column.
+
+-   Each row is an observation.
+
+-   The top of each column contains the name of the variable.
+
+-   There are no blank columns or blank rows between data.
+
+-   All data in a column has the same type (e.g. it is all numerical data, or it is all text data).
+
+-   Data are consistent (e.g. if a binary variable can take values 'Yes' or 'No' with no alternatives such as 'Y' and 'N').
+
+## Setting the Working Directory
+
+Before importing and reading any data, we must set the working directory to the location of the data.
+
+-   `getwd()` will print out the current directory.
+
+-   `setwd(“C:/mydata”)` will set the current working directory to a specific location.
+
+We can also set the current working directory clicking the Session tab and then Set Working Directory option.
+
+![Set Working Directory
+option.](/workshops/neom/importing_files/setwd.png){width="400px" height="200px"}
+
+## Importing using command
+
+### csv Files
+
+We can import **.csv** files using basic R function **read.csv()**.
+
+Syntax:
+
+`read.csv("path/file_name.csv", header = TRUE)`
+
+Arguments:
+
+-   path : The path of the file to be imported.
+
+-   file_name: The name of the file.
+
+-   header : Indicator of whether to import column headings. By default TRUE.
+
+### txt Files
+
+We can import **.txt** or a tab-delimited text files using basic R function `read.table()`. The data will be imported as a data frame.
+
+Syntax:
+
+`read.table("path/file_name.csv", header=TRUE)`
+
+Arguments:
+
+-   path : The path of the file to be imported.
+
+-   file_name: The name of the file.
+
+-   header : Indicator of whether to import column headings. By default
+    TRUE .
+
+We can also will use `read.table()` methods to import **.csv** file into R Programming Language.
+
+Syntax:
+
+`read.table("path/file_name.csv", header=TRUE, sep = ",")`
+
+Arguments:
+
+-   sep = "," : The separator for the values in each row.
+
+### xls/xlsx Files
+
+We can import import Excel files, **.xls** and **.xlsx**, using the function `read_excel()` from `readxl` package.
+
+Syntax:
+
+`library("readxl")` `read_excel("path/file_name.xlsx")`
+
+We can also import **.xlsx** using the function `read.xlsx()` from `xlsx` package.
+
+Syntax:
+
+`library("xlsx")` `read.xlsx("path/file_name.xlsx")`
+
+## Importing using Environment tab
+
+A flexible way to import data is to click on the Environment tab in the upper right window of RStudio and then click the Import Dataset tab.
+
+Multiple file type options are shown, such as text, Excel, SPSS, SAS, and Stata.
+
+We can easily import data through R studio with the following steps.
+
+-   From the Environment tab click on the Import Dataset Menu.
+
+-   Select the file extension from the option.
+
+-   A pop-up box will appear, either enter the file name or browse the
+    desktop.
+
+-   The selected file will be displayed on a new window with its dimensions.
+
+-   In order to see the output on the console, type the file name.
+
+![](/workshops/neom/importing_files/Environment.png){width=400px height=200px}

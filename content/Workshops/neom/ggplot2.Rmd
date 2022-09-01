@@ -1,0 +1,377 @@
+---
+title: "Day 3: ggplot2"
+date: "`r Sys.Date()`"
+categories: R
+tags:
+- RStudio
+- ggplot2
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: true
+type: book
+weight: 80
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+# Data Visualization
+
+Data visualization is the technique used to translate information into visual cues such as graphs, charts, maps, and many others. The main goal of data visualization is to make it easier to identify patterns, trends and outliers in large data sets. This is useful as it helps in intuitive and easy understanding of the data and thereby make better decisions regarding it.
+
+`R` has several systems for making graphs, but `ggplot2` is one of the most elegant and most versatile.
+
+# Data Visualization with `ggplot2`
+
+`ggplot2` is a R-package dedicated to data visualization.
+
+`ggplot2` implements the layered grammar of graphics, a coherent system for describing and building graphs. All plots in this package are built using a layered approach, building layers up to create the final visualization. To add layers, we use the symbol `+`.
+
+Every `ggplot2` plot has three key components:
+
+`Plot = data + aesthetic mappings + geometry`
+
+Arguments:
+
+-   `data`: the information we want to visualise.
+
+-   `aesthetic mappings`: defined with `aes()`, describe how data's variables are mapped to visual properties or aesthetics attributes.
+
+-   `geometry`: at least one layer defining the type of graphics. Layers are usually created with a `geom` function.
+
+Here's a simple example with the basic syntax for a `ggplot2` plot:
+
+```{r echo=FALSE}
+library(ggplot2)
+```
+
+```{r}
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) + 
+  geom_point()
+```
+
+where,
+
+-   `data`: The iris dataset is a built-in dataset in R that contains measurements on 4 different attributes (in centimeters) for 50 flowers from 3 different species.
+
+-   `aesthetic mappings`: engine Sepal Length mapped to x position, Sepal Width to y position.
+
+-   `geometry`: Layer to make a scatterplot.
+
+In our example the data and aesthetic mappings are supplied in `ggplot()`, then layers are added on with `+`.
+
+# Themes
+
+Themes are a powerful way to customize the non-data components of your plots (titles, labels, fonts, background, gridlines, and legends). Themes can be used to give plots a consistent customized look. The theme system does not affect how the data is rendered by geoms, or how it is transformed by scales.
+
+The theming system is composed of four main components:
+
+-   Theme elements specify the non-data elements that we can control. For example, the `plot.title` element controls the appearance of the plot title.
+
+-   Each element is associated with an element function, which describes the visual properties of the element. For example, `element_text()` sets the font size, colour and face of text elements like `plot.title`.
+
+-   The `theme()` function which allows you to override the default theme elements by calling element functions, like `theme(plot.title = element_text(colour = "green"))`.
+
+-   Complete themes, like `theme_bw()` set all of the theme elements to values designed to work together harmoniously.
+
+# installing/loading `ggplot2`
+
+Before using `ggplot2` it is necessary to install it, since it is not a part of base R.
+
+The `ggplot2` package is hosted in the CRAN repository. Any package from the CRAN repository can be installed using the function `install.packages("ggplot2")`
+
+Now that we have the `ggplot2` package installed we need to load it to our R workspace. For this purpose we can use the `library()` function. If installed correctly, the message "Attaching package: 'ggplot2'" will appear.
+
+```{r}
+library(ggplot2)
+```
+
+# Loading our data
+
+To explore the functions of `ggplot2`, we need a dataset. We will use the `FacultyAffairs` dataset.
+
+We can load the dataset into the current R session by selecting `Import Dataset>From Excel File...` in the Environment tab.
+
+![](/workshops/neom/dplyr_files/importing.png){width="800px" height="400px"}
+
+```{r echo=FALSE}
+library(readxl)
+data <- read_excel("FacultyAffairs.xlsx")
+```
+
+# Plot types
+
+The geometry defines the plot types in `ggplot2`.
+
+Geometry function names follow the pattern: `geom_X` where X is the name of the geometry. Some examples include:
+
+-   `geom_blank()`: display nothing.
+
+-   `geom_point()`: makes a scatterplot.
+
+-   `geom_line()` makes a line plot.
+
+-   `geom_bar()`: makes a bar chart. Display distribution of discrete variable.
+
+-   `geom_histogram()`: makes a bar chart. Bin and count continuous variable.
+
+-   `geom_boxplot()`: makes a Box-and-whisker plot.
+
+-   `geom_jitter()`: randomly jitter overlapping points.
+
+-   `geom_density()`: smoothed density estimate.
+
+-   `geom_dotplot()`: stack individual points into a dot plot.
+
+-   `geom_area()` makes an area plot.
+
+-   `geom_freqpoly()`: bin and count continuous variable, display with lines.
+
+## Scatterplot
+
+A Scatterplots displays the relationship between two numeric variables in a data-set. he position of each dot on the horizontal and vertical axis indicates values for an individual data point.
+
+Let´s generate a scatterplot to evaluate the relationship between faculty members' self-assessment (`SelfEvalTech`) and the students' assessment (`StudentEvalTech`) on the use of technologies during teaching activities.
+
+```{r}
+ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) + 
+  geom_point()
+```
+
+### Set axis limits
+
+We can use the `xlim()` and `ylim()` functions to set the scatterplot´s x-axis and y-axis limits, respectively.
+
+Let´s create a scatterplot with a x-axis and y-axis ranging from 0 to 100.
+
+```{r}
+ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) + 
+  geom_point()+
+  xlim(0,100)+
+  ylim(0,100)
+```
+
+### Titles and axes labels
+
+We can use the `labs()` function to change the title and axes labels.
+
+```{r}
+ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) + 
+  geom_point()+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title="My first scatterplot",
+       x="Self-assessment (%)",
+       y="Students’ assessment (%)")
+```
+
+Now, let's increase the size of the title, axis labels and axis text with using the `theme()` function.
+
+```{r}
+ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) + 
+  geom_point()+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title="My first scatterplot",
+       x="Self-assessment (%)",
+       y="Students’ assessment (%)")+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=25))
+```
+
+We can also change the color of title and/or axis labels. Let´s change the color of the axis
+
+```{r}
+ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) + 
+  geom_point()+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title="My first scatterplot",
+       x="Self-assessment (%)",
+       y="Students’ assessment (%)")+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20,colour="darkblue"),
+        plot.title=element_text(size=25))
+```
+
+### Points Size
+
+The `size` argument of the `geom_point` function allows chancing the size of the points. The default `size` is 1.5 but you can decrease or increase this value to make the points smaller or larger.
+
+```{r}
+ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) + 
+  geom_point(size=2.5)+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title="My first scatterplot",
+       x="Self-assessment (%)",
+       y="Students’ assessment (%)")+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=25))
+```
+
+### Color customization
+
+The `colour` argument of the `geom_point` function allows customizing the color of the points.
+
+```{r}
+ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) + 
+  geom_point(size=2.5, colour="darkblue")+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title="My first scatterplot",
+       x="Self-assessment (%)",
+       y="Students’ assessment (%)")+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=25))
+```
+
+The transparency of the points can also be customized with `alpha` argument (values 0- to 1).
+
+```{r}
+ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) + 
+  geom_point(size=2.5, colour="darkblue", alpha= 0.5)+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title="My first scatterplot",
+       x="Self-assessment (%)",
+       y="Students’ assessment (%)")+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=25))
+```
+
+There are at least two ways we can customize color by a variable. One of the ways is to use color argument inside global `aes()` function with the variable we want to color with. Let´s color our points by the academic year of the assessment.
+
+```{r}
+ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech, color=as.factor(AcadYear))) + 
+  geom_point(size=2.5, alpha= 0.5)+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title="My first scatterplot",
+       x="Self-assessment (%)",
+       y="Students’ assessment (%)")+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=25))
+```
+
+Another way is to use color argument with variable inside the aesthetics function `aes()` inside `geom_point()`. The code below will generate the same scatter plot as the one above.
+
+```{r}
+ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) + 
+  geom_point(aes(col=as.factor(AcadYear)),size=2.5, alpha= 0.5)+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title="My first scatterplot",
+       x="Self-assessment (%)",
+       y="Students’ assessment (%)")+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=25))
+```
+
+Often we may want to use our favourites values and show a useful legend. Fortunately this is simple to do using the `scale_colour_manual()` function.
+
+```{r}
+ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech, color=as.factor(AcadYear))) + 
+  geom_point(size=2.5, alpha= 0.5)+
+  scale_colour_manual("Academic Year", values= c("#007BB5", "#E0403F", "#F18825", "#006B44"))+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title="My first scatterplot",
+       x="Self-assessment (%)",
+       y="Students’ assessment (%)")+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=25))
+```
+
+### Customizing the legend
+
+By default, `ggplot2` automatically build a legend on our chart as soon as a point feature (e.g. color, shape) is mapped to a variable in `aes()`. We can modify attributes of the legend within the `theme()` function.
+
+We can control a legend position using `legend.position=" "` function. The possible arguments are: `"top"`, `"right"`, `"bottom"`,  `"left"` or `"none"`.
+
+Alternatively, we can insert the legend on the inside of the plot by specifying the exact coordinates: `legend.position= c(x, y)`. 
+
+
+```{r}
+ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech, color=as.factor(AcadYear))) + 
+  geom_point(size=2.5, alpha= 0.5)+
+  scale_colour_manual("Academic Year", values= c("#007BB5", "#E0403F", "#F18825", "#006B44"))+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title="My first scatterplot",
+       x="Self-assessment (%)",
+       y="Students’ assessment (%)")+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=25),
+        legend.position=c(0.15,0.8))
+
+```
+
+We can customize the title using `legend.title=" "` function. We can also hide the title of legend with `legend.title= element_blank()`. Let´s increase the legend title size.
+
+```{r}
+ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech, color=as.factor(AcadYear))) + 
+  geom_point(size=2.5, alpha= 0.5)+
+  scale_colour_manual("Academic Year", values= c("#007BB5", "#E0403F", "#F18825", "#006B44"))+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title="My first scatterplot",
+       x="Self-assessment (%)",
+       y="Students’ assessment (%)")+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=25),
+        legend.position=c(0.1,0.8),
+        legend.title=element_text(size=12))
+
+```
+
+We can also customize the legend background (fill) and border (colour) using `legend.background=" "` function. Let´s increase the legend title size.
+
+```{r}
+ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech, color=as.factor(AcadYear))) + 
+  geom_point(size=2.5, alpha= 0.5)+
+  scale_colour_manual("Academic Year", values= c("#007BB5", "#E0403F", "#F18825", "#006B44"))+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title="My first scatterplot",
+       x="Self-assessment (%)",
+       y="Students’ assessment (%)")+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=25),
+        legend.position=c(0.1,0.8),
+        legend.title=element_text(size=12),
+        legend.background = element_rect(colour="black"))
+
+```
+We can change the text of the legend using `legend.text= element_text()`.
+
+```{r}
+ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech, color=as.factor(AcadYear))) + 
+  geom_point(size=2.5, alpha= 0.5)+
+  scale_colour_manual("Academic Year", values= c("#007BB5", "#E0403F", "#F18825", "#006B44"))+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title="My first scatterplot",
+       x="Self-assessment (%)",
+       y="Students’ assessment (%)")+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=25),
+        legend.position=c(0.1,0.8),
+        legend.title=element_text(size=12),
+        legend.background = element_rect(colour="black"),
+        legend.text= element_text(size=10))
+
+```

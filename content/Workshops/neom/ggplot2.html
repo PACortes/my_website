@@ -1,0 +1,309 @@
+---
+title: "Day 3: ggplot2"
+date: "2022-09-01"
+categories: R
+tags:
+- RStudio
+- ggplot2
+output:
+  blogdown::html_page:
+    toc: true
+    number_sections: true
+type: book
+weight: 80
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+<div id="TOC">
+<ul>
+<li><a href="#data-visualization" id="toc-data-visualization"><span class="toc-section-number">1</span> Data Visualization</a></li>
+<li><a href="#data-visualization-with-ggplot2" id="toc-data-visualization-with-ggplot2"><span class="toc-section-number">2</span> Data Visualization with <code>ggplot2</code></a></li>
+<li><a href="#themes" id="toc-themes"><span class="toc-section-number">3</span> Themes</a></li>
+<li><a href="#installingloading-ggplot2" id="toc-installingloading-ggplot2"><span class="toc-section-number">4</span> installing/loading <code>ggplot2</code></a></li>
+<li><a href="#loading-our-data" id="toc-loading-our-data"><span class="toc-section-number">5</span> Loading our data</a></li>
+<li><a href="#plot-types" id="toc-plot-types"><span class="toc-section-number">6</span> Plot types</a>
+<ul>
+<li><a href="#scatterplot" id="toc-scatterplot"><span class="toc-section-number">6.1</span> Scatterplot</a>
+<ul>
+<li><a href="#set-axis-limits" id="toc-set-axis-limits"><span class="toc-section-number">6.1.1</span> Set axis limits</a></li>
+<li><a href="#titles-and-axes-labels" id="toc-titles-and-axes-labels"><span class="toc-section-number">6.1.2</span> Titles and axes labels</a></li>
+<li><a href="#points-size" id="toc-points-size"><span class="toc-section-number">6.1.3</span> Points Size</a></li>
+<li><a href="#color-customization" id="toc-color-customization"><span class="toc-section-number">6.1.4</span> Color customization</a></li>
+<li><a href="#customizing-the-legend" id="toc-customizing-the-legend"><span class="toc-section-number">6.1.5</span> Customizing the legend</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+
+<div id="data-visualization" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Data Visualization</h1>
+<p>Data visualization is the technique used to translate information into visual cues such as graphs, charts, maps, and many others. The main goal of data visualization is to make it easier to identify patterns, trends and outliers in large data sets. This is useful as it helps in intuitive and easy understanding of the data and thereby make better decisions regarding it.</p>
+<p><code>R</code> has several systems for making graphs, but <code>ggplot2</code> is one of the most elegant and most versatile.</p>
+</div>
+<div id="data-visualization-with-ggplot2" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Data Visualization with <code>ggplot2</code></h1>
+<p><code>ggplot2</code> is a R-package dedicated to data visualization.</p>
+<p><code>ggplot2</code> implements the layered grammar of graphics, a coherent system for describing and building graphs. All plots in this package are built using a layered approach, building layers up to create the final visualization. To add layers, we use the symbol <code>+</code>.</p>
+<p>Every <code>ggplot2</code> plot has three key components:</p>
+<p><code>Plot = data + aesthetic mappings + geometry</code></p>
+<p>Arguments:</p>
+<ul>
+<li><p><code>data</code>: the information we want to visualise.</p></li>
+<li><p><code>aesthetic mappings</code>: defined with <code>aes()</code>, describe how data’s variables are mapped to visual properties or aesthetics attributes.</p></li>
+<li><p><code>geometry</code>: at least one layer defining the type of graphics. Layers are usually created with a <code>geom</code> function.</p></li>
+</ul>
+<p>Here’s a simple example with the basic syntax for a <code>ggplot2</code> plot:</p>
+<pre class="r"><code>ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) + 
+  geom_point()</code></pre>
+<p><img src="/workshops/neom/ggplot2_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>where,</p>
+<ul>
+<li><p><code>data</code>: The iris dataset is a built-in dataset in R that contains measurements on 4 different attributes (in centimeters) for 50 flowers from 3 different species.</p></li>
+<li><p><code>aesthetic mappings</code>: engine Sepal Length mapped to x position, Sepal Width to y position.</p></li>
+<li><p><code>geometry</code>: Layer to make a scatterplot.</p></li>
+</ul>
+<p>In our example the data and aesthetic mappings are supplied in <code>ggplot()</code>, then layers are added on with <code>+</code>.</p>
+</div>
+<div id="themes" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Themes</h1>
+<p>Themes are a powerful way to customize the non-data components of your plots (titles, labels, fonts, background, gridlines, and legends). Themes can be used to give plots a consistent customized look. The theme system does not affect how the data is rendered by geoms, or how it is transformed by scales.</p>
+<p>The theming system is composed of four main components:</p>
+<ul>
+<li><p>Theme elements specify the non-data elements that we can control. For example, the <code>plot.title</code> element controls the appearance of the plot title.</p></li>
+<li><p>Each element is associated with an element function, which describes the visual properties of the element. For example, <code>element_text()</code> sets the font size, colour and face of text elements like <code>plot.title</code>.</p></li>
+<li><p>The <code>theme()</code> function which allows you to override the default theme elements by calling element functions, like <code>theme(plot.title = element_text(colour = "green"))</code>.</p></li>
+<li><p>Complete themes, like <code>theme_bw()</code> set all of the theme elements to values designed to work together harmoniously.</p></li>
+</ul>
+</div>
+<div id="installingloading-ggplot2" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> installing/loading <code>ggplot2</code></h1>
+<p>Before using <code>ggplot2</code> it is necessary to install it, since it is not a part of base R.</p>
+<p>The <code>ggplot2</code> package is hosted in the CRAN repository. Any package from the CRAN repository can be installed using the function <code>install.packages("ggplot2")</code></p>
+<p>Now that we have the <code>ggplot2</code> package installed we need to load it to our R workspace. For this purpose we can use the <code>library()</code> function. If installed correctly, the message “Attaching package: ‘ggplot2’” will appear.</p>
+<pre class="r"><code>library(ggplot2)</code></pre>
+</div>
+<div id="loading-our-data" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Loading our data</h1>
+<p>To explore the functions of <code>ggplot2</code>, we need a dataset. We will use the <code>FacultyAffairs</code> dataset.</p>
+<p>We can load the dataset into the current R session by selecting <code>Import Dataset&gt;From Excel File...</code> in the Environment tab.</p>
+<p><img src="/workshops/neom/dplyr_files/importing.png" width="800" height="400" /></p>
+</div>
+<div id="plot-types" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Plot types</h1>
+<p>The geometry defines the plot types in <code>ggplot2</code>.</p>
+<p>Geometry function names follow the pattern: <code>geom_X</code> where X is the name of the geometry. Some examples include:</p>
+<ul>
+<li><p><code>geom_blank()</code>: display nothing.</p></li>
+<li><p><code>geom_point()</code>: makes a scatterplot.</p></li>
+<li><p><code>geom_line()</code> makes a line plot.</p></li>
+<li><p><code>geom_bar()</code>: makes a bar chart. Display distribution of discrete variable.</p></li>
+<li><p><code>geom_histogram()</code>: makes a bar chart. Bin and count continuous variable.</p></li>
+<li><p><code>geom_boxplot()</code>: makes a Box-and-whisker plot.</p></li>
+<li><p><code>geom_jitter()</code>: randomly jitter overlapping points.</p></li>
+<li><p><code>geom_density()</code>: smoothed density estimate.</p></li>
+<li><p><code>geom_dotplot()</code>: stack individual points into a dot plot.</p></li>
+<li><p><code>geom_area()</code> makes an area plot.</p></li>
+<li><p><code>geom_freqpoly()</code>: bin and count continuous variable, display with lines.</p></li>
+</ul>
+<div id="scatterplot" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Scatterplot</h2>
+<p>A Scatterplots displays the relationship between two numeric variables in a data-set. he position of each dot on the horizontal and vertical axis indicates values for an individual data point.</p>
+<p>Let´s generate a scatterplot to evaluate the relationship between faculty members’ self-assessment (<code>SelfEvalTech</code>) and the students’ assessment (<code>StudentEvalTech</code>) on the use of technologies during teaching activities.</p>
+<pre class="r"><code>ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) + 
+  geom_point()</code></pre>
+<p><img src="/workshops/neom/ggplot2_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<div id="set-axis-limits" class="section level3" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Set axis limits</h3>
+<p>We can use the <code>xlim()</code> and <code>ylim()</code> functions to set the scatterplot´s x-axis and y-axis limits, respectively.</p>
+<p>Let´s create a scatterplot with a x-axis and y-axis ranging from 0 to 100.</p>
+<pre class="r"><code>ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) + 
+  geom_point()+
+  xlim(0,100)+
+  ylim(0,100)</code></pre>
+<p><img src="/workshops/neom/ggplot2_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="titles-and-axes-labels" class="section level3" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> Titles and axes labels</h3>
+<p>We can use the <code>labs()</code> function to change the title and axes labels.</p>
+<pre class="r"><code>ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) + 
+  geom_point()+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title=&quot;My first scatterplot&quot;,
+       x=&quot;Self-assessment (%)&quot;,
+       y=&quot;Students’ assessment (%)&quot;)</code></pre>
+<p><img src="/workshops/neom/ggplot2_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Now, let’s increase the size of the title, axis labels and axis text with using the <code>theme()</code> function.</p>
+<pre class="r"><code>ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) + 
+  geom_point()+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title=&quot;My first scatterplot&quot;,
+       x=&quot;Self-assessment (%)&quot;,
+       y=&quot;Students’ assessment (%)&quot;)+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=25))</code></pre>
+<p><img src="/workshops/neom/ggplot2_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>We can also change the color of title and/or axis labels. Let´s change the color of the axis</p>
+<pre class="r"><code>ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) + 
+  geom_point()+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title=&quot;My first scatterplot&quot;,
+       x=&quot;Self-assessment (%)&quot;,
+       y=&quot;Students’ assessment (%)&quot;)+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20,colour=&quot;darkblue&quot;),
+        plot.title=element_text(size=25))</code></pre>
+<p><img src="/workshops/neom/ggplot2_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+<div id="points-size" class="section level3" number="6.1.3">
+<h3><span class="header-section-number">6.1.3</span> Points Size</h3>
+<p>The <code>size</code> argument of the <code>geom_point</code> function allows chancing the size of the points. The default <code>size</code> is 1.5 but you can decrease or increase this value to make the points smaller or larger.</p>
+<pre class="r"><code>ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) + 
+  geom_point(size=2.5)+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title=&quot;My first scatterplot&quot;,
+       x=&quot;Self-assessment (%)&quot;,
+       y=&quot;Students’ assessment (%)&quot;)+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=25))</code></pre>
+<p><img src="/workshops/neom/ggplot2_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+</div>
+<div id="color-customization" class="section level3" number="6.1.4">
+<h3><span class="header-section-number">6.1.4</span> Color customization</h3>
+<p>The <code>colour</code> argument of the <code>geom_point</code> function allows customizing the color of the points.</p>
+<pre class="r"><code>ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) + 
+  geom_point(size=2.5, colour=&quot;darkblue&quot;)+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title=&quot;My first scatterplot&quot;,
+       x=&quot;Self-assessment (%)&quot;,
+       y=&quot;Students’ assessment (%)&quot;)+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=25))</code></pre>
+<p><img src="/workshops/neom/ggplot2_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>The transparency of the points can also be customized with <code>alpha</code> argument (values 0- to 1).</p>
+<pre class="r"><code>ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) + 
+  geom_point(size=2.5, colour=&quot;darkblue&quot;, alpha= 0.5)+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title=&quot;My first scatterplot&quot;,
+       x=&quot;Self-assessment (%)&quot;,
+       y=&quot;Students’ assessment (%)&quot;)+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=25))</code></pre>
+<p><img src="/workshops/neom/ggplot2_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>There are at least two ways we can customize color by a variable. One of the ways is to use color argument inside global <code>aes()</code> function with the variable we want to color with. Let´s color our points by the academic year of the assessment.</p>
+<pre class="r"><code>ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech, color=as.factor(AcadYear))) + 
+  geom_point(size=2.5, alpha= 0.5)+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title=&quot;My first scatterplot&quot;,
+       x=&quot;Self-assessment (%)&quot;,
+       y=&quot;Students’ assessment (%)&quot;)+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=25))</code></pre>
+<p><img src="/workshops/neom/ggplot2_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>Another way is to use color argument with variable inside the aesthetics function <code>aes()</code> inside <code>geom_point()</code>. The code below will generate the same scatter plot as the one above.</p>
+<pre class="r"><code>ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) + 
+  geom_point(aes(col=as.factor(AcadYear)),size=2.5, alpha= 0.5)+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title=&quot;My first scatterplot&quot;,
+       x=&quot;Self-assessment (%)&quot;,
+       y=&quot;Students’ assessment (%)&quot;)+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=25))</code></pre>
+<p><img src="/workshops/neom/ggplot2_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>Often we may want to use our favourites values and show a useful legend. Fortunately this is simple to do using the <code>scale_colour_manual()</code> function.</p>
+<pre class="r"><code>ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech, color=as.factor(AcadYear))) + 
+  geom_point(size=2.5, alpha= 0.5)+
+  scale_colour_manual(&quot;Academic Year&quot;, values= c(&quot;#007BB5&quot;, &quot;#E0403F&quot;, &quot;#F18825&quot;, &quot;#006B44&quot;))+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title=&quot;My first scatterplot&quot;,
+       x=&quot;Self-assessment (%)&quot;,
+       y=&quot;Students’ assessment (%)&quot;)+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=25))</code></pre>
+<p><img src="/workshops/neom/ggplot2_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+</div>
+<div id="customizing-the-legend" class="section level3" number="6.1.5">
+<h3><span class="header-section-number">6.1.5</span> Customizing the legend</h3>
+<p>By default, <code>ggplot2</code> automatically build a legend on our chart as soon as a point feature (e.g. color, shape) is mapped to a variable in <code>aes()</code>. We can modify attributes of the legend within the <code>theme()</code> function.</p>
+<p>We can control a legend position using <code>legend.position=" "</code> function. The possible arguments are: <code>"top"</code>, <code>"right"</code>, <code>"bottom"</code>, <code>"left"</code> or <code>"none"</code>.</p>
+<p>Alternatively, we can insert the legend on the inside of the plot by specifying the exact coordinates: <code>legend.position= c(x, y)</code>.</p>
+<pre class="r"><code>ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech, color=as.factor(AcadYear))) + 
+  geom_point(size=2.5, alpha= 0.5)+
+  scale_colour_manual(&quot;Academic Year&quot;, values= c(&quot;#007BB5&quot;, &quot;#E0403F&quot;, &quot;#F18825&quot;, &quot;#006B44&quot;))+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title=&quot;My first scatterplot&quot;,
+       x=&quot;Self-assessment (%)&quot;,
+       y=&quot;Students’ assessment (%)&quot;)+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=25),
+        legend.position=c(0.15,0.8))</code></pre>
+<p><img src="/workshops/neom/ggplot2_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>We can customize the title using <code>legend.title=" "</code> function. We can also hide the title of legend with <code>legend.title= element_blank()</code>. Let´s increase the legend title size.</p>
+<pre class="r"><code>ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech, color=as.factor(AcadYear))) + 
+  geom_point(size=2.5, alpha= 0.5)+
+  scale_colour_manual(&quot;Academic Year&quot;, values= c(&quot;#007BB5&quot;, &quot;#E0403F&quot;, &quot;#F18825&quot;, &quot;#006B44&quot;))+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title=&quot;My first scatterplot&quot;,
+       x=&quot;Self-assessment (%)&quot;,
+       y=&quot;Students’ assessment (%)&quot;)+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=25),
+        legend.position=c(0.1,0.8),
+        legend.title=element_text(size=12))</code></pre>
+<p><img src="/workshops/neom/ggplot2_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p>We can also customize the legend background (fill) and border (colour) using <code>legend.background=" "</code> function. Let´s increase the legend title size.</p>
+<pre class="r"><code>ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech, color=as.factor(AcadYear))) + 
+  geom_point(size=2.5, alpha= 0.5)+
+  scale_colour_manual(&quot;Academic Year&quot;, values= c(&quot;#007BB5&quot;, &quot;#E0403F&quot;, &quot;#F18825&quot;, &quot;#006B44&quot;))+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title=&quot;My first scatterplot&quot;,
+       x=&quot;Self-assessment (%)&quot;,
+       y=&quot;Students’ assessment (%)&quot;)+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=25),
+        legend.position=c(0.1,0.8),
+        legend.title=element_text(size=12),
+        legend.background = element_rect(colour=&quot;black&quot;))</code></pre>
+<p><img src="/workshops/neom/ggplot2_files/figure-html/unnamed-chunk-18-1.png" width="672" />
+We can change the text of the legend using <code>legend.text= element_text()</code>.</p>
+<pre class="r"><code>ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech, color=as.factor(AcadYear))) + 
+  geom_point(size=2.5, alpha= 0.5)+
+  scale_colour_manual(&quot;Academic Year&quot;, values= c(&quot;#007BB5&quot;, &quot;#E0403F&quot;, &quot;#F18825&quot;, &quot;#006B44&quot;))+
+  xlim(0,100)+
+  ylim(0,100)+
+  labs(title=&quot;My first scatterplot&quot;,
+       x=&quot;Self-assessment (%)&quot;,
+       y=&quot;Students’ assessment (%)&quot;)+
+  theme(axis.text =element_text(size=15),
+        axis.title=element_text(size=20),
+        plot.title=element_text(size=25),
+        legend.position=c(0.1,0.8),
+        legend.title=element_text(size=12),
+        legend.background = element_rect(colour=&quot;black&quot;),
+        legend.text= element_text(size=10))</code></pre>
+<p><img src="/workshops/neom/ggplot2_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+</div>
+</div>
+</div>

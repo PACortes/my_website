@@ -21,13 +21,11 @@ knitr::opts_chunk$set(collapse = TRUE)
 
 Data visualization is the technique used to translate information into visual cues such as graphs, charts, maps, and many others. The main goal of data visualization is to make it easier to identify patterns, trends and outliers in large data sets. This is useful as it helps in intuitive and easy understanding of the data and thereby make better decisions regarding it.
 
-`R` has several systems for making graphs, but `ggplot2` is one of the most elegant and most versatile.
+`R` has several systems for making graphs, but `ggplot2` is one of the most elegant and versatile.
 
-# Data Visualization with `ggplot2`
+# `ggplot2`
 
-`ggplot2` is a R-package dedicated to data visualization.
-
-`ggplot2` implements the layered grammar of graphics, a coherent system for describing and building graphs. All plots in this package are built using a layered approach, building layers up to create the final visualization. To add layers, we use the symbol `+`.
+`ggplot2` is a R-package dedicated to data visualization. It implements the grammar of graphics, a coherent system for describing and building plots. All plots in this package are built using a layered approach, building layers up to create the final visualization. To add layers, we use the symbol `+`.
 
 Every `ggplot2` plot has three key components:
 
@@ -35,11 +33,11 @@ Every `ggplot2` plot has three key components:
 
 Arguments:
 
--   `data`: the information we want to visualise.
+-   data: the information we want to visualise.
 
--   `aesthetic mappings`: defined with `aes()`, describe how data's variables are mapped to visual properties or aesthetics attributes.
+-   aesthetic mappings: defined with `aes()`, describe how data's variables are mapped to visual properties or aesthetics attributes.
 
--   `geometry`: at least one layer defining the type of graphics. Layers are usually created with a `geom` function.
+-   geometry: at least one layer defining the type of graphics. Layers are usually created with a `geom` function.
 
 Here's a simple example with the basic syntax for a `ggplot2` plot:
 
@@ -54,17 +52,17 @@ ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
 
 where,
 
--   `data`: The iris dataset is a built-in dataset in R that contains measurements on 4 different attributes (in centimeters) for 50 flowers from 3 different species.
+-   data: the iris dataset is a built-in dataset in R that contains measurements on 4 different attributes (in centimeters) for 50 flowers from 3 different species.
 
--   `aesthetic mappings`: engine Sepal Length mapped to x position, Sepal Width to y position.
+-   aesthetic mappings: engine Sepal Length mapped to x position, Sepal Width to y position.
 
--   `geometry`: Layer to make a scatterplot.
+-   geometry: layer to make a scatterplot.
 
 In our example the data and aesthetic mappings are supplied in `ggplot()`, then layers are added on with `+`.
 
 # Themes
 
-Themes are a powerful way to customize the non-data components of your plots (titles, labels, fonts, background, gridlines, and legends). Themes can be used to give plots a consistent customized look. The theme system does not affect how the data is rendered by geoms, or how it is transformed by scales.
+Themes are a powerful way to customize the non-data components of `ggplot()` plots (titles, labels, fonts, background, gridlines, and legends). Themes can be used to give plots a consistent customized look. The theme system does not affect how the data is rendered by geom functions.
 
 The theming system is composed of four main components:
 
@@ -103,9 +101,7 @@ data <- read_excel("FacultyAffairs.xlsx")
 
 # Plot types
 
-The geometry defines the plot types in `ggplot2`.
-
-Geometry function names follow the pattern: `geom_X` where X is the name of the geometry. Some examples include:
+The geometry defines the plot types in `ggplot2`. Geometry function names follow the pattern: `geom_X()` where X is the name of the geometry. Some examples include:
 
 -   `geom_blank()`: display nothing.
 
@@ -127,7 +123,6 @@ Geometry function names follow the pattern: `geom_X` where X is the name of the 
 
 -   `geom_area()` makes an area plot.
 
--   `geom_freqpoly()`: bin and count continuous variable, display with lines.
 
 ## Scatterplot
 
@@ -199,7 +194,7 @@ ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) +
 
 ### Points Size
 
-The `size` argument of the `geom_point` function allows chancing the size of the points. The default `size` is 1.5 but you can decrease or increase this value to make the points smaller or larger.
+The `size` argument of the `geom_point` function allows changing the size of the points. The default `size` is 1.5 but you can decrease or increase this value to make the points smaller or larger.
 
 ```{r}
 ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) + 
@@ -216,7 +211,7 @@ ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) +
 
 ### Color customization
 
-The `colour` argument of the `geom_point` function allows customizing the color of the points.
+The `colour` argument of the `geom_point` function allows customizing point´s color.
 
 ```{r}
 ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) + 
@@ -231,7 +226,7 @@ ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) +
         plot.title=element_text(size=25))
 ```
 
-The transparency of the points can also be customized with `alpha` argument (values 0- to 1).
+The transparency of the points can also be customized with `alpha` argument (values 0 to 1).
 
 ```{r}
 ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) + 
@@ -276,7 +271,7 @@ ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech)) +
         plot.title=element_text(size=25))
 ```
 
-Often we may want to use our favourites values and show a useful legend. Fortunately this is simple to do using the `scale_colour_manual()` function.
+Often we may want to use our favourites values and show a useful legend. Fortunately, this is simple to do using the `scale_colour_manual()` function.
 
 ```{r}
 ggplot(data, aes(x = SelfEvalTech, y = StudentEvalTech, color=as.factor(AcadYear))) + 
